@@ -1,0 +1,6 @@
+C:\Users\Abid\Desktop\Nickolas Tasks\WMS\WMS-web\WMS.Repository\bin\Debug\WMS.Repository.dll
+C:\Users\Abid\Desktop\Nickolas Tasks\WMS\WMS-web\WMS.Repository\bin\Debug\WMS.Repository.pdb
+C:\Users\Abid\Desktop\Nickolas Tasks\WMS\WMS-web\WMS.Repository\obj\Debug\WMS.Repository.csprojAssemblyReference.cache
+C:\Users\Abid\Desktop\Nickolas Tasks\WMS\WMS-web\WMS.Repository\obj\Debug\WMS.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Abid\Desktop\Nickolas Tasks\WMS\WMS-web\WMS.Repository\obj\Debug\WMS.Repository.dll
+C:\Users\Abid\Desktop\Nickolas Tasks\WMS\WMS-web\WMS.Repository\obj\Debug\WMS.Repository.pdb

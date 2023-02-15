@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string urlname = Convert.ToString(Request.QueryString["detail"]);
+}
+
+
+    <div ng-controller="BlogsController" ng-init="GetBlogDetail('@urlname');">
+        
+        <div id="preloader" ng-if="loader==true">
+            <div id="loader"></div>
+        </div>
+
+        <div class="page-layout">
+            <div class="main-content-area">
+                <!-- page-header-section start -->
+                <div class="page-header-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-between justify-content-md-end">
+                                <ul class="breadcrumb">
+                                    <li><a href="Home/Index">Home</a></li>
+                                    <li><span>/</span></li>
+                                    <li>Blog Page</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- page-header-section end -->
+                <!-- about section start -->
+                <section class="blog-section section-ptb" ng-if="loader==false">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9 main-content">
+                                <div class="entry-wrapper">
+                                    <div class="entry-single">
+                                        <div class="entry-header">
+                                            <img src="{{BlogDetail.BlogImageUrl}}" alt="thumb">
+                                        </div>
+                                        <div class="entry-content">
+                                            <ul class="meta-post list-unstyled pl-0 d-flex">
+                                                <li>
+                                                    <span class="icon"><i class="far fa-clock"></i></span>
+                                                    <span class="meta-content">{{BlogDetail.DateString}}</span>
+                                                </li>
+                                            </ul>
+                                            <h2 class="title mb-3">{{BlogDetail.BlogTitle}}</h2>
+                                            <p style="text-align: justify; text-justify: inter-word;">{{BlogDetail.BlogHtml}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 sidebar blog-sidebar">
+                                <div class="widget searh-widget">
+                                    <form class="search-form">
+                                        <input type="text" name="search" placeholder="Search">
+                                        <i class="fas fa-search"></i>
+                                    </form>
+                                </div>
+                                <div class="widget">
+                                    <h5 class="widget-title">Recent Blog</h5>
+                                    <div class="widget-wrapper1">
+                                        <div class="small-post-list">
+                                            <div class="post-item d-flex" ng-repeat="resentBlog in GetRecentBlogs">
+                                                <div class="post-thumb">
+                                                    <a href="/Blogs/Detail?detail={{resentBlog.BlogTitleUrl}}"><img src="{{resentBlog.BlogImageUrl}}" alt="thumb"></a>
+                                                </div>
+                                                <div class="post-content">
+                                                    <a class="title" href="/Blogs/Detail?detail={{resentBlog.BlogTitleUrl}}">{{resentBlog.BlogTitle}}</a>
+                                                    <ul class="meta-post list-unstyled pl-0 d-flex">
+                                                        <li>
+                                                            <span class="meta-content">{{resentBlog.CreatedDateString}}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- about section end -->
+
+            </div>
+        </div>
+    </div>
+
+@section scripts{
+    <script src="~/ngControllers/BlogDetailController.js"></script>
+}
+

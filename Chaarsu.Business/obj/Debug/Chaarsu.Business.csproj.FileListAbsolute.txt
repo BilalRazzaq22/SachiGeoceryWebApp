@@ -1,0 +1,240 @@
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CoreCompileInputs.cache
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll.config
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.pdb
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.xml
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CopyComplete
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.pdb
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll.config
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.pdb
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll
+D:\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.dll
+D:\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.dll
+D:\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.dll
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.dll
+D:\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.dll
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.pdb
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll.config
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.pdb
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll.config
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.pdb
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll.config
+D:\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.xml
+D:\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.xml
+D:\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.xml
+D:\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.xml
+D:\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.xml
+D:\Chaarsu\Chaarsu.Business\bin\Debug\evointernal.dat
+D:\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csprojAssemblyReference.cache
+D:\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CoreCompileInputs.cache
+D:\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CopyComplete
+D:\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.dll
+D:\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.pdb
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.pdb
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll.config
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll.config
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.pdb
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll.config
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.xml
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.xml
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\bin\Debug\evointernal.dat
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csprojAssemblyReference.cache
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll.config
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.pdb
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll
+E:\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.dll
+E:\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.dll
+E:\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.dll
+E:\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.dll
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.dll
+E:\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.dll
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.pdb
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll.config
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.pdb
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll.config
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.pdb
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll.config
+E:\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.xml
+E:\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.xml
+E:\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.xml
+E:\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.xml
+E:\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.xml
+E:\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.xml
+E:\Chaarsu\Chaarsu.Business\bin\Debug\evointernal.dat
+E:\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csprojAssemblyReference.cache
+E:\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CoreCompileInputs.cache
+E:\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CopyComplete
+E:\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.dll
+E:\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.pdb
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll.config
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.pdb
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.pdb
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll.config
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.pdb
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll.config
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.pdb
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll.config
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.xml
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.xml
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.xml
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.xml
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.xml
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\evointernal.dat
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csprojAssemblyReference.cache
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CoreCompileInputs.cache
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CopyComplete
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.pdb
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll.config
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.pdb
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.pdb
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll.config
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.pdb
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll.config
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.pdb
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll.config
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.xml
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.xml
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.xml
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.xml
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.xml
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.xml
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\bin\Debug\evointernal.dat
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.AssemblyReference.cache
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CoreCompileInputs.cache
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CopyComplete
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.pdb
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll.config
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.pdb
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.pdb
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll.config
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll.config
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.pdb
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll.config
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.xml
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.xml
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.xml
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\evointernal.dat
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.AssemblyReference.cache
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CoreCompileInputs.cache
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CopyComplete
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.pdb
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll.config
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Business.pdb
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\EntityFramework.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\System.Web.Http.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\evohtmltopdf.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Library.pdb
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll.config
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll.config
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Repository.pdb
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll.config
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\EntityFramework.xml
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\System.Web.Http.xml
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\evohtmltopdf.xml
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\bin\Debug\evointernal.dat
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.AssemblyReference.cache
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CoreCompileInputs.cache
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CopyComplete
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\obj\Debug\Chaarsu.Business.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Business\obj\Debug\Chaarsu.Business.pdb
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll.config
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Business.pdb
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.pdb
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Library.dll.config
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.pdb
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Models.dll.config
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.pdb
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Chaarsu.Repository.dll.config
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.xml
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\EntityFramework.SqlServer.xml
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\System.Web.Http.xml
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\evohtmltopdf.xml
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\Newtonsoft.Json.xml
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\System.Net.Http.Formatting.xml
+E:\UsmanZia\Chaarsu\Chaarsu.Business\bin\Debug\evointernal.dat
+E:\UsmanZia\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.AssemblyReference.cache
+E:\UsmanZia\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CoreCompileInputs.cache
+E:\UsmanZia\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.csproj.CopyComplete
+E:\UsmanZia\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Business\obj\Debug\Chaarsu.Business.pdb

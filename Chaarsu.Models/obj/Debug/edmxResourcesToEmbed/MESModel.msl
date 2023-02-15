@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MESModelStoreContainer" CdmEntityContainer="MESEntities">
+    <EntitySetMapping Name="AdmCompanies">
+      <EntityTypeMapping TypeName="MESModel.AdmCompany">
+        <MappingFragment StoreEntitySet="AdmCompany">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Postal" ColumnName="Postal" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="TrnTime" ColumnName="TrnTime" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdmCompanyPwds">
+      <EntityTypeMapping TypeName="MESModel.AdmCompanyPwd">
+        <MappingFragment StoreEntitySet="AdmCompanyPwd">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdmConnections">
+      <EntityTypeMapping TypeName="MESModel.AdmConnection">
+        <MappingFragment StoreEntitySet="AdmConnection">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ERPDB" ColumnName="ERPDB" />
+          <ScalarProperty Name="MESDB" ColumnName="MESDB" />
+          <ScalarProperty Name="TrnTime" ColumnName="TrnTime" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdmGroups">
+      <EntityTypeMapping TypeName="MESModel.AdmGroup">
+        <MappingFragment StoreEntitySet="AdmGroup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LogoutFlag" ColumnName="LogoutFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="TrnTime" ColumnName="TrnTime" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdmLicenses">
+      <EntityTypeMapping TypeName="MESModel.AdmLicense">
+        <MappingFragment StoreEntitySet="AdmLicense">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="License" ColumnName="License" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdmSystemSettings">
+      <EntityTypeMapping TypeName="MESModel.AdmSystemSetting">
+        <MappingFragment StoreEntitySet="AdmSystemSetting">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="MasterAppName" ColumnName="MasterAppName" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleDesc" ColumnName="ModuleDesc" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="HasApp" ColumnName="HasApp" />
+          <ScalarProperty Name="AppSort" ColumnName="AppSort" />
+          <ScalarProperty Name="ImageIndex" ColumnName="ImageIndex" />
+          <ScalarProperty Name="AppIndex" ColumnName="AppIndex" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="SecurityKey" ColumnName="SecurityKey" />
+          <ScalarProperty Name="ProgramSort" ColumnName="ProgramSort" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="MESModel.Language">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MES_Program_t">
+      <EntityTypeMapping TypeName="MESModel.MES_Program_t">
+        <MappingFragment StoreEntitySet="MES_Program_t">
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="LangaugeId" ColumnName="LangaugeId" />
+          <ScalarProperty Name="ProgramName" ColumnName="ProgramName" />
+          <ScalarProperty Name="ProgramDescription" ColumnName="ProgramDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MES_Programs">
+      <EntityTypeMapping TypeName="MESModel.MES_Programs">
+        <MappingFragment StoreEntitySet="MES_Programs">
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="ProgramName" ColumnName="ProgramName" />
+          <ScalarProperty Name="ProgramDescription" ColumnName="ProgramDescription" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpCreateCustomColumns" FunctionName="MESModel.Store.SpCreateCustomColumns" />
+    <FunctionImportMapping FunctionImportName="SpGetAllCompanies" FunctionName="MESModel.Store.SpGetAllCompanies">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MESModel.SpGetAllCompanies_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Postal" ColumnName="Postal" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="TrnTime" ColumnName="TrnTime" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDateString" ColumnName="CreatedDateString" />
+          <ScalarProperty Name="RowIndex" ColumnName="RowIndex" />
+          <ScalarProperty Name="TotalRecords" ColumnName="TotalRecords" />
+          <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="End" ColumnName="End" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpGetAllGroups" FunctionName="MESModel.Store.SpGetAllGroups">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MESModel.SpGetAllGroups_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LogoutFlag" ColumnName="LogoutFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="TrnTime" ColumnName="TrnTime" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDateString" ColumnName="CreatedDateString" />
+          <ScalarProperty Name="RowIndex" ColumnName="RowIndex" />
+          <ScalarProperty Name="TotalRecords" ColumnName="TotalRecords" />
+          <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="End" ColumnName="End" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpGetAllPrograms" FunctionName="MESModel.Store.SpGetAllPrograms">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MESModel.SpGetAllPrograms_Result">
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="ProgramName" ColumnName="ProgramName" />
+          <ScalarProperty Name="ProgramDescription" ColumnName="ProgramDescription" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="CreatedDateString" ColumnName="CreatedDateString" />
+          <ScalarProperty Name="RowIndex" ColumnName="RowIndex" />
+          <ScalarProperty Name="TotalRecords" ColumnName="TotalRecords" />
+          <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="End" ColumnName="End" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpGetColumns" FunctionName="MESModel.Store.SpGetColumns" />
+    <EntitySetMapping Name="AdmUsers">
+      <EntityTypeMapping TypeName="MESModel.AdmUser">
+        <MappingFragment StoreEntitySet="AdmUsers">
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+          <ScalarProperty Name="LoginMAC" ColumnName="LoginMAC" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="TrnTime" ColumnName="TrnTime" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="OnHold" ColumnName="OnHold" />
+          <ScalarProperty Name="AdminFlag" ColumnName="AdminFlag" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpGetAllUsers" FunctionName="MESModel.Store.SpGetAllUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MESModel.SpGetAllUsers_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="AdminFlag" ColumnName="AdminFlag" />
+          <ScalarProperty Name="OnHold" ColumnName="OnHold" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="TrnTime" ColumnName="TrnTime" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="LoginMAC" ColumnName="LoginMAC" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedDateString" ColumnName="CreatedDateString" />
+          <ScalarProperty Name="RowIndex" ColumnName="RowIndex" />
+          <ScalarProperty Name="TotalRecords" ColumnName="TotalRecords" />
+          <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="End" ColumnName="End" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="AdmGroupSecurities">
+      <EntityTypeMapping TypeName="MESModel.AdmGroupSecurity">
+        <MappingFragment StoreEntitySet="AdmGroupSecurity">
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="ModifyOperator" ColumnName="ModifyOperator" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="AccessFlag" ColumnName="AccessFlag" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpGetGroupSecurity" FunctionName="MESModel.Store.SpGetGroupSecurity">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MESModel.SpGetGroupSecurity_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="MasterAppName" ColumnName="MasterAppName" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleDesc" ColumnName="ModuleDesc" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="HasApp" ColumnName="HasApp" />
+          <ScalarProperty Name="ImageIndex" ColumnName="ImageIndex" />
+          <ScalarProperty Name="AppIndex" ColumnName="AppIndex" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="ProgramSort" ColumnName="ProgramSort" />
+          <ScalarProperty Name="AccessFlag" ColumnName="AccessFlag" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="GSId" ColumnName="GSId" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="AdmUserCards">
+      <EntityTypeMapping TypeName="MESModel.AdmUserCard">
+        <MappingFragment StoreEntitySet="AdmUserCards">
+          <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CardDesc" ColumnName="CardDesc" />
+          <ScalarProperty Name="CardTitle" ColumnName="CardTitle" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CardId" ColumnName="CardId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

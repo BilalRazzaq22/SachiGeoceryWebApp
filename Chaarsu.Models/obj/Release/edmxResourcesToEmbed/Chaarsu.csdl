@@ -1,0 +1,2514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="anytimea_GROCERYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AD">
+    <Key>
+      <PropertyRef Name="AD_ID" />
+    </Key>
+    <Property Name="AD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IMAGE_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="IS_ACTIVE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AREA">
+    <Key>
+      <PropertyRef Name="AREA_ID" />
+    </Key>
+    <Property Name="AREA_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="BRANCH_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BANNER_IMAGES">
+    <Key>
+      <PropertyRef Name="BANNER_ID" />
+    </Key>
+    <Property Name="BANNER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BANNER_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BANNER_IMAGE_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="USER_ID" Type="Int32" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BANNER">
+    <Key>
+      <PropertyRef Name="BannerId" />
+    </Key>
+    <Property Name="BannerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdminImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BannerTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BannerType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Width" Type="Int32" />
+    <Property Name="Height" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BARCODESTest">
+    <Key>
+      <PropertyRef Name="LOCNO" />
+      <PropertyRef Name="ITEM_CODE" />
+      <PropertyRef Name="PACK_CODE" />
+    </Key>
+    <Property Name="LOCNO" Type="Int16" Nullable="false" />
+    <Property Name="ITEM_CODE" Type="Int32" Nullable="false" />
+    <Property Name="PACK_CODE" Type="Int16" Nullable="false" />
+    <Property Name="PACK_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UNIT" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="bDEFAULT" Type="Boolean" Nullable="false" />
+    <Property Name="BAR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BARTYPE" Type="Byte" Nullable="false" />
+    <Property Name="UNIT_PRICE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DEALER_PRICE1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DEALER_PRICE2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="RF_MARGIN" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="CUSER" Type="Int32" Nullable="false" />
+    <Property Name="CDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MUSER" Type="Int32" Nullable="false" />
+    <Property Name="MDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="bRandomDisc" Type="Boolean" Nullable="false" />
+    <Property Name="DiscStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiscEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiscStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiscEndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DISC_TYPE" Type="Int16" Nullable="false" />
+    <Property Name="DISC" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsReplication" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P2NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P4NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P5NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P6NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P7NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P8NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P9NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P10NeedsUpdation" Type="Boolean" />
+    <Property Name="L2P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L2P2NeedsUpdation" Type="Boolean" />
+    <Property Name="L2P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P2NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P4NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P5NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P6NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P7NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P8NeedsUpdation" Type="Boolean" />
+    <Property Name="L4P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L5P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L6P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L4P2NeedsUpdation" Type="Boolean" />
+    <Property Name="L4P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L5P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L6P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L5P2NeedsUpdation" Type="Boolean" />
+    <Property Name="L6P2NeedsUpdation" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BlogImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BlogHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BlogTitleUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BRANCH">
+    <Key>
+      <PropertyRef Name="BRANCH_ID" />
+    </Key>
+    <Property Name="BRANCH_ID" Type="Int32" Nullable="false" />
+    <Property Name="BRANCH_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LATITUDE" Type="Double" />
+    <Property Name="LONGITUDE" Type="Double" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BRAND">
+    <Key>
+      <PropertyRef Name="BRAND_ID" />
+    </Key>
+    <Property Name="BRAND_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CART">
+    <Key>
+      <PropertyRef Name="CART_ID" />
+    </Key>
+    <Property Name="CART_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="Int32" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CATEGORy">
+    <Key>
+      <PropertyRef Name="CATEGORY_ID" />
+    </Key>
+    <Property Name="CATEGORY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GROUP_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="Int32" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="DESCRIPTION_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CompanyInfo">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WebsiteTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BottomText" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BottomLogoUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TopLogoUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SocialVimeoUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SocialPinterestUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SocialTwitterUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SocialFacebookUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AboutUsText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IosAppUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AndroidAppUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ContactU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="COUPON">
+    <Key>
+      <PropertyRef Name="COUPON_ID" />
+    </Key>
+    <Property Name="COUPON_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROMO_TEXT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="START_DATE" Type="DateTime" Precision="3" />
+    <Property Name="EXPIRY_DATE" Type="DateTime" Precision="3" />
+    <Property Name="VALUE" Type="Int32" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <Property Name="IS_USED" Type="Boolean" />
+    <Property Name="UNLOCK_AMOUNT" Type="Int32" />
+    <Property Name="CODE" Type="Int32" />
+    <Property Name="PROMO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="updated_by" Type="Int32" />
+    <Property Name="updated_on" Type="DateTime" Precision="3" />
+    <Property Name="CATEGORYID" Type="Int32" />
+    <Property Name="SUBCATEGORYID" Type="Int32" />
+    <Property Name="PRODUCTID" Type="Int32" />
+    <Property Name="COUPONTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GROUP">
+    <Key>
+      <PropertyRef Name="GROUP_ID" />
+    </Key>
+    <Property Name="GROUP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IMAGE_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RELATIVE_IMAGE_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NAME_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MAINMENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MAINMENU1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USERTYPEID" Type="Int32" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="OFFER_MANAGEMENT">
+    <Key>
+      <PropertyRef Name="OFFER_ID" />
+    </Key>
+    <Property Name="OFFER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DISCOUNT" Type="Int32" />
+    <Property Name="USER_ID" Type="Int32" />
+    <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CATEGORY_ID" Type="Int32" />
+    <Property Name="CATEGORY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SUB_CATEGORY_ID" Type="Int32" />
+    <Property Name="SUB_CATEGORY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="PRODUCT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ONLINE_TRANSACTION">
+    <Key>
+      <PropertyRef Name="TRANSACTION_ID" />
+    </Key>
+    <Property Name="TRANSACTION_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PAYMENT_MODE_ID" Type="Int32" />
+    <Property Name="TRANSACTION_NUMBER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ORDER_PRODUCTS">
+    <Key>
+      <PropertyRef Name="OREDER_PRODUCT_ID" />
+    </Key>
+    <Property Name="OREDER_PRODUCT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORDER_ID" Type="Int32" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="IS_ACTIVE" Type="Int32" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="BAR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ORDER_STATUSES">
+    <Key>
+      <PropertyRef Name="ORDER_STATUS_ID" />
+    </Key>
+    <Property Name="ORDER_STATUS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ORDER">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+    </Key>
+    <Property Name="ORDER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_ID" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MOBILE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="ASSIGNED_ON" Type="DateTime" Precision="3" />
+    <Property Name="ASSIGNED_BY" Type="Int32" />
+    <Property Name="SENT_TO_RIDER_ON" Type="DateTime" Precision="3" />
+    <Property Name="SENT_TO_RIDER_BY" Type="Int32" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="RIDER_ID" Type="Int32" />
+    <Property Name="REJECTED_BY" Type="Int32" />
+    <Property Name="REJECTED_REASON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DELIVERY_TIME" Type="DateTime" Precision="3" />
+    <Property Name="IS_ACTIVE" Type="Int32" />
+    <Property Name="BRANCH_ID" Type="Int32" />
+    <Property Name="DELIVERY_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMENT_MODE_ID" Type="Int32" />
+    <Property Name="MANUAL_DISCOUNT" Type="Int32" />
+    <Property Name="COUPON_ID" Type="Int32" />
+    <Property Name="COUPON_DISCOUNT" Type="Int32" />
+    <Property Name="PICKUP_TIME" Type="DateTime" Precision="3" />
+    <Property Name="IS_PACKAGE" Type="Int32" />
+    <Property Name="ADDED_BY" Type="Byte" />
+    <Property Name="IsTestOrder" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PACKAGE_PRODUCTS">
+    <Key>
+      <PropertyRef Name="PACKAGE_PRODUCT_ID" />
+    </Key>
+    <Property Name="PACKAGE_PRODUCT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PACKAGE_ID" Type="Int32" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="IS_ACTIVE" Type="Int32" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="BAR_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PACKAGE">
+    <Key>
+      <PropertyRef Name="PACKAGE_ID" />
+    </Key>
+    <Property Name="PACKAGE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BRANCH_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PAYMENT_MODES">
+    <Key>
+      <PropertyRef Name="PAYMENT_MODE_ID" />
+    </Key>
+    <Property Name="PAYMENT_MODE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PRODUCT_BRANDS">
+    <Key>
+      <PropertyRef Name="PRODUCT_BRAND_ID" />
+    </Key>
+    <Property Name="PRODUCT_BRAND_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="BRAND_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PRODUCT_COLORS">
+    <Key>
+      <PropertyRef Name="PRODUCT_COLOR_ID" />
+    </Key>
+    <Property Name="PRODUCT_COLOR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="COLOR_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PRODUCT_FLAVORS">
+    <Key>
+      <PropertyRef Name="PRODUCT_FLAVOR_ID" />
+    </Key>
+    <Property Name="PRODUCT_FLAVOR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="FLAVOR_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PRODUCT_IMAGES">
+    <Key>
+      <PropertyRef Name="PRODUCT_IMAGE_ID" />
+    </Key>
+    <Property Name="PRODUCT_IMAGE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="ADMIN_IMAGE_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ADMIN_THUMNAIL_IMAGE_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CHAARSU_IMAGE_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CHAARSU_THUMBNAIL_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PRODUCT_LEVELS">
+    <Key>
+      <PropertyRef Name="PRODUCT_LEVEL_ID" />
+    </Key>
+    <Property Name="PRODUCT_LEVEL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUB_CATEGORY_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PRODUCT_PACKINGS">
+    <Key>
+      <PropertyRef Name="PRODUCT_PACKING_ID" />
+    </Key>
+    <Property Name="PRODUCT_PACKING_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="PACKING_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PRODUCT_REVIEWS">
+    <Key>
+      <PropertyRef Name="PRODUCT_REVIEW_ID" />
+    </Key>
+    <Property Name="PRODUCT_REVIEW_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="Int64" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="Int64" Nullable="false" />
+    <Property Name="REVIEW" Type="Int32" />
+    <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="RECORD_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCT_TAGS">
+    <Key>
+      <PropertyRef Name="PRODUCT_TAG_ID" />
+    </Key>
+    <Property Name="PRODUCT_TAG_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="TAG_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PRODUCT_TYPES">
+    <Key>
+      <PropertyRef Name="PRODUCT_TYPE_ID" />
+    </Key>
+    <Property Name="PRODUCT_TYPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="TYPE_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProductTest">
+    <Key>
+      <PropertyRef Name="PRODUCT_ID" />
+    </Key>
+    <Property Name="PRODUCT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OLD_PRODUCT_ID" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SUB_CATEGORY_ID" Type="Int32" />
+    <Property Name="UNIT_OF_MEASUREMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AVG_COST" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DISCOUNT_PERCENTAGE" Type="Int32" />
+    <Property Name="IMPORTED" Type="Boolean" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="Int32" />
+    <Property Name="COLOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BRAND" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FLAVOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PACKING" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TAG" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TYPES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DISCOUNT" Type="Double" />
+    <Property Name="SEC_SUB_CATEGORY_A" Type="Int32" />
+    <Property Name="SEC_SUB_CATEGORY_B" Type="Int32" />
+    <Property Name="PRICE2" Type="Int32" />
+    <Property Name="HAS_IMAGE" Type="Boolean" />
+    <Property Name="HAS_THUMBNAIL_IMAGE" Type="Boolean" />
+    <Property Name="VENDOR_ID" Type="Int32" />
+    <Property Name="CATEGORY_ID" Type="Int32" />
+    <Property Name="IS_FEATURED" Type="Boolean" />
+    <Property Name="THRESHOLD" Type="Int32" />
+    <Property Name="IS_EXEMPTED" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="RECOMMENDED_PRODUCTS">
+    <Key>
+      <PropertyRef Name="RECOMMENDED_PRODUCT_ID" />
+    </Key>
+    <Property Name="RECOMMENDED_PRODUCT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="PRODUCT_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PACKING" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RIDER_ORDER">
+    <Key>
+      <PropertyRef Name="RIDER_ORDER_ID" />
+    </Key>
+    <Property Name="RIDER_ORDER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RIDER_ID" Type="Int32" />
+    <Property Name="ORDER_ID" Type="Int32" />
+    <Property Name="RIDER_TIME_IN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RIDER_TIME_OUT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IS_RIDER_BACK" Type="Boolean" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SM">
+    <Key>
+      <PropertyRef Name="SMS_ID" />
+    </Key>
+    <Property Name="SMS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SENDER" Type="Int32" />
+    <Property Name="TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RESPONSE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SENT_ON" Type="DateTime" Precision="3" />
+    <Property Name="SMS_TYPE_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SMS_TYPES">
+    <Key>
+      <PropertyRef Name="SMS_TYPE_ID" />
+    </Key>
+    <Property Name="SMS_TYPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SUB_CATEGORIES">
+    <Key>
+      <PropertyRef Name="SUB_CATEGORY_ID" />
+    </Key>
+    <Property Name="SUB_CATEGORY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CATEGORY_ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="Int32" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="APP_IMAGE_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SUBMENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SUBMENU1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAINMENUID" Type="Int32" Nullable="false" />
+    <Property Name="USERTYPEID" Type="Int32" Nullable="false" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TEMP_CUSTOMERS">
+    <Key>
+      <PropertyRef Name="TEMP_CUSTOMER_ID" />
+    </Key>
+    <Property Name="TEMP_CUSTOMER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="USER_ADDRESSES">
+    <Key>
+      <PropertyRef Name="USER_ADDRESS_ID" />
+    </Key>
+    <Property Name="USER_ADDRESS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="Int32" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="USER_DEVICES">
+    <Key>
+      <PropertyRef Name="USER_DEVICE_ID" />
+    </Key>
+    <Property Name="USER_DEVICE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="Int32" />
+    <Property Name="DEVICE_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FCM_TOKEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="USER_FAVOURITES">
+    <Key>
+      <PropertyRef Name="USER_FAVOURITE_ID" />
+    </Key>
+    <Property Name="USER_FAVOURITE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="Int32" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="IS_ACTIVE" Type="Int32" />
+    <Property Name="IS_FAVOURITE" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="USER_TYPES">
+    <Key>
+      <PropertyRef Name="USER_TYPE_ID" />
+    </Key>
+    <Property Name="USER_TYPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USER_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="BRANCH_ID" Type="Int32" />
+    <Property Name="MOBILE_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IS_ACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="IS_AVAILABLE" Type="Int32" />
+    <Property Name="VEHICLE_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VEHICLE_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DEVICE_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IMAGE_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IPhoneId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FaceBookId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IsSocialLogin" Type="Boolean" />
+    <Property Name="DEVICE_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ResetPasswordCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IS_GUEST" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="VENDOR_BRANCHES">
+    <Key>
+      <PropertyRef Name="VENDOR_BRANCH_ID" />
+    </Key>
+    <Property Name="VENDOR_BRANCH_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VENDOR_ID" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LATITUDE" Type="Double" />
+    <Property Name="LONGITUDE" Type="Double" />
+    <Property Name="PHONE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VENDOR">
+    <Key>
+      <PropertyRef Name="VENDOR_ID" />
+    </Key>
+    <Property Name="VENDOR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENT_TYPE" Type="Byte" Nullable="false" />
+    <Property Name="VENDOR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDR1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CITY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONT_PERSON1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TITLE1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MOBILE1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PHONE1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FAX1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDR2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CITY2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COUNTRY2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONT_PERSON2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TITLE2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MOBILE2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PHONE2" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FAX2" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WHATSAPP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NTN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="Int32" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="WebsitePage">
+    <Key>
+      <PropertyRef Name="PageId" />
+    </Key>
+    <Property Name="PageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="PageHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="WISHES_PRODUCT">
+    <Key>
+      <PropertyRef Name="WISH_ID" />
+    </Key>
+    <Property Name="WISH_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_ID" Type="Int32" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="BarcodeNewTest">
+    <Key>
+      <PropertyRef Name="LOCNO" />
+      <PropertyRef Name="ITEM_CODE" />
+      <PropertyRef Name="PACK_CODE" />
+      <PropertyRef Name="PACK_DESC" />
+      <PropertyRef Name="UNIT" />
+      <PropertyRef Name="bDEFAULT" />
+      <PropertyRef Name="BAR_CODE" />
+      <PropertyRef Name="BARTYPE" />
+      <PropertyRef Name="UNIT_PRICE" />
+      <PropertyRef Name="DEALER_PRICE1" />
+      <PropertyRef Name="DEALER_PRICE2" />
+      <PropertyRef Name="RF_MARGIN" />
+      <PropertyRef Name="CUSER" />
+      <PropertyRef Name="CDATE" />
+      <PropertyRef Name="MUSER" />
+      <PropertyRef Name="MDATE" />
+      <PropertyRef Name="bRandomDisc" />
+      <PropertyRef Name="DiscStartDate" />
+      <PropertyRef Name="DiscEndDate" />
+      <PropertyRef Name="DiscStartTime" />
+      <PropertyRef Name="DiscEndTime" />
+      <PropertyRef Name="DISC_TYPE" />
+      <PropertyRef Name="DISC" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="NeedsReplication" />
+      <PropertyRef Name="NeedsUpdation" />
+    </Key>
+    <Property Name="LOCNO" Type="Int16" Nullable="false" />
+    <Property Name="ITEM_CODE" Type="Int32" Nullable="false" />
+    <Property Name="PACK_CODE" Type="Int16" Nullable="false" />
+    <Property Name="PACK_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UNIT" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="bDEFAULT" Type="Boolean" Nullable="false" />
+    <Property Name="BAR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BARTYPE" Type="Byte" Nullable="false" />
+    <Property Name="UNIT_PRICE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DEALER_PRICE1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DEALER_PRICE2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="RF_MARGIN" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="CUSER" Type="Int32" Nullable="false" />
+    <Property Name="CDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MUSER" Type="Int32" Nullable="false" />
+    <Property Name="MDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="bRandomDisc" Type="Boolean" Nullable="false" />
+    <Property Name="DiscStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiscEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiscStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiscEndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DISC_TYPE" Type="Int16" Nullable="false" />
+    <Property Name="DISC" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsReplication" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P2NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P4NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P5NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P6NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P7NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P8NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P9NeedsUpdation" Type="Boolean" />
+    <Property Name="L1P10NeedsUpdation" Type="Boolean" />
+    <Property Name="L2P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L2P2NeedsUpdation" Type="Boolean" />
+    <Property Name="L2P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P2NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P4NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P5NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P6NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P7NeedsUpdation" Type="Boolean" />
+    <Property Name="L3P8NeedsUpdation" Type="Boolean" />
+    <Property Name="L4P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L5P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L6P1NeedsUpdation" Type="Boolean" />
+    <Property Name="L4P2NeedsUpdation" Type="Boolean" />
+    <Property Name="L4P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L5P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L6P3NeedsUpdation" Type="Boolean" />
+    <Property Name="L5P2NeedsUpdation" Type="Boolean" />
+    <Property Name="L6P2NeedsUpdation" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BARCODE">
+    <Key>
+      <PropertyRef Name="LOCNO" />
+      <PropertyRef Name="ITEM_CODE" />
+      <PropertyRef Name="PACK_CODE" />
+      <PropertyRef Name="PACK_DESC" />
+      <PropertyRef Name="UNIT" />
+      <PropertyRef Name="bDEFAULT" />
+      <PropertyRef Name="BAR_CODE" />
+      <PropertyRef Name="BARTYPE" />
+      <PropertyRef Name="UNIT_PRICE" />
+      <PropertyRef Name="DEALER_PRICE1" />
+      <PropertyRef Name="DEALER_PRICE2" />
+      <PropertyRef Name="RF_MARGIN" />
+      <PropertyRef Name="CUSER" />
+      <PropertyRef Name="CDATE" />
+      <PropertyRef Name="MUSER" />
+      <PropertyRef Name="MDATE" />
+      <PropertyRef Name="bRandomDisc" />
+      <PropertyRef Name="DiscStartDate" />
+      <PropertyRef Name="DiscEndDate" />
+      <PropertyRef Name="DiscStartTime" />
+      <PropertyRef Name="DiscEndTime" />
+      <PropertyRef Name="DISC_TYPE" />
+      <PropertyRef Name="DISC" />
+      <PropertyRef Name="LOYALTY_DISC" />
+      <PropertyRef Name="STAFF_DISC" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="NeedsReplication" />
+      <PropertyRef Name="NeedsUpdation" />
+      <PropertyRef Name="L1P1NeedsUpdation" />
+      <PropertyRef Name="L1P2NeedsUpdation" />
+      <PropertyRef Name="L1P3NeedsUpdation" />
+      <PropertyRef Name="L1P4NeedsUpdation" />
+      <PropertyRef Name="L1P5NeedsUpdation" />
+      <PropertyRef Name="L1P6NeedsUpdation" />
+      <PropertyRef Name="L1P7NeedsUpdation" />
+      <PropertyRef Name="L1P8NeedsUpdation" />
+      <PropertyRef Name="L1P9NeedsUpdation" />
+      <PropertyRef Name="L1P10NeedsUpdation" />
+      <PropertyRef Name="L2P1NeedsUpdation" />
+      <PropertyRef Name="L2P2NeedsUpdation" />
+      <PropertyRef Name="L2P3NeedsUpdation" />
+      <PropertyRef Name="L2P4NeedsUpdation" />
+      <PropertyRef Name="L2P5NeedsUpdation" />
+      <PropertyRef Name="L2P6NeedsUpdation" />
+      <PropertyRef Name="L2P7NeedsUpdation" />
+      <PropertyRef Name="L2P8NeedsUpdation" />
+      <PropertyRef Name="L2P9NeedsUpdation" />
+      <PropertyRef Name="L2P10NeedsUpdation" />
+      <PropertyRef Name="L0NeedsUpdation" />
+      <PropertyRef Name="L1NeedsUpdation" />
+      <PropertyRef Name="L2NeedsUpdation" />
+      <PropertyRef Name="L3NeedsUpdation" />
+      <PropertyRef Name="L3P1NeedsUpdation" />
+      <PropertyRef Name="L4NeedsUpdation" />
+      <PropertyRef Name="L5NeedsUpdation" />
+      <PropertyRef Name="L6NeedsUpdation" />
+      <PropertyRef Name="L3P2NeedsUpdation" />
+      <PropertyRef Name="L3P3NeedsUpdation" />
+      <PropertyRef Name="L3P4NeedsUpdation" />
+      <PropertyRef Name="L3P5NeedsUpdation" />
+      <PropertyRef Name="L3P6NeedsUpdation" />
+      <PropertyRef Name="L4P1NeedsUpdation" />
+      <PropertyRef Name="L4P2NeedsUpdation" />
+      <PropertyRef Name="L4P3NeedsUpdation" />
+      <PropertyRef Name="L4P4NeedsUpdation" />
+      <PropertyRef Name="L4P5NeedsUpdation" />
+      <PropertyRef Name="L4P6NeedsUpdation" />
+      <PropertyRef Name="L5P6NeedsUpdation" />
+      <PropertyRef Name="L5P1NeedsUpdation" />
+      <PropertyRef Name="L5P2NeedsUpdation" />
+      <PropertyRef Name="L5P3NeedsUpdation" />
+      <PropertyRef Name="L5P4NeedsUpdation" />
+      <PropertyRef Name="L5P5NeedsUpdation" />
+      <PropertyRef Name="L6P1NeedsUpdation" />
+      <PropertyRef Name="L6P2NeedsUpdation" />
+      <PropertyRef Name="L6P3NeedsUpdation" />
+      <PropertyRef Name="L6P4NeedsUpdation" />
+      <PropertyRef Name="L6P5NeedsUpdation" />
+      <PropertyRef Name="L6P6NeedsUpdation" />
+      <PropertyRef Name="L7NeedsUpdation" />
+      <PropertyRef Name="L7P1NeedsUpdation" />
+      <PropertyRef Name="L7P2NeedsUpdation" />
+      <PropertyRef Name="L7P3NeedsUpdation" />
+      <PropertyRef Name="L7P4NeedsUpdation" />
+      <PropertyRef Name="L7P5NeedsUpdation" />
+      <PropertyRef Name="L7P6NeedsUpdation" />
+      <PropertyRef Name="L8NeedsUpdation" />
+      <PropertyRef Name="L9NeedsUpdation" />
+      <PropertyRef Name="L10NeedsUpdation" />
+      <PropertyRef Name="L11NeedsUpdation" />
+      <PropertyRef Name="L12NeedsUpdation" />
+      <PropertyRef Name="L8P1NeedsUpdation" />
+      <PropertyRef Name="L9P1NeedsUpdation" />
+      <PropertyRef Name="L10P1NeedsUpdation" />
+      <PropertyRef Name="L11P1NeedsUpdation" />
+      <PropertyRef Name="L12P1NeedsUpdation" />
+      <PropertyRef Name="L8P2NeedsUpdation" />
+      <PropertyRef Name="L8P3NeedsUpdation" />
+    </Key>
+    <Property Name="LOCNO" Type="Int16" Nullable="false" />
+    <Property Name="ITEM_CODE" Type="Int32" Nullable="false" />
+    <Property Name="PACK_CODE" Type="Int16" Nullable="false" />
+    <Property Name="PACK_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UNIT" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="bDEFAULT" Type="Boolean" Nullable="false" />
+    <Property Name="BAR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BARTYPE" Type="Int16" Nullable="false" />
+    <Property Name="UNIT_PRICE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DEALER_PRICE1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DEALER_PRICE2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="RF_MARGIN" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="CUSER" Type="Int32" Nullable="false" />
+    <Property Name="CDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MUSER" Type="Int32" Nullable="false" />
+    <Property Name="MDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="bRandomDisc" Type="Boolean" Nullable="false" />
+    <Property Name="DiscStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiscEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiscStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DiscEndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DISC_TYPE" Type="Int16" Nullable="false" />
+    <Property Name="DISC" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="LOYALTY_DISC" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="STAFF_DISC" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsReplication" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L0NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L11NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L12NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L9P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L10P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L11P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L12P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8P3NeedsUpdation" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ITEMINFO">
+    <Key>
+      <PropertyRef Name="ITEM_CODE" />
+      <PropertyRef Name="HV_CODE" />
+      <PropertyRef Name="ITEM_ATTRIB" />
+      <PropertyRef Name="ITEM_TYPE" />
+      <PropertyRef Name="UOM" />
+      <PropertyRef Name="PACKING_UNITS" />
+      <PropertyRef Name="ISSUE_BY_WEIGHT" />
+      <PropertyRef Name="ITEM_DESC" />
+      <PropertyRef Name="ITEM_DESC_LONG" />
+      <PropertyRef Name="SECTID" />
+      <PropertyRef Name="DEPT_CODE" />
+      <PropertyRef Name="GRCODE" />
+      <PropertyRef Name="SUBGRCODE" />
+      <PropertyRef Name="CATCODE" />
+      <PropertyRef Name="BRAND_CODE" />
+      <PropertyRef Name="DESIGN_CD" />
+      <PropertyRef Name="CLR_CODE" />
+      <PropertyRef Name="MAKE_CODE" />
+      <PropertyRef Name="SIZE_CODE" />
+      <PropertyRef Name="AUTH_CODE" />
+      <PropertyRef Name="PUB_CODE" />
+      <PropertyRef Name="EDITION" />
+      <PropertyRef Name="CLASS" />
+      <PropertyRef Name="ISBN" />
+      <PropertyRef Name="SEX" />
+      <PropertyRef Name="SEASON" />
+      <PropertyRef Name="AGE" />
+      <PropertyRef Name="FABRIC" />
+      <PropertyRef Name="IsPACKAGE" />
+      <PropertyRef Name="IsRECIPE" />
+      <PropertyRef Name="SERIALIZED" />
+      <PropertyRef Name="FEATURED" />
+      <PropertyRef Name="EXPIRY_ITEM" />
+      <PropertyRef Name="COMMENT" />
+      <PropertyRef Name="EXEMPT" />
+      <PropertyRef Name="VAT" />
+      <PropertyRef Name="GST" />
+      <PropertyRef Name="GST_SALES" />
+      <PropertyRef Name="GST_MODE" />
+      <PropertyRef Name="GST_REF" />
+      <PropertyRef Name="HS_CODE" />
+      <PropertyRef Name="GROSS_WEIGHT" />
+      <PropertyRef Name="NET_WEIGHT" />
+      <PropertyRef Name="OPEN_PRICE" />
+      <PropertyRef Name="FRACTIONAL" />
+      <PropertyRef Name="ALLOWQTY" />
+      <PropertyRef Name="BATCH_QTY" />
+      <PropertyRef Name="ITEM_DISC" />
+      <PropertyRef Name="bDISCOUNTED" />
+      <PropertyRef Name="DISC_QTY" />
+      <PropertyRef Name="SALE_DISC" />
+      <PropertyRef Name="bPrintOnBill" />
+      <PropertyRef Name="DESCR" />
+      <PropertyRef Name="IMAGE_PATH" />
+      <PropertyRef Name="THUMBNAIL_PATH" />
+      <PropertyRef Name="IMPORTED" />
+      <PropertyRef Name="ShowOnWeb" />
+      <PropertyRef Name="bNEW" />
+      <PropertyRef Name="CDATE" />
+      <PropertyRef Name="CUSER" />
+      <PropertyRef Name="MDATE" />
+      <PropertyRef Name="MUSER" />
+      <PropertyRef Name="CreatedAt" />
+      <PropertyRef Name="NeedsReplication" />
+      <PropertyRef Name="L1P1NeedsUpdation" />
+      <PropertyRef Name="L1P2NeedsUpdation" />
+      <PropertyRef Name="L1P3NeedsUpdation" />
+      <PropertyRef Name="L1P4NeedsUpdation" />
+      <PropertyRef Name="L1P5NeedsUpdation" />
+      <PropertyRef Name="L1P6NeedsUpdation" />
+      <PropertyRef Name="L1P7NeedsUpdation" />
+      <PropertyRef Name="L1P8NeedsUpdation" />
+      <PropertyRef Name="L1P9NeedsUpdation" />
+      <PropertyRef Name="L1P10NeedsUpdation" />
+      <PropertyRef Name="L2P1NeedsUpdation" />
+      <PropertyRef Name="L2P2NeedsUpdation" />
+      <PropertyRef Name="L2P3NeedsUpdation" />
+      <PropertyRef Name="L3P1NeedsUpdation" />
+      <PropertyRef Name="L3P2NeedsUpdation" />
+      <PropertyRef Name="L3P3NeedsUpdation" />
+      <PropertyRef Name="L3P4NeedsUpdation" />
+      <PropertyRef Name="L3P5NeedsUpdation" />
+      <PropertyRef Name="L3P6NeedsUpdation" />
+      <PropertyRef Name="L3P7NeedsUpdation" />
+      <PropertyRef Name="L3P8NeedsUpdation" />
+      <PropertyRef Name="L4P1NeedsUpdation" />
+      <PropertyRef Name="L5P1NeedsUpdation" />
+      <PropertyRef Name="L6P1NeedsUpdation" />
+      <PropertyRef Name="L4P2NeedsUpdation" />
+      <PropertyRef Name="L4P3NeedsUpdation" />
+      <PropertyRef Name="L5P3NeedsUpdation" />
+      <PropertyRef Name="L6P3NeedsUpdation" />
+      <PropertyRef Name="L5P2NeedsUpdation" />
+      <PropertyRef Name="L6P2NeedsUpdation" />
+      <PropertyRef Name="L1P11NeedsUpdation" />
+      <PropertyRef Name="L1P12NeedsUpdation" />
+      <PropertyRef Name="L3P9NeedsUpdation" />
+      <PropertyRef Name="L3P10NeedsUpdation" />
+      <PropertyRef Name="L4P4NeedsUpdation" />
+      <PropertyRef Name="L4P5NeedsUpdation" />
+      <PropertyRef Name="L5P4NeedsUpdation" />
+      <PropertyRef Name="L5P5NeedsUpdation" />
+      <PropertyRef Name="L6P4NeedsUpdation" />
+      <PropertyRef Name="L6P5NeedsUpdation" />
+      <PropertyRef Name="L7P1NeedsUpdation" />
+      <PropertyRef Name="L7P2NeedsUpdation" />
+      <PropertyRef Name="L7P3NeedsUpdation" />
+      <PropertyRef Name="L7P4NeedsUpdation" />
+      <PropertyRef Name="L7P5NeedsUpdation" />
+      <PropertyRef Name="L7P6NeedsUpdation" />
+      <PropertyRef Name="L7P7NeedsUpdation" />
+      <PropertyRef Name="L7P8NeedsUpdation" />
+      <PropertyRef Name="L2P4NeedsUpdation" />
+      <PropertyRef Name="L2P5NeedsUpdation" />
+      <PropertyRef Name="L2P6NeedsUpdation" />
+      <PropertyRef Name="L2P7NeedsUpdation" />
+      <PropertyRef Name="L2P8NeedsUpdation" />
+      <PropertyRef Name="L2P9NeedsUpdation" />
+      <PropertyRef Name="L2P10NeedsUpdation" />
+      <PropertyRef Name="L0NeedsUpdation" />
+      <PropertyRef Name="L1NeedsUpdation" />
+      <PropertyRef Name="L2NeedsUpdation" />
+      <PropertyRef Name="L3NeedsUpdation" />
+      <PropertyRef Name="L4NeedsUpdation" />
+      <PropertyRef Name="L5NeedsUpdation" />
+      <PropertyRef Name="L6NeedsUpdation" />
+      <PropertyRef Name="L4P6NeedsUpdation" />
+      <PropertyRef Name="L5P6NeedsUpdation" />
+      <PropertyRef Name="L6P6NeedsUpdation" />
+      <PropertyRef Name="L7NeedsUpdation" />
+      <PropertyRef Name="L8NeedsUpdation" />
+      <PropertyRef Name="L9NeedsUpdation" />
+      <PropertyRef Name="L10NeedsUpdation" />
+      <PropertyRef Name="L11NeedsUpdation" />
+      <PropertyRef Name="L12NeedsUpdation" />
+      <PropertyRef Name="L8P1NeedsUpdation" />
+      <PropertyRef Name="L9P1NeedsUpdation" />
+      <PropertyRef Name="L10P1NeedsUpdation" />
+      <PropertyRef Name="L11P1NeedsUpdation" />
+      <PropertyRef Name="L12P1NeedsUpdation" />
+      <PropertyRef Name="L8P2NeedsUpdation" />
+      <PropertyRef Name="L8p3NeedsUpdation" />
+    </Key>
+    <Property Name="ITEM_CODE" Type="Int32" Nullable="false" />
+    <Property Name="HV_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ITEM_ATTRIB" Type="Byte" Nullable="false" />
+    <Property Name="ITEM_TYPE" Type="Byte" Nullable="false" />
+    <Property Name="UOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PACKING_UNITS" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="ISSUE_BY_WEIGHT" Type="Boolean" Nullable="false" />
+    <Property Name="ITEM_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ITEM_DESC_LONG" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SECTID" Type="Int32" Nullable="false" />
+    <Property Name="DEPT_CODE" Type="Int16" Nullable="false" />
+    <Property Name="GRCODE" Type="Int16" Nullable="false" />
+    <Property Name="SUBGRCODE" Type="Int16" Nullable="false" />
+    <Property Name="CATCODE" Type="Int32" Nullable="false" />
+    <Property Name="BRAND_CODE" Type="Int32" Nullable="false" />
+    <Property Name="DESIGN_CD" Type="Int32" Nullable="false" />
+    <Property Name="CLR_CODE" Type="Int16" Nullable="false" />
+    <Property Name="MAKE_CODE" Type="Int16" Nullable="false" />
+    <Property Name="SIZE_CODE" Type="Int32" Nullable="false" />
+    <Property Name="AUTH_CODE" Type="Int32" Nullable="false" />
+    <Property Name="PUB_CODE" Type="Int32" Nullable="false" />
+    <Property Name="EDITION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CLASS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ISBN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SEX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SEASON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AGE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FABRIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsPACKAGE" Type="Boolean" Nullable="false" />
+    <Property Name="IsRECIPE" Type="Boolean" Nullable="false" />
+    <Property Name="SERIALIZED" Type="Boolean" Nullable="false" />
+    <Property Name="FEATURED" Type="Boolean" Nullable="false" />
+    <Property Name="EXPIRY_ITEM" Type="Boolean" Nullable="false" />
+    <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EXEMPT" Type="Boolean" Nullable="false" />
+    <Property Name="VAT" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="GST" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="GST_SALES" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="GST_MODE" Type="Byte" Nullable="false" />
+    <Property Name="GST_REF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HS_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GROSS_WEIGHT" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="NET_WEIGHT" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="OPEN_PRICE" Type="Boolean" Nullable="false" />
+    <Property Name="FRACTIONAL" Type="Boolean" Nullable="false" />
+    <Property Name="ALLOWQTY" Type="Boolean" Nullable="false" />
+    <Property Name="BATCH_QTY" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="ITEM_DISC" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="bDISCOUNTED" Type="Boolean" Nullable="false" />
+    <Property Name="DISC_QTY" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="SALE_DISC" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="bPrintOnBill" Type="Boolean" Nullable="false" />
+    <Property Name="DESCR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IMAGE_PATH" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="THUMBNAIL_PATH" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IMPORTED" Type="Boolean" Nullable="false" />
+    <Property Name="ShowOnWeb" Type="Boolean" Nullable="false" />
+    <Property Name="bNEW" Type="Boolean" Nullable="false" />
+    <Property Name="CDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CUSER" Type="Int32" Nullable="false" />
+    <Property Name="MDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MUSER" Type="Int32" Nullable="false" />
+    <Property Name="CreatedAt" Type="Int16" Nullable="false" />
+    <Property Name="NeedsReplication" Type="Boolean" Nullable="false" />
+    <Property Name="L1P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P11NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P12NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L0NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L11NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L12NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L9P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L10P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L11P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L12P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8p3NeedsUpdation" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="PRODUCT_ID" />
+    </Key>
+    <Property Name="PRODUCT_ID" Type="Int32" Nullable="false" />
+    <Property Name="OLD_PRODUCT_ID" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SUB_CATEGORY_ID" Type="Int32" />
+    <Property Name="UNIT_OF_MEASUREMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AVG_COST" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DISCOUNT_PERCENTAGE" Type="Int32" />
+    <Property Name="IMPORTED" Type="Boolean" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIED_BY" Type="Int32" />
+    <Property Name="COLOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BRAND" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FLAVOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PACKING" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TAG" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TYPES" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DISCOUNT" Type="Double" />
+    <Property Name="SEC_SUB_CATEGORY_A" Type="Int32" />
+    <Property Name="SEC_SUB_CATEGORY_B" Type="Int32" />
+    <Property Name="PRICE2" Type="Int32" />
+    <Property Name="HAS_IMAGE" Type="Boolean" />
+    <Property Name="HAS_THUMBNAIL_IMAGE" Type="Boolean" />
+    <Property Name="VENDOR_ID" Type="Int32" />
+    <Property Name="CATEGORY_ID" Type="Int32" />
+    <Property Name="IS_FEATURED" Type="Boolean" />
+    <Property Name="THRESHOLD" Type="Int32" />
+    <Property Name="IS_EXEMPTED" Type="Boolean" />
+    <Property Name="PRODUCT_NAME_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DEVICE_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IS_FAVOURITE" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PS000">
+    <Key>
+      <PropertyRef Name="LOCNO" />
+      <PropertyRef Name="ITEM_CODE" />
+      <PropertyRef Name="QTY" />
+      <PropertyRef Name="WH_QTY" />
+      <PropertyRef Name="T_QTY" />
+      <PropertyRef Name="MATERIAL_COST" />
+      <PropertyRef Name="INGR_COST" />
+      <PropertyRef Name="PKG_COST" />
+      <PropertyRef Name="LAB_COST" />
+      <PropertyRef Name="OH_COST" />
+      <PropertyRef Name="OTH_COST" />
+      <PropertyRef Name="WASTAGE" />
+      <PropertyRef Name="COST_PRICE1" />
+      <PropertyRef Name="COST_PRICE2" />
+      <PropertyRef Name="COST_PRICE3" />
+      <PropertyRef Name="NET_COST" />
+      <PropertyRef Name="AVG_COST" />
+      <PropertyRef Name="AVG_COST1" />
+      <PropertyRef Name="AVG_COST2" />
+      <PropertyRef Name="AVG_COST3" />
+      <PropertyRef Name="F_PUR_PRICE" />
+      <PropertyRef Name="LAST_PUR_PRICE1" />
+      <PropertyRef Name="LAST_PUR_PRICE2" />
+      <PropertyRef Name="LAST_PUR_PRICE3" />
+      <PropertyRef Name="LAST_SUPP" />
+      <PropertyRef Name="LAST_SUPP1" />
+      <PropertyRef Name="LAST_SUPP2" />
+      <PropertyRef Name="FLOOR_NO" />
+      <PropertyRef Name="COUNTER" />
+      <PropertyRef Name="SHELF" />
+      <PropertyRef Name="SHELF_QTY" />
+      <PropertyRef Name="SHELF_FACING" />
+      <PropertyRef Name="LSDATE" />
+      <PropertyRef Name="LPDATE" />
+      <PropertyRef Name="ALLOW_NEGATIVE" />
+      <PropertyRef Name="AreaCovered" />
+      <PropertyRef Name="MAX_QTY" />
+      <PropertyRef Name="MIN_QTY" />
+      <PropertyRef Name="OP_STOCK" />
+      <PropertyRef Name="OP_STOCK_VAL" />
+      <PropertyRef Name="ITEM_STATUS" />
+      <PropertyRef Name="PHY_QTY" />
+      <PropertyRef Name="STATUS" />
+      <PropertyRef Name="PDATE" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="NeedsReplication" />
+      <PropertyRef Name="NeedsUpdation" />
+      <PropertyRef Name="L1P1NeedsUpdation" />
+      <PropertyRef Name="L1P2NeedsUpdation" />
+      <PropertyRef Name="L1P3NeedsUpdation" />
+      <PropertyRef Name="L1P4NeedsUpdation" />
+      <PropertyRef Name="L1P5NeedsUpdation" />
+      <PropertyRef Name="L1P6NeedsUpdation" />
+      <PropertyRef Name="L1P7NeedsUpdation" />
+      <PropertyRef Name="L1P8NeedsUpdation" />
+      <PropertyRef Name="L1P9NeedsUpdation" />
+      <PropertyRef Name="L1P10NeedsUpdation" />
+      <PropertyRef Name="L2P1NeedsUpdation" />
+      <PropertyRef Name="L2P2NeedsUpdation" />
+      <PropertyRef Name="L2P3NeedsUpdation" />
+      <PropertyRef Name="L2P4NeedsUpdation" />
+      <PropertyRef Name="L2P5NeedsUpdation" />
+      <PropertyRef Name="L2P6NeedsUpdation" />
+      <PropertyRef Name="L2P7NeedsUpdation" />
+      <PropertyRef Name="L2P8NeedsUpdation" />
+      <PropertyRef Name="L2P9NeedsUpdation" />
+      <PropertyRef Name="L2P10NeedsUpdation" />
+      <PropertyRef Name="L0NeedsUpdation" />
+      <PropertyRef Name="L1NeedsUpdation" />
+      <PropertyRef Name="L2NeedsUpdation" />
+      <PropertyRef Name="L3NeedsUpdation" />
+      <PropertyRef Name="L3P1NeedsUpdation" />
+      <PropertyRef Name="L4NeedsUpdation" />
+      <PropertyRef Name="L5NeedsUpdation" />
+      <PropertyRef Name="L6NeedsUpdation" />
+      <PropertyRef Name="L3P2NeedsUpdation" />
+      <PropertyRef Name="L3P3NeedsUpdation" />
+      <PropertyRef Name="L3P4NeedsUpdation" />
+      <PropertyRef Name="L3P5NeedsUpdation" />
+      <PropertyRef Name="L3P6NeedsUpdation" />
+      <PropertyRef Name="L4P1NeedsUpdation" />
+      <PropertyRef Name="L4P2NeedsUpdation" />
+      <PropertyRef Name="L4P3NeedsUpdation" />
+      <PropertyRef Name="L4P4NeedsUpdation" />
+      <PropertyRef Name="L4P5NeedsUpdation" />
+      <PropertyRef Name="L4P6NeedsUpdation" />
+      <PropertyRef Name="L5P6NeedsUpdation" />
+      <PropertyRef Name="L5P1NeedsUpdation" />
+      <PropertyRef Name="L5P2NeedsUpdation" />
+      <PropertyRef Name="L5P3NeedsUpdation" />
+      <PropertyRef Name="L5P4NeedsUpdation" />
+      <PropertyRef Name="L5P5NeedsUpdation" />
+      <PropertyRef Name="L6P1NeedsUpdation" />
+      <PropertyRef Name="L6P2NeedsUpdation" />
+      <PropertyRef Name="L6P3NeedsUpdation" />
+      <PropertyRef Name="L6P4NeedsUpdation" />
+      <PropertyRef Name="L6P5NeedsUpdation" />
+      <PropertyRef Name="L6P6NeedsUpdation" />
+      <PropertyRef Name="L7NeedsUpdation" />
+      <PropertyRef Name="L7P1NeedsUpdation" />
+      <PropertyRef Name="L7P2NeedsUpdation" />
+      <PropertyRef Name="L7P3NeedsUpdation" />
+      <PropertyRef Name="L7P4NeedsUpdation" />
+      <PropertyRef Name="L7P5NeedsUpdation" />
+      <PropertyRef Name="L7P6NeedsUpdation" />
+      <PropertyRef Name="L8NeedsUpdation" />
+      <PropertyRef Name="L9NeedsUpdation" />
+      <PropertyRef Name="L10NeedsUpdation" />
+      <PropertyRef Name="L11NeedsUpdation" />
+      <PropertyRef Name="L12NeedsUpdation" />
+      <PropertyRef Name="L8P1NeedsUpdation" />
+      <PropertyRef Name="L9P1NeedsUpdation" />
+      <PropertyRef Name="L10P1NeedsUpdation" />
+      <PropertyRef Name="L11P1NeedsUpdation" />
+      <PropertyRef Name="L12P1NeedsUpdation" />
+      <PropertyRef Name="L8P2NeedsUpdation" />
+      <PropertyRef Name="L8p3NeedsUpdation" />
+      <PropertyRef Name="SUPP_CODE" />
+    </Key>
+    <Property Name="LOCNO" Type="Int16" Nullable="false" />
+    <Property Name="ITEM_CODE" Type="Int32" Nullable="false" />
+    <Property Name="QTY" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="WH_QTY" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="T_QTY" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="MATERIAL_COST" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="INGR_COST" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PKG_COST" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="LAB_COST" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OH_COST" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="OTH_COST" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="WASTAGE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="COST_PRICE1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="COST_PRICE2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="COST_PRICE3" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NET_COST" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="AVG_COST" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="AVG_COST1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="AVG_COST2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="AVG_COST3" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="F_PUR_PRICE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="LAST_PUR_PRICE1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="LAST_PUR_PRICE2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="LAST_PUR_PRICE3" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="LAST_SUPP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LAST_SUPP1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LAST_SUPP2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FLOOR_NO" Type="Byte" Nullable="false" />
+    <Property Name="COUNTER" Type="Int16" Nullable="false" />
+    <Property Name="SHELF" Type="Byte" Nullable="false" />
+    <Property Name="SHELF_QTY" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="SHELF_FACING" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="LSDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LPDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ALLOW_NEGATIVE" Type="Boolean" Nullable="false" />
+    <Property Name="AreaCovered" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="MAX_QTY" Type="Decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="MIN_QTY" Type="Decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="OP_STOCK" Type="Decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="OP_STOCK_VAL" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ITEM_STATUS" Type="Boolean" Nullable="false" />
+    <Property Name="PHY_QTY" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="PDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsReplication" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L0NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L11NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L12NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L9P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L10P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L11P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L12P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8p3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="SUPP_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PS000Test">
+    <Key>
+      <PropertyRef Name="LOCNO" />
+      <PropertyRef Name="ITEM_CODE" />
+      <PropertyRef Name="QTY" />
+      <PropertyRef Name="WH_QTY" />
+      <PropertyRef Name="T_QTY" />
+      <PropertyRef Name="FLOOR_NO" />
+      <PropertyRef Name="COUNTER" />
+      <PropertyRef Name="SHELF" />
+      <PropertyRef Name="SHELF_QTY" />
+      <PropertyRef Name="SHELF_FACING" />
+      <PropertyRef Name="LSDATE" />
+      <PropertyRef Name="LPDATE" />
+      <PropertyRef Name="ALLOW_NEGATIVE" />
+      <PropertyRef Name="AreaCovered" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="MAX_QTY" />
+      <PropertyRef Name="MIN_QTY" />
+      <PropertyRef Name="OP_STOCK" />
+      <PropertyRef Name="OP_STOCK_VAL" />
+      <PropertyRef Name="NeedsReplication" />
+      <PropertyRef Name="NeedsUpdation" />
+    </Key>
+    <Property Name="LOCNO" Type="Int16" Nullable="false" />
+    <Property Name="ITEM_CODE" Type="Int32" Nullable="false" />
+    <Property Name="QTY" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="WH_QTY" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="T_QTY" Type="Decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="FLOOR_NO" Type="Byte" Nullable="false" />
+    <Property Name="COUNTER" Type="Int16" Nullable="false" />
+    <Property Name="SHELF" Type="Byte" Nullable="false" />
+    <Property Name="SHELF_QTY" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="SHELF_FACING" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
+    <Property Name="LSDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LPDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ALLOW_NEGATIVE" Type="Boolean" Nullable="false" />
+    <Property Name="AreaCovered" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="MAX_QTY" Type="Decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="MIN_QTY" Type="Decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="OP_STOCK" Type="Decimal" Precision="19" Scale="3" Nullable="false" />
+    <Property Name="OP_STOCK_VAL" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="NeedsReplication" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsUpdation" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STOCK">
+    <Key>
+      <PropertyRef Name="BRANCH_ID" />
+      <PropertyRef Name="PRODUCT_ID" />
+      <PropertyRef Name="QTY" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="BRANCH_ID" Type="Int16" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="Int32" Nullable="false" />
+    <Property Name="QTY" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TERMINFO">
+    <Key>
+      <PropertyRef Name="LOCNO" />
+      <PropertyRef Name="TERM_NO" />
+      <PropertyRef Name="TERM_TYPE" />
+      <PropertyRef Name="FBR_POSNO" />
+      <PropertyRef Name="FBR_ENABLED" />
+      <PropertyRef Name="HEAD0" />
+      <PropertyRef Name="HEAD1" />
+      <PropertyRef Name="HEAD2" />
+      <PropertyRef Name="HEAD3" />
+      <PropertyRef Name="HEAD4" />
+      <PropertyRef Name="TAIL0" />
+      <PropertyRef Name="TAIL1" />
+      <PropertyRef Name="TAIL2" />
+      <PropertyRef Name="TAIL3" />
+      <PropertyRef Name="TAIL4" />
+      <PropertyRef Name="PLINES" />
+      <PropertyRef Name="PRT_PORT" />
+      <PropertyRef Name="FLOOR" />
+      <PropertyRef Name="RUNNING" />
+      <PropertyRef Name="PRTDEV" />
+      <PropertyRef Name="PRTDEV1" />
+      <PropertyRef Name="RCPT_TYPE" />
+      <PropertyRef Name="PRT_TYPE" />
+      <PropertyRef Name="PRT_ALLIGN" />
+      <PropertyRef Name="PRT_LMARGIN" />
+      <PropertyRef Name="PRT_TMARGIN" />
+      <PropertyRef Name="CDR_TYPE" />
+      <PropertyRef Name="CDISP_TYPE" />
+      <PropertyRef Name="CDR_ENABLED" />
+      <PropertyRef Name="CDISP_ENABLED" />
+      <PropertyRef Name="CDR_PORT" />
+      <PropertyRef Name="CDISP_PORT" />
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="MAXORD" />
+      <PropertyRef Name="MAXDOC" />
+      <PropertyRef Name="LAST_UPDATED" />
+      <PropertyRef Name="COL1" />
+      <PropertyRef Name="COL2" />
+      <PropertyRef Name="COL3" />
+      <PropertyRef Name="COL4" />
+      <PropertyRef Name="LSDate" />
+      <PropertyRef Name="LRDate" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="NeedsUpdation" />
+      <PropertyRef Name="NeedsReplication" />
+      <PropertyRef Name="L1P1NeedsUpdation" />
+      <PropertyRef Name="L1P2NeedsUpdation" />
+      <PropertyRef Name="L1P3NeedsUpdation" />
+      <PropertyRef Name="L9P1NeedsUpdation" />
+      <PropertyRef Name="L10P1NeedsUpdation" />
+      <PropertyRef Name="L11P1NeedsUpdation" />
+      <PropertyRef Name="L12P1NeedsUpdation" />
+      <PropertyRef Name="L1P7NeedsUpdation" />
+      <PropertyRef Name="L1P8NeedsUpdation" />
+      <PropertyRef Name="L1P9NeedsUpdation" />
+      <PropertyRef Name="L1P10NeedsUpdation" />
+      <PropertyRef Name="L1P11NeedsUpdation" />
+      <PropertyRef Name="L1P12NeedsUpdation" />
+      <PropertyRef Name="L2P1NeedsUpdation" />
+      <PropertyRef Name="L2P2NeedsUpdation" />
+      <PropertyRef Name="L2P3NeedsUpdation" />
+      <PropertyRef Name="L2P4NeedsUpdation" />
+      <PropertyRef Name="L2P5NeedsUpdation" />
+      <PropertyRef Name="L2P6NeedsUpdation" />
+      <PropertyRef Name="L2P7NeedsUpdation" />
+      <PropertyRef Name="L2P8NeedsUpdation" />
+      <PropertyRef Name="L2P9NeedsUpdation" />
+      <PropertyRef Name="L2P10NeedsUpdation" />
+      <PropertyRef Name="L0NeedsUpdation" />
+      <PropertyRef Name="L1NeedsUpdation" />
+      <PropertyRef Name="L2NeedsUpdation" />
+      <PropertyRef Name="L3NeedsUpdation" />
+      <PropertyRef Name="L3P1NeedsUpdation" />
+      <PropertyRef Name="L4NeedsUpdation" />
+      <PropertyRef Name="L5NeedsUpdation" />
+      <PropertyRef Name="L6NeedsUpdation" />
+      <PropertyRef Name="L3P2NeedsUpdation" />
+      <PropertyRef Name="L3P3NeedsUpdation" />
+      <PropertyRef Name="L3P4NeedsUpdation" />
+      <PropertyRef Name="L3P5NeedsUpdation" />
+      <PropertyRef Name="L3P6NeedsUpdation" />
+      <PropertyRef Name="L4P1NeedsUpdation" />
+      <PropertyRef Name="L4P2NeedsUpdation" />
+      <PropertyRef Name="L4P3NeedsUpdation" />
+      <PropertyRef Name="L4P4NeedsUpdation" />
+      <PropertyRef Name="L4P5NeedsUpdation" />
+      <PropertyRef Name="L4P6NeedsUpdation" />
+      <PropertyRef Name="L5P6NeedsUpdation" />
+      <PropertyRef Name="L5P1NeedsUpdation" />
+      <PropertyRef Name="L5P2NeedsUpdation" />
+      <PropertyRef Name="L5P3NeedsUpdation" />
+      <PropertyRef Name="L5P4NeedsUpdation" />
+      <PropertyRef Name="L5P5NeedsUpdation" />
+      <PropertyRef Name="L6P1NeedsUpdation" />
+      <PropertyRef Name="L6P2NeedsUpdation" />
+      <PropertyRef Name="L6P3NeedsUpdation" />
+      <PropertyRef Name="L6P4NeedsUpdation" />
+      <PropertyRef Name="L6P5NeedsUpdation" />
+      <PropertyRef Name="L6P6NeedsUpdation" />
+      <PropertyRef Name="L7NeedsUpdation" />
+      <PropertyRef Name="L7P1NeedsUpdation" />
+      <PropertyRef Name="L7P2NeedsUpdation" />
+      <PropertyRef Name="L7P3NeedsUpdation" />
+      <PropertyRef Name="L8P1NeedsUpdation" />
+      <PropertyRef Name="L8P2NeedsUpdation" />
+      <PropertyRef Name="L8P3NeedsUpdation" />
+      <PropertyRef Name="L8NeedsUpdation" />
+      <PropertyRef Name="L9NeedsUpdation" />
+      <PropertyRef Name="L10NeedsUpdation" />
+      <PropertyRef Name="L11NeedsUpdation" />
+      <PropertyRef Name="L12NeedsUpdation" />
+    </Key>
+    <Property Name="LOCNO" Type="Int16" Nullable="false" />
+    <Property Name="TERM_NO" Type="Int16" Nullable="false" />
+    <Property Name="TERM_TYPE" Type="Byte" Nullable="false" />
+    <Property Name="FBR_POSNO" Type="Int64" Nullable="false" />
+    <Property Name="FBR_ENABLED" Type="Boolean" Nullable="false" />
+    <Property Name="HEAD0" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HEAD1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HEAD2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HEAD3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HEAD4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TAIL0" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TAIL1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TAIL2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TAIL3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TAIL4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PLINES" Type="Byte" Nullable="false" />
+    <Property Name="PRT_PORT" Type="Double" Nullable="false" />
+    <Property Name="FLOOR" Type="Int16" Nullable="false" />
+    <Property Name="RUNNING" Type="Boolean" Nullable="false" />
+    <Property Name="PRTDEV" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRTDEV1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RCPT_TYPE" Type="Byte" Nullable="false" />
+    <Property Name="PRT_TYPE" Type="Byte" Nullable="false" />
+    <Property Name="PRT_ALLIGN" Type="Byte" Nullable="false" />
+    <Property Name="PRT_LMARGIN" Type="Int32" Nullable="false" />
+    <Property Name="PRT_TMARGIN" Type="Int32" Nullable="false" />
+    <Property Name="CDR_TYPE" Type="Byte" Nullable="false" />
+    <Property Name="CDISP_TYPE" Type="Byte" Nullable="false" />
+    <Property Name="CDR_ENABLED" Type="Boolean" Nullable="false" />
+    <Property Name="CDISP_ENABLED" Type="Boolean" Nullable="false" />
+    <Property Name="CDR_PORT" Type="Int32" Nullable="false" />
+    <Property Name="CDISP_PORT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="MAXORD" Type="Int32" Nullable="false" />
+    <Property Name="MAXDOC" Type="Int32" Nullable="false" />
+    <Property Name="LAST_UPDATED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="COL1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COL2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COL3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="COL4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LSDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LRDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="NeedsReplication" Type="Boolean" Nullable="false" />
+    <Property Name="L1P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L9P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L10P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L11P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L12P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P11NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1P12NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2P10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L0NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L3P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L4P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L5P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P4NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P5NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L6P6NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L7P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8P1NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8P2NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8P3NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L8NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L9NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L10NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L11NeedsUpdation" Type="Boolean" Nullable="false" />
+    <Property Name="L12NeedsUpdation" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TEST">
+    <Key>
+      <PropertyRef Name="OLD_PRODUCT_ID" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="DESCRIPTION" />
+      <PropertyRef Name="AVG_COST" />
+    </Key>
+    <Property Name="OLD_PRODUCT_ID" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AVG_COST" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemList">
+    <Key>
+      <PropertyRef Name="PRODUCT_ID" />
+    </Key>
+    <Property Name="CATEGORY_ID" Type="Int32" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SUB_CATEGORY_ID" Type="Int32" />
+    <Property Name="SubCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRODUCT_ID" Type="Int32" Nullable="false" />
+    <Property Name="BAR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UNIT_PRICE" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ORDER_ID" />
+      <PropertyRef Name="CREATED_ON" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="MOBILE" />
+      <PropertyRef Name="ADDRESS" />
+    </Key>
+    <Property Name="ORDER_ID" Type="Int32" Nullable="false" />
+    <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CUSTOMER_ID" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MOBILE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="Int32" />
+    <Property Name="PROD_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="PRICE" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityContainer Name="anytimea_GROCERYEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADS" EntityType="Self.AD" />
+    <EntitySet Name="AREAS" EntityType="Self.AREA" />
+    <EntitySet Name="BANNER_IMAGES" EntityType="Self.BANNER_IMAGES" />
+    <EntitySet Name="BANNERS" EntityType="Self.BANNER" />
+    <EntitySet Name="BARCODESTests" EntityType="Self.BARCODESTest" />
+    <EntitySet Name="Blogs" EntityType="Self.Blog" />
+    <EntitySet Name="BRANCHES" EntityType="Self.BRANCH" />
+    <EntitySet Name="BRANDS" EntityType="Self.BRAND" />
+    <EntitySet Name="CARTs" EntityType="Self.CART" />
+    <EntitySet Name="CATEGORIES" EntityType="Self.CATEGORy" />
+    <EntitySet Name="CompanyInfoes" EntityType="Self.CompanyInfo" />
+    <EntitySet Name="ContactUs" EntityType="Self.ContactU" />
+    <EntitySet Name="COUPONS" EntityType="Self.COUPON" />
+    <EntitySet Name="GROUPS" EntityType="Self.GROUP" />
+    <EntitySet Name="MAINMENUs" EntityType="Self.MAINMENU" />
+    <EntitySet Name="OFFER_MANAGEMENT" EntityType="Self.OFFER_MANAGEMENT" />
+    <EntitySet Name="ONLINE_TRANSACTION" EntityType="Self.ONLINE_TRANSACTION" />
+    <EntitySet Name="ORDER_PRODUCTS" EntityType="Self.ORDER_PRODUCTS" />
+    <EntitySet Name="ORDER_STATUSES" EntityType="Self.ORDER_STATUSES" />
+    <EntitySet Name="ORDERS" EntityType="Self.ORDER" />
+    <EntitySet Name="PACKAGE_PRODUCTS" EntityType="Self.PACKAGE_PRODUCTS" />
+    <EntitySet Name="PACKAGES" EntityType="Self.PACKAGE" />
+    <EntitySet Name="PAYMENT_MODES" EntityType="Self.PAYMENT_MODES" />
+    <EntitySet Name="PRODUCT_BRANDS" EntityType="Self.PRODUCT_BRANDS" />
+    <EntitySet Name="PRODUCT_COLORS" EntityType="Self.PRODUCT_COLORS" />
+    <EntitySet Name="PRODUCT_FLAVORS" EntityType="Self.PRODUCT_FLAVORS" />
+    <EntitySet Name="PRODUCT_IMAGES" EntityType="Self.PRODUCT_IMAGES" />
+    <EntitySet Name="PRODUCT_LEVELS" EntityType="Self.PRODUCT_LEVELS" />
+    <EntitySet Name="PRODUCT_PACKINGS" EntityType="Self.PRODUCT_PACKINGS" />
+    <EntitySet Name="PRODUCT_REVIEWS" EntityType="Self.PRODUCT_REVIEWS" />
+    <EntitySet Name="PRODUCT_TAGS" EntityType="Self.PRODUCT_TAGS" />
+    <EntitySet Name="PRODUCT_TYPES" EntityType="Self.PRODUCT_TYPES" />
+    <EntitySet Name="ProductTests" EntityType="Self.ProductTest" />
+    <EntitySet Name="RECOMMENDED_PRODUCTS" EntityType="Self.RECOMMENDED_PRODUCTS" />
+    <EntitySet Name="RIDER_ORDER" EntityType="Self.RIDER_ORDER" />
+    <EntitySet Name="SMS" EntityType="Self.SM" />
+    <EntitySet Name="SMS_TYPES" EntityType="Self.SMS_TYPES" />
+    <EntitySet Name="SUB_CATEGORIES" EntityType="Self.SUB_CATEGORIES" />
+    <EntitySet Name="SUBMENUs" EntityType="Self.SUBMENU" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TEMP_CUSTOMERS" EntityType="Self.TEMP_CUSTOMERS" />
+    <EntitySet Name="USER_ADDRESSES" EntityType="Self.USER_ADDRESSES" />
+    <EntitySet Name="USER_DEVICES" EntityType="Self.USER_DEVICES" />
+    <EntitySet Name="USER_FAVOURITES" EntityType="Self.USER_FAVOURITES" />
+    <EntitySet Name="USER_TYPES" EntityType="Self.USER_TYPES" />
+    <EntitySet Name="USERS" EntityType="Self.USER" />
+    <EntitySet Name="VENDOR_BRANCHES" EntityType="Self.VENDOR_BRANCHES" />
+    <EntitySet Name="VENDORS" EntityType="Self.VENDOR" />
+    <EntitySet Name="WebsitePages" EntityType="Self.WebsitePage" />
+    <EntitySet Name="WISHES_PRODUCT" EntityType="Self.WISHES_PRODUCT" />
+    <EntitySet Name="BarcodeNewTests" EntityType="Self.BarcodeNewTest" />
+    <EntitySet Name="BARCODES" EntityType="Self.BARCODE" />
+    <EntitySet Name="ITEMINFOes" EntityType="Self.ITEMINFO" />
+    <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCT" />
+    <EntitySet Name="PS000" EntityType="Self.PS000" />
+    <EntitySet Name="PS000Test" EntityType="Self.PS000Test" />
+    <EntitySet Name="STOCKs" EntityType="Self.STOCK" />
+    <EntitySet Name="TERMINFOes" EntityType="Self.TERMINFO" />
+    <EntitySet Name="TESTs" EntityType="Self.TEST" />
+    <EntitySet Name="ItemLists" EntityType="Self.ItemList" />
+    <EntitySet Name="Reports" EntityType="Self.Report" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GETRECOMMENDEDPRODUCTS" />
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(anytimea_GROCERYModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(anytimea_GROCERYModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_InsertBarcode" />
+    <FunctionImport Name="SP_InsertItemInfo" />
+    <FunctionImport Name="SP_InsertProduct" />
+    <FunctionImport Name="SP_InsertProductFromItemInfo" />
+    <FunctionImport Name="SP_InsertStock" />
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_UpdateStock" />
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="SpGetAllBanners" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllBanners_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllBannersHome" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllBannersHome_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllBlogs" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllBlogs_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllCartItemsByUserId" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllCartItemsByUserId_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllOrders" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllOrders_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+      <Parameter Name="oStID" Mode="In" Type="Int32" />
+      <Parameter Name="oDateFrom" Mode="In" Type="String" />
+      <Parameter Name="oDateTo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllOrdersByCustomerId" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllOrdersByCustomerId_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+      <Parameter Name="oStID" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllProductReviews" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllProductReviews_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllProductReviewsHome" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllProductReviewsHome_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllProducts" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllProducts_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+      <Parameter Name="CategoryId" Mode="In" Type="String" />
+      <Parameter Name="SubCategoryId" Mode="In" Type="String" />
+      <Parameter Name="GroupId" Mode="In" Type="String" />
+      <Parameter Name="BranchId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPGetAllRecommendedProducts" ReturnType="Collection(anytimea_GROCERYModel.SPGetAllRecommendedProducts_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetBlogDetailByBlogTitleUrl" ReturnType="Collection(anytimea_GROCERYModel.SpGetBlogDetailByBlogTitleUrl_Result)">
+      <Parameter Name="BlogTitleUrl" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetHomeBlogs" ReturnType="Collection(anytimea_GROCERYModel.SpGetHomeBlogs_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetHomeProducts" ReturnType="Collection(anytimea_GROCERYModel.SpGetHomeProducts_Result)">
+      <Parameter Name="CategoryId" Mode="In" Type="Int32" />
+      <Parameter Name="BranchId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetProductDetailByProductNameUrl" ReturnType="Collection(anytimea_GROCERYModel.SpGetProductDetailByProductNameUrl_Result)">
+      <Parameter Name="ProductNameUrl" Mode="In" Type="String" />
+      <Parameter Name="BranchId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetProductImagesByProductId" ReturnType="Collection(anytimea_GROCERYModel.SpGetProductImagesByProductId_Result)">
+      <Parameter Name="ProductId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetProductReviewsByProductId" ReturnType="Collection(anytimea_GROCERYModel.SpGetProductReviewsByProductId_Result)">
+      <Parameter Name="PRODUCT_ID" Mode="In" Type="Int64" />
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPGetSearchProducts" ReturnType="Collection(anytimea_GROCERYModel.SPGetSearchProducts_Result)">
+      <Parameter Name="ProductName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetUserProfileById" ReturnType="Collection(anytimea_GROCERYModel.SpGetUserProfileById_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetWishList" ReturnType="Collection(anytimea_GROCERYModel.SpGetWishList_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+      <Parameter Name="USER_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllBanners_Result">
+    <Property Type="Int32" Name="BannerId" Nullable="false" />
+    <Property Type="String" Name="ImageUrl" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="AdminImagePath" Nullable="true" />
+    <Property Type="String" Name="BannerTitle" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BannerType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CreatedDateString" Nullable="true" MaxLength="30" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllBannersHome_Result">
+    <Property Type="String" Name="ImageUrl" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="AdminImagePath" Nullable="true" />
+    <Property Type="String" Name="BannerTitle" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllBlogs_Result">
+    <Property Type="Int32" Name="BlogId" Nullable="false" />
+    <Property Type="String" Name="BlogTitle" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BlogHtml" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="BlogImageUrl" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BlogTitleUrl" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="RecordStatus" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedDateString" Nullable="true" MaxLength="30" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllCartItemsByUserId_Result">
+    <Property Type="Int32" Name="CART_ID" Nullable="false" />
+    <Property Type="Int32" Name="USER_ID" Nullable="true" />
+    <Property Type="Int32" Name="PRODUCT_ID" Nullable="true" />
+    <Property Type="String" Name="NAME" Nullable="true" />
+    <Property Type="Decimal" Name="PRICE" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="PRICE2" Nullable="true" />
+    <Property Type="String" Name="PACKING" Nullable="true" />
+    <Property Type="String" Name="IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="IMAGE_THUMBNAIL_PATH" Nullable="true" />
+    <Property Type="String" Name="PRODUCT_NAME_URL" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="QUANTITY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllOrders_Result">
+    <Property Type="Int32" Name="ORDER_ID" Nullable="false" />
+    <Property Type="Int32" Name="CUSTOMER_ID" Nullable="true" />
+    <Property Type="String" Name="NAME" Nullable="false" />
+    <Property Type="String" Name="MOBILE" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ADDRESS" Nullable="false" />
+    <Property Type="String" Name="DELIVERY_DESCRIPTION" Nullable="true" />
+    <Property Type="String" Name="DELIVERY_TIME" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="MANUAL_DISCOUNT" Nullable="true" />
+    <Property Type="Int32" Name="COUPON_DISCOUNT" Nullable="true" />
+    <Property Type="Byte" Name="ADDED_BY" Nullable="true" />
+    <Property Type="String" Name="STATUS_DESCRIPTION" Nullable="false" MaxLength="19" />
+    <Property Type="String" Name="IS_PACKAGE" Nullable="false" MaxLength="3" />
+    <Property Type="Int32" Name="TOTAL_ITEMS" Nullable="true" />
+    <Property Type="Decimal" Name="TOTAL_AMOUNT" Nullable="true" Precision="38" Scale="0" />
+    <Property Type="String" Name="USERNAME" Nullable="false" MaxLength="1" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllOrdersByCustomerId_Result">
+    <Property Type="String" Name="STATUS_DESCRIPTION" Nullable="false" MaxLength="19" />
+    <Property Type="Int32" Name="ORDER_ID" Nullable="false" />
+    <Property Type="Int32" Name="CUSTOMER_ID" Nullable="true" />
+    <Property Type="String" Name="NAME" Nullable="false" />
+    <Property Type="String" Name="MOBILE" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ADDRESS" Nullable="false" />
+    <Property Type="String" Name="DELIVERY_DESCRIPTION" Nullable="true" />
+    <Property Type="DateTime" Name="DELIVERY_TIME" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedDateString" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="MANUAL_DISCOUNT" Nullable="true" />
+    <Property Type="Int32" Name="COUPON_DISCOUNT" Nullable="true" />
+    <Property Type="Byte" Name="ADDED_BY" Nullable="true" />
+    <Property Type="String" Name="IS_PACKAGE" Nullable="false" MaxLength="3" />
+    <Property Type="Int32" Name="TOTAL_ITEMS" Nullable="true" />
+    <Property Type="Decimal" Name="TOTAL_AMOUNT" Nullable="true" Precision="38" Scale="0" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllProductReviews_Result">
+    <Property Type="Int64" Name="PRODUCT_REVIEW_ID" Nullable="false" />
+    <Property Type="String" Name="USERNAME" Nullable="false" />
+    <Property Type="String" Name="IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="NAME" Nullable="true" />
+    <Property Type="Int32" Name="REVIEW" Nullable="true" />
+    <Property Type="String" Name="COMMENT" Nullable="true" />
+    <Property Type="String" Name="DateString" Nullable="true" MaxLength="4000" />
+    <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllProductReviewsHome_Result">
+    <Property Type="Int64" Name="PRODUCT_REVIEW_ID" Nullable="false" />
+    <Property Type="String" Name="USERNAME" Nullable="false" />
+    <Property Type="String" Name="IMAGE_PATH" Nullable="true" />
+    <Property Type="Int32" Name="REVIEW" Nullable="true" />
+    <Property Type="String" Name="COMMENT" Nullable="true" />
+    <Property Type="String" Name="DateString" Nullable="true" MaxLength="4000" />
+    <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllProducts_Result">
+    <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" />
+    <Property Type="String" Name="DESCRIPTION" Nullable="true" />
+    <Property Type="Decimal" Name="PRICE1" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="PRICE" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="PRICE2" Nullable="true" />
+    <Property Type="String" Name="COLOR" Nullable="true" />
+    <Property Type="String" Name="BRAND" Nullable="true" />
+    <Property Type="String" Name="FLAVOR" Nullable="true" />
+    <Property Type="String" Name="PACKING" Nullable="true" />
+    <Property Type="String" Name="TAG" Nullable="true" />
+    <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PRODUCT_NAME_URL" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IMAGE_THUMBNAIL_PATH" Nullable="true" />
+    <Property Type="Int32" Name="GroupID" Nullable="true" />
+    <Property Type="Int32" Name="VENDOR_ID" Nullable="true" />
+    <Property Type="Int32" Name="CATEGORY_ID" Nullable="true" />
+    <Property Type="Int32" Name="SUB_CATEGORY_ID" Nullable="true" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SPGetAllRecommendedProducts_Result">
+    <Property Type="Int32" Name="PRODUCT_ID" Nullable="true" />
+    <Property Type="Int32" Name="OLD_PRODUCT_ID" Nullable="true" />
+    <Property Type="String" Name="NAME" Nullable="true" />
+    <Property Type="String" Name="DESCRIPTION" Nullable="true" />
+    <Property Type="Int32" Name="SUB_CATEGORY_ID" Nullable="true" />
+    <Property Type="String" Name="UNIT_OF_MEASUREMENT" Nullable="true" />
+    <Property Type="Decimal" Name="AVG_COST" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="PRICE" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="DISCOUNT_PERCENTAGE" Nullable="true" />
+    <Property Type="Boolean" Name="IMPORTED" Nullable="true" />
+    <Property Type="Boolean" Name="IS_ACTIVE" Nullable="true" />
+    <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CREATED_BY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIED_DATE" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="MODIFIED_BY" Nullable="true" />
+    <Property Type="String" Name="COLOR" Nullable="true" />
+    <Property Type="String" Name="BRAND" Nullable="true" />
+    <Property Type="String" Name="FLAVOR" Nullable="true" />
+    <Property Type="String" Name="PACKING" Nullable="true" />
+    <Property Type="String" Name="TAG" Nullable="true" />
+    <Property Type="String" Name="TYPES" Nullable="true" />
+    <Property Type="Double" Name="DISCOUNT" Nullable="true" />
+    <Property Type="Int32" Name="SEC_SUB_CATEGORY_A" Nullable="true" />
+    <Property Type="Int32" Name="SEC_SUB_CATEGORY_B" Nullable="true" />
+    <Property Type="Int32" Name="PRICE2" Nullable="true" />
+    <Property Type="Boolean" Name="HAS_IMAGE" Nullable="true" />
+    <Property Type="Boolean" Name="HAS_THUMBNAIL_IMAGE" Nullable="true" />
+    <Property Type="Int32" Name="VENDOR_ID" Nullable="true" />
+    <Property Type="Int32" Name="CATEGORY_ID" Nullable="true" />
+    <Property Type="Int32" Name="THRESHOLD" Nullable="true" />
+    <Property Type="Boolean" Name="IS_FEATURED" Nullable="true" />
+    <Property Type="Boolean" Name="IS_EXEMPTED" Nullable="true" />
+    <Property Type="String" Name="PRODUCT_NAME_URL" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="DEVICE_TYPE" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IS_FAVOURITE" Nullable="true" />
+    <Property Type="Int32" Name="PRODUCT_IMAGE_ID" Nullable="false" />
+    <Property Type="String" Name="ADMIN_IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="ADMIN_THUMNAIL_IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="CHAARSU_IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="CHAARSU_THUMBNAIL_PATH" Nullable="true" />
+    <Property Type="Int16" Name="LOCNO" Nullable="false" />
+    <Property Type="Int32" Name="ITEM_CODE" Nullable="false" />
+    <Property Type="Int16" Name="PACK_CODE" Nullable="false" />
+    <Property Type="String" Name="PACK_DESC" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="UNIT" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Boolean" Name="bDEFAULT" Nullable="false" />
+    <Property Type="String" Name="BAR_CODE" Nullable="false" MaxLength="20" />
+    <Property Type="Int16" Name="BARTYPE" Nullable="false" />
+    <Property Type="Decimal" Name="UNIT_PRICE" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="DEALER_PRICE1" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="DEALER_PRICE2" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="RF_MARGIN" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Int32" Name="CUSER" Nullable="false" />
+    <Property Type="DateTime" Name="CDATE" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="MUSER" Nullable="false" />
+    <Property Type="DateTime" Name="MDATE" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="bRandomDisc" Nullable="false" />
+    <Property Type="DateTime" Name="DiscStartDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="DiscEndDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="DiscStartTime" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="DiscEndTime" Nullable="false" Precision="23" />
+    <Property Type="Int16" Name="DISC_TYPE" Nullable="false" />
+    <Property Type="Decimal" Name="DISC" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="LOYALTY_DISC" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="STAFF_DISC" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetBlogDetailByBlogTitleUrl_Result">
+    <Property Type="Int32" Name="BlogId" Nullable="false" />
+    <Property Type="String" Name="BlogTitle" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BlogImageUrl" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BlogHtml" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="BlogTitleUrl" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="DateString" Nullable="true" MaxLength="4000" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RecordStatus" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="SpGetHomeBlogs_Result">
+    <Property Type="Int32" Name="BlogId" Nullable="false" />
+    <Property Type="String" Name="BlogTitle" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BlogHtml" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="BlogImageUrl" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="BlogTitleUrl" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CreatedDateString" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="SpGetHomeProducts_Result">
+    <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" />
+    <Property Type="String" Name="DESCRIPTION" Nullable="true" />
+    <Property Type="Decimal" Name="PRICE1" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="PRICE2" Nullable="true" />
+    <Property Type="Decimal" Name="PRICE" Nullable="false" Precision="19" />
+    <Property Type="String" Name="COLOR" Nullable="true" />
+    <Property Type="String" Name="BRAND" Nullable="true" />
+    <Property Type="String" Name="FLAVOR" Nullable="true" />
+    <Property Type="String" Name="PACKING" Nullable="true" />
+    <Property Type="String" Name="TAG" Nullable="true" />
+    <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PRODUCT_NAME_URL" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IMAGE_THUMBNAIL_PATH" Nullable="true" />
+    <Property Type="Int32" Name="CATEGORY_ID" Nullable="true" />
+    <Property Type="Int32" Name="SUB_CATEGORY_ID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetProductDetailByProductNameUrl_Result">
+    <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" />
+    <Property Type="String" Name="DESCRIPTION" Nullable="true" />
+    <Property Type="Decimal" Name="PRICE1" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="PRICE2" Nullable="true" />
+    <Property Type="Decimal" Name="PRICE" Nullable="false" Precision="19" />
+    <Property Type="String" Name="COLOR" Nullable="true" />
+    <Property Type="String" Name="BRAND" Nullable="true" />
+    <Property Type="String" Name="FLAVOR" Nullable="true" />
+    <Property Type="String" Name="PACKING" Nullable="true" />
+    <Property Type="String" Name="TAG" Nullable="true" />
+    <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PRODUCT_NAME_URL" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IMAGE_THUMBNAIL_PATH" Nullable="true" />
+    <Property Type="Int32" Name="VENDOR_ID" Nullable="true" />
+    <Property Type="Int32" Name="CATEGORY_ID" Nullable="true" />
+    <Property Type="Int32" Name="SUB_CATEGORY_ID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetProductImagesByProductId_Result">
+    <Property Type="Int32" Name="PRODUCT_IMAGE_ID" Nullable="false" />
+    <Property Type="Int32" Name="PRODUCT_ID" Nullable="true" />
+    <Property Type="String" Name="ADMIN_IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="ADMIN_THUMNAIL_IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="CHAARSU_IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="CHAARSU_THUMBNAIL_PATH" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetProductReviewsByProductId_Result">
+    <Property Type="Int64" Name="PRODUCT_REVIEW_ID" Nullable="false" />
+    <Property Type="String" Name="USERNAME" Nullable="false" />
+    <Property Type="String" Name="IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="NAME" Nullable="true" />
+    <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" />
+    <Property Type="Int32" Name="REVIEW" Nullable="true" />
+    <Property Type="String" Name="COMMENT" Nullable="true" />
+    <Property Type="String" Name="DateString" Nullable="true" MaxLength="4000" />
+    <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SPGetSearchProducts_Result">
+    <Property Type="Int32" Name="PRODUCT_ID" Nullable="true" />
+    <Property Type="Int32" Name="OLD_PRODUCT_ID" Nullable="true" />
+    <Property Type="String" Name="NAME" Nullable="true" />
+    <Property Type="String" Name="DESCRIPTION" Nullable="true" />
+    <Property Type="Int32" Name="SUB_CATEGORY_ID" Nullable="true" />
+    <Property Type="String" Name="UNIT_OF_MEASUREMENT" Nullable="true" />
+    <Property Type="Decimal" Name="AVG_COST" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="PRICE" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="DISCOUNT_PERCENTAGE" Nullable="true" />
+    <Property Type="Boolean" Name="IMPORTED" Nullable="true" />
+    <Property Type="Boolean" Name="IS_ACTIVE" Nullable="true" />
+    <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CREATED_BY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIED_DATE" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="MODIFIED_BY" Nullable="true" />
+    <Property Type="String" Name="COLOR" Nullable="true" />
+    <Property Type="String" Name="BRAND" Nullable="true" />
+    <Property Type="String" Name="FLAVOR" Nullable="true" />
+    <Property Type="String" Name="PACKING" Nullable="true" />
+    <Property Type="String" Name="TAG" Nullable="true" />
+    <Property Type="String" Name="TYPES" Nullable="true" />
+    <Property Type="Double" Name="DISCOUNT" Nullable="true" />
+    <Property Type="Int32" Name="SEC_SUB_CATEGORY_A" Nullable="true" />
+    <Property Type="Int32" Name="SEC_SUB_CATEGORY_B" Nullable="true" />
+    <Property Type="Int32" Name="PRICE2" Nullable="true" />
+    <Property Type="Boolean" Name="HAS_IMAGE" Nullable="true" />
+    <Property Type="Boolean" Name="HAS_THUMBNAIL_IMAGE" Nullable="true" />
+    <Property Type="Int32" Name="VENDOR_ID" Nullable="true" />
+    <Property Type="Int32" Name="CATEGORY_ID" Nullable="true" />
+    <Property Type="Int32" Name="THRESHOLD" Nullable="true" />
+    <Property Type="Boolean" Name="IS_FEATURED" Nullable="true" />
+    <Property Type="Boolean" Name="IS_EXEMPTED" Nullable="true" />
+    <Property Type="String" Name="PRODUCT_NAME_URL" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="DEVICE_TYPE" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="IS_FAVOURITE" Nullable="true" />
+    <Property Type="Int32" Name="PRODUCT_IMAGE_ID" Nullable="false" />
+    <Property Type="String" Name="ADMIN_IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="ADMIN_THUMNAIL_IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="CHAARSU_IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="CHAARSU_THUMBNAIL_PATH" Nullable="true" />
+    <Property Type="Int16" Name="LOCNO" Nullable="false" />
+    <Property Type="Int32" Name="ITEM_CODE" Nullable="false" />
+    <Property Type="Int16" Name="PACK_CODE" Nullable="false" />
+    <Property Type="String" Name="PACK_DESC" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="UNIT" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Boolean" Name="bDEFAULT" Nullable="false" />
+    <Property Type="String" Name="BAR_CODE" Nullable="false" MaxLength="20" />
+    <Property Type="Int16" Name="BARTYPE" Nullable="false" />
+    <Property Type="Decimal" Name="UNIT_PRICE" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="DEALER_PRICE1" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="DEALER_PRICE2" Nullable="false" Precision="19" />
+    <Property Type="Decimal" Name="RF_MARGIN" Nullable="false" Precision="9" Scale="0" />
+    <Property Type="Int32" Name="CUSER" Nullable="false" />
+    <Property Type="DateTime" Name="CDATE" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="MUSER" Nullable="false" />
+    <Property Type="DateTime" Name="MDATE" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="bRandomDisc" Nullable="false" />
+    <Property Type="DateTime" Name="DiscStartDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="DiscEndDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="DiscStartTime" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="DiscEndTime" Nullable="false" Precision="23" />
+    <Property Type="Int16" Name="DISC_TYPE" Nullable="false" />
+    <Property Type="Decimal" Name="DISC" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="LOYALTY_DISC" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="STAFF_DISC" Nullable="false" Precision="9" Scale="2" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SpGetUserProfileById_Result">
+    <Property Type="Int32" Name="USER_ID" Nullable="false" />
+    <Property Type="String" Name="USERNAME" Nullable="false" />
+    <Property Type="String" Name="PASSWORD" Nullable="false" />
+    <Property Type="String" Name="USER_ROLE" Nullable="false" />
+    <Property Type="String" Name="BRANCH" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="MOBILE_NO" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ADDRESS" Nullable="true" />
+    <Property Type="String" Name="CITY" Nullable="true" />
+    <Property Type="String" Name="IMAGE_PATH" Nullable="true" />
+    <Property Type="String" Name="EMAIL" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="IPhoneId" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="IsSocialLogin" Nullable="true" />
+    <Property Type="String" Name="FaceBookId" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="CreatedDateString" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="ModifiedDateString" Nullable="true" MaxLength="4000" />
+    <Property Type="DateTime" Name="CREATED_ON" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UPDATED_ON" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SpGetWishList_Result">
+    <Property Type="Int32" Name="WISH_ID" Nullable="false" />
+    <Property Type="Int32" Name="USER_ID" Nullable="true" />
+    <Property Type="Int32" Name="PRODUCT_ID" Nullable="true" />
+    <Property Type="String" Name="PRODUCT_NAME" Nullable="true" />
+    <Property Type="String" Name="PRODUCT_DESCRIPTION" Nullable="true" />
+    <Property Type="Decimal" Name="PRICE" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="PRICE2" Nullable="true" />
+    <Property Type="String" Name="IMAGE_THUMBNAIL_PATH" Nullable="true" />
+    <Property Type="String" Name="PRODUCT_NAME_URL" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+</Schema>

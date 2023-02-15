@@ -1,0 +1,120 @@
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll.config
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.pdb
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll.config
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.xml
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csprojAssemblyReference.cache
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CoreCompileInputs.cache
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CopyComplete
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.pdb
+D:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll.config
+D:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll
+D:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.pdb
+D:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll
+D:\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.dll
+D:\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.pdb
+D:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll.config
+D:\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.xml
+D:\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csprojAssemblyReference.cache
+D:\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CoreCompileInputs.cache
+D:\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CopyComplete
+D:\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.dll
+D:\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.pdb
+E:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll.config
+E:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll
+E:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.pdb
+E:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll
+E:\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.dll
+E:\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.dll
+E:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.pdb
+E:\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll.config
+E:\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.xml
+E:\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csprojAssemblyReference.cache
+E:\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CoreCompileInputs.cache
+E:\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CopyComplete
+E:\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.dll
+E:\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.pdb
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll.config
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.pdb
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.pdb
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll.config
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.xml
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csprojAssemblyReference.cache
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CoreCompileInputs.cache
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CopyComplete
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.pdb
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll.config
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.pdb
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.pdb
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll.config
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.xml
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.xml
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.AssemblyReference.cache
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CoreCompileInputs.cache
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CopyComplete
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.pdb
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll.config
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.pdb
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll.config
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.xml
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.AssemblyReference.cache
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CoreCompileInputs.cache
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CopyComplete
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.pdb
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll.config
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.pdb
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\bin\Debug\EntityFramework.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\bin\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll.config
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\bin\Debug\EntityFramework.xml
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.AssemblyReference.cache
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CoreCompileInputs.cache
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CopyComplete
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.pdb
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll.config
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Repository.pdb
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.pdb
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\Chaarsu.Models.dll.config
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.xml
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.AssemblyReference.cache
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CoreCompileInputs.cache
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.csproj.CopyComplete
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Repository\obj\Debug\Chaarsu.Repository.pdb

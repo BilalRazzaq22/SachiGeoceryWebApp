@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{042F52FB-D42C-4FFC-9171-ACC55CD5F6F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chaarsu.Models</RootNamespace>
+    <AssemblyName>Chaarsu.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AD.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AREA.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANNER.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BANNER_IMAGES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BARCODE.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BarcodeNewTest.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BARCODESTest.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Blog.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BRANCH.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BRAND.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CART.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CATEGORy.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Chaarsu.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Chaarsu.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Chaarsu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Chaarsu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Chaarsu.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyInfo.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContactU.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COUPON.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GROUP.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITEMINFO.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemList.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAINMENU.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OFFER_MANAGEMENT.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ONLINE_TRANSACTION.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_PRODUCTS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_STATUSES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PACKAGE.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PACKAGE_PRODUCTS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PAYMENT_MODES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTest.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_BRANDS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_COLORS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_FLAVORS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_IMAGES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_LEVELS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_PACKINGS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_REVIEWS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_TAGS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCT_TYPES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PS000.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PS000Test.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RECOMMENDED_PRODUCTS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPasswordModel.cs" />
+    <Compile Include="InputModel\InputUserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RIDER_ORDER.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SM.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMS_TYPES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetAllBannersHome_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetAllBanners_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetAllBlogs_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetAllCartItemsByUserId_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetAllOrdersByCustomerId_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetAllOrders_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetAllProductReviewsHome_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetAllProductReviews_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetAllProducts_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetAllRecommendedProducts_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetBlogDetailByBlogTitleUrl_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetHomeBlogs_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetHomeProducts_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetProductDetailByProductNameUrl_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetProductImagesByProductId_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetProductReviewsByProductId_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetSearchProducts_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetUserProfileById_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpGetWishList_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STOCK.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUBMENU.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_CATEGORIES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEMP_CUSTOMERS.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TERMINFO.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TEST.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_ADDRESSES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_DEVICES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_FAVOURITES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_TYPES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VENDOR.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VENDOR_BRANCHES.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\GroupViewModel.cs" />
+    <Compile Include="ViewModel\InsertOrderWithBranchVM.cs" />
+    <Compile Include="ViewModel\ProductsViewModel.cs" />
+    <Compile Include="WebsitePage.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WISHES_PRODUCT.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Chaarsu.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Chaarsu.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Chaarsu.edmx.diagram">
+      <DependentUpon>Chaarsu.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Chaarsu.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Chaarsu.edmx</DependentUpon>
+      <LastGenOutput>Chaarsu.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Chaarsu.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Chaarsu.edmx</DependentUpon>
+      <LastGenOutput>Chaarsu.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

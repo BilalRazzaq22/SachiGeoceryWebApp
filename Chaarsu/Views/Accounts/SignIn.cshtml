@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- page-header-section start -->
+
+<div class="page-header-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between justify-content-md-end">
+                <ul class="breadcrumb">
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li><span>/</span></li>
+                    <li>Sign In</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page-header-section end -->
+
+<div ng-controller="AccountsController">
+    <section class="login-section section-ptb">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb--30 mb-lg-0">
+                    <div class="eflux-login-form-area">
+                        <div class="eflux-login-form">
+
+                            <div class="input-item">
+                                <label>Email / Mobile no</label>
+                                <input type="text" ng-model="emailOrmobile" name="emailOrmobile" placeholder="Enter Email Or Mobile No" />
+                            </div>
+
+                            <div class="input-item">
+                                <label>Password</label>
+                                <input type="password" ng-model="password" name="password" placeholder="Enter Password" />
+                            </div>
+
+                            <div>
+                                <button ng-click="SingIn()" class="submit">Sign in</button>
+                                @if (Session["GuestSession"] == null)
+                                {
+                                    <button onclick="OpenSignUpForm()" class="submit">Sign In as Guest</button>
+                                }
+
+                            </div>
+                        </div>
+                        <a href="/Accounts/ForgotPassword" class="mt-4 ml-1">Forgot Password?</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 pl-lg-5">
+                    <div class="new-customer-container">
+                        <h6>New Customer</h6>
+                        <div class="new-customer-box">
+                            <h6>Create a New Account</h6>
+                            <p>Sign up for a free account at our store. Registration is quick and easy. It allows you to be able to order from our shop. To start shopping click sign up.</p>
+                            <a href="/Accounts/SignUp" class="signup-btn">Sign Up</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- login-area -->
+    <section id="login-area" class="login-area">
+        <div onclick="CloseSignUpForm()" class="overlay"></div>
+        <div class="login-body-wrapper">
+            <div class="login-body">
+                <div class="close-icon" onclick="CloseSignUpForm()">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="login-header">
+                    <h4>You Want To SignIn As Guest</h4>
+                    <p>Then your name is required for access the features of Sachi Grocery </p>
+                </div>
+                <div class="login-content">
+                    <div class="login-form">
+                        <input type="text" ng-model="GuestName" placeholder="Enter Name">
+                        <button ng-click="GuestUser();" class="submit">SIGNIN AS GUEST</button>
+                    </div>
+                    <div class="text-center dont-account py-4">
+                        <p class="mb-0">Don't have any account <a href="/Accounts/SignUp">Sing Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- login-area -->
+</div>
+
+@section scripts{
+    <script src="~/ngControllers/AccountsController.js"></script>
+}

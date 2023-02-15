@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "OrderSuccess";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string orderid = Convert.ToString(Request.QueryString["OrderId"]);
+}
+<!-- page-header-section start -->
+<div class="page-header-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between justify-content-md-end">
+                <ul class="breadcrumb">
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li><span>/</span></li>
+                    <li>Product Order Success</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- page-header-section end -->
+
+<!-- Product order success section start -->
+<section class="product-order-success-section section-ptb">
+    <div class="container">
+        <div class="product-order-success-container">
+            <div class="product-order-success">
+                <div class="iconimage">
+                    <img src="~/assets/images/checkicon.png" alt="icon">
+                </div>
+                <h2>Your order #@orderid has been received.</h2>
+                <p>Thank you for order with sachi grocery</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Product order success section end -->

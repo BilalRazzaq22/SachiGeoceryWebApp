@@ -1,0 +1,94 @@
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll.config
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.xml
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CoreCompileInputs.cache
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CopyComplete
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.dll
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.pdb
+D:\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll.config
+D:\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll
+D:\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.pdb
+D:\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.dll
+D:\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.xml
+D:\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csprojAssemblyReference.cache
+D:\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CoreCompileInputs.cache
+D:\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CopyComplete
+D:\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.dll
+D:\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\OneDrive\Desktop\UsmanZia Projects\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csprojAssemblyReference.cache
+E:\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll.config
+E:\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll
+E:\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.pdb
+E:\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.dll
+E:\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.dll
+E:\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.xml
+E:\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.xml
+E:\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csprojAssemblyReference.cache
+E:\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CoreCompileInputs.cache
+E:\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CopyComplete
+E:\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.dll
+E:\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.pdb
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll.config
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.pdb
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.xml
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csprojAssemblyReference.cache
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CoreCompileInputs.cache
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CopyComplete
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.dll
+D:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.pdb
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll.config
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.pdb
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.xml
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.xml
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CoreCompileInputs.cache
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CopyComplete
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.dll
+F:\Abdullah Fiaz\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll.config
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.xml
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.AssemblyReference.cache
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CoreCompileInputs.cache
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.dll
+C:\Users\ah644\Desktop\UsmanZia\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll.config
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\bin\Debug\Chaarsu.Models.pdb
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\bin\Debug\EntityFramework.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\bin\Debug\EntityFramework.xml
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.AssemblyReference.cache
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CoreCompileInputs.cache
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CopyComplete
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\obj\Debug\Chaarsu.Models.dll
+C:\Users\ah644\Desktop\Qasim\Chaarsoabc\Chaarsu.Models\obj\Debug\Chaarsu.Models.pdb
+E:\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll.config
+E:\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\Chaarsu.Models.pdb
+E:\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.xml
+E:\UsmanZia\Chaarsu\Chaarsu.Models\bin\Debug\EntityFramework.SqlServer.xml
+E:\UsmanZia\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.AssemblyReference.cache
+E:\UsmanZia\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CoreCompileInputs.cache
+E:\UsmanZia\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.csproj.CopyComplete
+E:\UsmanZia\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.dll
+E:\UsmanZia\Chaarsu\Chaarsu.Models\obj\Debug\Chaarsu.Models.pdb

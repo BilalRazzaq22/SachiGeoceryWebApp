@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Blogs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-controller="BlogsController" ng-init="GetAllBlogs(1)">
+
+    <div id="preloader" ng-if="loader==true">
+        <div id="loader"></div>
+    </div>
+
+    <div class="page-header-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-between justify-content-md-end">
+                    <ul class="breadcrumb">
+                        <li><a href="/Home/Index">Home</a></li>
+                        <li><span>/</span></li>
+                        <li>All Blogs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- page-header-section end -->
+    <!-- about section start -->
+    <section class="blog-section section-ptb" ng-if="loader==false">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 col-lg-4 mb--30" ng-repeat="B in Blogs">
+                    <div class="post-item">
+                        <div class="post-thumb">
+                            <a href="/Blogs/Detail?detail={{B.BlogTitleUrl}}"><img src="{{B.BlogImageUrl}}" style="height:220px" alt="thumb"></a>
+                        </div>
+                        <div class="post-content border-effect">
+                            <ul class="meta-post list-unstyled pl-0 d-flex justify-content-between">
+                                <li>
+                                    <span class="icon"><i class="far fa-clock"></i></span>
+                                    <span class="meta-content">{{B.CreatedDateString}}</span>
+                                </li>
+                            </ul>
+                            <h5 class="title mb-3" style="height: 110px;line-height: 20px; overflow: hidden;text-align: justify;"><a href="/Blogs/Detail?detail={{B.BlogTitleUrl}}">{{B.BlogHtml}}</a></h5>
+                            <a href="/Blogs/Detail?detail={{B.BlogTitleUrl}}" class="blog-btn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section scripts{
+    <script src="~/ngControllers/BlogController.js"></script>
+}

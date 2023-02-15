@@ -1,0 +1,169 @@
+﻿
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+
+
+    string categoryid = "";
+    string search = "";
+    string group = "";
+    categoryid = Convert.ToString(Request.QueryString["category"]);
+    search = Convert.ToString(Request.QueryString["search"]);
+    group = Convert.ToString(Request.QueryString["group"]);
+
+}
+@model List<Chaarsu.Models.ViewModel.GroupViewModel>
+
+
+<div ng-controller="ProductsController" ng-init="GetAllProducts('@categoryid','@search','@group')">
+    <div id="preloader" ng-if="loader==true">
+        <div id="loader"></div>
+    </div>
+    <div class="page-header-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-between justify-content-md-end">
+                    <ul class="breadcrumb">
+                        <li><a href="/Home/Index">Home</a></li>
+                        <li><span>/</span></li>
+                        <li>Products</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- page-header-section end -->
+    <!-- page-content -->
+    <section class="page-content section-ptb-90">
+        <div class="container">
+            <div class="row" ng-if="loader==false">
+                <div class="col-lg-3 sidebar order-lg-last">
+                    <div class="theiaStickySidebar">
+                        <div class="widget widget-head">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 data-toggle="collapse" href="#filtermain" role="button" aria-expanded="false" aria-controls="filtermain"><i class="fas fa-filter"></i> Filter</h6>
+                                <a href="#" ng-click="ClearAllFilters()">Clear All</a>
+                            </div>
+                        </div>
+                        <div class="widget-callapse" id="filtermain">
+                            <div class="widget">
+                                <h4 class="widget-title d-none d-lg-block">Catagories</h4>
+                                <a class="widget-title d-lg-none" data-toggle="collapse" href="#scatagory-widget01" role="button" aria-expanded="false" aria-controls="scatagory-widget01">Catagories<i class="fas fa-angle-down"></i></a>
+
+                                <div class="widget-wrapper" id="scatagory-widget01">
+                                    <ul class="catagory-menu collapse show" id="catagory-main">
+                                        @{
+                                            if (Model != null)
+                                            {
+                                                int count = -1;
+                                                foreach (var g in Model)
+                                                {
+                                                    count = count + 1;
+
+                                                    <li>
+                                                        <a class="" data-toggle="collapse" href="#catagory-widget-s@(count)" role="button" aria-expanded="false" aria-controls="catagory-widget-s@(count)">
+                                                            @g.Name<span class="plus-minus"></span>
+                                                        </a>
+                                                        <ul class="catagory-submenu collapse show" id="catagory-widget-s@(count)">
+
+                                                            @{
+                                                                if (g.listCategories.Count > 0)
+                                                                {
+                                                                    foreach (var c in g.listCategories)
+                                                                    {
+                                                                        <li class="checkbox-item" id="catagory-widget-s@(count)">
+                                                                         <a class="anchortag" style="cursor:pointer" id="@(c.CATEGORY_ID)anchor" ng-click="GetProductsByCategory('@c.CATEGORY_ID','@count');">@c.DESCRIPTION</a>
+                                                                        </li>
+                                                                    }
+                                                                }
+                                                            }
+
+
+                                                        </ul>
+                                                    </li>
+                                                   
+                                                }
+                                            }
+                                        }
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="widget">
+                                <h4 class="widget-title d-none d-lg-block">Filter by Price</h4>
+                                <a class="widget-title d-lg-none" data-toggle="collapse" href="#scatagory-widget02" role="button" aria-expanded="false" aria-controls="scatagory-widget02">Filte by Price<i class="fas fa-angle-down"></i></a>
+
+                                <div class="widget-wrapper" id="scatagory-widget02">
+                                    <div class="range-slider">
+                                        <input type="text" class="js-range-slider" value="" />
+                                        <input type="submit" class="submit" value="filter">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 order-lg-first">
+                    <div class="row product-list">
+                        <div class="col-sm-6 col-xl-4" ng-repeat="P in Products">
+                            <div class="product-item">
+                                <div class="product-thumb">
+                                    <a href="/Products/Detail?detail={{P.PRODUCT_NAME_URL}}">
+                                        <div ng-if="P.IMAGE_THUMBNAIL_PATH!=null">
+                                            <img src="{{P.IMAGE_THUMBNAIL_PATH}}" style="height:200px;width:200px" alt="product">
+                                        </div>
+                                        <div ng-if="P.IMAGE_THUMBNAIL_PATH==null">
+                                            <img src="~/assets/images/products/05.png" alt="product">
+                                        </div>
+                                    </a>
+                                    <span class="batch sale">Sale</span>
+                                    <a class="wish-link" href="#" ng-click="AddToWishlist(P.PRODUCT_ID)">
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <a ng-if="P.CategoryName!=null" href="/Products/Detail?detail={{P.PRODUCT_NAME_URL}}" class="cata">{{P.CategoryName}}</a>
+                                    <a ng-if="P.CategoryName==null" href="/Products/Detail?detail={{P.PRODUCT_NAME_URL}}" class="cata">Catagory</a>
+                                    <h6 style="height: 25px;line-height: 25px; overflow: hidden;"><a href="/Products/Detail?detail={{P.PRODUCT_NAME_URL}}" class="product-title">{{P.NAME}}</a></h6>
+                                    <div ng-if="P.PACKING!=null">
+                                        <p class="quantity">{{P.PACKING}}</p>
+                                    </div>
+                                    <div ng-if="P.PACKING==null">
+                                        <p class="quantity">Packing</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div ng-if="P.PRICE2==null">
+                                            <div class="price">Rs.{{P.PRICE}}</div>
+                                        </div>
+                                        <div ng-if="P.PRICE2!=null">
+                                            <div class="price">Rs.{{P.PRICE}} <del>Rs.{{P.PRICE2}}</del></div>
+                                        </div>
+                                        <div class="cart-btn-toggle" onclick="cartopen()" ng-click="AddToCart(P.PRODUCT_ID,P.NAME,P.PAKCING,P.PRICE,P.PRICE2,P.IMAGE_THUMBNAIL_PATH,1,P.PRODUCT_NAME_URL)">
+                                            <span class="cart-btn"><i class="fas fa-shopping-cart"></i> Cart</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                            <h4 id="txtloadmore">Products Not Found</h4>
+                            <button id="btnloadmore" class="loadMore" ng-click="LoadeMoreProducts()">Load More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page-content -->
+</div>
+
+
+@section scripts{
+    <script src="~/ngControllers/ProductController.js"></script>
+
+}

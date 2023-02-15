@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="login-section section-ptb" ng-controller="AccountsController">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="eflux-login-form-area">
+                    <div class="eflux-login-form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="input-item">
+                                    <label>User Name</label>
+                                    <input type="text" ng-model="Username" name="name" placeholder="Enter User Name" />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="input-item">
+                                    <label>Mobile Number</label>
+                                    <input type="text" ng-model="Mobile" name="mobile" placeholder="Enter Mobile Number" />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="input-item">
+                                    <label>Date of Birth</label>
+                                    <input type="date" ng-model="DOB" name="dob" placeholder="Enter Date of Birth" />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="input-item">
+                                    <label>Gender</label>
+                                    <select class="form-control" ng-model="Gender" style="height:50px; width: 100%; border: 1px solid #e4e4e4; background-color: #fafafa; font-size: 13px; border-radius: 5px; outline: none; ">
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Others</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="input-item">
+                                    <label>Email</label>
+                                    <input type="email" ng-model="Email" name="email" placeholder="Enter Email" />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="input-item">
+                                    <label>Address</label>
+                                    <input type="text" id="Address" ng-model="Address" name="address" placeholder="Enter Address" />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="input-item">
+                                    <label>Password</label>
+                                    <input type="password" ng-model="Password" name="password" placeholder="Enter Password" />
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="input-item">
+                                    <label>Confirm Password</label>
+                                    <input type="password" ng-model="ConfirmPassword" name="confirmPassword" placeholder="Enter Confirm Password" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="button" ng-click="SingUp()" class="submit">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    //Google Map Api Key = AIzaSyA9YPC2M-cRQio-njM4b-UwBvKbJyc0VF4 https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA9YPC2M-cRQio-njM4b-UwBvKbJyc0VF4
+    <script src="~/ngControllers/AccountsController.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA9YPC2M-cRQio-njM4b-UwBvKbJyc0VF4"></script>
+
+    <script type="text/javascript">
+        function activatePlacesSearch() {
+            var input = document.getElementById('Address');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+        activatePlacesSearch();
+    </script>
+}

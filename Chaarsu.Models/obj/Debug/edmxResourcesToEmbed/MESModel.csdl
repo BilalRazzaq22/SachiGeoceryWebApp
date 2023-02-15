@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdmCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="220" FixedLength="false" Unicode="true" />
+    <Property Name="Postal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaxNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reference" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TrnTime" Type="DateTime" Precision="3" />
+    <Property Name="Operator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="AdmCompanyPwd">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AdmConnection">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Server" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ERPDB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MESDB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TrnTime" Type="DateTime" Precision="3" />
+    <Property Name="Operator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="AdmGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="LogoutFlag" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TrnTime" Type="DateTime" Precision="3" />
+    <Property Name="Operator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="AdmLicense">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="License" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdmSystemSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MasterAppName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModuleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModuleDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HasApp" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="AppSort" Type="Int32" />
+    <Property Name="ImageIndex" Type="Int32" />
+    <Property Name="AppIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Int64" />
+    <Property Name="SecurityKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProgramSort" Type="Decimal" Precision="4" Scale="0" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MES_Program_t">
+    <Key>
+      <PropertyRef Name="ProgramId" />
+      <PropertyRef Name="LangaugeId" />
+    </Key>
+    <Property Name="ProgramId" Type="Int64" Nullable="false" />
+    <Property Name="LangaugeId" Type="Int32" Nullable="false" />
+    <Property Name="ProgramName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MES_Programs">
+    <Key>
+      <PropertyRef Name="ProgramId" />
+    </Key>
+    <Property Name="ProgramId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgramName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="MESEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdmCompanies" EntityType="Self.AdmCompany" />
+    <EntitySet Name="AdmCompanyPwds" EntityType="Self.AdmCompanyPwd" />
+    <EntitySet Name="AdmConnections" EntityType="Self.AdmConnection" />
+    <EntitySet Name="AdmGroups" EntityType="Self.AdmGroup" />
+    <EntitySet Name="AdmLicenses" EntityType="Self.AdmLicense" />
+    <EntitySet Name="AdmSystemSettings" EntityType="Self.AdmSystemSetting" />
+    <EntitySet Name="Languages" EntityType="Self.Language" />
+    <EntitySet Name="MES_Program_t" EntityType="Self.MES_Program_t" />
+    <EntitySet Name="MES_Programs" EntityType="Self.MES_Programs" />
+    <FunctionImport Name="SpCreateCustomColumns">
+      <Parameter Name="ColumnName" Mode="In" Type="String" />
+      <Parameter Name="ColumnType" Mode="In" Type="String" />
+      <Parameter Name="ColumnLength" Mode="In" Type="String" />
+      <Parameter Name="TableName" Mode="In" Type="String" />
+      <Parameter Name="AllowNull" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllCompanies" ReturnType="Collection(MESModel.SpGetAllCompanies_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllGroups" ReturnType="Collection(MESModel.SpGetAllGroups_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetAllPrograms" ReturnType="Collection(MESModel.SpGetAllPrograms_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpGetColumns">
+      <Parameter Name="TableName" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="AdmUsers" EntityType="MESModel.AdmUser" />
+    <FunctionImport Name="SpGetAllUsers" ReturnType="Collection(MESModel.SpGetAllUsers_Result)">
+      <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+      <Parameter Name="PageSize" Mode="In" Type="Int32" />
+      <Parameter Name="SortColumn" Mode="In" Type="String" />
+      <Parameter Name="SortOrder" Mode="In" Type="String" />
+      <Parameter Name="SearchText" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="AdmGroupSecurities" EntityType="MESModel.AdmGroupSecurity" />
+    <FunctionImport Name="SpGetGroupSecurity" ReturnType="Collection(MESModel.SpGetGroupSecurity_Result)">
+      <Parameter Name="GroupId" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="AdmUserCards" EntityType="MESModel.AdmUserCard" />
+  </EntityContainer>
+  <ComplexType Name="SpGetAllCompanies_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Company" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="220" />
+    <Property Type="String" Name="Postal" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TaxNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Reference" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="TrnTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Operator" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RecordStatus" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedDateString" Nullable="true" MaxLength="30" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllGroups_Result">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="String" Name="GroupID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Boolean" Name="LogoutFlag" Nullable="true" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="TrnTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Operator" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RecordStatus" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedDateString" Nullable="true" MaxLength="30" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SpGetAllPrograms_Result">
+    <Property Type="Int64" Name="ProgramId" Nullable="false" />
+    <Property Type="String" Name="ProgramName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProgramDescription" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RecordStatus" Nullable="true" MaxLength="20" />
+    <Property Type="Int64" Name="CreatedBy" Nullable="true" />
+    <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CreatedDateString" Nullable="true" MaxLength="30" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="AdmUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="GroupId" Type="Int32" />
+    <Property Name="AdminFlag" Type="Boolean" />
+    <Property Name="OnHold" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TrnTime" Type="DateTime" Precision="3" />
+    <Property Name="Operator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginMAC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginTime" Type="DateTime" Precision="3" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ImageUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="SpGetAllUsers_Result">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="GroupId" Nullable="true" />
+    <Property Type="Boolean" Name="AdminFlag" Nullable="true" />
+    <Property Type="Boolean" Name="OnHold" Nullable="true" />
+    <Property Type="String" Name="Remark" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="TrnTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Operator" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LoginMAC" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LoginTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RecordStatus" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedDateString" Nullable="true" MaxLength="30" />
+    <Property Type="Int64" Name="RowIndex" Nullable="true" />
+    <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+    <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+    <Property Type="Int32" Name="Start" Nullable="true" />
+    <Property Type="Int32" Name="End" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="AdmGroupSecurity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProgramId" Type="Int32" />
+    <Property Name="AccessFlag" Type="Boolean" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="Operator" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+    <Property Name="ModifyOperator" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SpGetGroupSecurity_Result">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="String" Name="ApplicationName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="MasterAppName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ModuleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ModuleDesc" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HasApp" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="ImageIndex" Nullable="true" />
+    <Property Type="String" Name="AppIndex" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="ParentId" Nullable="true" />
+    <Property Type="Decimal" Name="ProgramSort" Nullable="true" Precision="4" Scale="0" />
+    <Property Type="Boolean" Name="AccessFlag" Nullable="true" />
+    <Property Type="String" Name="GroupId" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="GSId" Nullable="true" />
+    <Property Type="Int32" Name="ProgramId" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="AdmUserCard">
+    <Key>
+      <PropertyRef Name="CardId" />
+    </Key>
+    <Property Name="CardId" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramId" Type="Int32" />
+    <Property Name="CardTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CardDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

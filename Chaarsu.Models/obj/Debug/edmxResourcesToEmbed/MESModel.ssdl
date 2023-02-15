@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdmCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="220" />
+    <Property Name="Postal" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reference" Type="nvarchar" MaxLength="250" />
+    <Property Name="TrnTime" Type="datetime" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AdmCompanyPwd">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="AdmConnection">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Server" Type="nvarchar" MaxLength="100" />
+    <Property Name="Type" Type="nvarchar" MaxLength="1" />
+    <Property Name="LoginName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="ERPDB" Type="nvarchar" MaxLength="100" />
+    <Property Name="MESDB" Type="nvarchar" MaxLength="100" />
+    <Property Name="TrnTime" Type="datetime" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AdmGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="LogoutFlag" Type="bit" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+    <Property Name="TrnTime" Type="datetime" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AdmGroupSecurity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProgramId" Type="int" />
+    <Property Name="AccessFlag" Type="bit" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="200" />
+    <Property Name="ModifyTime" Type="datetime" />
+    <Property Name="ModifyOperator" Type="nvarchar" MaxLength="200" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="AdmLicense">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="License" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdmSystemSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MasterAppName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModuleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModuleDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="HasApp" Type="nvarchar" MaxLength="10" />
+    <Property Name="AppSort" Type="int" />
+    <Property Name="ImageIndex" Type="int" />
+    <Property Name="AppIndex" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentId" Type="bigint" />
+    <Property Name="SecurityKey" Type="nvarchar(max)" />
+    <Property Name="ProgramSort" Type="decimal" Precision="4" Scale="0" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="AdmUserCards">
+    <Key>
+      <PropertyRef Name="CardId" />
+    </Key>
+    <Property Name="CardId" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="ProgramId" Type="int" />
+    <Property Name="CardTitle" Type="varchar" MaxLength="50" />
+    <Property Name="CardDesc" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="AdmUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="200" />
+    <Property Name="Gender" Type="varchar" MaxLength="20" />
+    <Property Name="Title" Type="varchar" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="AdminFlag" Type="bit" />
+    <Property Name="OnHold" Type="bit" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="250" />
+    <Property Name="TrnTime" Type="datetime" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoginMAC" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoginTime" Type="datetime" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="20" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LanguageCode" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="MES_Program_t">
+    <Key>
+      <PropertyRef Name="ProgramId" />
+      <PropertyRef Name="LangaugeId" />
+    </Key>
+    <Property Name="ProgramId" Type="bigint" Nullable="false" />
+    <Property Name="LangaugeId" Type="int" Nullable="false" />
+    <Property Name="ProgramName" Type="varchar" MaxLength="50" />
+    <Property Name="ProgramDescription" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="MES_Programs">
+    <Key>
+      <PropertyRef Name="ProgramId" />
+    </Key>
+    <Property Name="ProgramId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProgramName" Type="varchar" MaxLength="50" />
+    <Property Name="ProgramDescription" Type="varchar" MaxLength="500" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="FullName" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Function Name="SpCreateCustomColumns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ColumnName" Type="varchar" Mode="In" />
+    <Parameter Name="ColumnType" Type="varchar" Mode="In" />
+    <Parameter Name="ColumnLength" Type="varchar" Mode="In" />
+    <Parameter Name="TableName" Type="varchar" Mode="In" />
+    <Parameter Name="AllowNull" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SpGetAllCompanies" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="SortColumn" Type="nvarchar" Mode="In" />
+    <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchText" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SpGetAllGroups" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="SortColumn" Type="nvarchar" Mode="In" />
+    <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchText" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SpGetAllPrograms" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="SortColumn" Type="nvarchar" Mode="In" />
+    <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchText" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SpGetAllUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageIndex" Type="int" Mode="In" />
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="SortColumn" Type="nvarchar" Mode="In" />
+    <Parameter Name="SortOrder" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchText" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SpGetColumns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TableName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SpGetGroupSecurity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GroupId" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="MESModelStoreContainer">
+    <EntitySet Name="AdmCompany" EntityType="Self.AdmCompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdmCompanyPwd" EntityType="Self.AdmCompanyPwd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdmConnection" EntityType="Self.AdmConnection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdmGroup" EntityType="Self.AdmGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdmGroupSecurity" EntityType="Self.AdmGroupSecurity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdmLicense" EntityType="Self.AdmLicense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdmSystemSetting" EntityType="Self.AdmSystemSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdmUserCards" EntityType="Self.AdmUserCards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdmUsers" EntityType="Self.AdmUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MES_Program_t" EntityType="Self.MES_Program_t" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MES_Programs" EntityType="Self.MES_Programs" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

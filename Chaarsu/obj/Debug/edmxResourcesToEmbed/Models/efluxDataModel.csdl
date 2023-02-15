@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="anytimea_GROCERY_testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="anytimea_GROCERY_testEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SP_GetAllProducts" ReturnType="Collection(anytimea_GROCERY_testModel.SP_GetAllProducts_Result)" />
+  </EntityContainer>
+  <ComplexType Name="SP_GetAllProducts_Result">
+    <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" />
+    <Property Type="String" Name="DESCRIPTION" Nullable="true" />
+    <Property Type="String" Name="CATEGORY" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="PRICE" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="PRICE2" Nullable="true" />
+    <Property Type="String" Name="COLOR" Nullable="true" />
+    <Property Type="String" Name="BRAND" Nullable="true" />
+    <Property Type="String" Name="FLAVOR" Nullable="true" />
+    <Property Type="String" Name="IMAGE" Nullable="true" />
+  </ComplexType>
+</Schema>

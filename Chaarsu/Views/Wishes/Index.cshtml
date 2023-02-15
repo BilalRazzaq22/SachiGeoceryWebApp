@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div id="preloader" ng-if="loader==true">
+        <div id="loader"></div>
+    </div>
+<!-- dashboard-section start -->
+<section id="dashboard-nav" class="dashboard-section" ng-init="GetWishlist()">
+    <div class="container">
+        <div class="dashboard-body wishlist">
+            <div class="wishlist-header">
+                <h6>Shopping Wishlist</h6>
+            </div>
+            <div class="wish-list-container">
+                <div class="wishlist-item product-item d-flex align-items-center" ng-repeat="p in Wishlist">
+                    <span class="close-item" ng-click="DeleteProductFromWishList(p.PRODUCT_ID)"><i class="fas fa-times"></i></span>
+                    <div class="thumb">
+                        <a href="/Products/Detail?detail={{p.PRODUCT_NAME_URL}}"><img src="{{p.IMAGE_THUMBNAIL_PATH}}" alt="products"></a>
+                    </div>
+                    <div class="product-content">
+                        <a href="/Products/Detail?detail={{p.PRODUCT_NAME_URL}}" class="product-title">{{p.PRODUCT_NAME}}</a>
+                        <div class="product-cart-info">
+                            {{p.PRODUCT_DESCRIPTION}}
+                        </div>
+                        <div class="product-price">
+                            <div ng-if="p.PRICE2!=null">
+                                <del>Rs. {{p.PRICE2}}</del><span class="ml-4">Rs. {{p.PRICE}}</span>
+                            </div>
+                            <div ng-if="p.PRICE2==null">
+                                <span>Rs. {{p.PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="cart-btn-toggle" onclick="cartopen()" ng-click="AddToCart(p.PRODUCT_ID,p.NAME,p.PAKCING,p.PRICE,p.PRICE2,p.IMAGE_THUMBNAIL_PATH,1,p.PRODUCT_NAME_URL)">
+                            <span class="cart-btn"><i class="fas fa-shopping-cart"></i> Cart</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- dashboard-section end -->
+

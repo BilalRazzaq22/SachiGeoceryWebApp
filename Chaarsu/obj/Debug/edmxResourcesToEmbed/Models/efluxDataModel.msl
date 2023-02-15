@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="anytimea_GROCERY_testModelStoreContainer" CdmEntityContainer="anytimea_GROCERY_testEntities">
+    <FunctionImportMapping FunctionImportName="SP_GetAllProducts" FunctionName="anytimea_GROCERY_testModel.Store.SP_GetAllProducts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="anytimea_GROCERY_testModel.SP_GetAllProducts_Result">
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="PRICE2" ColumnName="PRICE2" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="BRAND" ColumnName="BRAND" />
+          <ScalarProperty Name="FLAVOR" ColumnName="FLAVOR" />
+          <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
