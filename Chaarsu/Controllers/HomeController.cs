@@ -31,6 +31,9 @@ namespace Chaarsu.Controllers
 
         public ActionResult Index()
         {
+
+            
+
             int BranchId = 0;
             if (Session["BranchId"] != null)
             {
@@ -54,6 +57,7 @@ namespace Chaarsu.Controllers
         [HttpGet]
         public ActionResult About()
         {
+            var a = Session["long"];
             ViewBag.Message = "Your application description page.";
 
             return View();

@@ -59,6 +59,7 @@ namespace Chaarsu.Models
         public virtual DbSet<PRODUCT_REVIEWS> PRODUCT_REVIEWS { get; set; }
         public virtual DbSet<PRODUCT_TAGS> PRODUCT_TAGS { get; set; }
         public virtual DbSet<PRODUCT_TYPES> PRODUCT_TYPES { get; set; }
+        public virtual DbSet<PRODUCT> PRODUCTS { get; set; }
         public virtual DbSet<ProductTest> ProductTests { get; set; }
         public virtual DbSet<RECOMMENDED_PRODUCTS> RECOMMENDED_PRODUCTS { get; set; }
         public virtual DbSet<RIDER_ORDER> RIDER_ORDER { get; set; }
@@ -80,14 +81,11 @@ namespace Chaarsu.Models
         public virtual DbSet<BarcodeNewTest> BarcodeNewTests { get; set; }
         public virtual DbSet<BARCODE> BARCODES { get; set; }
         public virtual DbSet<ITEMINFO> ITEMINFOes { get; set; }
-        public virtual DbSet<PRODUCT> PRODUCTS { get; set; }
         public virtual DbSet<PS000> PS000 { get; set; }
         public virtual DbSet<PS000Test> PS000Test { get; set; }
         public virtual DbSet<STOCK> STOCKs { get; set; }
         public virtual DbSet<TERMINFO> TERMINFOes { get; set; }
         public virtual DbSet<TEST> TESTs { get; set; }
-        public virtual DbSet<ItemList> ItemLists { get; set; }
-        public virtual DbSet<Report> Reports { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -600,6 +598,27 @@ namespace Chaarsu.Models
                 new ObjectParameter("USER_ID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpGetWishList_Result>("SpGetWishList", pageIndexParameter, pageSizeParameter, sortColumnParameter, sortOrderParameter, searchTextParameter, uSER_IDParameter);
+        }
+    
+        public virtual ObjectResult<SP_GetAllProductsByCategories_Result> SP_GetAllProductsByCategories(Nullable<int> pageIndex, Nullable<int> pageSize, Nullable<int> sub_Categories_Id, Nullable<int> branchId)
+        {
+            var pageIndexParameter = pageIndex.HasValue ?
+                new ObjectParameter("PageIndex", pageIndex) :
+                new ObjectParameter("PageIndex", typeof(int));
+    
+            var pageSizeParameter = pageSize.HasValue ?
+                new ObjectParameter("PageSize", pageSize) :
+                new ObjectParameter("PageSize", typeof(int));
+    
+            var sub_Categories_IdParameter = sub_Categories_Id.HasValue ?
+                new ObjectParameter("Sub_Categories_Id", sub_Categories_Id) :
+                new ObjectParameter("Sub_Categories_Id", typeof(int));
+    
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllProductsByCategories_Result>("SP_GetAllProductsByCategories", pageIndexParameter, pageSizeParameter, sub_Categories_IdParameter, branchIdParameter);
         }
     }
 }

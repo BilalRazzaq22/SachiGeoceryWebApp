@@ -117,9 +117,6 @@
     <Compile Include="ITEMINFO.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
-    <Compile Include="ItemList.cs">
-      <DependentUpon>Chaarsu.tt</DependentUpon>
-    </Compile>
     <Compile Include="MAINMENU.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
@@ -189,9 +186,6 @@
     <Compile Include="RECOMMENDED_PRODUCTS.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
-    <Compile Include="Report.cs">
-      <DependentUpon>Chaarsu.tt</DependentUpon>
-    </Compile>
     <Compile Include="ResetPasswordModel.cs" />
     <Compile Include="InputModel\InputUserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -259,6 +253,9 @@
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
     <Compile Include="SpGetWishList_Result.cs">
+      <DependentUpon>Chaarsu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GetAllProductsByCategories_Result.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">

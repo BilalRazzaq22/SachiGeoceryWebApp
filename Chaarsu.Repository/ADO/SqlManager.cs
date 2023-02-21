@@ -99,7 +99,7 @@ namespace Chaarsu.Repository.ADO
             string _Server = "";
 
           
-            StrConnectionString = ConfigurationManager.ConnectionStrings["MESADO"].ConnectionString;
+            StrConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             SqlCon = new SqlConnection(StrConnectionString);
            
 

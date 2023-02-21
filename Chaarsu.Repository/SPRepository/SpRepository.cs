@@ -295,7 +295,18 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
-        
+        public List<SP_GetAllProductsByCategories_Result> GetAllProductsByCategoryId(int PageIndex, int PageSize,string CategoryId,int branchId)
+        {
+            try
+            {
+                return db.SP_GetAllProductsByCategories(PageIndex, PageSize, Convert.ToInt32(CategoryId), branchId).ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public SpGetProductDetailByProductNameUrl_Result GetProductDetailByProductNameUrl(string productNameUrl,int BranchId)
         {
             try

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,6 +10,7 @@ using Chaarsu.Library;
 using Chaarsu.Library.DataTableExtension;
 using Chaarsu.Models;
 using Chaarsu.Models.ViewModel;
+using Chaarsu.Repository.ADO;
 using Chaarsu.Repository.GRepository;
 using Chaarsu.Repository.Interface;
 using Chaarsu.Repository.SPRepository;
@@ -65,7 +68,37 @@ namespace Chaarsu.Controllers
                 return Json(new { Status = false, RetMessage = ex.Message });
             }
         }
-        
+
+        [HttpGet]
+        public JsonResult GetAllProductsByCategoryId(string CategoryId, int PageIndex, int PageSize)
+        {
+            try
+            {
+                List<SP_GetAllProductsByCategories_Result> response = new List<SP_GetAllProductsByCategories_Result>();
+                int BranchId = 0;
+                if (Session["BranchId"] != null)
+                {
+                    BranchId = Convert.ToInt32(Session["BranchId"]);
+                }
+
+                SqlManager sqlManager = new SqlManager();
+                var dt = sqlManager.ExecuteDataTable($"select sub_category_id from sub_categories where category_id = {CategoryId}",SqlCommandType.Text,new SqlCommand());
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    var size = Math.Ceiling(Convert.ToDecimal(PageSize / dt.Rows.Count));
+                    var sub_cateogry_id = dr["sub_category_id"].ToString();
+                    response.AddRange(_sp.GetAllProductsByCategoryId(PageIndex, PageSize, sub_cateogry_id, BranchId));
+                }
+
+                return Json(new { Status = true, response }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Status = false, RetMessage = ex.Message });
+            }
+        }
+
         [HttpGet]
         public JsonResult GetProductDetail(string productNameUrl)
         {

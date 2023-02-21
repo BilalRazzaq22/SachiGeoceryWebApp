@@ -2,6 +2,8 @@
 
 suchiapp.controller("HeaderController", function ($scope, $window) {
 
+    $scope.pageIndex = 1;
+    $scope.pageSize = 15;
     $scope.TotalPrice = 0;
     $scope.TotalCartItems = 0;
     $scope.TextSearch = '';
@@ -256,7 +258,55 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
     }
 
     $scope.GetProductByCategory = function (categoryId) {
-        $window.location.href = objCommon.baseUrl + 'Products/Index?category=' + categoryId;
+        //$("body").css({ "opacity": "0.5" });
+        //$scope.loader = true;
+        //$scope.categoryId = categoryId;
+        //isFilter = true;
+        //var data = {
+        //    CategoryId: $scope.categoryId,
+        //    PageIndex: $scope.pageIndex,
+        //    PageSize: $scope.pageSize
+        //}
+        //objCommon.AjaxCallAPS("Products/GetAllProductsByCategoryId", $.param(data), "GET", true, function (data) {
+        //    debugger;
+        //    isFilter = true;
+        //    $scope.Products = data.response;
+        //    $scope.loader = false;
+        //    $("body").css({ "opacity": "1" });
+        //    $scope.$apply();
+
+        //    if (data.response.length == 0) {
+        //        $('#btnloadmore').addClass('d-none');
+        //        //$("#btnloadmore").prop('disabled', true);
+        //        $('#txtloadmore').text('No More Products');
+        //        //$('#txtloadmore').removeClass('d-none');
+        //    }
+        //    else {
+        //        //$('#btnloadmore').removeClass('d-none');
+        //        $('#txtloadmore').addClass('d-none');
+        //        $("#btnloadmore").prop('disabled', false);
+        //    }
+
+        //    if (data.response[0].TotalRecords < $scope.pageSize) {
+        //        $('#btnloadmore').addClass('d-none');
+        //        //$("#btnloadmore").prop('disabled', true);
+        //        $('#txtloadmore').text('No More Products');
+        //    }
+
+        //    //$(".anchortag").css("font-weight", "200");
+        //    //$("#" + $scope.categoryId + "anchor").css("font-weight", "700");
+        //    //setTimeout(function () {
+        //    //    $("#maincategory").val($scope.groupId + "");
+        //    //    $("#txtSearchBox").val($scope.searchText);
+        //    //}, 300)
+
+        //});
+
+        //window.location.replace(objCommon.baseUrl + "Products/Index?category=" + categoryId + "&search=" + $scope.searchText + "&group=" + $scope.groupId);
+
+       // $scope.GetAllProducts(categoryId, $scope.searchText);
+        //$window.location.href = objCommon.baseUrl + 'Products/GetAllProductsByCategoryId?CategoryId=' + categoryId + '&PageIndex=1&PageSize=15';
+        $window.location.href = objCommon.baseUrl + 'Products/Index?category=' + categoryId + '&search=&group=&isFromMenu=true';
     }
 
     $scope.GetProductBySearch = function () {

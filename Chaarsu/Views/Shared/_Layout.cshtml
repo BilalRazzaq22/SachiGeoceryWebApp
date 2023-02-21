@@ -491,8 +491,12 @@
 
             var lang = position.coords.longitude;
             var lat = position.coords.latitude
+            console.log(lang);
+            console.log(lat);
             localStorage.setItem("lang", lang);
             localStorage.setItem("lat", lat);
+            sessionStorage.setItem("long", lang);
+            sessionStorage.setItem("lat", lat);
             $.get({
                 url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat+"," + lang+"&sensor=false&key=AIzaSyCaJllIQS2KnZBX6ioHHnWLojKHkLzsZp4", success(data) {
                     localStorage.setItem("address", data.results[0].formatted_address);
