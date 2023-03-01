@@ -123,18 +123,18 @@ namespace Chaarsu.Controllers
                 _USER = new GenericRepository<USER>(_unitOfWork);
                 if (user.IS_GUEST==true)
                 {
-                    Random r = new Random();
-                    int random = r.Next();
-                    string randomString = Convert.ToString(random);
-                    user.MOBILE_NO = randomString + " " + user.USERNAME;
-                    user.EMAIL = randomString + " " + user.USERNAME;
-                    user.PASSWORD = randomString + " " + user.USERNAME;
-                    user.ADDRESS = randomString + " " + user.USERNAME;
-                    user.CREATED_ON = DateTime.Now;
-                    user.USER_TYPE = 9;
-                    user.IS_ACTIVE = true;
-                    _USER.Repository.Add(user);
-                    Session["GuestSession"] = user.USER_ID.ToString();
+                    //Random r = new Random();
+                    //int random = r.Next();
+                    //string randomString = Convert.ToString(random);
+                    //user.MOBILE_NO = randomString + " " + user.USERNAME;
+                    //user.EMAIL = randomString + " " + user.USERNAME;
+                    //user.PASSWORD = randomString + " " + user.USERNAME;
+                    //user.ADDRESS = randomString + " " + user.USERNAME;
+                    //user.CREATED_ON = DateTime.Now;
+                    //user.USER_TYPE = 9;
+                    //user.IS_ACTIVE = true;
+                    //_USER.Repository.Add(user);
+                    Session["GuestSession"] = user.USERNAME;
                     return Json(new { Status = true, RetMessage = "You are signin successfully as guest" }, JsonRequestBehavior.AllowGet);
                 }
                 else

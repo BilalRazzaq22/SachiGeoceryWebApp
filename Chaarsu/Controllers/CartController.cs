@@ -36,10 +36,10 @@ namespace Chaarsu.Controllers
         [HttpGet]
         public ActionResult CheckOut()
         {
-            if (Session["UserSession"] != null || Session["GuestSession"] != null) 
+            if (Session["UserSession"] != null || Session["GuestSession"] != null)
             {
                 return View();
-                
+
             }
             else
             {
@@ -57,7 +57,7 @@ namespace Chaarsu.Controllers
             List<BRANCH> branches = _BRANCHES.Repository.GetAll();
             foreach (var row in branches)
             {
-                    bLat = row.LATITUDE??0;
+                bLat = row.LATITUDE ?? 0;
                 bLong = row.LONGITUDE ?? 0;
 
                 Double latDistance = DegreeToRadian(bLat - Lat);
@@ -96,7 +96,7 @@ namespace Chaarsu.Controllers
 
 
 
-    
+
 
         [HttpGet]
         public JsonResult GetPaymentModes()
@@ -105,7 +105,7 @@ namespace Chaarsu.Controllers
             {
                 _PAYMENT_MODES = new GenericRepository<PAYMENT_MODES>(_unitOfWork);
                 var data = _PAYMENT_MODES.Repository.GetAll();
-                return Json(new { Status = true, response = data },JsonRequestBehavior.AllowGet);
+                return Json(new { Status = true, response = data }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
@@ -118,10 +118,13 @@ namespace Chaarsu.Controllers
         {
             try
             {
-                var UserId=0;
-                if (Session["GuestSession"]!=null)
+                var bb = Session["BranchId"];
+
+                var UserId = 0;
+                string guestUserName = "";
+                if (Session["GuestSession"] != null)
                 {
-                    UserId = Convert.ToInt32(Session["GuestSession"]);
+                    guestUserName = Session["GuestSession"].ToString();
                 }
                 if (Session["UserSession"] != null)
                 {
@@ -139,8 +142,11 @@ namespace Chaarsu.Controllers
                     DELIVERY_DESCRIPTION = order.DELIVERY_DESCRIPTION
 
                 };
-                data.BRANCH_ID = GetBranchId(order.LONGITUDE,order.LATITUDE);
+                data.BRANCH_ID =  GetBranchId(order.LONGITUDE,order.LATITUDE);
+                if(Session["UserSession"] != null)
+                {
                 data.CUSTOMER_ID = UserId;
+                }
                 data.STATUS = 2;
                 data.CREATED_ON = DateTime.Now;
                 DateTime orderDate = data.CREATED_ON;
@@ -162,10 +168,10 @@ namespace Chaarsu.Controllers
             try
             {
                 _ORDER_PRODUCTS = new GenericRepository<ORDER_PRODUCTS>(_unitOfWork);
-               
+
                 foreach (var item in orderProductsList)
                 {
-                   
+
                     _ORDER_PRODUCTS.Repository.Add(item);
                 }
                 return Json(new { Status = true, RetMessage = "Your Order Submit Successfully. Thank You" }, JsonRequestBehavior.AllowGet);

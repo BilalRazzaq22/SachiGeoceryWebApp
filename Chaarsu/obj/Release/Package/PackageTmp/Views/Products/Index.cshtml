@@ -9,15 +9,17 @@
     string categoryid = "";
     string search = "";
     string group = "";
+    string isFromMenu = "";
     categoryid = Convert.ToString(Request.QueryString["category"]);
     search = Convert.ToString(Request.QueryString["search"]);
     group = Convert.ToString(Request.QueryString["group"]);
+    isFromMenu = Convert.ToString(Request.QueryString["isFromMenu"]);
 
 }
 @model List<Chaarsu.Models.ViewModel.GroupViewModel>
 
 
-<div ng-controller="ProductsController" ng-init="GetAllProducts('@categoryid','@search','@group')">
+<div ng-controller="ProductsController" ng-init="GetAllProducts('@categoryid','@search','@group','@isFromMenu')">
     <div id="preloader" ng-if="loader==true">
         <div id="loader"></div>
     </div>

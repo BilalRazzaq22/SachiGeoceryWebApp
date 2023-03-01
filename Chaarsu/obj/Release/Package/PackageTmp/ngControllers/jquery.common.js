@@ -10,9 +10,9 @@
 });
 var Common = function () {
     _this = this;
-    var baseUrl = "http://localhost:49663/";
+    var baseUrl = "https://sachigrocery.pk/";
     _this.baseUrl = baseUrl;
-    var baseUrlAPS = "http://localhost:49663/";
+    var baseUrlAPS = "https://sachigrocery.pk/";
     _this.baseUrlAPS = baseUrlAPS;
     _this.AjaxCall = function (url, data, methodType, isAsync, callback, btn) {
         var value = $(btn).val();
@@ -36,7 +36,7 @@ var Common = function () {
                 if (response.IsValid == false && response.Message == "LoggedOut") {
                     _this.ShowMessage("You are logged out.", "error");
                     setTimeout(function () {
-                        window.location = "http://localhost:49663/account/login";
+                        window.location = "https://sachigrocery.pk/account/login";
                     }, 1000);
                 }
                 else {
