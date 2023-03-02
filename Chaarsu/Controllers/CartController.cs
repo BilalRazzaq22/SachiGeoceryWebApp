@@ -23,6 +23,7 @@ namespace Chaarsu.Controllers
         private GenericRepository<ORDER> _ORDER;
         private GenericRepository<ORDER_PRODUCTS> _ORDER_PRODUCTS;
         private GenericRepository<BRANCH> _BRANCHES;
+        private GenericRepository<BARCODE> _BARCODES;
         private readonly IUnitOfWork _unitOfWork;
         private readonly SpRepository _sp;
         public CartController()
@@ -140,14 +141,17 @@ namespace Chaarsu.Controllers
                     ADDRESS = order.ADDRESS,
                     PAYMENT_MODE_ID = order.PAYMENT_MODE_ID,
                     DELIVERY_DESCRIPTION = order.DELIVERY_DESCRIPTION
-
                 };
-                data.BRANCH_ID =  GetBranchId(order.LONGITUDE,order.LATITUDE);
-                if(Session["UserSession"] != null)
+                data.BRANCH_ID = GetBranchId(order.LONGITUDE, order.LATITUDE);
+                if (Session["UserSession"] != null)
                 {
-                data.CUSTOMER_ID = UserId;
+                    data.CUSTOMER_ID = UserId;
                 }
-                data.STATUS = 2;
+                else
+                {
+                    data.CUSTOMER_ID = null;
+                }
+                data.STATUS = 1;
                 data.CREATED_ON = DateTime.Now;
                 DateTime orderDate = data.CREATED_ON;
                 data.CREATED_BY = UserId;
@@ -168,10 +172,12 @@ namespace Chaarsu.Controllers
             try
             {
                 _ORDER_PRODUCTS = new GenericRepository<ORDER_PRODUCTS>(_unitOfWork);
+                _BARCODES = new GenericRepository<BARCODE>(_unitOfWork);
 
                 foreach (var item in orderProductsList)
                 {
-
+                    var barcode = _BARCODES.Repository.GetAll().FirstOrDefault(x => x.ITEM_CODE == item.PRODUCT_ID && x.bDEFAULT == true && x.IsActive == true);
+                    item.BAR_CODE = barcode.BAR_CODE;
                     _ORDER_PRODUCTS.Repository.Add(item);
                 }
                 return Json(new { Status = true, RetMessage = "Your Order Submit Successfully. Thank You" }, JsonRequestBehavior.AllowGet);

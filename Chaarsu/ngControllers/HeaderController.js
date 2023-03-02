@@ -189,7 +189,7 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
         $scope.GetCompanyInfo();
     }
 
-    $scope.AddToCart = function (ProductId, Name, Packing, Price, Price2, Image, Quantity, ProductNameUrl) {
+    $scope.AddToCart = function (ProductId, Name, Packing, Price, Price2, Image, Quantity, ProductNameUrl,Barcode) {
         if (localStorage.getItem('Cart') == null) {
             localStorage.setItem('Cart', JSON.stringify([]));
         }
@@ -203,7 +203,7 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
             }
         });
         if (exist == false) {
-            var newItem = { PRODUCT_ID: ProductId, NAME: Name, PACKING: Packing, PRICE: Price, PRICE2: Price2, IMAGE_THUMBNAIL_PATH: Image, QUANTITY: Quantity, PRODUCT_NAME_URL: ProductNameUrl };
+            var newItem = { PRODUCT_ID: ProductId, NAME: Name, PACKING: Packing, PRICE: Price, PRICE2: Price2, IMAGE_THUMBNAIL_PATH: Image, QUANTITY: Quantity, PRODUCT_NAME_URL: ProductNameUrl, BAR_CODE: Barcode };
 
             oldItems.push(newItem);
 

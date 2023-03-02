@@ -417,47 +417,6 @@ namespace Chaarsu.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpGetAllProductReviewsHome_Result>("SpGetAllProductReviewsHome", pageIndexParameter);
         }
     
-        public virtual ObjectResult<SpGetAllProducts_Result> SpGetAllProducts(Nullable<int> pageIndex, Nullable<int> pageSize, string sortColumn, string sortOrder, string searchText, string categoryId, string subCategoryId, string groupId, Nullable<int> branchId)
-        {
-            var pageIndexParameter = pageIndex.HasValue ?
-                new ObjectParameter("PageIndex", pageIndex) :
-                new ObjectParameter("PageIndex", typeof(int));
-    
-            var pageSizeParameter = pageSize.HasValue ?
-                new ObjectParameter("PageSize", pageSize) :
-                new ObjectParameter("PageSize", typeof(int));
-    
-            var sortColumnParameter = sortColumn != null ?
-                new ObjectParameter("SortColumn", sortColumn) :
-                new ObjectParameter("SortColumn", typeof(string));
-    
-            var sortOrderParameter = sortOrder != null ?
-                new ObjectParameter("SortOrder", sortOrder) :
-                new ObjectParameter("SortOrder", typeof(string));
-    
-            var searchTextParameter = searchText != null ?
-                new ObjectParameter("SearchText", searchText) :
-                new ObjectParameter("SearchText", typeof(string));
-    
-            var categoryIdParameter = categoryId != null ?
-                new ObjectParameter("CategoryId", categoryId) :
-                new ObjectParameter("CategoryId", typeof(string));
-    
-            var subCategoryIdParameter = subCategoryId != null ?
-                new ObjectParameter("SubCategoryId", subCategoryId) :
-                new ObjectParameter("SubCategoryId", typeof(string));
-    
-            var groupIdParameter = groupId != null ?
-                new ObjectParameter("GroupId", groupId) :
-                new ObjectParameter("GroupId", typeof(string));
-    
-            var branchIdParameter = branchId.HasValue ?
-                new ObjectParameter("BranchId", branchId) :
-                new ObjectParameter("BranchId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpGetAllProducts_Result>("SpGetAllProducts", pageIndexParameter, pageSizeParameter, sortColumnParameter, sortOrderParameter, searchTextParameter, categoryIdParameter, subCategoryIdParameter, groupIdParameter, branchIdParameter);
-        }
-    
         public virtual ObjectResult<SPGetAllRecommendedProducts_Result> SPGetAllRecommendedProducts(Nullable<int> pageIndex, Nullable<int> pageSize)
         {
             var pageIndexParameter = pageIndex.HasValue ?
@@ -619,6 +578,47 @@ namespace Chaarsu.Models
                 new ObjectParameter("BranchId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllProductsByCategories_Result>("SP_GetAllProductsByCategories", pageIndexParameter, pageSizeParameter, sub_Categories_IdParameter, branchIdParameter);
+        }
+    
+        public virtual ObjectResult<SpGetAllProducts_Result> SpGetAllProducts(Nullable<int> pageIndex, Nullable<int> pageSize, string sortColumn, string sortOrder, string searchText, string categoryId, string subCategoryId, string groupId, Nullable<int> branchId)
+        {
+            var pageIndexParameter = pageIndex.HasValue ?
+                new ObjectParameter("PageIndex", pageIndex) :
+                new ObjectParameter("PageIndex", typeof(int));
+    
+            var pageSizeParameter = pageSize.HasValue ?
+                new ObjectParameter("PageSize", pageSize) :
+                new ObjectParameter("PageSize", typeof(int));
+    
+            var sortColumnParameter = sortColumn != null ?
+                new ObjectParameter("SortColumn", sortColumn) :
+                new ObjectParameter("SortColumn", typeof(string));
+    
+            var sortOrderParameter = sortOrder != null ?
+                new ObjectParameter("SortOrder", sortOrder) :
+                new ObjectParameter("SortOrder", typeof(string));
+    
+            var searchTextParameter = searchText != null ?
+                new ObjectParameter("SearchText", searchText) :
+                new ObjectParameter("SearchText", typeof(string));
+    
+            var categoryIdParameter = categoryId != null ?
+                new ObjectParameter("CategoryId", categoryId) :
+                new ObjectParameter("CategoryId", typeof(string));
+    
+            var subCategoryIdParameter = subCategoryId != null ?
+                new ObjectParameter("SubCategoryId", subCategoryId) :
+                new ObjectParameter("SubCategoryId", typeof(string));
+    
+            var groupIdParameter = groupId != null ?
+                new ObjectParameter("GroupId", groupId) :
+                new ObjectParameter("GroupId", typeof(string));
+    
+            var branchIdParameter = branchId.HasValue ?
+                new ObjectParameter("BranchId", branchId) :
+                new ObjectParameter("BranchId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpGetAllProducts_Result>("SpGetAllProducts", pageIndexParameter, pageSizeParameter, sortColumnParameter, sortOrderParameter, searchTextParameter, categoryIdParameter, subCategoryIdParameter, groupIdParameter, branchIdParameter);
         }
     }
 }

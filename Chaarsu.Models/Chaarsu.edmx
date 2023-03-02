@@ -2286,17 +2286,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <FunctionImport Name="SpGetAllProductReviewsHome" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllProductReviewsHome_Result)">
           <Parameter Name="PageIndex" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SpGetAllProducts" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllProducts_Result)">
-            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
-            <Parameter Name="PageSize" Mode="In" Type="Int32" />
-            <Parameter Name="SortColumn" Mode="In" Type="String" />
-            <Parameter Name="SortOrder" Mode="In" Type="String" />
-            <Parameter Name="SearchText" Mode="In" Type="String" />
-            <Parameter Name="CategoryId" Mode="In" Type="String" />
-            <Parameter Name="SubCategoryId" Mode="In" Type="String" />
-            <Parameter Name="GroupId" Mode="In" Type="String" />
-            <Parameter Name="BranchId" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="SPGetAllRecommendedProducts" ReturnType="Collection(anytimea_GROCERYModel.SPGetAllRecommendedProducts_Result)">
             <Parameter Name="PageIndex" Mode="In" Type="Int32" />
             <Parameter Name="PageSize" Mode="In" Type="Int32" />
@@ -2403,6 +2392,17 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
             <Parameter Name="PageIndex" Mode="In" Type="Int32" />
             <Parameter Name="PageSize" Mode="In" Type="Int32" />
             <Parameter Name="Sub_Categories_Id" Mode="In" Type="Int32" />
+            <Parameter Name="BranchId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SpGetAllProducts" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllProducts_Result)">
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="SortColumn" Mode="In" Type="String" />
+            <Parameter Name="SortOrder" Mode="In" Type="String" />
+            <Parameter Name="SearchText" Mode="In" Type="String" />
+            <Parameter Name="CategoryId" Mode="In" Type="String" />
+            <Parameter Name="SubCategoryId" Mode="In" Type="String" />
+            <Parameter Name="GroupId" Mode="In" Type="String" />
             <Parameter Name="BranchId" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
@@ -2540,32 +2540,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Type="String" Name="COMMENT" Nullable="true" />
           <Property Type="String" Name="DateString" Nullable="true" MaxLength="4000" />
           <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
-        </ComplexType>
-        <ComplexType Name="SpGetAllProducts_Result">
-          <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" />
-          <Property Type="String" Name="NAME" Nullable="true" />
-          <Property Type="String" Name="DESCRIPTION" Nullable="true" />
-          <Property Type="Decimal" Name="PRICE1" Nullable="true" Precision="19" />
-          <Property Type="Decimal" Name="PRICE" Nullable="true" Precision="19" />
-          <Property Type="Int32" Name="PRICE2" Nullable="true" />
-          <Property Type="String" Name="COLOR" Nullable="true" />
-          <Property Type="String" Name="BRAND" Nullable="true" />
-          <Property Type="String" Name="FLAVOR" Nullable="true" />
-          <Property Type="String" Name="PACKING" Nullable="true" />
-          <Property Type="String" Name="TAG" Nullable="true" />
-          <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
-          <Property Type="String" Name="PRODUCT_NAME_URL" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="IMAGE_THUMBNAIL_PATH" Nullable="true" />
-          <Property Type="Int32" Name="GroupID" Nullable="true" />
-          <Property Type="Int32" Name="VENDOR_ID" Nullable="true" />
-          <Property Type="Int32" Name="CATEGORY_ID" Nullable="true" />
-          <Property Type="Int32" Name="SUB_CATEGORY_ID" Nullable="true" />
-          <Property Type="Int64" Name="RowIndex" Nullable="true" />
-          <Property Type="Int32" Name="TotalRecords" Nullable="true" />
-          <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
-          <Property Type="Int32" Name="Start" Nullable="true" />
-          <Property Type="Int32" Name="End" Nullable="true" />
         </ComplexType>
         <ComplexType Name="SPGetAllRecommendedProducts_Result">
           <Property Type="Int32" Name="PRODUCT_ID" Nullable="true" />
@@ -4372,6 +4346,33 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Type="Int32" Name="Start" Nullable="true" />
           <Property Type="Int32" Name="End" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="SpGetAllProducts_Result">
+          <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" />
+          <Property Type="String" Name="NAME" Nullable="true" />
+          <Property Type="String" Name="DESCRIPTION" Nullable="true" />
+          <Property Type="Decimal" Name="PRICE1" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="PRICE" Nullable="true" Precision="19" />
+          <Property Type="String" Name="BARCODE" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="PRICE2" Nullable="true" />
+          <Property Type="String" Name="COLOR" Nullable="true" />
+          <Property Type="String" Name="BRAND" Nullable="true" />
+          <Property Type="String" Name="FLAVOR" Nullable="true" />
+          <Property Type="String" Name="PACKING" Nullable="true" />
+          <Property Type="String" Name="TAG" Nullable="true" />
+          <Property Type="DateTime" Name="CREATED_DATE" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PRODUCT_NAME_URL" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="IMAGE_THUMBNAIL_PATH" Nullable="true" />
+          <Property Type="Int32" Name="GroupID" Nullable="true" />
+          <Property Type="Int32" Name="VENDOR_ID" Nullable="true" />
+          <Property Type="Int32" Name="CATEGORY_ID" Nullable="true" />
+          <Property Type="Int32" Name="SUB_CATEGORY_ID" Nullable="true" />
+          <Property Type="Int64" Name="RowIndex" Nullable="true" />
+          <Property Type="Int32" Name="TotalRecords" Nullable="true" />
+          <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
+          <Property Type="Int32" Name="Start" Nullable="true" />
+          <Property Type="Int32" Name="End" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4562,36 +4563,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
                 <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
                 <ScalarProperty Name="DateString" ColumnName="DateString" />
                 <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SpGetAllProducts" FunctionName="anytimea_GROCERYModel.Store.SpGetAllProducts">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="anytimea_GROCERYModel.SpGetAllProducts_Result">
-                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
-                <ScalarProperty Name="PRICE1" ColumnName="PRICE1" />
-                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
-                <ScalarProperty Name="PRICE2" ColumnName="PRICE2" />
-                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
-                <ScalarProperty Name="BRAND" ColumnName="BRAND" />
-                <ScalarProperty Name="FLAVOR" ColumnName="FLAVOR" />
-                <ScalarProperty Name="PACKING" ColumnName="PACKING" />
-                <ScalarProperty Name="TAG" ColumnName="TAG" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="PRODUCT_NAME_URL" ColumnName="PRODUCT_NAME_URL" />
-                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-                <ScalarProperty Name="IMAGE_THUMBNAIL_PATH" ColumnName="IMAGE_THUMBNAIL_PATH" />
-                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-                <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
-                <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
-                <ScalarProperty Name="SUB_CATEGORY_ID" ColumnName="SUB_CATEGORY_ID" />
-                <ScalarProperty Name="RowIndex" ColumnName="RowIndex" />
-                <ScalarProperty Name="TotalRecords" ColumnName="TotalRecords" />
-                <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
-                <ScalarProperty Name="Start" ColumnName="Start" />
-                <ScalarProperty Name="End" ColumnName="End" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -6151,6 +6122,37 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
                 <ScalarProperty Name="PRICE1" ColumnName="PRICE1" />
                 <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="PRICE2" ColumnName="PRICE2" />
+                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+                <ScalarProperty Name="BRAND" ColumnName="BRAND" />
+                <ScalarProperty Name="FLAVOR" ColumnName="FLAVOR" />
+                <ScalarProperty Name="PACKING" ColumnName="PACKING" />
+                <ScalarProperty Name="TAG" ColumnName="TAG" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="PRODUCT_NAME_URL" ColumnName="PRODUCT_NAME_URL" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="IMAGE_THUMBNAIL_PATH" ColumnName="IMAGE_THUMBNAIL_PATH" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+                <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+                <ScalarProperty Name="SUB_CATEGORY_ID" ColumnName="SUB_CATEGORY_ID" />
+                <ScalarProperty Name="RowIndex" ColumnName="RowIndex" />
+                <ScalarProperty Name="TotalRecords" ColumnName="TotalRecords" />
+                <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="End" ColumnName="End" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SpGetAllProducts" FunctionName="anytimea_GROCERYModel.Store.SpGetAllProducts">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="anytimea_GROCERYModel.SpGetAllProducts_Result">
+                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PRICE1" ColumnName="PRICE1" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
                 <ScalarProperty Name="PRICE2" ColumnName="PRICE2" />
                 <ScalarProperty Name="COLOR" ColumnName="COLOR" />
                 <ScalarProperty Name="BRAND" ColumnName="BRAND" />

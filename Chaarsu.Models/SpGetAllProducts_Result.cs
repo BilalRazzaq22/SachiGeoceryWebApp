@@ -18,6 +18,7 @@ namespace Chaarsu.Models
         public string DESCRIPTION { get; set; }
         public Nullable<decimal> PRICE1 { get; set; }
         public Nullable<decimal> PRICE { get; set; }
+        public string BARCODE { get; set; }
         public Nullable<int> PRICE2 { get; set; }
         public string COLOR { get; set; }
         public string BRAND { get; set; }
