@@ -73,7 +73,7 @@ suchiapp.controller("CartController", function ($scope, $window) {
                         var products = JSON.parse(localStorage.getItem('Cart'));
                         console.log(products);
                         $.each(products, function (i) {
-                            var obj = { OREDER_PRODUCT_ID: 0, ORDER_ID: order.OrderId, PRODUCT_ID: products[i].PRODUCT_ID, QUANTITY: products[i].QUANTITY, IS_ACTIVE: 1 }
+                            var obj = { OREDER_PRODUCT_ID: 0, ORDER_ID: order.OrderId, PRODUCT_ID: products[i].PRODUCT_ID, QUANTITY: products[i].QUANTITY, IS_ACTIVE: 1, BAR_CODE: products[i].BAR_CODE }
                             arrayObjects.push(obj);
                         });
                         objCommon.AjaxCall("Cart/InsertOrderProducts", JSON.stringify(arrayObjects), "POST", true, function (d) {
@@ -83,6 +83,7 @@ suchiapp.controller("CartController", function ($scope, $window) {
                                 localStorage.clear();
                                 window.location.replace(objCommon.baseUrl + "Cart/OrderSuccess?OrderId=" + order.OrderId);
                                 $scope.$apply();
+                                localStorage.setItem("Cart", JSON.stringify([]));
                             }
                         });
                        

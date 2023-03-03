@@ -7,8 +7,8 @@ suchiapp.controller("HomeController", function ($scope, $window) {
 
 
 
-    $scope.GetProductByCategory = function (NAME) {
-        $window.location.href = objCommon.baseUrl + 'Products/Index?group=' + NAME;
+    $scope.GetProductByCategory = function (groupId) {
+        $window.location.href = objCommon.baseUrl + 'Products/Index?group=' + groupId;
     }
     
 });

@@ -189,7 +189,7 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
         $scope.GetCompanyInfo();
     }
 
-    $scope.AddToCart = function (ProductId, Name, Packing, Price, Price2, Image, Quantity, ProductNameUrl,Barcode) {
+    $scope.AddToCart = function (ProductId, Name, Packing, Price, Price2, Image, Quantity, ProductNameUrl, Barcode) {
         if (localStorage.getItem('Cart') == null) {
             localStorage.setItem('Cart', JSON.stringify([]));
         }

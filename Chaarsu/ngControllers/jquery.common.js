@@ -10,10 +10,16 @@
 });
 var Common = function () {
     _this = this;
-    var baseUrl = "http://localhost:49663/";
+    var localUrl = "http://localhost:49663/";
+    var liveUrl = "https://sachigrocery.pk/";
+    var localLoginUrl = "http://localhost:49663/account/login";
+    var liveLoginUrl = "https://sachigrocery.pk/account/login";
+    var baseUrl = liveUrl;
     _this.baseUrl = baseUrl;
-    var baseUrlAPS = "http://localhost:49663/";
+    var baseUrlAPS = baseUrl;
     _this.baseUrlAPS = baseUrlAPS;
+    var baseLoginUrl = liveLoginUrl;
+    _this.baseLoginUrl = liveLoginUrl;
     _this.AjaxCall = function (url, data, methodType, isAsync, callback, btn) {
         var value = $(btn).val();
         if (value == "") {
@@ -36,7 +42,7 @@ var Common = function () {
                 if (response.IsValid == false && response.Message == "LoggedOut") {
                     _this.ShowMessage("You are logged out.", "error");
                     setTimeout(function () {
-                        window.location = "http://localhost:49663/account/login";
+                        window.location = baseLoginUrl;
                     }, 1000);
                 }
                 else {
@@ -87,7 +93,7 @@ var Common = function () {
                 if (response.IsValid == false && response.Message == "LoggedOut") {
                     _this.ShowMessage("You are logged out.", "error");
                     setTimeout(function () {
-                        window.location = "http://localhost:55055/account/login";
+                        window.location = baseLoginUrl;
                     }, 1000);
                 }
                 else {
@@ -153,7 +159,7 @@ var Common = function () {
                 if (response.IsValid == false && response.Message == "LoggedOut") {
                     _this.ShowMessage("You are logged out.", "error");
                     setTimeout(function () {
-                        window.location = "http://localhost:55055/account/login";
+                        window.location = baseLoginUrl;
                     }, 1000);
                 }
                 else {

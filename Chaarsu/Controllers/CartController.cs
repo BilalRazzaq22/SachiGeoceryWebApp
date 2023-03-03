@@ -176,8 +176,8 @@ namespace Chaarsu.Controllers
 
                 foreach (var item in orderProductsList)
                 {
-                    var barcode = _BARCODES.Repository.GetAll().FirstOrDefault(x => x.ITEM_CODE == item.PRODUCT_ID && x.bDEFAULT == true && x.IsActive == true);
-                    item.BAR_CODE = barcode.BAR_CODE;
+                    //var barcode = _BARCODES.Repository.GetAll().FirstOrDefault(x => x.ITEM_CODE == item.PRODUCT_ID && x.bDEFAULT == true && x.IsActive == true);
+                    //item.BAR_CODE = barcode.BAR_CODE;
                     _ORDER_PRODUCTS.Repository.Add(item);
                 }
                 return Json(new { Status = true, RetMessage = "Your Order Submit Successfully. Thank You" }, JsonRequestBehavior.AllowGet);
