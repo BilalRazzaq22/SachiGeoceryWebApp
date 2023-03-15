@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ADO\SqlManager.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="DBManager\QuickQueries.cs" />
     <Compile Include="GRepository\BaseRepository.cs" />
     <Compile Include="GRepository\GenericRepository.cs" />
     <Compile Include="Interface\IUnitOfWork.cs" />

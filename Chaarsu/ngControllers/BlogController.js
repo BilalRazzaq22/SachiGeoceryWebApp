@@ -21,11 +21,10 @@ suchiapp.controller("BlogsController", function ($scope) {
         }
 
         objCommon.AjaxCallAPS("Blogs/GetAllBlogs", $.param(data), "GET", true, function (data) {
-            console.log(data.allBlogs);
             $scope.Blogs = data.allBlogs;
             $scope.loader = false;
             $("body").css({ "opacity": "1" });
             $scope.$apply();
-        })
+        }, null, "Error while getting all blogs, Please try again.", $scope);
     }
 });

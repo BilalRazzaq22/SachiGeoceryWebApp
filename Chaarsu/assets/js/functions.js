@@ -242,7 +242,6 @@
             $qty.val(currentVal - 1);
         }
         if(currentVal === 1){
-            console.log(ths);
             // ths.parents('.price-increase-decrese-group').css('background-color','red');
             ths.parents('.price-btn').hide();
             ths.parents('.price-btn').siblings('.cart-btn').show();

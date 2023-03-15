@@ -120,6 +120,7 @@
     <Compile Include="MAINMENU.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
+    <Compile Include="MyCollection.cs" />
     <Compile Include="OFFER_MANAGEMENT.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
@@ -307,6 +308,7 @@
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\GroupViewModel.cs" />
+    <Compile Include="ViewModel\HomeRootModel.cs" />
     <Compile Include="ViewModel\InsertOrderWithBranchVM.cs" />
     <Compile Include="ViewModel\ProductsViewModel.cs" />
     <Compile Include="WebsitePage.cs">

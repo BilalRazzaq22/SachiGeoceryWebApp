@@ -76,7 +76,7 @@
                                                                     foreach (var c in g.listCategories)
                                                                     {
                                                                         <li class="checkbox-item" id="catagory-widget-s@(count)">
-                                                                         <a class="anchortag" style="cursor:pointer" id="@(c.CATEGORY_ID)anchor" ng-click="GetProductsByCategory('@c.CATEGORY_ID','@count');">@c.DESCRIPTION</a>
+                                                                         <a class="anchortag" style="cursor:pointer" id="@(c.CATEGORY_ID)anchor" ng-click="GetProductsByCategory('@c.CATEGORY_ID','False');">@c.DESCRIPTION</a>
                                                                         </li>
                                                                     }
                                                                 }

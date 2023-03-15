@@ -101,7 +101,8 @@ namespace Chaarsu.Controllers
                     {
                         Session.Remove("GuestSession");
                         Session["UserSession"] = entity.USER_ID.ToString();
-                        return Json(new { Status = true, RetMessage = "You are SignIn Successfully" },JsonRequestBehavior.AllowGet);
+                        Session["Username"] = entity.USERNAME.ToString();
+                        return Json(new { Status = true, RetMessage = "You are SignIn Successfully", UserObj = entity },JsonRequestBehavior.AllowGet);
                     }
                     else
                     {
@@ -135,7 +136,7 @@ namespace Chaarsu.Controllers
                     //user.IS_ACTIVE = true;
                     //_USER.Repository.Add(user);
                     Session["GuestSession"] = user.USERNAME;
-                    return Json(new { Status = true, RetMessage = "You are signin successfully as guest" }, JsonRequestBehavior.AllowGet);
+                    return Json(new { Status = true, RetMessage = "You are signin successfully as guest", IsGuest = true, GuestUser = user.USERNAME }, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
@@ -177,7 +178,10 @@ namespace Chaarsu.Controllers
                         _USER.Repository.Add(user);
                         var GuestId = user.USER_ID;
 
-                        return Json(new { Status = true, RetMessage = "You are Sign Up Successfully" }, JsonRequestBehavior.AllowGet);
+                        Session.Remove("GuestSession");
+                        Session["UserSession"] = user.USER_ID.ToString();
+
+                        return Json(new { Status = true, RetMessage = "You are Sign Up Successfully", IsGuest = false, UserObj = user }, JsonRequestBehavior.AllowGet);
                     }
                 }
             }

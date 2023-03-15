@@ -19,10 +19,9 @@ suchiapp.controller("ProductDetailController", function ($scope) {
             GroupId: ""
         }
         objCommon.AjaxCall("Products/GetAllProducts", $.param(data), "GET", true, function (data) {
-            console.log(data);
             $scope.TrandingProductList = data.response;
             $scope.$apply();
-        });
+        }, null, "Error while getting all products, Please try again.", $scope);
     }
 
     $scope.GetProductDetail = function (productNameUrl) {
@@ -33,7 +32,6 @@ suchiapp.controller("ProductDetailController", function ($scope) {
             productNameUrl: productNameUrl
         }
         objCommon.AjaxCall("Products/GetProductDetail", $.param(data), "GET", true, function (d) {
-            console.log(d);
             $scope.ProductDetail = d.response.ProductDetail;
             $scope.ProductImages = d.response.ProductImages;
             $scope.GetAllProductReviews(d.response.ProductDetail.PRODUCT_ID);
@@ -99,7 +97,7 @@ suchiapp.controller("ProductDetailController", function ($scope) {
                     else { $('.myratings').css('color', 'green'); $(".myratings").text(sim); }
                 });
             });
-        });
+        }, null, "Error while getting product details, Please try again.", $scope);
     }
 
     $scope.GetAllProductReviews = function (id) {
@@ -112,11 +110,10 @@ suchiapp.controller("ProductDetailController", function ($scope) {
             SearchText: ''
         }
         objCommon.AjaxCall("Products/GetAllProductReviews", $.param(data), "GET", true, function (d) {
-            console.log(d);
             $scope.TotalReviews = d.response.ProductReviews[0].TotalRecords;
             $scope.ProductReviews = d.response.ProductReviews;
             $scope.$apply();
-        });
+        }, null, "Error while getting product reviews, Please try again.", $scope);
 
     }
 
@@ -143,7 +140,7 @@ suchiapp.controller("ProductDetailController", function ($scope) {
                 $('#star1,#star2,#star3,#star4,#star5').prop('checked', false);
                 $scope.GetAllProductReviews(productId);
                 $scope.$apply();
-            })
+            }, null, "Error while adding reviews, Please try again.", $scope);
         }
     }
 

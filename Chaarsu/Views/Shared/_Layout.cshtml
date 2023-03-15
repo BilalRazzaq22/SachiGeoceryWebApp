@@ -21,16 +21,18 @@
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
             display: none !important;
         }
-        .apps-store a img{
-            box-shadow:none !important
+
+        .apps-store a img {
+            box-shadow: none !important
         }
+
         .fa-phone {
-            -webkit-transform: scaleX(-1); 
+            -webkit-transform: scaleX(-1);
             transform: scaleX(-1);
         }
     </style>
 </head>
-<body id="top-page" ng-app="suchiapp" class="ng-cloak"  onLoad="initGeolocation();">
+<body id="top-page" ng-app="suchiapp" class="ng-cloak" onLoad="initGeolocation();">
     <div ng-controller="HeaderController" ng-init="LoadHeaderData();">
         <a class="position-absolute" href="javascript:void(0)" onclick="cartopen()">
             <div id="sitebar-drawar" class="sitebar-drawar">
@@ -50,7 +52,7 @@
                         <div class="header-top-action-dropdown">
                             <ul>
                                 <li class="signin-option"><a href="/Accounts/SignIn"><i class="fas fa-user mr-2"></i>Sign In</a></li>
-                                <li class="site-phone"><a href="tel:000-000-000"><i class="fas fa-phone"></i> {{CompanyInfo.PhoneNumber}}</a></li>
+                                <li class="site-phone"><a href="tel:000-000-000"><i class="fas fa-phone"></i> 0311-1188816 </a></li>
                                 <li class="site-help"><a href="/Home/Contact"><i class="fas fa-question-circle"></i> Help & More</a></li>
                             </ul>
                         </div>
@@ -66,7 +68,7 @@
                     <div class="modal-body">
                         <div class="header-top-action-dropdown">
                             <ul>
-                                <li class="site-phone"><a href="tel:000-000-000"><i class="fas fa-phone"></i> {{CompanyInfo.IosAppUrl}}</a></li>
+                                <li class="site-phone"><a href="tel:000-000-000"><i class="fas fa-phone"></i> https://apps.apple.com/us/app/chaarsu-pk/id1498919071</a></li>
                                 <li class="site-help"><a href="/Home/Contact"><i class="fas fa-question-circle"></i> Help & More</a></li>
                             </ul>
                         </div>
@@ -198,7 +200,7 @@
                         <span>Total</span>
                         <span>Rs.{{TotalPrice}}</span>
                     </p>
-                    <a href="/Cart/CheckOut" class="procced-checkout">Prosecced Checkout</a>
+                    <a ng-click="CartCheckOut()" class="procced-checkout">Prosecced Checkout</a>
                 </div>
             </div>
 
@@ -213,13 +215,13 @@
                             <a class="bar-btn"><i class="fas fa-bars"></i>All Catagories</a>
                             <a class="close-btn"><i class="fas fa-times"></i>All Catagories</a>
                         </div>
-                          <a href="/Home/Index" class="logo"><img src="{{CompanyInfo.TopLogoUrl}}" alt="logo"></a>
+                          <a href="/Home/Index" class="logo"><img src="~/assets/images/SachiLogo.jfif" alt="logo"></a>
                     </div> -->
                     <div class="all-catagory-option mobile-device">
                         <a class="bar-btn"><i class="fas fa-bars"></i><span class="ml-2 d-none d-md-inline">All Categories</span></a>
                         <a class="close-btn"><i class="fas fa-times"></i><span class="ml-2 d-none d-md-inline">All Categories</span></a>
                     </div>
-                    <a href="/Home/Index" class="logo"><img src="{{CompanyInfo.TopLogoUrl}}" alt="logo"></a>
+                    <a href="/Home/Index" class="logo"><img src="~/assets/images/SachiLogo.jfif" alt="logo"></a>
 
                     <!-- search select -->
                     <div class="text-center mobile-search">
@@ -253,11 +255,11 @@
                         </div>
                     </div>
                     <div class="col-5 col-md-2">
-                        <a href="/Home/Index" class="logo"><img src="{{CompanyInfo.TopLogoUrl}}" alt="logo"></a>
+                        <a href="/Home/Index" class="logo"><img src="~/assets/images/SachiLogo.jfif" alt="logo"></a>
                     </div>
                     <div class="col-2 col-md-1 col-lg-5">
                         <ul class="site-action d-none d-lg-flex align-items-center justify-content-between  ml-auto">
-                            <li class="site-phone"><a href="tel:000-000-000"><i class="fas fa-phone"></i> {{CompanyInfo.PhoneNumber}}</a></li>
+                            <li class="site-phone"><a href="tel:000-000-000"><i class="fas fa-phone"></i> 0311-1188816 </a></li>
                             <li class="site-help"><a href="/Home/Contact"><i class="fas fa-question-circle"></i> Help & More</a></li>
                             @if (Session["UserSession"] == null)
                             {
@@ -362,12 +364,13 @@
                         <div class="col-md-6 col-lg-3">
                             <div class="footer-widget">
                                 <a href="/Home/Index" class="footer-logo"><img src="~/assets/images/sachilogofooter.jpg" style="width:50%" alt="logo"></a>
-                                <p>{{CompanyInfo.BottomText}} </p>
+                                <p> SachiGrocery is the ultimate online marketplace which is established to provide trouble-free online shopping experience at your fingertips. </p>
                                 <ul class="social-media-list d-flex flex-wrap">
-                                    <li><a href="{{CompanyInfo.SocialFacebookUrl}}"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="{{CompanyInfo.SocialTwitterUrl}}"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="{{CompanyInfo.SocialVimeoUrl}}"><i class="fab fa-vimeo-v"></i></a></li>
-                                    <li><a href="{{CompanyInfo.SocialPinterestUrl}}"><i class="fab fa-pinterest-p"></i></a></li>
+                                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://vimeo.com/" target="_blank"><i class="fab fa-vimeo-v"></i></a></li>
+                                    <li><a href="https://www.pinterest.com/" target="_blank"<i class="fab fa-pinterest-p"></i></a></li>
+                                    <li><a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -407,10 +410,10 @@
                                 <h5 class="footer-title">Download Apps</h5>
                                 <div class="widget-wrapper">
                                     <div class="apps-store">
-                                        <a href="{{CompanyInfo.IosAppUrl}}"><img src="~/assets/images/app-store/apple.png" style="width:80%" alt="app"></a>
-                                        <a href="{{CompanyInfo.AndroidAppUrl}}"><img src="~/assets/images/app-store/google.png" style="width:80%" alt="app"></a>
-                                        <a href="{{CompanyInfo.AndroidAppUrl}}"><img src="~/assets/images/payment/jazzcash.png" style="width:100px" alt="app"></a>
-                                        <a href="{{CompanyInfo.AndroidAppUrl}}"><img src="~/assets/images/payment/easypaisa.png" style="width:100px" alt="app"></a>
+                                        <a href="https://apps.apple.com/us/app/chaarsu-pk/id1498919071"><img src="~/assets/images/app-store/apple.png" style="width:80%" alt="app"></a>
+                                        <a href="https://play.google.com/store/apps/details?id=com.MT.sachigrocery"><img src="~/assets/images/app-store/google.png" style="width:80%" alt="app"></a>
+                                        @*<a href=""><img src="~/assets/images/payment/jazzcash.png" style="width:100px" alt="app"></a>
+                                            <a href=""><img src="~/assets/images/payment/easypaisa.png" style="width:100px" alt="app"></a>*@
                                     </div>
 
                                 </div>
@@ -465,7 +468,7 @@
     <script src='~/assets/js/scroll-nav.js'></script>
     <script src="~/assets/js/jquery.elevatezoom.js"></script>
     <script src='~/assets/js/price-range.js'></script>
-    <script src='~/assets/js/custom-select.js'></script>
+    @*<script src='~/assets/js/custom-select.js'></script>*@
     <script src='~/assets/js/fly-cart.js'></script>
     <script src='~/assets/js/multi-countdown.js'></script>
     <script src='~/assets/js/theia-sticky-sidebar.js'></script>
@@ -491,22 +494,19 @@
 
             var lang = position.coords.longitude;
             var lat = position.coords.latitude
-            console.log(lang);
-            console.log(lat);
             localStorage.setItem("lang", lang);
             localStorage.setItem("lat", lat);
             sessionStorage.setItem("long", lang);
             sessionStorage.setItem("lat", lat);
             $.get({
-                url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat+"," + lang+"&sensor=false&key=AIzaSyCaJllIQS2KnZBX6ioHHnWLojKHkLzsZp4", success(data) {
+                url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lang + "&sensor=false&key=AIzaSyCaJllIQS2KnZBX6ioHHnWLojKHkLzsZp4", success(data) {
                     localStorage.setItem("address", data.results[0].formatted_address);
-                    console.log(data.results[0].formatted_address);
                 }
             });
         }
 
         function fail() {
-            
+
         }
 
     </script>

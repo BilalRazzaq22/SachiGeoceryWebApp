@@ -2,6 +2,7 @@
 using Chaarsu.Library.Utilities;
 using Chaarsu.Models;
 using Chaarsu.Models.ViewModel;
+using Chaarsu.Repository.DBManager;
 using Chaarsu.Repository.GRepository;
 using Chaarsu.Repository.Interface;
 using Chaarsu.Repository.SPRepository;
@@ -25,33 +26,43 @@ namespace Chaarsu.Business
     public class HomeBLL: IHomeBLL
     {
         private readonly IUnitOfWork _unitOfWork;
+        QuickQueries qq = new QuickQueries(); 
         public HomeBLL()
         {
             _unitOfWork =new UnitOfWork();
+            if (MyCollection.Instance.Groups == null)
+            {
+                MyCollection.Instance.Groups = qq.GetAllGroups();
+            }
+            if (MyCollection.Instance.Categories == null)
+            {
+                MyCollection.Instance.Categories = qq.GetAllCategories();
+            }
         }
-        private GenericRepository<GROUP> _group;
+        //private GenericRepository<GROUP> _group;
        // private GenericRepository<TUTORIAL> _TUTORIAL;
-        private GenericRepository<CATEGORy> _categories;
+        //private GenericRepository<CATEGORy> _categories;
         private GenericRepository<PRODUCT> _products;
         private SpRepository _sp;
 
         public List<GROUP> GetHeaderCategories()
         {
-            
-                _group = new GenericRepository<GROUP>(_unitOfWork);
-                return  _group.Repository.GetAll();
-               
+
+            //_group = new GenericRepository<GROUP>(_unitOfWork);
+            return MyCollection.Instance.Groups;
+
+
         }
         public AjaxResponse GetGroupCategories()
         {
             try
             {
                 Dictionary<string, object> response = new Dictionary<string, object>();
-                _group = new GenericRepository<GROUP>(_unitOfWork);
-                _categories = new GenericRepository<CATEGORy>(_unitOfWork);
-                var listObj = _group.Repository.GetAll();
+                //_group = new GenericRepository<GROUP>(_unitOfWork);
+                //_categories = new GenericRepository<CATEGORy>(_unitOfWork);
+                var listObj = MyCollection.Instance.Groups;
                 response.Add("GroupList", listObj);
-                var listObjCat = _categories.Repository.GetAll();
+                var listObjCat = MyCollection.Instance.Categories;
                 List<GroupViewModel> listGroup = new List<GroupViewModel>();
                 if (listObj != null)
                 {
@@ -83,11 +94,11 @@ namespace Chaarsu.Business
             try
             {
                 Dictionary<string, object> response = new Dictionary<string, object>();
-                _group = new GenericRepository<GROUP>(_unitOfWork);
-                _categories = new GenericRepository<CATEGORy>(_unitOfWork);
-                var listObj = _group.Repository.GetAll();
+                //_group = new GenericRepository<GROUP>(_unitOfWork);
+                //_categories = new GenericRepository<CATEGORy>(_unitOfWork);
+                var listObj = MyCollection.Instance.Groups;
                 response.Add("GroupList", listObj);
-                var listObjCat = _categories.Repository.GetAll();
+                var listObjCat = MyCollection.Instance.Categories;
                 List<GroupViewModel> listGroup = new List<GroupViewModel>();
                 if (listObj != null)
                 {

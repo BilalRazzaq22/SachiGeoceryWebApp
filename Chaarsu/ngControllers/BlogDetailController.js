@@ -13,13 +13,12 @@ suchiapp.controller("BlogsController", function ($scope) {
         }
 
         objCommon.AjaxCallAPS("Blogs/GetBlogDetail", $.param(data), "GET", true, function (d) {
-            console.log(d);
             $scope.BlogDetail = d.response.BlogDetail;
             $scope.GetRecentBlogs = d.response.recentBlog;
             $("body").css({ "opacity": "1" });
             $scope.loader = false;
             $scope.$apply();
-        });
+        }, null, "Error while getting blog details, Please try again.", $scope);
 
     }
     

@@ -1,11 +1,12 @@
-﻿
-var objCommon = new Common();
+﻿var objCommon = new Common();
 
 suchiapp.controller("AccountsController", function ($scope, $window) {
     $scope.password = '';
     $scope.emailOrmobile = '';
     $scope.loader = false;
     $scope.SingIn = function () {
+        localStorage.setItem('Username', "");
+        localStorage.setItem('Mobile', "");
         if ($scope.emailOrmobile == '' || $scope.emailOrmobile == null) {
             objCommon.ShowMessage("Please Enter Email Or Mobile No", "error");
         }
@@ -21,19 +22,23 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
             objCommon.AjaxCall("Accounts/signInUser", $.param(data), "get", true, function (response) {
                 $("body").css({ "opacity": "1" });
                 if (response.Status == true) {
+                    localStorage.setItem('Username', response.UserObj.USERNAME);
+                    localStorage.setItem('Mobile', response.UserObj.MOBILE_NO);
                     objCommon.ShowMessage(response.RetMessage, "success");
                     window.location.replace(objCommon.baseUrl + "User/Profile");
                 }
                 else {
                     objCommon.ShowMessage(response.RetMessage, "error");
                 }
-            });
+            }, null, "Error while sign in user, Please try again.", $scope);
         }       
     };
 
     $scope.Gender = 'Male';
 
     $scope.SingUp = function () {
+        localStorage.setItem('Username', "");
+        localStorage.setItem('Mobile', "");
 
         if ($scope.Username == '' || $scope.Username == null)
         {
@@ -73,14 +78,22 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
                 };
                 objCommon.AjaxCall("Accounts/signUpUser", JSON.stringify(data), "POST", true, function (response) {
                     $("body").css({ "opacity": "1" });
+                    debugger;
                     if (response.Status == true) {
+                        if (response.IsGuest) {
+                            localStorage.setItem('Username', response.GuestUser);
+                            localStorage.setItem('Mobile', "");
+                        } else {
+                        localStorage.setItem('Username', response.UserObj.USERNAME);
+                        localStorage.setItem('Mobile', response.UserObj.MOBILE_NO);
+                        }
                         objCommon.ShowMessage(response.RetMessage, "success");
                         window.location.replace(objCommon.baseUrl + "Accounts/SignIn");
                     }
                     else {
                         objCommon.ShowMessage(response.RetMessage, "error");
                     }
-                });
+                }, null, "Error while sign up user, Please try again.", $scope);
             }
         }
         $scope.$apply();
@@ -104,12 +117,14 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
                else {
                   objCommon.ShowMessage(response.RetMessage, "error");
                }
-            });
+            }, null, "Error while forget password, Please try again.", $scope);
         }
         
     };
 
     $scope.GuestUser = function () {
+        localStorage.setItem('Username', "");
+        localStorage.setItem('Mobile', "");
         if ($scope.GuestName == "" || $scope.Password != null) {
             objCommon.ShowMessage("Name is required", "error");
         }
@@ -126,6 +141,10 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
             objCommon.AjaxCall("Accounts/signUpUser", JSON.stringify(data), "POST", true, function (response) {
                 $("body").css({ "opacity": "1" });
                 if (response.Status == true) {
+                    if (response.IsGuest) {
+                        localStorage.setItem('Username', response.GuestUser);
+                        localStorage.setItem('Mobile', "");
+                    }
                     $scope.GuestName = '';
                     objCommon.ShowMessage(response.RetMessage, "success");
                     CloseSignUpForm();
@@ -134,7 +153,7 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
                 else {
                     objCommon.ShowMessage(response.RetMessage, "error");
                 }
-            });
+            }, null, "Error while sign up user as a guest, Please try again.", $scope);
         }
 
         $scope.$apply();

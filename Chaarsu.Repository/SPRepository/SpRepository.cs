@@ -9,10 +9,12 @@ using System.Data.SqlClient;
 using Chaarsu.Models;
 using Chaarsu.Repository.ADO;
 using Chaarsu.Models.InputModel;
+using System.Configuration;
+using System.Data.Entity.Core.EntityClient;
 
 namespace Chaarsu.Repository.SPRepository
 {
-    
+
     public class SpRepository
     {
         private readonly anytimea_GROCERYEntities db;
@@ -62,11 +64,11 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
-        public int CreateCardField(string ColumnName,string ColumnType,string ColumnLength,string TableName,bool AllowNull)
+        public int CreateCardField(string ColumnName, string ColumnType, string ColumnLength, string TableName, bool AllowNull)
         {
             var sqlManager = new SqlManager();
             var sCmd = new SqlCommand();
-            int result=0;
+            int result = 0;
 
             sCmd.Parameters.Add(new SqlParameter("@ColumnName", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Default, ColumnName));
             sCmd.Parameters.Add(new SqlParameter("@ColumnType", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Default, ColumnType));
@@ -91,13 +93,13 @@ namespace Chaarsu.Repository.SPRepository
             return result;
         }
 
-        public int InsertDataDynamic(string ColumnNames,string ColumnValues, string TableName)
+        public int InsertDataDynamic(string ColumnNames, string ColumnValues, string TableName)
         {
             var sqlManager = new SqlManager();
             var sCmd = new SqlCommand();
             int result = 0;
-            
-            result = sqlManager.ExecuteNonQuery("Insert into "+TableName+"("+ ColumnNames + ")values("+ ColumnValues + ")", SqlCommandType.Text, sCmd);
+
+            result = sqlManager.ExecuteNonQuery("Insert into " + TableName + "(" + ColumnNames + ")values(" + ColumnValues + ")", SqlCommandType.Text, sCmd);
             _ErrorDescription = sqlManager.ErrorDescription;
 
 
@@ -225,7 +227,7 @@ namespace Chaarsu.Repository.SPRepository
             return dt;
         }
 
-        public DataTable SpGetAllCards(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText,string UserId)
+        public DataTable SpGetAllCards(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, string UserId)
         {
             var sqlManager = new SqlManager();
             var sCmd = new SqlCommand();
@@ -258,7 +260,7 @@ namespace Chaarsu.Repository.SPRepository
         {
             try
             {
-                return db.SpGetAllBlogs(PageIndex,PageSize,SortColumn,SortOrder,SearchText).ToList();
+                return db.SpGetAllBlogs(PageIndex, PageSize, SortColumn, SortOrder, SearchText).ToList();
             }
             catch (Exception ex)
             {
@@ -280,12 +282,82 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
-        public List<SpGetAllProducts_Result> SpGetAllProducts(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, string CategoryId, string SubCategoryId, string GroupId,int BranchId)
+        public List<SpGetAllProducts_Result> SpGetAllProducts(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, string CategoryId, string SubCategoryId, string GroupId, int BranchId)
         {
             try
             {
-             
-                return db.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText,CategoryId,SubCategoryId,GroupId, BranchId).ToList();
+
+                //               @PageIndex as int = 1,
+                //@PageSize as int = 50,
+                //@SortColumn nvarchar(20) = NULL, 
+                //@SortOrder nvarchar(20) = NULL,
+                //@SearchText nvarchar(100)= '',
+                //   @CategoryId nvarchar(300) = '',
+                //   @SubCategoryId nvarchar(300)= '',
+                //@GroupId nvarchar(300)= '',
+                //@BranchId as int = 0
+
+                SqlConnection con = null;
+                List<SpGetAllProducts_Result> list = null;
+                string efConnectionString = ConfigurationManager.ConnectionStrings["anytimea_GROCERYEntities"].ToString();
+                var efConnectionStringBuilder = new EntityConnectionStringBuilder(efConnectionString);
+                string sqlConnectionString = efConnectionStringBuilder.ProviderConnectionString;
+
+                con = new SqlConnection(sqlConnectionString);
+                SqlCommand cmd = new SqlCommand("SpGetAllProducts", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.CommandTimeout = 120;
+                cmd.Parameters.AddWithValue("@PageIndex", PageIndex);
+                cmd.Parameters.AddWithValue("@PageSize", PageSize);
+                cmd.Parameters.AddWithValue("@SortColumn", SortColumn);
+                cmd.Parameters.AddWithValue("@SortOrder", SortOrder);
+                cmd.Parameters.AddWithValue("@SearchText", SearchText);
+                cmd.Parameters.AddWithValue("@CategoryId", CategoryId);
+                cmd.Parameters.AddWithValue("@SubCategoryId", SubCategoryId);
+                cmd.Parameters.AddWithValue("@GroupId", GroupId);
+                cmd.Parameters.AddWithValue("@BranchId", BranchId);
+                SqlDataReader r;
+                // Execute the command.
+                con.Open();
+                r = cmd.ExecuteReader();
+                list = new List<SpGetAllProducts_Result>();
+                while (r.Read())
+                {
+                    list.Add(new SpGetAllProducts_Result()
+                    {
+                        BARCODE = r["BARCODE"] as string,
+                        BRAND = r["BRAND"] as string,
+                        CategoryName = r["CategoryName"] as string,
+                        CATEGORY_ID = r["CATEGORY_ID"] as int?,
+                        //COLOR = r["COLOR"] as string,
+                        //CREATED_DATE = r["CREATED_DATE"] as DateTime?,
+                        DESCRIPTION = r["DESCRIPTION"] as string,
+                        End = r["End"] as int?,
+                        FLAVOR = r["FLAVOR"] as string,
+                        GroupID = r["GroupID"] as int?,
+                        IMAGE_THUMBNAIL_PATH = r["IMAGE_THUMBNAIL_PATH"] as string,
+                        NAME = r["NAME"] as string,
+                        PACKING = r["PACKING"] as string,
+                        PRICE = r["PRICE"] as decimal?,
+                        PRICE1 = r["PRICE1"] as decimal?,
+                        //PRICE2 = r["PRICE2"] as int?,
+                        PRODUCT_ID = Convert.ToInt32(r["PRODUCT_ID"]),
+                        PRODUCT_NAME_URL = r["PRODUCT_NAME_URL"] as string,
+                        RowIndex = r["RowIndex"] as long?,
+                        Start = r["Start"] as int?,
+                        SUB_CATEGORY_ID = r["SUB_CATEGORY_ID"] as int?,
+                        //TAG = r["AdminImagePath"] as string,
+                        TotalPages = r["TotalPages"] as decimal?,
+                        TotalRecords = r["TotalRecords"] as int?,
+                        VENDOR_ID = r["VENDOR_ID"] as int?
+                    });
+
+                }
+                return list;
+
+
+
+                //return db.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText, CategoryId, SubCategoryId, GroupId, BranchId).ToList();
 
             }
             catch (Exception ex)
@@ -295,7 +367,7 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
-        public List<SP_GetAllProductsByCategories_Result> GetAllProductsByCategoryId(int PageIndex, int PageSize,string CategoryId,int branchId)
+        public List<SP_GetAllProductsByCategories_Result> GetAllProductsByCategoryId(int PageIndex, int PageSize, string CategoryId, int branchId)
         {
             try
             {
@@ -307,7 +379,7 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
-        public SpGetProductDetailByProductNameUrl_Result GetProductDetailByProductNameUrl(string productNameUrl,int BranchId)
+        public SpGetProductDetailByProductNameUrl_Result GetProductDetailByProductNameUrl(string productNameUrl, int BranchId)
         {
             try
             {
@@ -333,11 +405,11 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
-        public List<SpGetProductReviewsByProductId_Result> GetProductReviewsById(int PRODUCT_ID,int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText)
+        public List<SpGetProductReviewsByProductId_Result> GetProductReviewsById(int PRODUCT_ID, int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText)
         {
             try
             {
-                return db.SpGetProductReviewsByProductId(PRODUCT_ID, PageIndex, PageSize, SortColumn,SortOrder, SearchText).ToList();
+                return db.SpGetProductReviewsByProductId(PRODUCT_ID, PageIndex, PageSize, SortColumn, SortOrder, SearchText).ToList();
             }
             catch (Exception ex)
             {
@@ -372,13 +444,13 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
-        public List<SpGetAllOrdersByCustomerId_Result> GetAllOrders(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, int OrderStatusId,int CustomerId)
+        public List<SpGetAllOrdersByCustomerId_Result> GetAllOrders(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, int OrderStatusId, int CustomerId)
         {
             try
             {
                 return db.SpGetAllOrdersByCustomerId(PageIndex, PageSize, SortColumn, SortOrder, SearchText, OrderStatusId, CustomerId).ToList();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -388,7 +460,7 @@ namespace Chaarsu.Repository.SPRepository
         {
             try
             {
-                return db.SpGetWishList(PageIndex, PageSize, SortColumn, SortOrder, SearchText,UserId).ToList();
+                return db.SpGetWishList(PageIndex, PageSize, SortColumn, SortOrder, SearchText, UserId).ToList();
             }
             catch (Exception ex)
             {

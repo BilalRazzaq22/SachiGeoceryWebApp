@@ -1,4 +1,4 @@
-﻿ var objCommon = new Common();
+﻿var objCommon = new Common();
 
 suchiapp.controller("HeaderController", function ($scope, $window) {
 
@@ -18,24 +18,30 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
     $scope.GroupCategoriesList = [];
     $scope.GroupList = [];
     $scope.CartArray = [];
-    
+
     objCommon.AjaxCall("Wishes/TotalWishesItems", JSON.stringify({}), "GET", true, function (d) {
         $scope.TotalWishesItems = d;
         $scope.$apply();
-    });
+    }, null, "Error while getting wishes items, Please try again.", $scope);
 
     $scope.GetCompanyInfo = function () {
 
         var lang = localStorage.getItem("lang");
         var lot = localStorage.getItem("lat");
 
-        console.log(lang);
-        console.log(lot);
-
         objCommon.AjaxCall("Home/GetCompanyInfo", $.param({ lang: lang, lot: lot }), "GET", true, function (d) {
-            console.log(d);
             $scope.CompanyInfo = d;
-        });
+        }, null, "Error while getting company info, Please try again.", $scope);
+    }
+
+    $scope.GetBranchId = function () {
+
+        var lang = localStorage.getItem("lang");
+        var lot = localStorage.getItem("lat");
+
+        objCommon.AjaxCall("Home/GetBranchId", $.param({ Lang: lang, Lat: lot }), "GET", true, function (d) {
+
+        }, null, "Error while getting branch, Please try again.", $scope);
     }
 
     $scope.GetHeaderCategories = function () {
@@ -52,7 +58,7 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
                 renderDropdown();
             }, 200)
 
-        })
+        }, null, "Error while header categories, Please try again.", $scope);
 
     }
 
@@ -62,23 +68,25 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
         };
 
         objCommon.AjaxCall("Home/GetGroupAndCategories", $.param(data), "GET", true, function (d) {
-            console.log(d);
             $scope.GroupCategoriesList = d.Data.GroupAndCatList;
             // $scope.GroupList = d.Data.GroupList;
-            $("#maincategory").html("");
-            $("#maincategory").append("<option value='0'>Select Category</option>")
-            for (var i = 0; i < d.Data.GroupList.length; i++) {
-                var rw = d.Data.GroupList[i];
-                $("#maincategory").append("<option value='" + rw.GROUP_ID + "'>" + rw.NAME +"</option>")
+            if ($("#maincategory")[0].length == 0) {
+
+                $("#maincategory").html("");
+                $("#maincategory").append("<option value='0'>Select Category</option>")
+                for (var i = 0; i < d.Data.GroupList.length; i++) {
+                    var rw = d.Data.GroupList[i];
+                    $("#maincategory").append("<option value='" + rw.GROUP_ID + "'>" + rw.NAME + "</option>")
+                }
             }
-           
+
 
             $scope.$apply();
             setTimeout(function () {
                 renderDropdown();
             }, 300)
 
-        })
+        }, null, "Error while getting group with categories, Please try again.", $scope);
 
     }
 
@@ -89,16 +97,18 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
         $window.location.href = objCommon.baseUrl + 'Products/Index?category=' + NAME;
     }
     $scope.SignOut = function () {
-     
-          objCommon.AjaxCall("Accounts/SignOut", $.param({}), "GET", true, function (d) {
-                if (d == "success") {
-                    window.location.replace(objCommon.baseUrl + "Home/Index");
-                }
-                else {
-                    objCommon.ShowMessage(d, "error");
-                }
-          });
-        
+
+        objCommon.AjaxCall("Accounts/SignOut", $.param({}), "GET", true, function (d) {
+            if (d == "success") {
+                localStorage.setItem('Username', "");
+                localStorage.setItem('Mobile', "");
+                window.location.replace(objCommon.baseUrl + "Home/Index");
+            }
+            else {
+                objCommon.ShowMessage(d, "error");
+            }
+        }, null, "Error while dign out user, Please try again.", $scope);
+
     }
 
     $scope.AddToWishlist = function (productId) {
@@ -108,18 +118,17 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
             CREATED_DATE: '2018-01-18 23:35:59.763'
         };
         objCommon.AjaxCall("Wishes/Add", JSON.stringify(data), "POST", true, function (d) {
-            console.log(d)
             if (d.Status == true) {
                 objCommon.AjaxCall("Wishes/TotalWishesItems", JSON.stringify({}), "GET", true, function (d) {
                     $scope.TotalWishesItems = d;
                     $scope.$apply();
-                });
+                }, null, "Error while getting total wish items, Please try again.", $scope);
                 objCommon.ShowMessage(d.RetMessage, "success");
             }
             else {
                 objCommon.ShowMessage(d.RetMessage, "error");
             }
-        });
+        }, null, "Error while adding wish items, Please try again.", $scope);
     }
 
     $scope.DeleteProductFromWishList = function (productId) {
@@ -132,16 +141,15 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
             if (d == "AccessDenied") {
                 window.location.replace(objCommon.baseUrl + "Accounts/SignIn");
             }
-            else
-            {
+            else {
                 objCommon.AjaxCall("Wishes/TotalWishesItems", JSON.stringify({}), "GET", true, function (d) {
                     $scope.TotalWishesItems = d;
-                });
+                }, null, "Error while getting wish items, Please try again.", $scope);
                 objCommon.ShowMessage("Product remove successfully from your wish list", "success");
                 $scope.GetWishlist();
             }
             $scope.$apply();
-        });
+        }, null, "Error while deleting wish items, Please try again.", $scope);
     }
 
     $scope.GetWishlist = function () {
@@ -159,13 +167,63 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
                 window.location.replace(objCommon.baseUrl + "Accounts/SignIn");
             }
             else {
-                console.log(d);
                 $scope.Wishlist = d;
                 $("body").css({ "opacity": "1" });
                 $scope.loader = false;
                 $scope.$apply();
             }
-        });
+        }, null, "Error while getting wish list, Please try again.", $scope);
+    }
+
+    $scope.CartCheckOut = function () {
+
+        if ($scope.TotalPrice < 1500) {
+            objCommon.ShowMessage("Total order amount must be equal or more than 1500", "info");
+            return;
+        }
+
+        $scope.loader = true;
+        $("body").css({ "opacity": "0.5" });
+
+        //$.ajax({
+        //    type: "GET",
+        //    //dataType: 'json',
+        //    crossDomain: true,
+        //    //contentType: 'application/json; charset=utf-8', // text for IE, xml for the rest ,
+        //    url: '/Cart/ProcessCheckOut',
+        //    //data: data,
+        //    //async: isAsync,
+        //    success: function (response) {
+
+        //        if (!response.Status) {
+        //            window.location.replace(objCommon.baseUrl + "Accounts/SignIn");
+        //        } else {
+        //            window.location.replace(objCommon.baseUrl + "Cart/CheckOut");
+        //        }
+
+        //        $("body").css({ "opacity": "1" });
+        //        $scope.loader = false;
+        //        $scope.$apply();
+        //    },
+        //    error: function (err) {
+        //        $("body").css({ "opacity": "1" });
+        //        $scope.loader = false;
+        //        $scope.$apply();
+        //    }
+        //});
+
+
+
+        objCommon.AjaxCall("/Cart/ProcessCheckOut", null, "GET", true, function (d) {
+            if (!d.Status) {
+                window.location.replace(objCommon.baseUrl + "Accounts/SignIn");
+            } else {
+                window.location.replace(objCommon.baseUrl + "Cart/CheckOut");
+            }
+                $("body").css({ "opacity": "1" });
+                $scope.loader = false;
+                $scope.$apply();
+        }, null, "Error while processing check out, Please try again.", $scope);
     }
 
     $scope.GetCartList = function () {
@@ -174,7 +232,7 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
         if (localStorage.getItem("Cart") == null) {
             localStorage.setItem("Cart", JSON.stringify([]));
         }
-        $scope.CartList = JSON.parse(localStorage.getItem('Cart')); 
+        $scope.CartList = JSON.parse(localStorage.getItem('Cart'));
         $.each($scope.CartList, function (i) {
             $scope.TotalPrice += $scope.CartList[i].QUANTITY * $scope.CartList[i].PRICE;
             $scope.TotalCartItems += 1;
@@ -186,7 +244,8 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
         // $scope.GetHeaderCategories();
         $scope.GetGroupAndCategories();
         $scope.GetCartList();
-        $scope.GetCompanyInfo();
+        //$scope.GetCompanyInfo();
+        $scope.GetBranchId();
     }
 
     $scope.AddToCart = function (ProductId, Name, Packing, Price, Price2, Image, Quantity, ProductNameUrl, Barcode) {
@@ -206,12 +265,11 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
             var newItem = { PRODUCT_ID: ProductId, NAME: Name, PACKING: Packing, PRICE: Price, PRICE2: Price2, IMAGE_THUMBNAIL_PATH: Image, QUANTITY: Quantity, PRODUCT_NAME_URL: ProductNameUrl, BAR_CODE: Barcode };
 
             oldItems.push(newItem);
-
             localStorage.setItem('Cart', JSON.stringify(oldItems));
             $scope.GetCartList();
         }
-        
-        
+
+
     }
 
     $scope.DeleteProductFromCart = function (productId) {
@@ -230,7 +288,7 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
     }
 
     $scope.IncreaseOrDecreaseQuantity = function (productId, quantity, status) {
-        
+
         if (status == 0 && quantity > 1) {
             var oldItems = JSON.parse(localStorage.getItem('Cart'));
             $.each(oldItems, function (i) {
@@ -242,8 +300,7 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
                 }
             });
         }
-        if (status == 1)
-        {
+        if (status == 1) {
             var oldItems = JSON.parse(localStorage.getItem('Cart'));
             $.each(oldItems, function (i) {
                 if (oldItems[i].PRODUCT_ID === productId) {
@@ -304,13 +361,18 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
 
         //window.location.replace(objCommon.baseUrl + "Products/Index?category=" + categoryId + "&search=" + $scope.searchText + "&group=" + $scope.groupId);
 
-       // $scope.GetAllProducts(categoryId, $scope.searchText);
+        // $scope.GetAllProducts(categoryId, $scope.searchText);
         //$window.location.href = objCommon.baseUrl + 'Products/GetAllProductsByCategoryId?CategoryId=' + categoryId + '&PageIndex=1&PageSize=15';
         $window.location.href = objCommon.baseUrl + 'Products/Index?category=' + categoryId + '&search=&group=&isFromMenu=true';
     }
 
     $scope.GetProductBySearch = function () {
-        $window.location.href = objCommon.baseUrl + 'Products/Index?group=' + $("#maincategory").val()+'&search=' + $scope.TextSearch;
+        //if ($("#maincategory option:selected").text() == "Select Category" || $("#maincategory option:selected").text() == "") {
+        //    objCommon.ShowMessage("Please select category for product search", "error");
+        //    return;
+        //}
+
+        $window.location.href = objCommon.baseUrl + 'Products/Index?search=' + $scope.TextSearch;
     }
 
 });

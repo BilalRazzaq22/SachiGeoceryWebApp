@@ -35,17 +35,25 @@ namespace Chaarsu.Controllers
         // GET: Cart
 
         [HttpGet]
-        public ActionResult CheckOut()
+        public JsonResult ProcessCheckOut()
         {
             if (Session["UserSession"] != null || Session["GuestSession"] != null)
             {
-                return View();
+                return Json(new { Status = true, RetMessage = "User Found" }, JsonRequestBehavior.AllowGet);
+                //return View();
 
             }
             else
             {
-                return RedirectToAction("SignIn", "Accounts");
+                return Json(new { Status = false, RetMessage = "User Not Found" }, JsonRequestBehavior.AllowGet);
+                //return RedirectToAction("SignIn", "Accounts");
             }
+        }
+
+        [HttpGet]
+        public ActionResult CheckOut()
+        {
+                return View();
         }
 
         public int GetBranchId(double Lang, double Lat)

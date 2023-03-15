@@ -2,15 +2,19 @@
 var objCommon = new Common();
 
 suchiapp.controller("CartController", function ($scope, $window) {
+    debugger;
     $scope.loader = true;
     $scope.Name = '';
     $scope.Mobile = '';
     $scope.Address = '';
     var address = localStorage.getItem("address");
+    var username = localStorage.getItem("Username");
+    var mobile = localStorage.getItem("Mobile");
+    $scope.Name = username;
+    $scope.Mobile = mobile;
     $scope.Address = address;
 
     objCommon.AjaxCallAPS("Cart/GetPaymentModes", $.param({}), "GET", true, function (data) {
-        console.log(data.response);
         if (data.Status == true) {
             $scope.PaymentModes = data.response;
             $scope.loader = false;
@@ -19,7 +23,7 @@ suchiapp.controller("CartController", function ($scope, $window) {
         else {
             objCommon.ShowMessage(data.RetMessage, "error");
         }
-    })
+    }, null, "Error while getting payment modes, Please try again.", $scope);
 
     $scope.Valid = function () {
         if ($scope.Name == '' || $scope.Name == null) {
@@ -71,7 +75,6 @@ suchiapp.controller("CartController", function ($scope, $window) {
                     var arrayObjects = [];
                     if (order.Status == true) {
                         var products = JSON.parse(localStorage.getItem('Cart'));
-                        console.log(products);
                         $.each(products, function (i) {
                             var obj = { OREDER_PRODUCT_ID: 0, ORDER_ID: order.OrderId, PRODUCT_ID: products[i].PRODUCT_ID, QUANTITY: products[i].QUANTITY, IS_ACTIVE: 1, BAR_CODE: products[i].BAR_CODE }
                             arrayObjects.push(obj);
@@ -85,13 +88,13 @@ suchiapp.controller("CartController", function ($scope, $window) {
                                 $scope.$apply();
                                 localStorage.setItem("Cart", JSON.stringify([]));
                             }
-                        });
+                        }, null, "Error while inserting order products, Please try again.", $scope);
                        
                     }
                     else {
                         objCommon.ShowMessage(order.RetMessage, "error");
                     }
-                });
+                }, null, "Error while inserting order, Please try again.", $scope);
             }
             else {
                 objCommon.ShowMessage("Please select payment mode", "error");

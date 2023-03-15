@@ -23,11 +23,10 @@ suchiapp.controller("UserController", function ($scope) {
                 objCommon.ShowMessage("Access Denied Your Session is Time Out.", "error");
             }
             else {
-                console.log(data);
                 $scope.Orders = data;
             }
             $scope.$apply();
-        });
+        }, null, "Error while getting all orders, Please try again.", $scope);
         $scope.AccountDetail();
     }
 
@@ -37,7 +36,6 @@ suchiapp.controller("UserController", function ($scope) {
                 objCommon.ShowMessage("Access Denied Your Session is Time Out.", "error");
             }
             else {
-                console.log(data);
                 $scope.username = data.USERNAME;
                 $scope.email = data.EMAIL;
                 $scope.mobile = data.MOBILE_NO;
@@ -46,7 +44,7 @@ suchiapp.controller("UserController", function ($scope) {
             $("body").css({ "opacity": "1" });
             $scope.loader = false;
             $scope.$apply();
-        });
+        }, null, "Error while getting user details, Please try again.", $scope);
     }
 
     $scope.UpdateUserAccount = function () {
@@ -81,7 +79,7 @@ suchiapp.controller("UserController", function ($scope) {
                     objCommon.ShowMessage(response.RetMessage, "error");
                 }
                 $scope.$apply();
-            });
+            }, null, "Error while updating user details, Please try again.", $scope);
         }  
     };
 
@@ -94,13 +92,12 @@ suchiapp.controller("UserController", function ($scope) {
                 objCommon.ShowMessage("Access Denied Your Session is Time Out.", "error");
             }
             else {
-                console.log(data);
                 $scope.AddressList = data;
             }
             $("body").css({ "opacity": "1" });
             $scope.loader = false;
             $scope.$apply();
-        })
+        }, null, "Error while getting address list, Please try again.", $scope)
 
     }
 
@@ -135,7 +132,7 @@ suchiapp.controller("UserController", function ($scope) {
                     objCommon.ShowMessage(response.RetMessage, "error");
                 }
                 $scope.$apply();
-            });
+            }, null, "Error while changing password, Please try again.", $scope);
         }
     };
 
@@ -147,7 +144,7 @@ suchiapp.controller("UserController", function ($scope) {
             else {
                 objCommon.ShowMessage(d, "error");
             }
-        });       
+        }, null, "Error while sign out user, Please try again.", $scope);
     }
 
 });

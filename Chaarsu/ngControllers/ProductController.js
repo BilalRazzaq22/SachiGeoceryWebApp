@@ -14,7 +14,7 @@ suchiapp.controller("ProductsController", function ($scope) {
     $scope.groupId = "";
     $scope.isMenu = "";
 
-    
+
 
     $scope.GetAllProducts = function (catid, search, group, isFromMenu) {
         isFilter = false;
@@ -24,7 +24,7 @@ suchiapp.controller("ProductsController", function ($scope) {
         $scope.isMenu = isFromMenu;
 
         if (isFromMenu) {
-            $scope.GetProductsByCategory(catid);
+            $scope.GetProductsByCategory(catid, "False");
             return;
         }
 
@@ -49,7 +49,6 @@ suchiapp.controller("ProductsController", function ($scope) {
         }
         objCommon.AjaxCallAPS("Products/GetAllProducts", $.param(data), "GET", true, function (data) {
 
-            console.log(data.response);
             $scope.Products = data.response;
             $scope.loader = false;
             $("body").css({ "opacity": "1" });
@@ -73,17 +72,19 @@ suchiapp.controller("ProductsController", function ($scope) {
             setTimeout(function () {
                 $("#maincategory").val($scope.groupId + "");
                 $("#txtSearchBox").val($scope.searchText);
-            }, 300)
-          
-        });        
+            }, 300);
+        }, null, "Error while getting products, Please try again.", $scope);
     }
 
 
-    $scope.GetProductsByCategory = function (categoryId) {
+    $scope.GetProductsByCategory = function (categoryId, isLoadMore) {
         catId = categoryId;
         $("body").css({ "opacity": "0.5" });
         $scope.loader = true;
         $scope.categoryId = categoryId;
+        if (isLoadMore == "False") {
+            $scope.pageIndex = 1;
+        }
         isFilter = true;
         var data = {
             CategoryId: $scope.categoryId,
@@ -121,12 +122,11 @@ suchiapp.controller("ProductsController", function ($scope) {
             //    $("#maincategory").val($scope.groupId + "");
             //    $("#txtSearchBox").val($scope.searchText);
             //}, 300)
-
-        });
+        }, null, "Error while getting products by category, Please try again.", $scope);
 
         //window.location.replace(objCommon.baseUrl + "Products/Index?category=" + categoryId + "&search=" + $scope.searchText + "&group=" + $scope.groupId);
 
-       // $scope.GetAllProducts(categoryId, $scope.searchText);
+        // $scope.GetAllProducts(categoryId, $scope.searchText);
     }
 
     $scope.LoadeMoreProducts = function () {
@@ -134,9 +134,9 @@ suchiapp.controller("ProductsController", function ($scope) {
         $scope.loader = true;
         $scope.pageIndex = $scope.pageIndex + 1;
         if (isFilter) {
-            $scope.GetProductsByCategory(catId);
+            $scope.GetProductsByCategory(catId, "True");
         } else {
-        $scope.GetAllProducts();
+            $scope.GetAllProducts();
         }
     }
 

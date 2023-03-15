@@ -20,7 +20,7 @@ var Common = function () {
     _this.baseUrlAPS = baseUrlAPS;
     var baseLoginUrl = liveLoginUrl;
     _this.baseLoginUrl = liveLoginUrl;
-    _this.AjaxCall = function (url, data, methodType, isAsync, callback, btn) {
+    _this.AjaxCall = function (url, data, methodType, isAsync, callback, btn, errorMsg, $scope) {
         var value = $(btn).val();
         if (value == "") {
             value = $(btn).html();
@@ -54,6 +54,9 @@ var Common = function () {
                 callback(response);
             },
             error: function (jqXhr, textStatus, errorThrown) {
+                $scope.loader = false;
+                $("body").css({ "opacity": "1" });
+                $scope.$apply();
                 $(btn).val(value).prop("disabled", false); // for input element
                 $(btn).removeAttr("style").html(value).prop("disabled", false); // for button element
 
@@ -62,13 +65,13 @@ var Common = function () {
                     var error = $.parseJSON(jqXhr.responseText);
                     _this.ShowMessage(error, "error");
                 } else {
-                    _this.ShowMessage("Oops! Something went wrong, please try again later.", "error");
+                    _this.ShowMessage(errorMsg, "error");
                 }
                 //$(".modal").modal("hide");
             }
         });
     }
-    _this.AjaxCallAPS = function (url, data, methodType, isAsync, callback, btn) {
+    _this.AjaxCallAPS = function (url, data, methodType, isAsync, callback, btn, errorMsg, $scope) {
         var value = $(btn).val();
         if (value == "") {
             value = $(btn).html();
@@ -105,6 +108,9 @@ var Common = function () {
                 callback(response);
             },
             error: function (jqXhr, textStatus, errorThrown) {
+                $scope.loader = false;
+                $("body").css({ "opacity": "1" });
+                $scope.$apply();
                 $(btn).val(value).prop("disabled", false); // for input element
                 $(btn).removeAttr("style").html(value).prop("disabled", false); // for button element
 
@@ -113,7 +119,7 @@ var Common = function () {
                     var error = $.parseJSON(jqXhr.responseText);
                     _this.ShowMessage(error, "error");
                 } else {
-                    _this.ShowMessage("Oops! Something went wrong, please try again later.", "error");
+                    _this.ShowMessage(errorMsg, "error");
                 }
                 //$(".modal").modal("hide");
             }
