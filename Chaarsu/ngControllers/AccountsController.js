@@ -78,7 +78,6 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
                 };
                 objCommon.AjaxCall("Accounts/signUpUser", JSON.stringify(data), "POST", true, function (response) {
                     $("body").css({ "opacity": "1" });
-                    debugger;
                     if (response.Status == true) {
                         if (response.IsGuest) {
                             localStorage.setItem('Username', response.GuestUser);

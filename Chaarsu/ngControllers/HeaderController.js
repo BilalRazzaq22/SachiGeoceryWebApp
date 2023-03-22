@@ -41,7 +41,7 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
 
         objCommon.AjaxCall("Home/GetBranchId", $.param({ Lang: lang, Lat: lot }), "GET", true, function (d) {
 
-        }, null, "Error while getting branch, Please try again.", $scope);
+        }, null, "Error while getting branch check the location is ON or not, Please try again.", $scope);
     }
 
     $scope.GetHeaderCategories = function () {
@@ -325,7 +325,6 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
         //    PageSize: $scope.pageSize
         //}
         //objCommon.AjaxCallAPS("Products/GetAllProductsByCategoryId", $.param(data), "GET", true, function (data) {
-        //    debugger;
         //    isFilter = true;
         //    $scope.Products = data.response;
         //    $scope.loader = false;

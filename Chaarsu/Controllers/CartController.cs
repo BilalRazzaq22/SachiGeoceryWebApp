@@ -150,7 +150,13 @@ namespace Chaarsu.Controllers
                     PAYMENT_MODE_ID = order.PAYMENT_MODE_ID,
                     DELIVERY_DESCRIPTION = order.DELIVERY_DESCRIPTION
                 };
-                data.BRANCH_ID = GetBranchId(order.LONGITUDE, order.LATITUDE);
+
+                if (Session["BranchId"] != null)
+                { 
+                   //data.BRANCH_ID = GetBranchId(order.LONGITUDE, order.LATITUDE);
+                   data.BRANCH_ID = Convert.ToInt32(Session["BranchId"]);
+                }
+
                 if (Session["UserSession"] != null)
                 {
                     data.CUSTOMER_ID = UserId;

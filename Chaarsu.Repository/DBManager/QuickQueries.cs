@@ -324,5 +324,44 @@ namespace Chaarsu.Repository.DBManager
                 con.Close();
             }
         }
+
+        public List<BRANCH> GetAllBranches()
+        {
+            SqlConnection con = null;
+            List<BRANCH> list = null;
+            try
+            {
+                string efConnectionString = ConfigurationManager.ConnectionStrings["anytimea_GROCERYEntities"].ToString();
+                var efConnectionStringBuilder = new EntityConnectionStringBuilder(efConnectionString);
+                string sqlConnectionString = efConnectionStringBuilder.ProviderConnectionString;
+
+                con = new SqlConnection(sqlConnectionString);
+                SqlCommand cmd = new SqlCommand("select BRANCH_ID,LONGITUDE,LATITUDE from BRANCHES", con);
+                cmd.CommandType = CommandType.Text;
+                SqlDataReader r;
+                // Execute the command.
+                con.Open();
+                r = cmd.ExecuteReader();
+                list = new List<BRANCH>();
+                while (r.Read())
+                {
+                    list.Add(new BRANCH()
+                    {
+                        BRANCH_ID = Convert.ToInt32(r["BRANCH_ID"]),
+                        LONGITUDE = (r["LONGITUDE"] != DBNull.Value) ? Convert.ToDouble(r["LONGITUDE"]) : 0,
+                        LATITUDE = (r["LATITUDE"] != DBNull.Value) ? Convert.ToDouble(r["LATITUDE"]) : 0
+                    });
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }

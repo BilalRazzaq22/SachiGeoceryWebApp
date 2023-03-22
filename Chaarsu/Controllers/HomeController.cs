@@ -18,13 +18,13 @@ namespace Chaarsu.Controllers
     {
         private readonly IHomeBLL _homeBLL;
         //private GenericRepository<CompanyInfo> _CompanyInfo;
-        private GenericRepository<BRANCH> _BRANCHES;
-        private readonly IUnitOfWork _unitOfWork;
+        //private GenericRepository<BRANCH> _BRANCHES;
+        //private readonly IUnitOfWork _unitOfWork;
         private readonly SpRepository _sp;
         public HomeController(IHomeBLL homeBLL)
         {
             _homeBLL = homeBLL;
-            _unitOfWork = new UnitOfWork();
+            //_unitOfWork = new UnitOfWork();
             _sp = new SpRepository();
         }
 
@@ -48,6 +48,9 @@ namespace Chaarsu.Controllers
             if (MyCollection.Instance.ModelHomeBanners == null)
                 MyCollection.Instance.ModelHomeBanners = _dbmanager.GetAllBannersHome();
 
+            if (MyCollection.Instance.Branches == null)
+                MyCollection.Instance.Branches = _dbmanager.GetAllBranches();
+
             HomeRootModel objHome = new HomeRootModel();
             objHome._ModelHomeBanner = MyCollection.Instance.ModelHomeBanners;
             objHome._ModelHomeBlogs = MyCollection.Instance.ModelHomeBlogs;
@@ -61,7 +64,7 @@ namespace Chaarsu.Controllers
         [HttpGet]
         public ActionResult About()
         {
-            var a = Session["long"];
+            var a = Session["Longitude"];
             ViewBag.Message = "Your application description page.";
 
             return View();
@@ -143,14 +146,14 @@ namespace Chaarsu.Controllers
 
         public JsonResult GetBranchId(double Lang, double Lat)
         {
-            if (Session["BranchId"] == null)
+            if (Session["BranchId"] == null || Convert.ToInt32(Session["BranchId"]) == 0)
             {
                 int nearestBranchId = 0;
                 double EarthRadius = 6400000.0, minD = 6400000.0;
                 double bLat = 0;
                 double bLong = 0;
-                _BRANCHES = new GenericRepository<BRANCH>(_unitOfWork);
-                List<BRANCH> branches = _BRANCHES.Repository.GetAll();
+                //_BRANCHES = new GenericRepository<BRANCH>(_unitOfWork);
+                List<BRANCH> branches = MyCollection.Instance.Branches;
                 foreach (var row in branches)
                 {
                     bLat = row.LATITUDE ?? 0;
@@ -170,6 +173,7 @@ namespace Chaarsu.Controllers
                     }
                 }
                 Session["BranchId"] = nearestBranchId;
+                return Json("Success", JsonRequestBehavior.AllowGet);
             }
             return Json("Success", JsonRequestBehavior.AllowGet);
         }

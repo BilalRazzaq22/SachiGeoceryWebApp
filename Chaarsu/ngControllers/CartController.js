@@ -2,7 +2,6 @@
 var objCommon = new Common();
 
 suchiapp.controller("CartController", function ($scope, $window) {
-    debugger;
     $scope.loader = true;
     $scope.Name = '';
     $scope.Mobile = '';

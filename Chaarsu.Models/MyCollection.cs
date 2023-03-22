@@ -35,5 +35,6 @@ namespace Chaarsu.Models
         public List<ModelHomeBanner> ModelHomeBanners { get; set; }
         public List<GROUP> Groups { get; set; }
         public List<CATEGORy> Categories { get; set; }
+        public List<BRANCH> Branches { get; set; }
     }
 }

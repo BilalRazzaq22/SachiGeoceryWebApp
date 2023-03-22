@@ -175,6 +175,8 @@ namespace Chaarsu.Controllers
                         user.CREATED_ON = DateTime.Now;
                         user.USER_TYPE = 3;
                         user.IS_ACTIVE = true;
+                        user.BRANCH_ID = Convert.ToInt32(Session["BranchId"]);
+                        user.CREATED_BY = 1;
                         _USER.Repository.Add(user);
                         var GuestId = user.USER_ID;
 
