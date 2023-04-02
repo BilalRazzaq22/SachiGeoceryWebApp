@@ -13,8 +13,8 @@ suchiapp.controller("ProductsController", function ($scope) {
     $scope.subCategoryId = "";
     $scope.groupId = "";
     $scope.isMenu = "";
-
-
+    $scope.MinPrice = 0;
+    $scope.MaxPrice = 0;
 
     $scope.GetAllProducts = function (catid, search, group, isFromMenu) {
         isFilter = false;
@@ -46,6 +46,8 @@ suchiapp.controller("ProductsController", function ($scope) {
             CategoryId: $scope.categoryId,
             SubCategoryId: $scope.subCategoryId,
             GroupId: $scope.groupId,
+            MinPrice: $scope.MinPrice,
+            MaxPrice: $scope.MaxPrice
         }
         objCommon.AjaxCallAPS("Products/GetAllProducts", $.param(data), "GET", true, function (data) {
 
@@ -53,7 +55,7 @@ suchiapp.controller("ProductsController", function ($scope) {
             $scope.loader = false;
             $("body").css({ "opacity": "1" });
             $scope.$apply();
-
+            initPriceFilter();
             if (data.response.length == 0) {
                 $('#btnloadmore').addClass('d-none');
                 $('#txtloadmore').removeClass('d-none');
@@ -151,6 +153,8 @@ suchiapp.controller("ProductsController", function ($scope) {
         $scope.categoryId = "";
         $scope.subCategoryId = "";
         $scope.groupId = "";
+        $scope.MinPrice = 0;
+        $scope.MaxPrice = 0;
         $scope.GetAllProducts();
     }
 
@@ -169,4 +173,56 @@ suchiapp.controller("ProductsController", function ($scope) {
         }
     };
 
+
+    function initPriceFilter() {
+        var lowerSlider = document.querySelector('#lower');
+        var upperSlider = document.querySelector('#upper');
+
+        document.querySelector('#two').value = upperSlider.value;
+        document.querySelector('#one').value = lowerSlider.value;
+
+        var lowerVal = parseInt(lowerSlider.value);
+        var upperVal = parseInt(upperSlider.value);
+
+        upperSlider.oninput = function () {
+            lowerVal = parseInt(lowerSlider.value);
+            upperVal = parseInt(upperSlider.value);
+
+            $scope.MinPrice = lowerVal;
+            $scope.MaxPrice = upperVal;
+
+            if (upperVal < lowerVal + 4) {
+                lowerSlider.value = upperVal - 4;
+                if (lowerVal == lowerSlider.min) {
+                    upperSlider.value = 4;
+                }
+            }
+            document.querySelector('#two').value = this.value;
+        };
+
+        lowerSlider.oninput = function () {
+            lowerVal = parseInt(lowerSlider.value);
+            upperVal = parseInt(upperSlider.value);
+
+
+
+            $scope.MinPrice = lowerVal;
+            $scope.MaxPrice = upperVal;
+
+            if (lowerVal > upperVal - 4) {
+                upperSlider.value = lowerVal + 4;
+                if (upperVal == upperSlider.max) {
+                    lowerSlider.value = parseInt(upperSlider.max) - 4;
+                }
+            }
+            document.querySelector('#one').value = this.value;
+        };
+
+        if ($scope.MinPrice != 0 && $scope.MaxPrice != 0) {
+            document.querySelector('#one').value = $scope.MinPrice;
+            document.querySelector('#two').value = $scope.MaxPrice;
+            lowerSlider.value = $scope.MinPrice;
+            upperSlider.value = $scope.MaxPrice;
+        }
+    }
 });

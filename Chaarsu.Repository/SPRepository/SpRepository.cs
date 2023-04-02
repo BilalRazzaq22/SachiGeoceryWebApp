@@ -282,7 +282,7 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
-        public List<SpGetAllProducts_Result> SpGetAllProducts(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, string CategoryId, string SubCategoryId, string GroupId, int BranchId)
+        public List<SpGetAllProducts_Result> SpGetAllProducts(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, string CategoryId, string SubCategoryId, string GroupId, int BranchId, int MinPrice, int MaxPrice)
         {
             try
             {
@@ -316,6 +316,8 @@ namespace Chaarsu.Repository.SPRepository
                 cmd.Parameters.AddWithValue("@SubCategoryId", SubCategoryId);
                 cmd.Parameters.AddWithValue("@GroupId", GroupId);
                 cmd.Parameters.AddWithValue("@BranchId", BranchId);
+                cmd.Parameters.AddWithValue("@MinPrice", MinPrice);
+                cmd.Parameters.AddWithValue("@MaxPrice", MaxPrice);
                 SqlDataReader r;
                 // Execute the command.
                 con.Open();

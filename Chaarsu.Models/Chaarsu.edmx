@@ -1649,6 +1649,8 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Parameter Name="SubCategoryId" Type="nvarchar" Mode="In" />
           <Parameter Name="GroupId" Type="nvarchar" Mode="In" />
           <Parameter Name="BranchId" Type="int" Mode="In" />
+          <Parameter Name="MinPrice" Type="int" Mode="In" />
+          <Parameter Name="MaxPrice" Type="int" Mode="In" />
         </Function>
         <Function Name="SPGetAllRecommendedProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PageIndex" Type="int" Mode="In" />
@@ -2388,6 +2390,12 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <EntitySet Name="STOCKs" EntityType="anytimea_GROCERYModel.STOCK" />
           <EntitySet Name="TERMINFOes" EntityType="anytimea_GROCERYModel.TERMINFO" />
           <EntitySet Name="TESTs" EntityType="anytimea_GROCERYModel.TEST" />
+          <FunctionImport Name="SP_GetAllProductsByCategories" ReturnType="Collection(anytimea_GROCERYModel.SP_GetAllProductsByCategories_Result)">
+            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="Sub_Categories_Id" Mode="In" Type="Int32" />
+            <Parameter Name="BranchId" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="SpGetAllProducts" ReturnType="Collection(anytimea_GROCERYModel.SpGetAllProducts_Result)">
             <Parameter Name="PageIndex" Mode="In" Type="Int32" />
             <Parameter Name="PageSize" Mode="In" Type="Int32" />
@@ -2398,12 +2406,8 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
             <Parameter Name="SubCategoryId" Mode="In" Type="String" />
             <Parameter Name="GroupId" Mode="In" Type="String" />
             <Parameter Name="BranchId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_GetAllProductsByCategories" ReturnType="Collection(anytimea_GROCERYModel.SP_GetAllProductsByCategories_Result)">
-            <Parameter Name="PageIndex" Mode="In" Type="Int32" />
-            <Parameter Name="PageSize" Mode="In" Type="Int32" />
-            <Parameter Name="Sub_Categories_Id" Mode="In" Type="Int32" />
-            <Parameter Name="BranchId" Mode="In" Type="Int32" />
+            <Parameter Name="MinPrice" Mode="In" Type="Int32" />
+            <Parameter Name="MaxPrice" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -4320,7 +4324,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="DESCRIPTION" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="AVG_COST" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
         </EntityType>
-        <ComplexType Name="SpGetAllProducts_Result">
+        <ComplexType Name="SP_GetAllProductsByCategories_Result">
           <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" />
           <Property Type="String" Name="NAME" Nullable="true" />
           <Property Type="String" Name="DESCRIPTION" Nullable="true" />
@@ -4347,7 +4351,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Type="Int32" Name="Start" Nullable="true" />
           <Property Type="Int32" Name="End" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="SP_GetAllProductsByCategories_Result">
+        <ComplexType Name="SpGetAllProducts_Result">
           <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" />
           <Property Type="String" Name="NAME" Nullable="true" />
           <Property Type="String" Name="DESCRIPTION" Nullable="true" />
@@ -6115,9 +6119,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SpGetAllProducts" FunctionName="anytimea_GROCERYModel.Store.SpGetAllProducts">
+          <FunctionImportMapping FunctionImportName="SP_GetAllProductsByCategories" FunctionName="anytimea_GROCERYModel.Store.SP_GetAllProductsByCategories">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="anytimea_GROCERYModel.SpGetAllProducts_Result">
+              <ComplexTypeMapping TypeName="anytimea_GROCERYModel.SP_GetAllProductsByCategories_Result">
                 <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
@@ -6146,9 +6150,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_GetAllProductsByCategories" FunctionName="anytimea_GROCERYModel.Store.SP_GetAllProductsByCategories">
+          <FunctionImportMapping FunctionImportName="SpGetAllProducts" FunctionName="anytimea_GROCERYModel.Store.SpGetAllProducts">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="anytimea_GROCERYModel.SP_GetAllProductsByCategories_Result">
+              <ComplexTypeMapping TypeName="anytimea_GROCERYModel.SpGetAllProducts_Result">
                 <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />

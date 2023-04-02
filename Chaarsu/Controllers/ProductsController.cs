@@ -30,13 +30,13 @@ namespace Chaarsu.Controllers
             _sp = new SpRepository();
             _homeBLL = homeBLL;
         }
-       
+
         // GET: Products
         [HttpGet]
         public ActionResult Index()
         {
-            var response = _homeBLL.LoadCategoreis ();
-           
+            var response = _homeBLL.LoadCategoreis();
+
 
             return View(response);
         }
@@ -50,7 +50,7 @@ namespace Chaarsu.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetAllProducts(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, string CategoryId, string SubCategoryId, string GroupId)
+        public JsonResult GetAllProducts(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, string CategoryId, string SubCategoryId, string GroupId, int MinPrice, int MaxPrice)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace Chaarsu.Controllers
                     BranchId = Convert.ToInt32(Session["BranchId"]);
                 }
 
-                var response = _sp.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText, CategoryId, SubCategoryId, GroupId, BranchId).ToList();
+                var response = _sp.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText, CategoryId, SubCategoryId, GroupId, BranchId, MinPrice, MaxPrice).ToList();
                 return Json(new { Status = true, response }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
@@ -82,7 +82,7 @@ namespace Chaarsu.Controllers
                 }
 
                 SqlManager sqlManager = new SqlManager();
-                var dt = sqlManager.ExecuteDataTable($"select sub_category_id from sub_categories where category_id = {CategoryId}",SqlCommandType.Text,new SqlCommand());
+                var dt = sqlManager.ExecuteDataTable($"select sub_category_id from sub_categories where category_id = {CategoryId}", SqlCommandType.Text, new SqlCommand());
 
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -111,8 +111,8 @@ namespace Chaarsu.Controllers
                 }
 
                 Dictionary<string, object> response = new Dictionary<string, object>();
-                var productDetail = _sp.GetProductDetailByProductNameUrl(productNameUrl,BranchId);
-                if(productDetail==null)
+                var productDetail = _sp.GetProductDetailByProductNameUrl(productNameUrl, BranchId);
+                if (productDetail == null)
                 {
                     return Json(new { Status = false, RetMessage = productNameUrl + "of detail not exist." });
                 }
@@ -158,7 +158,7 @@ namespace Chaarsu.Controllers
                 pRODUCT_REVIEWS.CREATED_DATE = DateTime.Now;
                 pRODUCT_REVIEWS.RECORD_STATUS = "Active";
                 _PRODUCT_REVIEWS.Repository.Add(pRODUCT_REVIEWS);
-                return Json(new { Status = true, RetMessage= "Submited Your Product Review. Thank You" });
+                return Json(new { Status = true, RetMessage = "Submited Your Product Review. Thank You" });
             }
             catch (Exception ex)
             {

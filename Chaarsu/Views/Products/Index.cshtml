@@ -45,7 +45,7 @@
                     <div class="theiaStickySidebar">
                         <div class="widget widget-head">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h6 data-toggle="collapse" href="#filtermain" role="button" aria-expanded="false" aria-controls="filtermain"><i class="fas fa-filter"></i> Filter</h6>
+                                <h6 data-toggle="collapse" href="#filtermain" role="button" aria-expanded="false" aria-controls="filtermain"><i class="fas fa-filter"></i> Filters</h6>
                                 <a href="#" ng-click="ClearAllFilters()">Clear All</a>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                                                                     foreach (var c in g.listCategories)
                                                                     {
                                                                         <li class="checkbox-item" id="catagory-widget-s@(count)">
-                                                                         <a class="anchortag" style="cursor:pointer" id="@(c.CATEGORY_ID)anchor" ng-click="GetProductsByCategory('@c.CATEGORY_ID','False');">@c.DESCRIPTION</a>
+                                                                            <a class="anchortag" style="cursor:pointer" id="@(c.CATEGORY_ID)anchor" ng-click="GetProductsByCategory('@c.CATEGORY_ID','False');">@c.DESCRIPTION</a>
                                                                         </li>
                                                                     }
                                                                 }
@@ -85,7 +85,7 @@
 
                                                         </ul>
                                                     </li>
-                                                   
+
                                                 }
                                             }
                                         }
@@ -95,16 +95,59 @@
                             </div>
 
                             <div class="widget">
-                                <h4 class="widget-title d-none d-lg-block">Filter by Price</h4>
-                                <a class="widget-title d-lg-none" data-toggle="collapse" href="#scatagory-widget02" role="button" aria-expanded="false" aria-controls="scatagory-widget02">Filte by Price<i class="fas fa-angle-down"></i></a>
+            <h4 class="widget-title d-none d-lg-block">Filter by Price</h4>
+            <a class="widget-title d-lg-none" data-toggle="collapse" href="#scatagory-widget02" role="button" aria-expanded="false" aria-controls="scatagory-widget02">Filter by Price<i class="fas fa-angle-down"></i></a>
 
-                                <div class="widget-wrapper" id="scatagory-widget02">
-                                    <div class="range-slider">
-                                        <input type="text" class="js-range-slider" value="" />
-                                        <input type="submit" class="submit" value="filter">
+            <div class="widget-wrapper" id="scatagory-widget02">
+                <div class="price-field">
+                    <input type="range" min="100" max="50000" value="0" id="lower">
+                    <input type="range" min="100" max="50000" value="50000" id="upper">
+                </div>
+                <div class="price-wrap">
+                    <a ng-click="GetAllProducts()" class="btn-price-filter">Filter</a>
+                    @*<span class="price-title">FILTER</span>*@
+                    <div class="price-container">
+                        <div class="price-wrap-1">
+
+                            @*<label for="one">$</label>*@
+                            <input id="one">
+                        </div>
+                        <div class="price-wrap_line">-</div>
+                        <div class="price-wrap-2">
+                            @*<label for="two">$</label>*@
+                            <input id="two">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                            @*<div class="wrapper">
+                                <fieldset class="filter-price">
+
+                                    <div class="price-field">
+                                        <input type="range" min="100" max="50000" value="0" id="lower">
+                                        <input type="range" min="100" max="50000" value="50000" id="upper">
                                     </div>
-                                </div>
-                            </div>
+                                    <div class="price-wrap">
+                                        <span class="price-title">FILTER</span>
+                                        <div class="price-container">
+                                            <div class="price-wrap-1">
+
+                                                <label for="one">$</label>
+                                                <input id="one">
+                                            </div>
+                                            <div class="price-wrap_line">-</div>
+                                            <div class="price-wrap-2">
+                                                <label for="two">$</label>
+                                                <input id="two">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>*@
 
                         </div>
                     </div>
@@ -122,7 +165,7 @@
                                             <img src="~/assets/images/products/05.png" alt="product">
                                         </div>
                                     </a>
-                                    <span class="batch sale">Sale</span>
+                                    @*<span class="batch sale">Sale</span>*@
                                     <a class="wish-link" href="#" ng-click="AddToWishlist(P.PRODUCT_ID)">
                                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
                                     </a>

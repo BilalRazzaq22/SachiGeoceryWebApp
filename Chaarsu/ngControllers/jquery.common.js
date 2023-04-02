@@ -14,12 +14,12 @@ var Common = function () {
     var liveUrl = "https://sachigrocery.pk/";
     var localLoginUrl = "http://localhost:49663/account/login";
     var liveLoginUrl = "https://sachigrocery.pk/account/login";
-    var baseUrl = liveUrl;
+    var baseUrl = localUrl;
     _this.baseUrl = baseUrl;
     var baseUrlAPS = baseUrl;
     _this.baseUrlAPS = baseUrlAPS;
-    var baseLoginUrl = liveLoginUrl;
-    _this.baseLoginUrl = liveLoginUrl;
+    var baseLoginUrl = localLoginUrl;
+    _this.baseLoginUrl = localLoginUrl;
     _this.AjaxCall = function (url, data, methodType, isAsync, callback, btn, errorMsg, $scope) {
         var value = $(btn).val();
         if (value == "") {
