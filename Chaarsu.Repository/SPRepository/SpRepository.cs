@@ -297,69 +297,69 @@ namespace Chaarsu.Repository.SPRepository
                 //@GroupId nvarchar(300)= '',
                 //@BranchId as int = 0
 
-                SqlConnection con = null;
-                List<SpGetAllProducts_Result> list = null;
-                string efConnectionString = ConfigurationManager.ConnectionStrings["anytimea_GROCERYEntities"].ToString();
-                var efConnectionStringBuilder = new EntityConnectionStringBuilder(efConnectionString);
-                string sqlConnectionString = efConnectionStringBuilder.ProviderConnectionString;
+                //SqlConnection con = null;
+                //List<SpGetAllProducts_Result> list = null;
+                //string efConnectionString = ConfigurationManager.ConnectionStrings["anytimea_GROCERYEntities"].ToString();
+                //var efConnectionStringBuilder = new EntityConnectionStringBuilder(efConnectionString);
+                //string sqlConnectionString = efConnectionStringBuilder.ProviderConnectionString;
 
-                con = new SqlConnection(sqlConnectionString);
-                SqlCommand cmd = new SqlCommand("SpGetAllProducts", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.CommandTimeout = 120;
-                cmd.Parameters.AddWithValue("@PageIndex", PageIndex);
-                cmd.Parameters.AddWithValue("@PageSize", PageSize);
-                cmd.Parameters.AddWithValue("@SortColumn", SortColumn);
-                cmd.Parameters.AddWithValue("@SortOrder", SortOrder);
-                cmd.Parameters.AddWithValue("@SearchText", SearchText);
-                cmd.Parameters.AddWithValue("@CategoryId", CategoryId);
-                cmd.Parameters.AddWithValue("@SubCategoryId", SubCategoryId);
-                cmd.Parameters.AddWithValue("@GroupId", GroupId);
-                cmd.Parameters.AddWithValue("@BranchId", BranchId);
-                cmd.Parameters.AddWithValue("@MinPrice", MinPrice);
-                cmd.Parameters.AddWithValue("@MaxPrice", MaxPrice);
-                SqlDataReader r;
-                // Execute the command.
-                con.Open();
-                r = cmd.ExecuteReader();
-                list = new List<SpGetAllProducts_Result>();
-                while (r.Read())
-                {
-                    list.Add(new SpGetAllProducts_Result()
-                    {
-                        BARCODE = r["BARCODE"] as string,
-                        BRAND = r["BRAND"] as string,
-                        CategoryName = r["CategoryName"] as string,
-                        CATEGORY_ID = r["CATEGORY_ID"] as int?,
-                        //COLOR = r["COLOR"] as string,
-                        //CREATED_DATE = r["CREATED_DATE"] as DateTime?,
-                        DESCRIPTION = r["DESCRIPTION"] as string,
-                        End = r["End"] as int?,
-                        FLAVOR = r["FLAVOR"] as string,
-                        GroupID = r["GroupID"] as int?,
-                        IMAGE_THUMBNAIL_PATH = r["IMAGE_THUMBNAIL_PATH"] as string,
-                        NAME = r["NAME"] as string,
-                        PACKING = r["PACKING"] as string,
-                        PRICE = r["PRICE"] as decimal?,
-                        PRICE1 = r["PRICE1"] as decimal?,
-                        //PRICE2 = r["PRICE2"] as int?,
-                        PRODUCT_ID = Convert.ToInt32(r["PRODUCT_ID"]),
-                        PRODUCT_NAME_URL = r["PRODUCT_NAME_URL"] as string,
-                        RowIndex = r["RowIndex"] as long?,
-                        Start = r["Start"] as int?,
-                        SUB_CATEGORY_ID = r["SUB_CATEGORY_ID"] as int?,
-                        //TAG = r["AdminImagePath"] as string,
-                        TotalPages = r["TotalPages"] as decimal?,
-                        TotalRecords = r["TotalRecords"] as int?,
-                        VENDOR_ID = r["VENDOR_ID"] as int?
-                    });
+                //con = new SqlConnection(sqlConnectionString);
+                //SqlCommand cmd = new SqlCommand("SpGetAllProducts", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                ////cmd.CommandTimeout = 120;
+                //cmd.Parameters.AddWithValue("@PageIndex", PageIndex);
+                //cmd.Parameters.AddWithValue("@PageSize", PageSize);
+                //cmd.Parameters.AddWithValue("@SortColumn", SortColumn);
+                //cmd.Parameters.AddWithValue("@SortOrder", SortOrder);
+                //cmd.Parameters.AddWithValue("@SearchText", SearchText);
+                //cmd.Parameters.AddWithValue("@CategoryId", CategoryId);
+                //cmd.Parameters.AddWithValue("@SubCategoryId", SubCategoryId);
+                //cmd.Parameters.AddWithValue("@GroupId", GroupId);
+                //cmd.Parameters.AddWithValue("@BranchId", BranchId);
+                //cmd.Parameters.AddWithValue("@MinPrice", MinPrice);
+                //cmd.Parameters.AddWithValue("@MaxPrice", MaxPrice);
+                //SqlDataReader r;
+                //// Execute the command.
+                //con.Open();
+                //r = cmd.ExecuteReader();
+                //list = new List<SpGetAllProducts_Result>();
+                //while (r.Read())
+                //{
+                //    list.Add(new SpGetAllProducts_Result()
+                //    {
+                //        BARCODE = r["BARCODE"] as string,
+                //        BRAND = r["BRAND"] as string,
+                //        CategoryName = r["CategoryName"] as string,
+                //        CATEGORY_ID = r["CATEGORY_ID"] as int?,
+                //        //COLOR = r["COLOR"] as string,
+                //        //CREATED_DATE = r["CREATED_DATE"] as DateTime?,
+                //        DESCRIPTION = r["DESCRIPTION"] as string,
+                //        End = r["End"] as int?,
+                //        FLAVOR = r["FLAVOR"] as string,
+                //        GroupID = r["GroupID"] as int?,
+                //        IMAGE_THUMBNAIL_PATH = r["IMAGE_THUMBNAIL_PATH"] as string,
+                //        NAME = r["NAME"] as string,
+                //        PACKING = r["PACKING"] as string,
+                //        PRICE = r["PRICE"] as decimal?,
+                //        PRICE1 = r["PRICE1"] as decimal?,
+                //        //PRICE2 = r["PRICE2"] as int?,
+                //        PRODUCT_ID = Convert.ToInt32(r["PRODUCT_ID"]),
+                //        PRODUCT_NAME_URL = r["PRODUCT_NAME_URL"] as string,
+                //        RowIndex = r["RowIndex"] as long?,
+                //        Start = r["Start"] as int?,
+                //        SUB_CATEGORY_ID = r["SUB_CATEGORY_ID"] as int?,
+                //        //TAG = r["AdminImagePath"] as string,
+                //        TotalPages = r["TotalPages"] as decimal?,
+                //        TotalRecords = r["TotalRecords"] as int?,
+                //        VENDOR_ID = r["VENDOR_ID"] as int?
+                //    });
 
-                }
-                return list;
+                //}
+                //return list;
 
 
 
-                //return db.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText, CategoryId, SubCategoryId, GroupId, BranchId).ToList();
+                return db.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText, CategoryId, SubCategoryId, GroupId, BranchId, MinPrice, MaxPrice).ToList();
 
             }
             catch (Exception ex)

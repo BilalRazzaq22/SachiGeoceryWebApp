@@ -60,6 +60,11 @@ namespace Chaarsu.Controllers
                     BranchId = Convert.ToInt32(Session["BranchId"]);
                 }
 
+                if (string.IsNullOrEmpty(GroupId))
+                {
+                    GroupId = "1";
+                }
+
                 var response = _sp.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText, CategoryId, SubCategoryId, GroupId, BranchId, MinPrice, MaxPrice).ToList();
                 return Json(new { Status = true, response }, JsonRequestBehavior.AllowGet);
             }

@@ -336,7 +336,7 @@ namespace Chaarsu.Repository.DBManager
                 string sqlConnectionString = efConnectionStringBuilder.ProviderConnectionString;
 
                 con = new SqlConnection(sqlConnectionString);
-                SqlCommand cmd = new SqlCommand("select BRANCH_ID,LONGITUDE,LATITUDE from BRANCHES", con);
+                SqlCommand cmd = new SqlCommand("select BRANCH_ID,LONGITUDE,LATITUDE from BRANCHES WHERE IS_ACTIVE = 1", con);
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader r;
                 // Execute the command.

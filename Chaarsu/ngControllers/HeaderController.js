@@ -38,8 +38,9 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
 
         var lang = localStorage.getItem("lang");
         var lot = localStorage.getItem("lat");
-
-        objCommon.AjaxCall("Home/GetBranchId", $.param({ Lang: lang, Lat: lot }), "GET", true, function (d) {
+        console.log(lang);
+        console.log(lot);
+        objCommon.AjaxCallAPS("Home/GetBranchId", $.param({ Lang: lang, Lat: lot }), "GET", true, function (d) {
 
         }, null, "Error while getting branch check the location is ON or not, Please try again.", $scope);
     }
