@@ -55,17 +55,23 @@ namespace Chaarsu.Controllers
             try
             {
                 int BranchId = 0;
+                int UserId = 0;
                 if (Session["BranchId"] != null)
                 {
                     BranchId = Convert.ToInt32(Session["BranchId"]);
                 }
 
-                if (string.IsNullOrEmpty(GroupId))
+                if (Session["UserSession"] != null)
+                {
+                    UserId = Convert.ToInt32(Session["UserSession"]);
+                }
+
+                if (string.IsNullOrEmpty(SearchText) && string.IsNullOrEmpty(GroupId))
                 {
                     GroupId = "1";
                 }
 
-                var response = _sp.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText, CategoryId, SubCategoryId, GroupId, BranchId, MinPrice, MaxPrice).ToList();
+                var response = _sp.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText, CategoryId, SubCategoryId, GroupId, BranchId, MinPrice, MaxPrice, UserId).ToList();
                 return Json(new { Status = true, response }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)

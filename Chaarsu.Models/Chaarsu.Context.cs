@@ -580,7 +580,7 @@ namespace Chaarsu.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllProductsByCategories_Result>("SP_GetAllProductsByCategories", pageIndexParameter, pageSizeParameter, sub_Categories_IdParameter, branchIdParameter);
         }
     
-        public virtual ObjectResult<SpGetAllProducts_Result> SpGetAllProducts(Nullable<int> pageIndex, Nullable<int> pageSize, string sortColumn, string sortOrder, string searchText, string categoryId, string subCategoryId, string groupId, Nullable<int> branchId, Nullable<int> minPrice, Nullable<int> maxPrice)
+        public virtual ObjectResult<SpGetAllProducts_Result> SpGetAllProducts(Nullable<int> pageIndex, Nullable<int> pageSize, string sortColumn, string sortOrder, string searchText, string categoryId, string subCategoryId, string groupId, Nullable<int> branchId, Nullable<int> minPrice, Nullable<int> maxPrice, Nullable<int> userId)
         {
             var pageIndexParameter = pageIndex.HasValue ?
                 new ObjectParameter("PageIndex", pageIndex) :
@@ -626,7 +626,11 @@ namespace Chaarsu.Models
                 new ObjectParameter("MaxPrice", maxPrice) :
                 new ObjectParameter("MaxPrice", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpGetAllProducts_Result>("SpGetAllProducts", pageIndexParameter, pageSizeParameter, sortColumnParameter, sortOrderParameter, searchTextParameter, categoryIdParameter, subCategoryIdParameter, groupIdParameter, branchIdParameter, minPriceParameter, maxPriceParameter);
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpGetAllProducts_Result>("SpGetAllProducts", pageIndexParameter, pageSizeParameter, sortColumnParameter, sortOrderParameter, searchTextParameter, categoryIdParameter, subCategoryIdParameter, groupIdParameter, branchIdParameter, minPriceParameter, maxPriceParameter, userIdParameter);
         }
     }
 }

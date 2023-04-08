@@ -221,9 +221,9 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
             } else {
                 window.location.replace(objCommon.baseUrl + "Cart/CheckOut");
             }
-                $("body").css({ "opacity": "1" });
-                $scope.loader = false;
-                $scope.$apply();
+            $("body").css({ "opacity": "1" });
+            $scope.loader = false;
+            $scope.$apply();
         }, null, "Error while processing check out, Please try again.", $scope);
     }
 
@@ -367,14 +367,12 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
     }
 
     $scope.GetProductBySearch = function () {
-        //if ($("#maincategory option:selected").text() == "Select Category" || $("#maincategory option:selected").text() == "") {
-        //    objCommon.ShowMessage("Please select category for product search", "error");
-        //    return;
-        //}
-
-        $window.location.href = objCommon.baseUrl + 'Products/Index?search=' + $scope.TextSearch;
+        if ($("#maincategory option:selected").text() !== "Select Category" && $("#maincategory option:selected").text() !== "" && $("#maincategory option:selected").text() !== "0") {
+            $window.location.href = objCommon.baseUrl + 'Products/Index?search=' + $scope.TextSearch + '&group=' + $("#maincategory option:selected").val();
+        } else {
+            $window.location.href = objCommon.baseUrl + 'Products/Index?search=' + $scope.TextSearch;
+        }
     }
-
 });
 
 function renderDropdown() {

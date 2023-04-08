@@ -1651,6 +1651,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Parameter Name="BranchId" Type="int" Mode="In" />
           <Parameter Name="MinPrice" Type="int" Mode="In" />
           <Parameter Name="MaxPrice" Type="int" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
         </Function>
         <Function Name="SPGetAllRecommendedProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PageIndex" Type="int" Mode="In" />
@@ -2408,6 +2409,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
             <Parameter Name="BranchId" Mode="In" Type="Int32" />
             <Parameter Name="MinPrice" Mode="In" Type="Int32" />
             <Parameter Name="MaxPrice" Mode="In" Type="Int32" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -4372,6 +4374,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Type="Int32" Name="VENDOR_ID" Nullable="true" />
           <Property Type="Int32" Name="CATEGORY_ID" Nullable="true" />
           <Property Type="Int32" Name="SUB_CATEGORY_ID" Nullable="true" />
+          <Property Type="Int32" Name="FavouriteProduct" Nullable="true" />
           <Property Type="Int64" Name="RowIndex" Nullable="true" />
           <Property Type="Int32" Name="TotalRecords" Nullable="true" />
           <Property Type="Decimal" Name="TotalPages" Nullable="true" Precision="37" Scale="0" />
@@ -6173,6 +6176,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
                 <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
                 <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
                 <ScalarProperty Name="SUB_CATEGORY_ID" ColumnName="SUB_CATEGORY_ID" />
+                <ScalarProperty Name="FavouriteProduct" ColumnName="FavouriteProduct" />
                 <ScalarProperty Name="RowIndex" ColumnName="RowIndex" />
                 <ScalarProperty Name="TotalRecords" ColumnName="TotalRecords" />
                 <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />

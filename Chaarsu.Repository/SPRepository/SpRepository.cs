@@ -282,7 +282,7 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
-        public List<SpGetAllProducts_Result> SpGetAllProducts(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, string CategoryId, string SubCategoryId, string GroupId, int BranchId, int MinPrice, int MaxPrice)
+        public List<SpGetAllProducts_Result> SpGetAllProducts(int PageIndex, int PageSize, string SortColumn, string SortOrder, string SearchText, string CategoryId, string SubCategoryId, string GroupId, int BranchId, int MinPrice, int MaxPrice, int UserId)
         {
             try
             {
@@ -359,7 +359,7 @@ namespace Chaarsu.Repository.SPRepository
 
 
 
-                return db.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText, CategoryId, SubCategoryId, GroupId, BranchId, MinPrice, MaxPrice).ToList();
+                return db.SpGetAllProducts(PageIndex, PageSize, SortColumn, SortOrder, SearchText, CategoryId, SubCategoryId, GroupId, BranchId, MinPrice, MaxPrice, UserId).ToList();
 
             }
             catch (Exception ex)
