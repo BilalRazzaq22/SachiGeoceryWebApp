@@ -111,6 +111,7 @@
     <Compile Include="COUPON.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dto\RecommendedProductDto.cs" />
     <Compile Include="GROUP.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>

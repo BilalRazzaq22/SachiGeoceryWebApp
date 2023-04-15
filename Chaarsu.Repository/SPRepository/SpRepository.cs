@@ -11,6 +11,8 @@ using Chaarsu.Repository.ADO;
 using Chaarsu.Models.InputModel;
 using System.Configuration;
 using System.Data.Entity.Core.EntityClient;
+using Chaarsu.Models.Dto;
+using System.Diagnostics;
 
 namespace Chaarsu.Repository.SPRepository
 {
@@ -369,6 +371,44 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
+        public List<RecommendedProductDto> GetRecommendedProducts()
+        {
+            try
+            {
+                var sqlManager = new SqlManager();
+                var dt = sqlManager.ExecuteDataTable("SP_GETRECOMMENDEDPRODUCTS", SqlCommandType.StoredProcedure, new SqlCommand());
+                //DataSet ds = ExecuteStoredProcedure("SP_GETRECOMMENDEDPRODUCTS", new List<StoredProcedureParams>());
+                List<RecommendedProductDto> recommendedProductList = new List<RecommendedProductDto>();
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    RecommendedProductDto recommenedProduct = new RecommendedProductDto();
+                    recommenedProduct.RECOMMENDED_PRODUCT_ID = dataRow.Field<int>("RECOMMENDED_PRODUCT_ID");
+                    recommenedProduct.PRODUCT_ID = dataRow.Field<int>("PRODUCT_ID");
+                    recommenedProduct.PRODUCT_NAME = dataRow.Field<string>("NAME");
+                    if (dataRow.Field<string>("PACKING") != null)
+                        recommenedProduct.PACKING = dataRow.Field<string>("PACKING");
+                    if (dataRow.Field<decimal?>("PRICE") != null)
+                        recommenedProduct.PRICE = dataRow.Field<decimal>("PRICE");
+                    if (dataRow.Field<int?>("PRICE2") != null && dataRow.Field<int?>("PRICE2") != 0)
+                        recommenedProduct.PRICE = dataRow.Field<int?>("PRICE2");
+                    recommenedProduct.PRODUCT_NAME_URL = dataRow.Field<string>("PRODUCT_NAME_URL");
+                    recommenedProduct.CategoryName = dataRow.Field<string>("CategoryName");
+                    if (dataRow.Field<string>("IMAGE_THUMBNAIL_PATH") != null)
+                        recommenedProduct.IMAGE_THUMBNAIL_PATH = dataRow.Field<string>("IMAGE_THUMBNAIL_PATH");
+                    if (dataRow.Field<bool?>("FavouriteProduct") != null)
+                        recommenedProduct.FavouriteProduct = dataRow.Field<bool>("FavouriteProduct");
+                    recommendedProductList.Add(recommenedProduct);
+                }
+
+                return recommendedProductList;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public List<SP_GetAllProductsByCategories_Result> GetAllProductsByCategoryId(int PageIndex, int PageSize, string CategoryId, int branchId)
         {
             try
@@ -381,11 +421,11 @@ namespace Chaarsu.Repository.SPRepository
             }
         }
 
-        public SpGetProductDetailByProductNameUrl_Result GetProductDetailByProductNameUrl(string productNameUrl, int BranchId)
+        public SpGetProductDetailByProductNameUrl_Result GetProductDetailByProductNameUrl(string productNameUrl, int BranchId,int UserId)
         {
             try
             {
-                return db.SpGetProductDetailByProductNameUrl(productNameUrl, BranchId).FirstOrDefault();
+                return db.SpGetProductDetailByProductNameUrl(productNameUrl, BranchId, UserId).FirstOrDefault();
             }
             catch (Exception ex)
             {

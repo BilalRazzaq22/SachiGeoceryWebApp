@@ -22,5 +22,8 @@ namespace Chaarsu.Models
         public Nullable<System.DateTime> CREATED_ON { get; set; }
         public Nullable<int> UPDATED_BY { get; set; }
         public Nullable<System.DateTime> UPDATED_ON { get; set; }
+        public Nullable<int> BRANCH_ID { get; set; }
+        public string LONGITUDE { get; set; }
+        public string LATITUDE { get; set; }
     }
 }

@@ -166,7 +166,7 @@ namespace Chaarsu.Controllers
 
                         if (!string.IsNullOrEmpty(user.EMAIL))
                         {
-                            entity = _USER.Repository.Get(x => x.EMAIL == user.EMAIL);
+                            entity = _USER.Repository.Get(x => x.EMAIL == user.EMAIL && x.IS_ACTIVE == true);
                             if (entity != null)
                             {
                                 return Json(new { Status = false, RetMessage = "Email already exist" }, JsonRequestBehavior.AllowGet);

@@ -8,20 +8,12 @@ suchiapp.controller("ProductDetailController", function ($scope) {
     $scope.d = {};
     $scope.d.message = '';
     GetTrendingProducts = function () {
-        var data = {
-            PageIndex: 1,
-            PageSize: 12,
-            SortColumn: "",
-            SortOrder: "",
-            SearchText: "",
-            CategoryId: "29",
-            SubCategoryId: "",
-            GroupId: ""
-        }
-        objCommon.AjaxCall("Products/GetAllProducts", $.param(data), "GET", true, function (data) {
+        
+        objCommon.AjaxCall("Products/GetRecommendedProducts", null, "GET", true, function (data) {
+            console.log(data.response);
             $scope.TrandingProductList = data.response;
             $scope.$apply();
-        }, null, "Error while getting all products, Please try again.", $scope);
+        }, null, "Error while getting recommended products, Please try again.", $scope);
     }
 
     $scope.GetProductDetail = function (productNameUrl) {
@@ -34,7 +26,7 @@ suchiapp.controller("ProductDetailController", function ($scope) {
         objCommon.AjaxCall("Products/GetProductDetail", $.param(data), "GET", true, function (d) {
             $scope.ProductDetail = d.response.ProductDetail;
             $scope.ProductImages = d.response.ProductImages;
-            $scope.GetAllProductReviews(d.response.ProductDetail.PRODUCT_ID);
+            //$scope.GetAllProductReviews(d.response.ProductDetail.PRODUCT_ID);
             $("body").css({ "opacity": "1" });
             $scope.loader = false;
             $scope.$apply();

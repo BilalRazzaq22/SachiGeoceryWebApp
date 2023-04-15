@@ -81,6 +81,20 @@ namespace Chaarsu.Controllers
         }
 
         [HttpGet]
+        public JsonResult GetRecommendedProducts()
+        {
+            try
+            {
+                var response = _sp.GetRecommendedProducts().ToList();
+                return Json(new { Status = true, response }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Status = false, RetMessage = ex.Message });
+            }
+        }
+
+        [HttpGet]
         public JsonResult GetAllProductsByCategoryId(string CategoryId, int PageIndex, int PageSize)
         {
             try
@@ -116,13 +130,20 @@ namespace Chaarsu.Controllers
             try
             {
                 int BranchId = 0;
+                int UserId = 0;
                 if (Session["BranchId"] != null)
                 {
                     BranchId = Convert.ToInt32(Session["BranchId"]);
                 }
 
+
+                if (Session["UserSession"] != null)
+                {
+                    UserId = Convert.ToInt32(Session["UserSession"]);
+                }
+
                 Dictionary<string, object> response = new Dictionary<string, object>();
-                var productDetail = _sp.GetProductDetailByProductNameUrl(productNameUrl, BranchId);
+                var productDetail = _sp.GetProductDetailByProductNameUrl(productNameUrl, BranchId, UserId);
                 if (productDetail == null)
                 {
                     return Json(new { Status = false, RetMessage = productNameUrl + "of detail not exist." });

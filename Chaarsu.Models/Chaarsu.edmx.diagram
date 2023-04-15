@@ -4,66 +4,66 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d3376551f3c74bad996ce3c03416a5cb" Name="Diagram1" ZoomLevel="47">
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.AD" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.AREA" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.BANNER_IMAGES" Width="1.5" PointX="2.75" PointY="3.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.BANNER" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.BARCODESTest" Width="1.5" PointX="4.75" PointY="5.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.Blog" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.BRANCH" Width="1.5" PointX="6.75" PointY="4.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.BRAND" Width="1.5" PointX="0.75" PointY="7.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.CART" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.CATEGORy" Width="1.5" PointX="8.75" PointY="3.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.CompanyInfo" Width="1.5" PointX="6.75" PointY="8.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.ContactU" Width="1.5" PointX="8.75" PointY="7.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.COUPON" Width="1.5" PointX="10.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.GROUP" Width="1.5" PointX="0.75" PointY="10.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.MAINMENU" Width="1.5" PointX="10.75" PointY="6.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.OFFER_MANAGEMENT" Width="1.5" PointX="8.75" PointY="10.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.ONLINE_TRANSACTION" Width="1.5" PointX="10.75" PointY="9.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.ORDER_PRODUCTS" Width="1.5" PointX="12.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.ORDER_STATUSES" Width="1.5" PointX="12.75" PointY="4.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.ORDER" Width="1.5" PointX="12.75" PointY="7.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PACKAGE_PRODUCTS" Width="1.5" PointX="0.75" PointY="13.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PACKAGE" Width="1.5" PointX="14.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PAYMENT_MODES" Width="1.5" PointX="14.75" PointY="4.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_BRANDS" Width="1.5" PointX="14.75" PointY="7.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_COLORS" Width="1.5" PointX="14.75" PointY="10.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_FLAVORS" Width="1.5" PointX="14.75" PointY="13.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_IMAGES" Width="1.5" PointX="6.75" PointY="15.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_LEVELS" Width="1.5" PointX="8.75" PointY="15.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_PACKINGS" Width="1.5" PointX="10.75" PointY="15.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_REVIEWS" Width="1.5" PointX="16.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_TAGS" Width="1.5" PointX="16.75" PointY="4.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_TYPES" Width="1.5" PointX="16.75" PointY="7.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT" Width="1.5" PointX="16.75" PointY="10.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.ProductTest" Width="1.5" PointX="12.75" PointY="16.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.RECOMMENDED_PRODUCTS" Width="1.5" PointX="0.75" PointY="17.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.RIDER_ORDER" Width="1.5" PointX="18.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.SM" Width="1.5" PointX="2.75" PointY="18.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.SMS_TYPES" Width="1.5" PointX="18.75" PointY="4.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.SUB_CATEGORIES" Width="1.5" PointX="4.75" PointY="18.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.SUBMENU" Width="1.5" PointX="6.75" PointY="18.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.sysdiagram" Width="1.5" PointX="18.75" PointY="7.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.TEMP_CUSTOMERS" Width="1.5" PointX="8.75" PointY="18.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.USER_ADDRESSES" Width="1.5" PointX="18.75" PointY="10.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.USER_DEVICES" Width="1.5" PointX="18.75" PointY="14.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.USER_FAVOURITES" Width="1.5" PointX="18.75" PointY="17.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.USER_TYPES" Width="1.5" PointX="14.75" PointY="19.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.USER" Width="1.5" PointX="20.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.VENDOR_BRANCHES" Width="1.5" PointX="20.75" PointY="7.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.VENDOR" Width="1.5" PointX="20.75" PointY="11.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.WebsitePage" Width="1.5" PointX="20.75" PointY="19.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.WISHES_PRODUCT" Width="1.5" PointX="0.75" PointY="21.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.BarcodeNewTest" Width="1.5" PointX="6.75" PointY="21.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.BARCODE" Width="1.5" PointX="8.75" PointY="21.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.ITEMINFO" Width="1.5" PointX="16.75" PointY="21.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PS000" Width="1.5" PointX="22.75" PointY="0.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.PS000Test" Width="1.5" PointX="2.75" PointY="22.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.STOCK" Width="1.5" PointX="22.75" PointY="11.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.TERMINFO" Width="1.5" PointX="22.75" PointY="14.75" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.TEST" Width="1.5" PointX="18.75" PointY="22.75" />
+      <Diagram DiagramId="8114840e7ad64f2494cff5a8f77502c8" Name="Diagram1">
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.AD" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.AREA" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.BANNER_IMAGES" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.BANNER" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.BARCODESTest" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.Blog" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.BRANCH" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.BRAND" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.CART" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.CATEGORy" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.CompanyInfo" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.ContactU" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.COUPON" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.GROUP" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.MAINMENU" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.OFFER_MANAGEMENT" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.ONLINE_TRANSACTION" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.ORDER_PRODUCTS" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.ORDER_STATUSES" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.ORDER" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PACKAGE_PRODUCTS" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PACKAGE" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PAYMENT_MODES" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_BRANDS" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_COLORS" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_FLAVORS" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_IMAGES" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_LEVELS" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_PACKINGS" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_REVIEWS" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_TAGS" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT_TYPES" Width="1.5" PointX="16.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PRODUCT" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.ProductTest" Width="1.5" PointX="12.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.RECOMMENDED_PRODUCTS" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.RIDER_ORDER" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.SM" Width="1.5" PointX="2.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.SMS_TYPES" Width="1.5" PointX="18.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.SUB_CATEGORIES" Width="1.5" PointX="4.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.SUBMENU" Width="1.5" PointX="6.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.sysdiagram" Width="1.5" PointX="18.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.TEMP_CUSTOMERS" Width="1.5" PointX="8.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.USER_ADDRESSES" Width="1.5" PointX="18.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.USER_DEVICES" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.USER_FAVOURITES" Width="1.5" PointX="18.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.USER_TYPES" Width="1.5" PointX="14.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.USER" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.VENDOR_BRANCHES" Width="1.5" PointX="20.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.VENDOR" Width="1.5" PointX="20.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.WebsitePage" Width="1.5" PointX="20.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.WISHES_PRODUCT" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.BarcodeNewTest" Width="1.5" PointX="6.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.BARCODE" Width="1.5" PointX="8.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.ITEMINFO" Width="1.5" PointX="16.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PS000" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.PS000Test" Width="1.5" PointX="2.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.STOCK" Width="1.5" PointX="22.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.TERMINFO" Width="1.5" PointX="22.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.TEST" Width="1.5" PointX="18.75" PointY="22.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

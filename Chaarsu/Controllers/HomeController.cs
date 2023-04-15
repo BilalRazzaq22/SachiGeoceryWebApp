@@ -21,6 +21,7 @@ namespace Chaarsu.Controllers
         //private GenericRepository<BRANCH> _BRANCHES;
         //private readonly IUnitOfWork _unitOfWork;
         private readonly SpRepository _sp;
+        QuickQueries _dbmanager = new QuickQueries();
         public HomeController(IHomeBLL homeBLL)
         {
             _homeBLL = homeBLL;
@@ -35,12 +36,11 @@ namespace Chaarsu.Controllers
             {
                 BranchId = Convert.ToInt32(Session["BranchId"]);
             }
-            QuickQueries _dbmanager = new QuickQueries();
             if (MyCollection.Instance.ModelHomeProducts == null)
                 MyCollection.Instance.ModelHomeProducts = _dbmanager.GetHomeProducts(1, BranchId);
 
             if (MyCollection.Instance.ModelHomeBlogs == null)
-                MyCollection.Instance.ModelHomeBlogs= _dbmanager.GetHomeBlogs();
+                MyCollection.Instance.ModelHomeBlogs = _dbmanager.GetHomeBlogs();
 
             if (MyCollection.Instance.ModelProductReviewHomes == null)
                 MyCollection.Instance.ModelProductReviewHomes = _dbmanager.GetHomeProductReviews();
@@ -153,8 +153,9 @@ namespace Chaarsu.Controllers
                 double bLat = 0;
                 double bLong = 0;
                 //_BRANCHES = new GenericRepository<BRANCH>(_unitOfWork);
-                List<BRANCH> branches = MyCollection.Instance.Branches;
-                foreach (var row in branches)
+                if (MyCollection.Instance.Branches == null)
+                    MyCollection.Instance.Branches = _dbmanager.GetAllBranches();
+                foreach (var row in MyCollection.Instance.Branches)
                 {
                     bLat = row.LATITUDE ?? 0;
                     bLong = row.LONGITUDE ?? 0;

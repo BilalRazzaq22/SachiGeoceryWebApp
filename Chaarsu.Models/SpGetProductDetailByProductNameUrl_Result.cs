@@ -31,5 +31,6 @@ namespace Chaarsu.Models
         public Nullable<int> VENDOR_ID { get; set; }
         public Nullable<int> CATEGORY_ID { get; set; }
         public Nullable<int> SUB_CATEGORY_ID { get; set; }
+        public Nullable<int> FavouriteProduct { get; set; }
     }
 }
