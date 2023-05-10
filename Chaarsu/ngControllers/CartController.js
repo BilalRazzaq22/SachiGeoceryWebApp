@@ -25,6 +25,11 @@ suchiapp.controller("CartController", function ($scope, $window) {
     }, null, "Error while getting payment modes, Please try again.", $scope);
 
     $scope.Valid = function () {
+
+        $scope.Name = $("#txtName").val();
+        $scope.Mobile = $("#txtMobileNo").val();
+        $scope.Address = $("#txtAddress").val();
+
         if ($scope.Name == '' || $scope.Name == null) {
             objCommon.ShowMessage("Name is required", "error");
             return false;
@@ -45,10 +50,8 @@ suchiapp.controller("CartController", function ($scope, $window) {
             return true;
         }
     }
-   
-  
 
-    $scope.PlaceOrder = function () {
+    $scope.PlaceOrder = function (mobile) {
         if ($scope.Valid() == true) {
 
             var long = localStorage.getItem("lang");

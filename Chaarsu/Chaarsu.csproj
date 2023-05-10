@@ -169,6 +169,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SmsApiService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\all.min.css" />
@@ -6593,6 +6603,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="libman.json" />
     <Content Include="Product_Images\22070_logo-marco-F-01.psd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\dirPagination.js" />
     <Content Include="Scripts\dirPagination.tpl.html" />
@@ -6645,6 +6659,32 @@
     <Content Include="Views\User\TrackOrder.cshtml" />
     <Content Include="Views\Errors\NotFound.cshtml" />
     <Content Include="Views\Errors\Index.cshtml" />
+    <Content Include="Web References\SmsApiService\CampaignsResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\SmsApiService\CorporateSMS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SmsApiService\CorporateSMS0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SmsApiService\CorporateSMS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\SmsApiService\CounterResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SmsApiService\InboxResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\SmsApiService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\SmsApiService\reportResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\SmsApiService\Service1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6670,6 +6710,25 @@
       <Project>{b1796ea4-d45d-4249-8c67-98ada8f33d63}</Project>
       <Name>Chaarsu.Repository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://cbs.zong.com.pk/reachcwsv2/corporatesms.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SmsApiService\</RelPath>
+      <UpdateFromURL>https://cbs.zong.com.pk/reachcwsv2/corporatesms.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Chaarsu_SmsApiService_Service1</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
