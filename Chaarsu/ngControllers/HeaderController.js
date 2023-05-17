@@ -108,7 +108,7 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
             else {
                 objCommon.ShowMessage(d, "error");
             }
-        }, null, "Error while dign out user, Please try again.", $scope);
+        }, null, "Error while sign out user, Please try again.", $scope);
 
     }
 

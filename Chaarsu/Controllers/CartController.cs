@@ -173,7 +173,7 @@ namespace Chaarsu.Controllers
                 _ORDER.Repository.Add(data);
                 var orderId = data.ORDER_ID;
 
-                sendOrderSms($"Your order {orderId} has been Placed.", data.MOBILE);
+                SMSManager.sendOrderSms($"Your order {orderId} has been Placed.", data.MOBILE);
 
                 return Json(new { Status = true, OrderId = orderId }, JsonRequestBehavior.AllowGet);
             }
@@ -205,73 +205,12 @@ namespace Chaarsu.Controllers
             }
         }
 
-        public void sendOrderSms(string msg, string num)
-        {
-            string username = "923183183341";
-            string pass = "Zong@123";
-            string destinationnum = num;
-            string masking = "SachiChakki";
-            string text = msg;
-            string language = "English";
-            int msgCount = 0;
-            //start sending SMS on request
-            if (msg != string.Empty)
-            {
-                GenerateSMSAlert(masking, destinationnum, msg, username, pass);
-            }
-
-            //end sending SMS on request
-        }
-        #region Generate SMS
-
-        public int GenerateSMSAlert(string Masking, string toNumber, string MessageText, string MyUsername, string MyPassword)
-        {
-            int count = 0;
-            if (toNumber.Length == 12 && toNumber.Substring(0, 2).Equals("92"))
-            {
-                count++;
-            }
-            SendSMS(Masking, toNumber, MessageText, MyUsername, MyPassword);
-            return count;
-        }
-        #endregion
-
-        #region Send SMS
-
-        public static string SendSMS(string Masking, string toNumber, string MessageText, string MyUsername, string MyPassword)
-        {
-            // OLD IMPLEMENTATION
-            //string URI = @"http://api.bizsms.pk/api-send-branded-sms.aspx?username=" + MyUsername + "&pass=" + MyPassword +
-            //    "&text=" + MessageText + "&masking=" + Masking + "&destinationnum=" + toNumber + "&language=English";
-
-            //WebRequest req = WebRequest.Create(URI);
-            //WebResponse resp = req.GetResponse();
-            //var sr = new System.IO.StreamReader(resp.GetResponseStream());
-            //return sr.ReadToEnd().Trim();
-
-            SmsApiService.QuickSMSResquest quickSMSResquest = new SmsApiService.QuickSMSResquest()
-            {
-                loginId = MyUsername,
-                loginPassword = MyPassword,
-                Destination = toNumber,
-                Mask = Masking,
-                Message = MessageText,
-                ShortCodePrefered = "n",
-                UniCode = "0"
-            };
-
-            SmsApiService.BasicHttpBinding_ICorporateCBS client = new SmsApiService.BasicHttpBinding_ICorporateCBS();
-            string message = client.QuickSMS(quickSMSResquest);
-            return message;
-        }
-        #endregion
         [HttpGet]
         public ActionResult OrderSuccess()
         {
             if (Session["UserSession"] != null || Session["GuestSession"] != null)
             {
                 return View();
-
             }
             else
             {

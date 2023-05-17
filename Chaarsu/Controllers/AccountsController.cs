@@ -13,6 +13,8 @@ using System.Net;
 using System.Reactive.Subjects;
 using System.Web.Services.Description;
 using System.Configuration;
+using Chaarsu.Repository.ADO;
+using System.Data.SqlClient;
 
 namespace Chaarsu.Controllers
 {
@@ -76,8 +78,8 @@ namespace Chaarsu.Controllers
             {
                 return RedirectToAction("SignIn", "Accounts");
             }
-          
-            
+
+
         }
 
         [HttpGet]
@@ -87,14 +89,14 @@ namespace Chaarsu.Controllers
             {
                 if (string.IsNullOrEmpty(EmailOrmobile))
                 {
-                    return Json(new { Status = false, RetMessage = "Email / Mobile No is required" },JsonRequestBehavior.AllowGet);
+                    return Json(new { Status = false, RetMessage = "Email / Mobile No is required" }, JsonRequestBehavior.AllowGet);
                 }
                 else if (string.IsNullOrEmpty(Password))
                 {
-                    return Json(new { Status = false, RetMessage = "Password is required" },JsonRequestBehavior.AllowGet);
+                    return Json(new { Status = false, RetMessage = "Password is required" }, JsonRequestBehavior.AllowGet);
                 }
                 else
-                {                  
+                {
                     _USER = new GenericRepository<USER>(_unitOfWork);
                     var entity = _USER.Repository.Get(x => x.PASSWORD == Password && x.IS_ACTIVE == true && (x.EMAIL == EmailOrmobile || x.MOBILE_NO == EmailOrmobile));
                     if (entity != null)
@@ -102,11 +104,11 @@ namespace Chaarsu.Controllers
                         Session.Remove("GuestSession");
                         Session["UserSession"] = entity.USER_ID.ToString();
                         Session["Username"] = entity.USERNAME.ToString();
-                        return Json(new { Status = true, RetMessage = "You are SignIn Successfully", UserObj = entity },JsonRequestBehavior.AllowGet);
+                        return Json(new { Status = true, RetMessage = "You are SignIn Successfully", UserObj = entity }, JsonRequestBehavior.AllowGet);
                     }
                     else
                     {
-                        return Json(new { Status = false, RetMessage = "Invalid email/mobile number or password" },JsonRequestBehavior.AllowGet);
+                        return Json(new { Status = false, RetMessage = "Invalid email/mobile number or password" }, JsonRequestBehavior.AllowGet);
                     }
                 }
             }
@@ -122,7 +124,7 @@ namespace Chaarsu.Controllers
             try
             {
                 _USER = new GenericRepository<USER>(_unitOfWork);
-                if (user.IS_GUEST==true)
+                if (user.IS_GUEST == true)
                 {
                     //Random r = new Random();
                     //int random = r.Next();
@@ -189,7 +191,7 @@ namespace Chaarsu.Controllers
             }
             catch (Exception ex)
             {
-                return Json(new { Status = false, RetMessage = ex.Message },JsonRequestBehavior.AllowGet);
+                return Json(new { Status = false, RetMessage = ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
 
@@ -209,6 +211,55 @@ namespace Chaarsu.Controllers
         }
 
         [HttpGet]
+        public ActionResult DeleteAccount()
+        {
+            if (Session["UserSession"] != null)
+            {
+                return View("DeleteAccount");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public JsonResult DeleteAccount(USER user)
+        {
+            SqlManager sqlManager = new SqlManager();
+
+           var ds = sqlManager.ExecuteDataTable($"SELECT * FROM USERS WHERE EMAIL = '{user.EMAIL}' AND MOBILE_NO = '{user.MOBILE_NO}'", SqlCommandType.Text, new SqlCommand());
+
+            if (ds.Rows.Count > 0)
+            {
+                string str = GenerateRandomOTP(4);
+                sqlManager.ExecuteDataTable($"UPDATE USERS SET ResetPasswordCode = {str} WHERE EMAIL = '{user.EMAIL}' AND MOBILE_NO = '{user.MOBILE_NO}'", SqlCommandType.Text, new SqlCommand());
+
+                SMSManager.sendOrderSms($"Your OTP {str} for deactivating your account.", user.MOBILE_NO);
+
+                return Json("Success", JsonRequestBehavior.AllowGet);
+            }
+
+            return Json("Please provide valid email and mobile number", JsonRequestBehavior.AllowGet);
+        }
+        
+        [HttpPost]
+        public JsonResult ConfirmOTP(string OTPNumber)
+        {
+            SqlManager sqlManager = new SqlManager();
+
+           var ds = sqlManager.ExecuteDataTable($"SELECT * FROM USERS WHERE ResetPasswordCode = '{OTPNumber}'", SqlCommandType.Text, new SqlCommand());
+
+            if (ds.Rows.Count > 0)
+            {
+                sqlManager.ExecuteDataTable($"UPDATE USERS SET IS_ACTIVE = 0 WHERE USER_ID = '{Convert.ToInt32(Session["UserSession"])}'", SqlCommandType.Text, new SqlCommand());
+                return Json("Success", JsonRequestBehavior.AllowGet);
+            }
+
+            return Json("Please provide valid OTP Number", JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
         public JsonResult PasswordForgot(string email)
         {
             try
@@ -217,7 +268,7 @@ namespace Chaarsu.Controllers
                 string message = "";
                 bool status = false;
                 var account = _USER.Repository.Get(x => x.EMAIL == email && x.IS_ACTIVE == true);
-                if(account!=null)
+                if (account != null)
                 {
                     string resetCode = Guid.NewGuid().ToString();
                     SendVerificationLinkEmail(account.EMAIL, resetCode);
@@ -241,11 +292,11 @@ namespace Chaarsu.Controllers
         public ActionResult ResetPassword(ResetPasswordModel model)
         {
             var message = "";
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _USER = new GenericRepository<USER>(_unitOfWork);
                 var user = _USER.Repository.Get(x => x.ResetPasswordCode == model.ResetCode);
-                if(user==null)
+                if (user == null)
                 {
                     message = "Invalid";
                 }
@@ -255,7 +306,7 @@ namespace Chaarsu.Controllers
                     user.ResetPasswordCode = null;
                     _USER.Repository.Update(user);
                     message = "success";
-                }         
+                }
             }
             else
             {
@@ -284,7 +335,7 @@ namespace Chaarsu.Controllers
                 EnableSsl = true,
                 UseDefaultCredentials = false,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
-                Credentials = new NetworkCredential(fromEmail.Address,fromEmailPassword)
+                Credentials = new NetworkCredential(fromEmail.Address, fromEmailPassword)
             };
             using (var message = new MailMessage(fromEmail, toEmail)
             {
@@ -292,9 +343,37 @@ namespace Chaarsu.Controllers
                 Body = body,
                 IsBodyHtml = true
             })
-            smtp.Send(message);
+                smtp.Send(message);
         }
 
-        
+        private string GenerateRandomOTP(int iOTPLength)
+
+        {
+            string[] saAllowedCharacters = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
+
+
+
+            string sOTP = String.Empty;
+
+            string sTempChars = String.Empty;
+
+            Random rand = new Random();
+
+            for (int i = 0; i < iOTPLength; i++)
+
+            {
+
+                int p = rand.Next(0, saAllowedCharacters.Length);
+
+                sTempChars = saAllowedCharacters[rand.Next(0, saAllowedCharacters.Length)];
+
+                sOTP += sTempChars;
+
+            }
+
+            return sOTP;
+
+        }
+
     }
 }

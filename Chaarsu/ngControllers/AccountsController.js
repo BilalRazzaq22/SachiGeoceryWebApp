@@ -3,7 +3,10 @@
 suchiapp.controller("AccountsController", function ($scope, $window) {
     $scope.password = '';
     $scope.emailOrmobile = '';
+    $scope.mobileNo = '';
+    $scope.otpNumber = '';
     $scope.loader = false;
+    $("#otpForm").hide();
     $scope.SingIn = function () {
         localStorage.setItem('Username', "");
         localStorage.setItem('Mobile', "");
@@ -31,7 +34,7 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
                     objCommon.ShowMessage(response.RetMessage, "error");
                 }
             }, null, "Error while sign in user, Please try again.", $scope);
-        }       
+        }
     };
 
     $scope.Gender = 'Male';
@@ -40,33 +43,26 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
         localStorage.setItem('Username', "");
         localStorage.setItem('Mobile', "");
 
-        if ($scope.Username == '' || $scope.Username == null)
-        {
+        if ($scope.Username == '' || $scope.Username == null) {
             objCommon.ShowMessage("Name is required", "error");
         }
-        else if ($scope.Mobile == '' || $scope.Mobile == null)
-        {
+        else if ($scope.Mobile == '' || $scope.Mobile == null) {
             objCommon.ShowMessage("Mobile Number is required", "error");
         }
-        else if ($scope.Address == '' || $scope.Address == null)
-        {
+        else if ($scope.Address == '' || $scope.Address == null) {
             objCommon.ShowMessage("Address is required", "error");
         }
-        else if ($scope.Password == '' || $scope.Password == null)
-        {
+        else if ($scope.Password == '' || $scope.Password == null) {
             objCommon.ShowMessage("Password is required", "error");
         }
         else if ($scope.ConfirmPassword == '' || $scope.ConfirmPassword == null) {
             objCommon.ShowMessage("Confirm Password is required", "error");
         }
-        else
-        {
-            if ($scope.Password != $scope.ConfirmPassword)
-            {
+        else {
+            if ($scope.Password != $scope.ConfirmPassword) {
                 objCommon.ShowMessage("Password and Confirm Password Does Not Match", "error");
             }
-            else
-            {
+            else {
                 $("body").css({ "opacity": "0.5" });
                 var data = {
                     USERNAME: $scope.Username,
@@ -83,8 +79,8 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
                             localStorage.setItem('Username', response.GuestUser);
                             localStorage.setItem('Mobile', "");
                         } else {
-                        localStorage.setItem('Username', response.UserObj.USERNAME);
-                        localStorage.setItem('Mobile', response.UserObj.MOBILE_NO);
+                            localStorage.setItem('Username', response.UserObj.USERNAME);
+                            localStorage.setItem('Mobile', response.UserObj.MOBILE_NO);
                         }
                         objCommon.ShowMessage(response.RetMessage, "success");
                         window.location.replace(objCommon.baseUrl + "Accounts/SignIn");
@@ -102,23 +98,22 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
         if ($scope.email == null || $scope.email == undefined || $scope.email == "") {
             objCommon.ShowMessage("Please Enter Your Email Address", "error");
         }
-        else
-        {
+        else {
             $("body").css({ "opacity": "0.5" });
             var data = {
-            email: $scope.email
+                email: $scope.email
             };
             objCommon.AjaxCall("Accounts/PasswordForgot", $.param(data), "GET", true, function (response) {
                 $("body").css({ "opacity": "1" });
-               if (response.Status == true) {
-                  objCommon.ShowMessage(response.RetMessage, "success");
-               }
-               else {
-                  objCommon.ShowMessage(response.RetMessage, "error");
-               }
+                if (response.Status == true) {
+                    objCommon.ShowMessage(response.RetMessage, "success");
+                }
+                else {
+                    objCommon.ShowMessage(response.RetMessage, "error");
+                }
             }, null, "Error while forget password, Please try again.", $scope);
         }
-        
+
     };
 
     $scope.GuestUser = function () {
@@ -157,4 +152,41 @@ suchiapp.controller("AccountsController", function ($scope, $window) {
 
         $scope.$apply();
     };
+
+    $scope.DeleteAccount = function () {
+        //objCommon.Confirm("Delete", "Delete your account?");
+        let text = "Do you want to delete your account ?";
+        if (confirm(text) == true) {
+            var data = {
+                MOBILE_NO: $scope.mobileNo,
+                EMAIL: $scope.emailOrmobile
+            };
+
+            objCommon.AjaxCall("Accounts/DeleteAccount", JSON.stringify(data), "POST", true, function (d) {
+                if (d == "Success") {
+                    objCommon.ShowMessage("A 4-Digit OTP has been sent to your given mobile number.", "success");
+                    $("#mainForm").hide();
+                    $("#otpForm").show();
+                } else {
+                    objCommon.ShowMessage(d, "error");
+                }
+            }, null, "Error while deleting account, Please try again.", $scope);
+        }
+    };
+
+    $scope.ConfirmOTP = function () {
+
+        var data = {
+            OTPNumber: $scope.otpNumber
+        };
+
+        objCommon.AjaxCall("Accounts/ConfirmOTP", JSON.stringify(data), "POST", true, function (d) {
+            if (d == "Success") {
+                objCommon.ShowMessage("Your account has been deleted successfully.", "success");
+                window.location.replace(objCommon.baseUrl + "Home/Index");
+            } else {
+                objCommon.ShowMessage(d, "error");
+            }
+        }, null, "Error while confirming OTP number, Please try again.", $scope);
+    }
 });
