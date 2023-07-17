@@ -57,20 +57,27 @@ namespace Chaarsu
             //var sr = new System.IO.StreamReader(resp.GetResponseStream());
             //return sr.ReadToEnd().Trim();
 
-            SmsApiService.QuickSMSResquest quickSMSResquest = new SmsApiService.QuickSMSResquest()
+            try
             {
-                loginId = MyUsername,
-                loginPassword = MyPassword,
-                Destination = toNumber,
-                Mask = Masking,
-                Message = MessageText,
-                ShortCodePrefered = "n",
-                UniCode = "0"
-            };
+                SmsApiService.QuickSMSResquest quickSMSResquest = new SmsApiService.QuickSMSResquest()
+                {
+                    loginId = MyUsername,
+                    loginPassword = MyPassword,
+                    Destination = toNumber,
+                    Mask = Masking,
+                    Message = MessageText,
+                    ShortCodePrefered = "n",
+                    UniCode = "0"
+                };
 
-            SmsApiService.BasicHttpBinding_ICorporateCBS client = new SmsApiService.BasicHttpBinding_ICorporateCBS();
-            string message = client.QuickSMS(quickSMSResquest);
-            return message;
+                SmsApiService.BasicHttpBinding_ICorporateCBS client = new SmsApiService.BasicHttpBinding_ICorporateCBS();
+                string message = client.QuickSMS(quickSMSResquest);
+                return message;
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
         }
         #endregion
     }
