@@ -24,7 +24,6 @@
         <EntityTypeShape EntityType="anytimea_GROCERYModel.ONLINE_TRANSACTION" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="anytimea_GROCERYModel.ORDER_PRODUCTS" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="anytimea_GROCERYModel.ORDER_STATUSES" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="anytimea_GROCERYModel.ORDER" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="anytimea_GROCERYModel.PACKAGE_PRODUCTS" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="anytimea_GROCERYModel.PACKAGE" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="anytimea_GROCERYModel.PAYMENT_MODES" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
@@ -64,6 +63,7 @@
         <EntityTypeShape EntityType="anytimea_GROCERYModel.STOCK" Width="1.5" PointX="22.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="anytimea_GROCERYModel.TERMINFO" Width="1.5" PointX="22.75" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="anytimea_GROCERYModel.TEST" Width="1.5" PointX="18.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="anytimea_GROCERYModel.ORDER" Width="1.5" PointX="11.375" PointY="24.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

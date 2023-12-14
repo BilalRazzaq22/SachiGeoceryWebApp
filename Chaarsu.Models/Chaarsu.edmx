@@ -5,38 +5,44 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="anytimea_GROCERYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.ADS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ADS">
           <Key>
             <PropertyRef Name="AD_ID" />
           </Key>
-          <Property Name="AD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AD_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="TEXT" Type="nvarchar(max)" />
           <Property Name="IMAGE_PATH" Type="nvarchar(max)" />
           <Property Name="CREATED_BY" Type="int" />
-          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="CREATED_ON" Type="smalldatetime" />
           <Property Name="UPDATED_BY" Type="int" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
           <Property Name="IS_ACTIVE" Type="varchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.AREAS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="AREAS">
           <Key>
             <PropertyRef Name="AREA_ID" />
           </Key>
-          <Property Name="AREA_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AREA_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="nvarchar" MaxLength="300" />
           <Property Name="BRANCH_ID" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.BANNER_IMAGES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="BANNER_IMAGES">
           <Key>
             <PropertyRef Name="BANNER_ID" />
           </Key>
-          <Property Name="BANNER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BANNER_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="BANNER_TYPE" Type="nvarchar" MaxLength="50" />
           <Property Name="BANNER_IMAGE_PATH" Type="nvarchar(max)" />
           <Property Name="USER_ID" Type="int" />
-          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="CREATED_ON" Type="smalldatetime" />
           <Property Name="CREATED_BY" Type="nvarchar" MaxLength="50" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
           <Property Name="UPDATED_BY" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="BANNERS">
@@ -51,101 +57,13 @@
           <Property Name="BannerType" Type="varchar" MaxLength="20" />
           <Property Name="Width" Type="int" />
           <Property Name="Height" Type="int" />
-          <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="CreatedDate" Type="smalldatetime" />
+          <Property Name="ModifiedDate" Type="smalldatetime" />
           <Property Name="RecordStatus" Type="varchar" MaxLength="20" />
           <Property Name="IsActive" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'anytimea_GROCERY.dbo.BarcodeNewTest' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="BarcodeNewTest">
-          <Key>
-            <PropertyRef Name="LOCNO" />
-            <PropertyRef Name="ITEM_CODE" />
-            <PropertyRef Name="PACK_CODE" />
-            <PropertyRef Name="PACK_DESC" />
-            <PropertyRef Name="UNIT" />
-            <PropertyRef Name="bDEFAULT" />
-            <PropertyRef Name="BAR_CODE" />
-            <PropertyRef Name="BARTYPE" />
-            <PropertyRef Name="UNIT_PRICE" />
-            <PropertyRef Name="DEALER_PRICE1" />
-            <PropertyRef Name="DEALER_PRICE2" />
-            <PropertyRef Name="RF_MARGIN" />
-            <PropertyRef Name="CUSER" />
-            <PropertyRef Name="CDATE" />
-            <PropertyRef Name="MUSER" />
-            <PropertyRef Name="MDATE" />
-            <PropertyRef Name="bRandomDisc" />
-            <PropertyRef Name="DiscStartDate" />
-            <PropertyRef Name="DiscEndDate" />
-            <PropertyRef Name="DiscStartTime" />
-            <PropertyRef Name="DiscEndTime" />
-            <PropertyRef Name="DISC_TYPE" />
-            <PropertyRef Name="DISC" />
-            <PropertyRef Name="IsActive" />
-            <PropertyRef Name="NeedsReplication" />
-            <PropertyRef Name="NeedsUpdation" />
-          </Key>
-          <Property Name="LOCNO" Type="smallint" Nullable="false" />
-          <Property Name="ITEM_CODE" Type="int" Nullable="false" />
-          <Property Name="PACK_CODE" Type="smallint" Nullable="false" />
-          <Property Name="PACK_DESC" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UNIT" Type="decimal" Precision="9" Scale="0" Nullable="false" />
-          <Property Name="bDEFAULT" Type="bit" Nullable="false" />
-          <Property Name="BAR_CODE" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="BARTYPE" Type="tinyint" Nullable="false" />
-          <Property Name="UNIT_PRICE" Type="money" Nullable="false" />
-          <Property Name="DEALER_PRICE1" Type="money" Nullable="false" />
-          <Property Name="DEALER_PRICE2" Type="money" Nullable="false" />
-          <Property Name="RF_MARGIN" Type="decimal" Precision="9" Scale="0" Nullable="false" />
-          <Property Name="CUSER" Type="int" Nullable="false" />
-          <Property Name="CDATE" Type="datetime" Nullable="false" />
-          <Property Name="MUSER" Type="int" Nullable="false" />
-          <Property Name="MDATE" Type="datetime" Nullable="false" />
-          <Property Name="bRandomDisc" Type="bit" Nullable="false" />
-          <Property Name="DiscStartDate" Type="datetime" Nullable="false" />
-          <Property Name="DiscEndDate" Type="datetime" Nullable="false" />
-          <Property Name="DiscStartTime" Type="datetime" Nullable="false" />
-          <Property Name="DiscEndTime" Type="datetime" Nullable="false" />
-          <Property Name="DISC_TYPE" Type="smallint" Nullable="false" />
-          <Property Name="DISC" Type="decimal" Precision="9" Scale="0" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="NeedsReplication" Type="bit" Nullable="false" />
-          <Property Name="NeedsUpdation" Type="bit" Nullable="false" />
-          <Property Name="L1P1NeedsUpdation" Type="bit" />
-          <Property Name="L1P2NeedsUpdation" Type="bit" />
-          <Property Name="L1P3NeedsUpdation" Type="bit" />
-          <Property Name="L1P4NeedsUpdation" Type="bit" />
-          <Property Name="L1P5NeedsUpdation" Type="bit" />
-          <Property Name="L1P6NeedsUpdation" Type="bit" />
-          <Property Name="L1P7NeedsUpdation" Type="bit" />
-          <Property Name="L1P8NeedsUpdation" Type="bit" />
-          <Property Name="L1P9NeedsUpdation" Type="bit" />
-          <Property Name="L1P10NeedsUpdation" Type="bit" />
-          <Property Name="L2P1NeedsUpdation" Type="bit" />
-          <Property Name="L2P2NeedsUpdation" Type="bit" />
-          <Property Name="L2P3NeedsUpdation" Type="bit" />
-          <Property Name="L3P1NeedsUpdation" Type="bit" />
-          <Property Name="L3P2NeedsUpdation" Type="bit" />
-          <Property Name="L3P3NeedsUpdation" Type="bit" />
-          <Property Name="L3P4NeedsUpdation" Type="bit" />
-          <Property Name="L3P5NeedsUpdation" Type="bit" />
-          <Property Name="L3P6NeedsUpdation" Type="bit" />
-          <Property Name="L3P7NeedsUpdation" Type="bit" />
-          <Property Name="L3P8NeedsUpdation" Type="bit" />
-          <Property Name="L4P1NeedsUpdation" Type="bit" />
-          <Property Name="L5P1NeedsUpdation" Type="bit" />
-          <Property Name="L6P1NeedsUpdation" Type="bit" />
-          <Property Name="L4P2NeedsUpdation" Type="bit" />
-          <Property Name="L4P3NeedsUpdation" Type="bit" />
-          <Property Name="L5P3NeedsUpdation" Type="bit" />
-          <Property Name="L6P3NeedsUpdation" Type="bit" />
-          <Property Name="L5P2NeedsUpdation" Type="bit" />
-          <Property Name="L6P2NeedsUpdation" Type="bit" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'anytimea_GROCERY.dbo.BARCODES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.BARCODES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="BARCODES">
           <Key>
             <PropertyRef Name="LOCNO" />
@@ -183,104 +101,46 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.BARCODES' does not have a pri
           <Property Name="bDEFAULT" Type="bit" Nullable="false" />
           <Property Name="BAR_CODE" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="BARTYPE" Type="smallint" Nullable="false" />
-          <Property Name="UNIT_PRICE" Type="money" Nullable="false" />
-          <Property Name="DEALER_PRICE1" Type="money" Nullable="false" />
-          <Property Name="DEALER_PRICE2" Type="money" Nullable="false" />
+          <Property Name="UNIT_PRICE" Type="smallmoney" Nullable="false" />
+          <Property Name="DEALER_PRICE1" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DEALER_PRICE2" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="RF_MARGIN" Type="decimal" Precision="9" Scale="0" Nullable="false" />
           <Property Name="CUSER" Type="int" Nullable="false" />
-          <Property Name="CDATE" Type="datetime" Nullable="false" />
+          <Property Name="CDATE" Type="smalldatetime" Nullable="false" />
           <Property Name="MUSER" Type="int" Nullable="false" />
-          <Property Name="MDATE" Type="datetime" Nullable="false" />
+          <Property Name="MDATE" Type="smalldatetime" Nullable="false" />
           <Property Name="bRandomDisc" Type="bit" Nullable="false" />
-          <Property Name="DiscStartDate" Type="datetime" Nullable="false" />
-          <Property Name="DiscEndDate" Type="datetime" Nullable="false" />
-          <Property Name="DiscStartTime" Type="datetime" Nullable="false" />
-          <Property Name="DiscEndTime" Type="datetime" Nullable="false" />
+          <Property Name="DiscStartDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="DiscEndDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="DiscStartTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="DiscEndTime" Type="smalldatetime" Nullable="false" />
           <Property Name="DISC_TYPE" Type="smallint" Nullable="false" />
           <Property Name="DISC" Type="decimal" Precision="9" Scale="2" Nullable="false" />
           <Property Name="LOYALTY_DISC" Type="decimal" Precision="9" Scale="2" Nullable="false" />
           <Property Name="STAFF_DISC" Type="decimal" Precision="9" Scale="2" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="BARCODESTest">
-          <Key>
-            <PropertyRef Name="LOCNO" />
-            <PropertyRef Name="ITEM_CODE" />
-            <PropertyRef Name="PACK_CODE" />
-          </Key>
-          <Property Name="LOCNO" Type="smallint" Nullable="false" />
-          <Property Name="ITEM_CODE" Type="int" Nullable="false" />
-          <Property Name="PACK_CODE" Type="smallint" Nullable="false" />
-          <Property Name="PACK_DESC" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UNIT" Type="decimal" Precision="9" Scale="0" Nullable="false" />
-          <Property Name="bDEFAULT" Type="bit" Nullable="false" />
-          <Property Name="BAR_CODE" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="BARTYPE" Type="tinyint" Nullable="false" />
-          <Property Name="UNIT_PRICE" Type="money" Nullable="false" />
-          <Property Name="DEALER_PRICE1" Type="money" Nullable="false" />
-          <Property Name="DEALER_PRICE2" Type="money" Nullable="false" />
-          <Property Name="RF_MARGIN" Type="decimal" Precision="9" Scale="0" Nullable="false" />
-          <Property Name="CUSER" Type="int" Nullable="false" />
-          <Property Name="CDATE" Type="datetime" Nullable="false" />
-          <Property Name="MUSER" Type="int" Nullable="false" />
-          <Property Name="MDATE" Type="datetime" Nullable="false" />
-          <Property Name="bRandomDisc" Type="bit" Nullable="false" />
-          <Property Name="DiscStartDate" Type="datetime" Nullable="false" />
-          <Property Name="DiscEndDate" Type="datetime" Nullable="false" />
-          <Property Name="DiscStartTime" Type="datetime" Nullable="false" />
-          <Property Name="DiscEndTime" Type="datetime" Nullable="false" />
-          <Property Name="DISC_TYPE" Type="smallint" Nullable="false" />
-          <Property Name="DISC" Type="decimal" Precision="9" Scale="0" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="NeedsReplication" Type="bit" Nullable="false" />
-          <Property Name="NeedsUpdation" Type="bit" Nullable="false" />
-          <Property Name="L1P1NeedsUpdation" Type="bit" />
-          <Property Name="L1P2NeedsUpdation" Type="bit" />
-          <Property Name="L1P3NeedsUpdation" Type="bit" />
-          <Property Name="L1P4NeedsUpdation" Type="bit" />
-          <Property Name="L1P5NeedsUpdation" Type="bit" />
-          <Property Name="L1P6NeedsUpdation" Type="bit" />
-          <Property Name="L1P7NeedsUpdation" Type="bit" />
-          <Property Name="L1P8NeedsUpdation" Type="bit" />
-          <Property Name="L1P9NeedsUpdation" Type="bit" />
-          <Property Name="L1P10NeedsUpdation" Type="bit" />
-          <Property Name="L2P1NeedsUpdation" Type="bit" />
-          <Property Name="L2P2NeedsUpdation" Type="bit" />
-          <Property Name="L2P3NeedsUpdation" Type="bit" />
-          <Property Name="L3P1NeedsUpdation" Type="bit" />
-          <Property Name="L3P2NeedsUpdation" Type="bit" />
-          <Property Name="L3P3NeedsUpdation" Type="bit" />
-          <Property Name="L3P4NeedsUpdation" Type="bit" />
-          <Property Name="L3P5NeedsUpdation" Type="bit" />
-          <Property Name="L3P6NeedsUpdation" Type="bit" />
-          <Property Name="L3P7NeedsUpdation" Type="bit" />
-          <Property Name="L3P8NeedsUpdation" Type="bit" />
-          <Property Name="L4P1NeedsUpdation" Type="bit" />
-          <Property Name="L5P1NeedsUpdation" Type="bit" />
-          <Property Name="L6P1NeedsUpdation" Type="bit" />
-          <Property Name="L4P2NeedsUpdation" Type="bit" />
-          <Property Name="L4P3NeedsUpdation" Type="bit" />
-          <Property Name="L5P3NeedsUpdation" Type="bit" />
-          <Property Name="L6P3NeedsUpdation" Type="bit" />
-          <Property Name="L5P2NeedsUpdation" Type="bit" />
-          <Property Name="L6P2NeedsUpdation" Type="bit" />
-        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.Blogs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Blogs">
           <Key>
             <PropertyRef Name="BlogId" />
           </Key>
-          <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BlogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="BlogTitle" Type="varchar" MaxLength="255" />
           <Property Name="BlogImageUrl" Type="varchar" MaxLength="255" />
           <Property Name="BlogHtml" Type="text" />
           <Property Name="BlogTitleUrl" Type="nvarchar" MaxLength="255" />
-          <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="CreatedDate" Type="smalldatetime" />
+          <Property Name="ModifiedDate" Type="smalldatetime" />
           <Property Name="RecordStatus" Type="varchar" MaxLength="20" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.BRANCHES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="BRANCHES">
           <Key>
             <PropertyRef Name="BRANCH_ID" />
+            
           </Key>
           <Property Name="BRANCH_ID" Type="int" Nullable="false" />
           <Property Name="BRANCH_NAME" Type="varchar" MaxLength="50" Nullable="false" />
@@ -290,42 +150,62 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.BARCODES' does not have a pri
           <Property Name="PHONE" Type="varchar" MaxLength="50" />
           <Property Name="IS_ACTIVE" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.BRANDS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="BRANDS">
           <Key>
             <PropertyRef Name="BRAND_ID" />
           </Key>
-          <Property Name="BRAND_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BRAND_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="nvarchar" MaxLength="250" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.CART' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CART">
           <Key>
             <PropertyRef Name="CART_ID" />
           </Key>
-          <Property Name="CART_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CART_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="USER_ID" Type="int" />
           <Property Name="PRODUCT_ID" Type="int" />
           <Property Name="QUANTITY" Type="int" />
-          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="CREATED_DATE" Type="smalldatetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.CATEGORIES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CATEGORIES">
           <Key>
             <PropertyRef Name="CATEGORY_ID" />
+            
+            
+            
           </Key>
-          <Property Name="CATEGORY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CATEGORY_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="DESCRIPTION" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="GROUP_ID" Type="int" Nullable="false" />
           <Property Name="CREATED_BY" Type="int" />
-          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="CREATED_DATE" Type="smalldatetime" />
           <Property Name="MODIFIED_BY" Type="int" />
-          <Property Name="MODIFIED_DATE" Type="datetime" />
+          <Property Name="MODIFIED_DATE" Type="smalldatetime" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="DESCRIPTION_URL" Type="varchar" MaxLength="255" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.CompanyInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CompanyInfo">
           <Key>
             <PropertyRef Name="CompanyId" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
           </Key>
-          <Property Name="CompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CompanyName" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="WebsiteTitle" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="BottomText" Type="varchar" MaxLength="255" Nullable="false" />
@@ -341,27 +221,31 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.BARCODES' does not have a pri
           <Property Name="IosAppUrl" Type="varchar" MaxLength="100" />
           <Property Name="AndroidAppUrl" Type="varchar" MaxLength="100" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.ContactUs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ContactUs">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="PhoneNumber" Type="int" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Website" Type="nvarchar" MaxLength="50" />
           <Property Name="Message" Type="nvarchar" MaxLength="500" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.COUPONS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="COUPONS">
           <Key>
             <PropertyRef Name="COUPON_ID" />
           </Key>
-          <Property Name="COUPON_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COUPON_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PROMO_TEXT" Type="nvarchar" MaxLength="50" />
-          <Property Name="START_DATE" Type="datetime" />
-          <Property Name="EXPIRY_DATE" Type="datetime" />
+          <Property Name="START_DATE" Type="smalldatetime" />
+          <Property Name="EXPIRY_DATE" Type="smalldatetime" />
           <Property Name="VALUE" Type="int" />
-          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="CREATED_ON" Type="smalldatetime" />
           <Property Name="CREATED_BY" Type="int" />
           <Property Name="IS_ACTIVE" Type="bit" />
           <Property Name="IS_USED" Type="bit" />
@@ -369,24 +253,26 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.BARCODES' does not have a pri
           <Property Name="CODE" Type="int" />
           <Property Name="PROMO" Type="varchar" MaxLength="20" />
           <Property Name="updated_by" Type="int" />
-          <Property Name="updated_on" Type="datetime" />
+          <Property Name="updated_on" Type="smalldatetime" />
           <Property Name="CATEGORYID" Type="int" />
           <Property Name="SUBCATEGORYID" Type="int" />
           <Property Name="PRODUCTID" Type="int" />
           <Property Name="COUPONTYPE" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.GROUPS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="GROUPS">
           <Key>
             <PropertyRef Name="GROUP_ID" />
           </Key>
-          <Property Name="GROUP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GROUP_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="nvarchar" MaxLength="50" />
           <Property Name="IMAGE_NAME" Type="nvarchar(max)" />
           <Property Name="RELATIVE_IMAGE_NAME" Type="nvarchar(max)" />
           <Property Name="NAME_URL" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'anytimea_GROCERY.dbo.ITEMINFO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.ITEMINFO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ITEMINFO">
           <Key>
             <PropertyRef Name="ITEM_CODE" />
@@ -579,7 +465,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.ITEMINFO' does not have a pri
           <Property Name="FRACTIONAL" Type="bit" Nullable="false" />
           <Property Name="ALLOWQTY" Type="bit" Nullable="false" />
           <Property Name="BATCH_QTY" Type="decimal" Precision="9" Scale="3" Nullable="false" />
-          <Property Name="ITEM_DISC" Type="money" Nullable="false" />
+          <Property Name="ITEM_DISC" Type="smallmoney" Nullable="false" />
           <Property Name="bDISCOUNTED" Type="bit" Nullable="false" />
           <Property Name="DISC_QTY" Type="decimal" Precision="9" Scale="3" Nullable="false" />
           <Property Name="SALE_DISC" Type="decimal" Precision="9" Scale="2" Nullable="false" />
@@ -590,9 +476,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.ITEMINFO' does not have a pri
           <Property Name="IMPORTED" Type="bit" Nullable="false" />
           <Property Name="ShowOnWeb" Type="bit" Nullable="false" />
           <Property Name="bNEW" Type="bit" Nullable="false" />
-          <Property Name="CDATE" Type="datetime" Nullable="false" />
+          <Property Name="CDATE" Type="smalldatetime" Nullable="false" />
           <Property Name="CUSER" Type="int" Nullable="false" />
-          <Property Name="MDATE" Type="datetime" Nullable="false" />
+          <Property Name="MDATE" Type="smalldatetime" Nullable="false" />
           <Property Name="MUSER" Type="int" Nullable="false" />
           <Property Name="CreatedAt" Type="smallint" Nullable="false" />
           <Property Name="NeedsReplication" Type="bit" Nullable="false" />
@@ -675,21 +561,25 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.ITEMINFO' does not have a pri
           <Property Name="L8P2NeedsUpdation" Type="bit" Nullable="false" />
           <Property Name="L8p3NeedsUpdation" Type="bit" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.MAINMENU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="MAINMENU">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="MAINMENU" Type="nvarchar" MaxLength="50" />
           <Property Name="USERTYPEID" Type="int" />
           <Property Name="USERID" Type="int" />
           <Property Name="IsActive" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.OFFER_MANAGEMENT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="OFFER_MANAGEMENT">
           <Key>
             <PropertyRef Name="OFFER_ID" />
           </Key>
-          <Property Name="OFFER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OFFER_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="DISCOUNT" Type="int" />
           <Property Name="USER_ID" Type="int" />
           <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
@@ -699,16 +589,18 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.ITEMINFO' does not have a pri
           <Property Name="SUB_CATEGORY_NAME" Type="nvarchar" MaxLength="50" />
           <Property Name="PRODUCT_ID" Type="int" />
           <Property Name="PRODUCT_NAME" Type="nvarchar" MaxLength="50" />
-          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="CREATED_ON" Type="smalldatetime" />
           <Property Name="CREATED_BY" Type="nvarchar" MaxLength="50" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
           <Property Name="UPDATED_BY" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.ONLINE_TRANSACTION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ONLINE_TRANSACTION">
           <Key>
             <PropertyRef Name="TRANSACTION_ID" />
           </Key>
-          <Property Name="TRANSACTION_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TRANSACTION_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PAYMENT_MODE_ID" Type="int" />
           <Property Name="TRANSACTION_NUMBER" Type="nvarchar(max)" />
         </EntityType>
@@ -722,14 +614,16 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.ITEMINFO' does not have a pri
           <Property Name="QUANTITY" Type="int" />
           <Property Name="IS_ACTIVE" Type="int" />
           <Property Name="UPDATED_BY" Type="int" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
           <Property Name="BAR_CODE" Type="varchar" MaxLength="20" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.ORDER_STATUSES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ORDER_STATUSES">
           <Key>
             <PropertyRef Name="ORDER_STATUS_ID" />
           </Key>
-          <Property Name="ORDER_STATUS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORDER_STATUS_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="DESCRIPTION" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="ORDERS">
@@ -742,13 +636,13 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.ITEMINFO' does not have a pri
           <Property Name="MOBILE" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ADDRESS" Type="nvarchar(max)" Nullable="false" />
           <Property Name="STATUS" Type="int" Nullable="false" />
-          <Property Name="CREATED_ON" Type="datetime" Nullable="false" />
+          <Property Name="CREATED_ON" Type="smalldatetime" Nullable="false" />
           <Property Name="CREATED_BY" Type="int" />
-          <Property Name="ASSIGNED_ON" Type="datetime" />
+          <Property Name="ASSIGNED_ON" Type="smalldatetime" />
           <Property Name="ASSIGNED_BY" Type="int" />
-          <Property Name="SENT_TO_RIDER_ON" Type="datetime" />
+          <Property Name="SENT_TO_RIDER_ON" Type="smalldatetime" />
           <Property Name="SENT_TO_RIDER_BY" Type="int" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
           <Property Name="UPDATED_BY" Type="int" />
           <Property Name="RIDER_ID" Type="int" />
           <Property Name="REJECTED_BY" Type="int" />
@@ -761,66 +655,80 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.ITEMINFO' does not have a pri
           <Property Name="MANUAL_DISCOUNT" Type="int" />
           <Property Name="COUPON_ID" Type="int" />
           <Property Name="COUPON_DISCOUNT" Type="int" />
-          <Property Name="PICKUP_TIME" Type="datetime" />
+          <Property Name="PICKUP_TIME" Type="smalldatetime" />
           <Property Name="IS_PACKAGE" Type="int" />
           <Property Name="ADDED_BY" Type="tinyint" />
           <Property Name="IsTestOrder" Type="bit" />
+          <Property Name="DeliveryFee" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="EntryType" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PACKAGE_PRODUCTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PACKAGE_PRODUCTS">
           <Key>
             <PropertyRef Name="PACKAGE_PRODUCT_ID" />
           </Key>
-          <Property Name="PACKAGE_PRODUCT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PACKAGE_PRODUCT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PACKAGE_ID" Type="int" />
           <Property Name="PRODUCT_ID" Type="int" />
           <Property Name="QUANTITY" Type="int" />
           <Property Name="IS_ACTIVE" Type="int" />
           <Property Name="UPDATED_BY" Type="int" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
           <Property Name="BAR_CODE" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PACKAGES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PACKAGES">
           <Key>
             <PropertyRef Name="PACKAGE_ID" />
           </Key>
-          <Property Name="PACKAGE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PACKAGE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="nvarchar(max)" />
-          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="CREATED_ON" Type="smalldatetime" />
           <Property Name="CREATED_BY" Type="int" />
           <Property Name="IS_ACTIVE" Type="bit" />
           <Property Name="UPDATED_BY" Type="int" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
           <Property Name="DESCRIPTION" Type="nvarchar(max)" />
           <Property Name="BRANCH_ID" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PAYMENT_MODES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PAYMENT_MODES">
           <Key>
             <PropertyRef Name="PAYMENT_MODE_ID" />
           </Key>
-          <Property Name="PAYMENT_MODE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAYMENT_MODE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="DESCRIPTION" Type="varchar" MaxLength="20" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PRODUCT_BRANDS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRODUCT_BRANDS">
           <Key>
             <PropertyRef Name="PRODUCT_BRAND_ID" />
           </Key>
-          <Property Name="PRODUCT_BRAND_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT_BRAND_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PRODUCT_ID" Type="int" />
           <Property Name="BRAND_NAME" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PRODUCT_COLORS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRODUCT_COLORS">
           <Key>
             <PropertyRef Name="PRODUCT_COLOR_ID" />
           </Key>
-          <Property Name="PRODUCT_COLOR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT_COLOR_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PRODUCT_ID" Type="int" />
           <Property Name="COLOR_NAME" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PRODUCT_FLAVORS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRODUCT_FLAVORS">
           <Key>
             <PropertyRef Name="PRODUCT_FLAVOR_ID" />
           </Key>
-          <Property Name="PRODUCT_FLAVOR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT_FLAVOR_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PRODUCT_ID" Type="int" />
           <Property Name="FLAVOR_NAME" Type="nvarchar(max)" />
         </EntityType>
@@ -835,56 +743,70 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.ITEMINFO' does not have a pri
           <Property Name="CHAARSU_IMAGE_PATH" Type="nvarchar(max)" />
           <Property Name="CHAARSU_THUMBNAIL_PATH" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PRODUCT_LEVELS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRODUCT_LEVELS">
           <Key>
             <PropertyRef Name="PRODUCT_LEVEL_ID" />
           </Key>
-          <Property Name="PRODUCT_LEVEL_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT_LEVEL_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="varchar" MaxLength="50" />
           <Property Name="SUB_CATEGORY_ID" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PRODUCT_PACKINGS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRODUCT_PACKINGS">
           <Key>
             <PropertyRef Name="PRODUCT_PACKING_ID" />
           </Key>
-          <Property Name="PRODUCT_PACKING_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT_PACKING_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PRODUCT_ID" Type="int" />
           <Property Name="PACKING_NAME" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PRODUCT_REVIEWS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRODUCT_REVIEWS">
           <Key>
             <PropertyRef Name="PRODUCT_REVIEW_ID" />
+            
+            
+            
           </Key>
-          <Property Name="PRODUCT_REVIEW_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT_REVIEW_ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="USER_ID" Type="bigint" Nullable="false" />
           <Property Name="PRODUCT_ID" Type="bigint" Nullable="false" />
           <Property Name="REVIEW" Type="int" />
           <Property Name="COMMENT" Type="nvarchar(max)" />
-          <Property Name="CREATED_DATE" Type="datetime" />
-          <Property Name="MODIFIED_DATE" Type="datetime" />
+          <Property Name="CREATED_DATE" Type="smalldatetime" />
+          <Property Name="MODIFIED_DATE" Type="smalldatetime" />
           <Property Name="RECORD_STATUS" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PRODUCT_TAGS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRODUCT_TAGS">
           <Key>
             <PropertyRef Name="PRODUCT_TAG_ID" />
           </Key>
-          <Property Name="PRODUCT_TAG_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT_TAG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PRODUCT_ID" Type="int" />
           <Property Name="TAG_NAME" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PRODUCT_TYPES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRODUCT_TYPES">
           <Key>
             <PropertyRef Name="PRODUCT_TYPE_ID" />
           </Key>
-          <Property Name="PRODUCT_TYPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT_TYPE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PRODUCT_ID" Type="int" />
           <Property Name="TYPE_NAME" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="PRODUCTS">
           <Key>
-            <PropertyRef Name="PRODUCT_ID" />
+            <PropertyRef Name="PARENT_ID" />
           </Key>
-          <Property Name="PRODUCT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PARENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PRODUCT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="OLD_PRODUCT_ID" Type="int" />
           <Property Name="NAME" Type="varchar(max)" />
           <Property Name="DESCRIPTION" Type="varchar(max)" />
@@ -920,45 +842,8 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.ITEMINFO' does not have a pri
           <Property Name="DEVICE_TYPE" Type="nvarchar" MaxLength="20" />
           <Property Name="IS_FAVOURITE" Type="bit" />
         </EntityType>
-        <EntityType Name="ProductTest">
-          <Key>
-            <PropertyRef Name="PRODUCT_ID" />
-          </Key>
-          <Property Name="PRODUCT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="OLD_PRODUCT_ID" Type="int" />
-          <Property Name="NAME" Type="varchar(max)" />
-          <Property Name="DESCRIPTION" Type="varchar(max)" />
-          <Property Name="SUB_CATEGORY_ID" Type="int" />
-          <Property Name="UNIT_OF_MEASUREMENT" Type="varchar(max)" />
-          <Property Name="AVG_COST" Type="money" />
-          <Property Name="PRICE" Type="money" />
-          <Property Name="DISCOUNT_PERCENTAGE" Type="int" />
-          <Property Name="IMPORTED" Type="bit" />
-          <Property Name="IS_ACTIVE" Type="bit" />
-          <Property Name="CREATED_DATE" Type="datetime" />
-          <Property Name="CREATED_BY" Type="int" />
-          <Property Name="MODIFIED_DATE" Type="datetime" />
-          <Property Name="MODIFIED_BY" Type="int" />
-          <Property Name="COLOR" Type="varchar(max)" />
-          <Property Name="BRAND" Type="varchar(max)" />
-          <Property Name="FLAVOR" Type="varchar(max)" />
-          <Property Name="PACKING" Type="varchar(max)" />
-          <Property Name="TAG" Type="varchar(max)" />
-          <Property Name="TYPES" Type="varchar(max)" />
-          <Property Name="DISCOUNT" Type="float" />
-          <Property Name="SEC_SUB_CATEGORY_A" Type="int" />
-          <Property Name="SEC_SUB_CATEGORY_B" Type="int" />
-          <Property Name="PRICE2" Type="int" />
-          <Property Name="HAS_IMAGE" Type="bit" />
-          <Property Name="HAS_THUMBNAIL_IMAGE" Type="bit" />
-          <Property Name="VENDOR_ID" Type="int" />
-          <Property Name="CATEGORY_ID" Type="int" />
-          <Property Name="IS_FEATURED" Type="bit" />
-          <Property Name="THRESHOLD" Type="int" />
-          <Property Name="IS_EXEMPTED" Type="bit" />
-        </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'anytimea_GROCERY.dbo.PS000' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.PS000' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PS000">
           <Key>
             <PropertyRef Name="LOCNO" />
@@ -969,25 +854,25 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.PS000' does not have a primar
           <Property Name="QTY" Type="float" />
           <Property Name="WH_QTY" Type="float" />
           <Property Name="T_QTY" Type="float" />
-          <Property Name="MATERIAL_COST" Type="money" />
-          <Property Name="INGR_COST" Type="money" />
-          <Property Name="PKG_COST" Type="money" />
-          <Property Name="LAB_COST" Type="money" />
-          <Property Name="OH_COST" Type="money" />
-          <Property Name="OTH_COST" Type="money" />
-          <Property Name="WASTAGE" Type="money" />
-          <Property Name="COST_PRICE1" Type="money" />
-          <Property Name="COST_PRICE2" Type="money" />
-          <Property Name="COST_PRICE3" Type="money" />
-          <Property Name="NET_COST" Type="money" />
-          <Property Name="AVG_COST" Type="money" />
-          <Property Name="AVG_COST1" Type="money" />
-          <Property Name="AVG_COST2" Type="money" />
-          <Property Name="AVG_COST3" Type="money" />
-          <Property Name="F_PUR_PRICE" Type="money" />
-          <Property Name="LAST_PUR_PRICE1" Type="money" />
-          <Property Name="LAST_PUR_PRICE2" Type="money" />
-          <Property Name="LAST_PUR_PRICE3" Type="money" />
+          <Property Name="MATERIAL_COST" Type="smallmoney" />
+          <Property Name="INGR_COST" Type="smallmoney" />
+          <Property Name="PKG_COST" Type="smallmoney" />
+          <Property Name="LAB_COST" Type="smallmoney" />
+          <Property Name="OH_COST" Type="smallmoney" />
+          <Property Name="OTH_COST" Type="smallmoney" />
+          <Property Name="WASTAGE" Type="smallmoney" />
+          <Property Name="COST_PRICE1" Type="smallmoney" />
+          <Property Name="COST_PRICE2" Type="smallmoney" />
+          <Property Name="COST_PRICE3" Type="smallmoney" />
+          <Property Name="NET_COST" Type="smallmoney" />
+          <Property Name="AVG_COST" Type="smallmoney" />
+          <Property Name="AVG_COST1" Type="smallmoney" />
+          <Property Name="AVG_COST2" Type="smallmoney" />
+          <Property Name="AVG_COST3" Type="smallmoney" />
+          <Property Name="F_PUR_PRICE" Type="smallmoney" />
+          <Property Name="LAST_PUR_PRICE1" Type="smallmoney" />
+          <Property Name="LAST_PUR_PRICE2" Type="smallmoney" />
+          <Property Name="LAST_PUR_PRICE3" Type="smallmoney" />
           <Property Name="LAST_SUPP" Type="varchar" MaxLength="10" />
           <Property Name="LAST_SUPP1" Type="varchar" MaxLength="10" />
           <Property Name="LAST_SUPP2" Type="varchar" MaxLength="10" />
@@ -1007,59 +892,11 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.PS000' does not have a primar
           <Property Name="ITEM_STATUS" Type="bit" />
           <Property Name="PHY_QTY" Type="float" />
           <Property Name="STATUS" Type="int" />
-          <Property Name="PDATE" Type="datetime" />
+          <Property Name="PDATE" Type="smalldatetime" />
           <Property Name="IsActive" Type="bit" />
           <Property Name="NeedsReplication" Type="bit" />
           <Property Name="NeedsUpdation" Type="bit" />
           <Property Name="SUPP_CODE" Type="varchar" MaxLength="10" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'anytimea_GROCERY.dbo.PS000Test' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="PS000Test">
-          <Key>
-            <PropertyRef Name="LOCNO" />
-            <PropertyRef Name="ITEM_CODE" />
-            <PropertyRef Name="QTY" />
-            <PropertyRef Name="WH_QTY" />
-            <PropertyRef Name="T_QTY" />
-            <PropertyRef Name="FLOOR_NO" />
-            <PropertyRef Name="COUNTER" />
-            <PropertyRef Name="SHELF" />
-            <PropertyRef Name="SHELF_QTY" />
-            <PropertyRef Name="SHELF_FACING" />
-            <PropertyRef Name="LSDATE" />
-            <PropertyRef Name="LPDATE" />
-            <PropertyRef Name="ALLOW_NEGATIVE" />
-            <PropertyRef Name="AreaCovered" />
-            <PropertyRef Name="IsActive" />
-            <PropertyRef Name="MAX_QTY" />
-            <PropertyRef Name="MIN_QTY" />
-            <PropertyRef Name="OP_STOCK" />
-            <PropertyRef Name="OP_STOCK_VAL" />
-            <PropertyRef Name="NeedsReplication" />
-            <PropertyRef Name="NeedsUpdation" />
-          </Key>
-          <Property Name="LOCNO" Type="smallint" Nullable="false" />
-          <Property Name="ITEM_CODE" Type="int" Nullable="false" />
-          <Property Name="QTY" Type="decimal" Precision="9" Scale="3" Nullable="false" />
-          <Property Name="WH_QTY" Type="decimal" Precision="9" Scale="3" Nullable="false" />
-          <Property Name="T_QTY" Type="decimal" Precision="19" Scale="3" Nullable="false" />
-          <Property Name="FLOOR_NO" Type="tinyint" Nullable="false" />
-          <Property Name="COUNTER" Type="smallint" Nullable="false" />
-          <Property Name="SHELF" Type="tinyint" Nullable="false" />
-          <Property Name="SHELF_QTY" Type="decimal" Precision="9" Scale="3" Nullable="false" />
-          <Property Name="SHELF_FACING" Type="decimal" Precision="9" Scale="3" Nullable="false" />
-          <Property Name="LSDATE" Type="datetime" Nullable="false" />
-          <Property Name="LPDATE" Type="datetime" Nullable="false" />
-          <Property Name="ALLOW_NEGATIVE" Type="bit" Nullable="false" />
-          <Property Name="AreaCovered" Type="decimal" Precision="9" Scale="2" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="MAX_QTY" Type="decimal" Precision="19" Scale="3" Nullable="false" />
-          <Property Name="MIN_QTY" Type="decimal" Precision="19" Scale="3" Nullable="false" />
-          <Property Name="OP_STOCK" Type="decimal" Precision="19" Scale="3" Nullable="false" />
-          <Property Name="OP_STOCK_VAL" Type="money" Nullable="false" />
-          <Property Name="NeedsReplication" Type="bit" Nullable="false" />
-          <Property Name="NeedsUpdation" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="RECOMMENDED_PRODUCTS">
           <Key>
@@ -1068,46 +905,52 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.PS000Test' does not have a pr
           <Property Name="RECOMMENDED_PRODUCT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PRODUCT_ID" Type="int" />
           <Property Name="PRODUCT_NAME" Type="varchar(max)" />
-          <Property Name="PRICE" Type="money" />
+          <Property Name="PRICE" Type="smallmoney" />
           <Property Name="PACKING" Type="varchar(max)" />
           <Property Name="TYPE" Type="nvarchar" MaxLength="50" />
-          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="CREATED_ON" Type="smalldatetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.RIDER_ORDER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="RIDER_ORDER">
           <Key>
             <PropertyRef Name="RIDER_ORDER_ID" />
           </Key>
-          <Property Name="RIDER_ORDER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RIDER_ORDER_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="RIDER_ID" Type="int" />
           <Property Name="ORDER_ID" Type="int" />
           <Property Name="RIDER_TIME_IN" Type="nvarchar" MaxLength="100" />
           <Property Name="RIDER_TIME_OUT" Type="nvarchar" MaxLength="100" />
           <Property Name="IS_RIDER_BACK" Type="bit" />
-          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="CREATED_ON" Type="smalldatetime" />
           <Property Name="CREATED_BY" Type="nvarchar" MaxLength="50" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
           <Property Name="UPDATED_BY" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.SMS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SMS">
           <Key>
             <PropertyRef Name="SMS_ID" />
           </Key>
-          <Property Name="SMS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SMS_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="SENDER" Type="int" />
           <Property Name="TEXT" Type="nvarchar(max)" />
           <Property Name="RESPONSE" Type="nvarchar(max)" />
-          <Property Name="SENT_ON" Type="datetime" />
+          <Property Name="SENT_ON" Type="smalldatetime" />
           <Property Name="SMS_TYPE_ID" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.SMS_TYPES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SMS_TYPES">
           <Key>
             <PropertyRef Name="SMS_TYPE_ID" />
           </Key>
-          <Property Name="SMS_TYPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SMS_TYPE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'anytimea_GROCERY.dbo.STOCK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.STOCK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="STOCK">
           <Key>
             <PropertyRef Name="BRANCH_ID" />
@@ -1120,53 +963,42 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.STOCK' does not have a primar
           <Property Name="QTY" Type="decimal" Precision="18" Scale="3" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.SUB_CATEGORIES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SUB_CATEGORIES">
           <Key>
             <PropertyRef Name="SUB_CATEGORY_ID" />
+            
+            
           </Key>
-          <Property Name="SUB_CATEGORY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SUB_CATEGORY_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CATEGORY_ID" Type="int" Nullable="false" />
           <Property Name="DESCRIPTION" Type="varchar" MaxLength="50" />
           <Property Name="CREATED_BY" Type="int" />
-          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="CREATED_DATE" Type="smalldatetime" />
           <Property Name="MODIFIED_BY" Type="int" />
-          <Property Name="MODIFIED_DATE" Type="datetime" />
+          <Property Name="MODIFIED_DATE" Type="smalldatetime" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="APP_IMAGE_PATH" Type="nvarchar(max)" />
           <Property Name="DESCRIPTION_URL" Type="varchar" MaxLength="255" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.SUBMENU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SUBMENU">
           <Key>
             <PropertyRef Name="ID" />
+            
+            
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="SUBMENU" Type="nvarchar" MaxLength="50" />
           <Property Name="MAINMENUID" Type="int" Nullable="false" />
           <Property Name="USERTYPEID" Type="int" Nullable="false" />
           <Property Name="USERID" Type="int" />
           <Property Name="IsActive" Type="bit" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="TEMP_CUSTOMERS">
-          <Key>
-            <PropertyRef Name="TEMP_CUSTOMER_ID" />
-          </Key>
-          <Property Name="TEMP_CUSTOMER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NAME" Type="nvarchar(max)" />
-          <Property Name="PHONE" Type="nvarchar" MaxLength="20" />
-          <Property Name="ADDRESS" Type="nvarchar(max)" />
-        </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'anytimea_GROCERY.dbo.TERMINFO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.TERMINFO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TERMINFO">
           <Key>
             <PropertyRef Name="LOCNO" />
@@ -1316,13 +1148,13 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TERMINFO' does not have a pri
           <Property Name="USERID" Type="int" Nullable="false" />
           <Property Name="MAXORD" Type="int" Nullable="false" />
           <Property Name="MAXDOC" Type="int" Nullable="false" />
-          <Property Name="LAST_UPDATED" Type="datetime" Nullable="false" />
+          <Property Name="LAST_UPDATED" Type="smalldatetime" Nullable="false" />
           <Property Name="COL1" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="COL2" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="COL3" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="COL4" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="LSDate" Type="datetime" Nullable="false" />
-          <Property Name="LRDate" Type="datetime" Nullable="false" />
+          <Property Name="LSDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="LRDate" Type="smalldatetime" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="NeedsUpdation" Type="bit" Nullable="false" />
           <Property Name="NeedsReplication" Type="bit" Nullable="false" />
@@ -1393,20 +1225,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TERMINFO' does not have a pri
           <Property Name="L11NeedsUpdation" Type="bit" Nullable="false" />
           <Property Name="L12NeedsUpdation" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TEST">
-          <Key>
-            <PropertyRef Name="OLD_PRODUCT_ID" />
-            <PropertyRef Name="NAME" />
-            <PropertyRef Name="DESCRIPTION" />
-            <PropertyRef Name="AVG_COST" />
-          </Key>
-          <Property Name="OLD_PRODUCT_ID" Type="int" Nullable="false" />
-          <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DESCRIPTION" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="AVG_COST" Type="decimal" Precision="9" Scale="2" Nullable="false" />
-        </EntityType>
         <EntityType Name="USER_ADDRESSES">
           <Key>
             <PropertyRef Name="USER_ADDRESS_ID" />
@@ -1419,9 +1237,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="LATITUDE" Type="nvarchar" MaxLength="50" />
           <Property Name="IS_ACTIVE" Type="bit" />
           <Property Name="CREATED_BY" Type="int" />
-          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="CREATED_ON" Type="smalldatetime" />
           <Property Name="UPDATED_BY" Type="int" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="USER_DEVICES">
           <Key>
@@ -1439,16 +1257,19 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="USER_FAVOURITE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="USER_ID" Type="int" />
           <Property Name="PRODUCT_ID" Type="int" />
-          <Property Name="CREATED_ON" Type="datetime" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="CREATED_ON" Type="smalldatetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
           <Property Name="IS_ACTIVE" Type="int" />
           <Property Name="IS_FAVOURITE" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.USER_TYPES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="USER_TYPES">
           <Key>
             <PropertyRef Name="USER_TYPE_ID" />
+            
           </Key>
-          <Property Name="USER_TYPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_TYPE_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="DESCRIPTION" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="USERS">
@@ -1464,9 +1285,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="ADDRESS" Type="nvarchar(max)" />
           <Property Name="CITY" Type="nvarchar(max)" />
           <Property Name="IS_ACTIVE" Type="bit" Nullable="false" />
-          <Property Name="CREATED_ON" Type="datetime" />
+          <Property Name="CREATED_ON" Type="smalldatetime" />
           <Property Name="CREATED_BY" Type="int" />
-          <Property Name="UPDATED_ON" Type="datetime" />
+          <Property Name="UPDATED_ON" Type="smalldatetime" />
           <Property Name="UPDATED_BY" Type="int" />
           <Property Name="IS_AVAILABLE" Type="int" />
           <Property Name="VEHICLE_NUMBER" Type="varchar" MaxLength="20" />
@@ -1481,11 +1302,13 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="ResetPasswordCode" Type="varchar" MaxLength="100" />
           <Property Name="IS_GUEST" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.VENDOR_BRANCHES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VENDOR_BRANCHES">
           <Key>
             <PropertyRef Name="VENDOR_BRANCH_ID" />
           </Key>
-          <Property Name="VENDOR_BRANCH_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VENDOR_BRANCH_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="VENDOR_ID" Type="int" />
           <Property Name="NAME" Type="nvarchar(max)" />
           <Property Name="ADDRESS" Type="nvarchar(max)" />
@@ -1493,11 +1316,36 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="LONGITUDE" Type="float" />
           <Property Name="PHONE" Type="nvarchar(max)" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.VENDORS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VENDORS">
           <Key>
             <PropertyRef Name="VENDOR_ID" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
           </Key>
-          <Property Name="VENDOR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VENDOR_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CLIENT_TYPE" Type="tinyint" Nullable="false" />
           <Property Name="VENDOR_NAME" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="ADDR1" Type="varchar" MaxLength="255" Nullable="false" />
@@ -1522,45 +1370,32 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="NTN" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="CREATED_BY" Type="int" />
-          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="CREATED_DATE" Type="smalldatetime" />
           <Property Name="MODIFIED_BY" Type="int" />
-          <Property Name="MODIFIED_DATE" Type="datetime" />
+          <Property Name="MODIFIED_DATE" Type="smalldatetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.WebsitePages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="WebsitePages">
           <Key>
             <PropertyRef Name="PageId" />
           </Key>
-          <Property Name="PageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PageTitle" Type="varchar" MaxLength="255" />
           <Property Name="PageUrl" Type="varchar" MaxLength="255" />
           <Property Name="PageHtml" Type="text" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sachiery_GroceryApps.dbo.WISHES_PRODUCT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="WISHES_PRODUCT">
           <Key>
             <PropertyRef Name="WISH_ID" />
           </Key>
-          <Property Name="WISH_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WISH_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="USER_ID" Type="int" />
           <Property Name="PRODUCT_ID" Type="int" />
-          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="CREATED_DATE" Type="smalldatetime" />
         </EntityType>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
         <Function Name="SP_GetAllProductsByCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PageIndex" Type="int" Mode="In" />
           <Parameter Name="PageSize" Type="int" Mode="In" />
@@ -1568,26 +1403,12 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Parameter Name="BranchId" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_GETRECOMMENDEDPRODUCTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
         <Function Name="SP_InsertBarcode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_InsertItemInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_InsertProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_InsertProductFromItemInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_InsertStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
         <Function Name="SP_UpdateStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SpGetAllBanners" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PageIndex" Type="int" Mode="In" />
           <Parameter Name="PageSize" Type="int" Mode="In" />
@@ -1701,116 +1522,46 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Parameter Name="USER_ID" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="anytimea_GROCERYModelStoreContainer">
-          <EntitySet Name="ADS" EntityType="Self.ADS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="AREAS" EntityType="Self.AREAS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BANNER_IMAGES" EntityType="Self.BANNER_IMAGES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BANNERS" EntityType="Self.BANNERS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BARCODESTest" EntityType="Self.BARCODESTest" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Blogs" EntityType="Self.Blogs" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BRANCHES" EntityType="Self.BRANCHES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BRANDS" EntityType="Self.BRANDS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CART" EntityType="Self.CART" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CATEGORIES" EntityType="Self.CATEGORIES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CompanyInfo" EntityType="Self.CompanyInfo" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="COUPONS" EntityType="Self.COUPONS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GROUPS" EntityType="Self.GROUPS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MAINMENU" EntityType="Self.MAINMENU" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OFFER_MANAGEMENT" EntityType="Self.OFFER_MANAGEMENT" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ONLINE_TRANSACTION" EntityType="Self.ONLINE_TRANSACTION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ORDER_PRODUCTS" EntityType="Self.ORDER_PRODUCTS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ORDER_STATUSES" EntityType="Self.ORDER_STATUSES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ORDERS" EntityType="Self.ORDERS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PACKAGE_PRODUCTS" EntityType="Self.PACKAGE_PRODUCTS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PACKAGES" EntityType="Self.PACKAGES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PAYMENT_MODES" EntityType="Self.PAYMENT_MODES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PRODUCT_BRANDS" EntityType="Self.PRODUCT_BRANDS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PRODUCT_COLORS" EntityType="Self.PRODUCT_COLORS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PRODUCT_FLAVORS" EntityType="Self.PRODUCT_FLAVORS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRODUCT_IMAGES" EntityType="Self.PRODUCT_IMAGES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PRODUCT_LEVELS" EntityType="Self.PRODUCT_LEVELS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PRODUCT_PACKINGS" EntityType="Self.PRODUCT_PACKINGS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PRODUCT_REVIEWS" EntityType="Self.PRODUCT_REVIEWS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PRODUCT_TAGS" EntityType="Self.PRODUCT_TAGS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PRODUCT_TYPES" EntityType="Self.PRODUCT_TYPES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCTS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProductTest" EntityType="Self.ProductTest" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RECOMMENDED_PRODUCTS" EntityType="Self.RECOMMENDED_PRODUCTS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RIDER_ORDER" EntityType="Self.RIDER_ORDER" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SMS" EntityType="Self.SMS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SMS_TYPES" EntityType="Self.SMS_TYPES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SUB_CATEGORIES" EntityType="Self.SUB_CATEGORIES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SUBMENU" EntityType="Self.SUBMENU" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TEMP_CUSTOMERS" EntityType="Self.TEMP_CUSTOMERS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USER_ADDRESSES" EntityType="Self.USER_ADDRESSES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USER_DEVICES" EntityType="Self.USER_DEVICES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USER_FAVOURITES" EntityType="Self.USER_FAVOURITES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="USER_TYPES" EntityType="Self.USER_TYPES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VENDOR_BRANCHES" EntityType="Self.VENDOR_BRANCHES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VENDORS" EntityType="Self.VENDORS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="WebsitePages" EntityType="Self.WebsitePages" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="WISHES_PRODUCT" EntityType="Self.WISHES_PRODUCT" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BarcodeNewTest" EntityType="Self.BarcodeNewTest" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="ADS" EntityType="Self.ADS" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [BarcodeNewTest].[LOCNO] AS [LOCNO], 
-    [BarcodeNewTest].[ITEM_CODE] AS [ITEM_CODE], 
-    [BarcodeNewTest].[PACK_CODE] AS [PACK_CODE], 
-    [BarcodeNewTest].[PACK_DESC] AS [PACK_DESC], 
-    [BarcodeNewTest].[UNIT] AS [UNIT], 
-    [BarcodeNewTest].[bDEFAULT] AS [bDEFAULT], 
-    [BarcodeNewTest].[BAR_CODE] AS [BAR_CODE], 
-    [BarcodeNewTest].[BARTYPE] AS [BARTYPE], 
-    [BarcodeNewTest].[UNIT_PRICE] AS [UNIT_PRICE], 
-    [BarcodeNewTest].[DEALER_PRICE1] AS [DEALER_PRICE1], 
-    [BarcodeNewTest].[DEALER_PRICE2] AS [DEALER_PRICE2], 
-    [BarcodeNewTest].[RF_MARGIN] AS [RF_MARGIN], 
-    [BarcodeNewTest].[CUSER] AS [CUSER], 
-    [BarcodeNewTest].[CDATE] AS [CDATE], 
-    [BarcodeNewTest].[MUSER] AS [MUSER], 
-    [BarcodeNewTest].[MDATE] AS [MDATE], 
-    [BarcodeNewTest].[bRandomDisc] AS [bRandomDisc], 
-    [BarcodeNewTest].[DiscStartDate] AS [DiscStartDate], 
-    [BarcodeNewTest].[DiscEndDate] AS [DiscEndDate], 
-    [BarcodeNewTest].[DiscStartTime] AS [DiscStartTime], 
-    [BarcodeNewTest].[DiscEndTime] AS [DiscEndTime], 
-    [BarcodeNewTest].[DISC_TYPE] AS [DISC_TYPE], 
-    [BarcodeNewTest].[DISC] AS [DISC], 
-    [BarcodeNewTest].[IsActive] AS [IsActive], 
-    [BarcodeNewTest].[NeedsReplication] AS [NeedsReplication], 
-    [BarcodeNewTest].[NeedsUpdation] AS [NeedsUpdation], 
-    [BarcodeNewTest].[L1P1NeedsUpdation] AS [L1P1NeedsUpdation], 
-    [BarcodeNewTest].[L1P2NeedsUpdation] AS [L1P2NeedsUpdation], 
-    [BarcodeNewTest].[L1P3NeedsUpdation] AS [L1P3NeedsUpdation], 
-    [BarcodeNewTest].[L1P4NeedsUpdation] AS [L1P4NeedsUpdation], 
-    [BarcodeNewTest].[L1P5NeedsUpdation] AS [L1P5NeedsUpdation], 
-    [BarcodeNewTest].[L1P6NeedsUpdation] AS [L1P6NeedsUpdation], 
-    [BarcodeNewTest].[L1P7NeedsUpdation] AS [L1P7NeedsUpdation], 
-    [BarcodeNewTest].[L1P8NeedsUpdation] AS [L1P8NeedsUpdation], 
-    [BarcodeNewTest].[L1P9NeedsUpdation] AS [L1P9NeedsUpdation], 
-    [BarcodeNewTest].[L1P10NeedsUpdation] AS [L1P10NeedsUpdation], 
-    [BarcodeNewTest].[L2P1NeedsUpdation] AS [L2P1NeedsUpdation], 
-    [BarcodeNewTest].[L2P2NeedsUpdation] AS [L2P2NeedsUpdation], 
-    [BarcodeNewTest].[L2P3NeedsUpdation] AS [L2P3NeedsUpdation], 
-    [BarcodeNewTest].[L3P1NeedsUpdation] AS [L3P1NeedsUpdation], 
-    [BarcodeNewTest].[L3P2NeedsUpdation] AS [L3P2NeedsUpdation], 
-    [BarcodeNewTest].[L3P3NeedsUpdation] AS [L3P3NeedsUpdation], 
-    [BarcodeNewTest].[L3P4NeedsUpdation] AS [L3P4NeedsUpdation], 
-    [BarcodeNewTest].[L3P5NeedsUpdation] AS [L3P5NeedsUpdation], 
-    [BarcodeNewTest].[L3P6NeedsUpdation] AS [L3P6NeedsUpdation], 
-    [BarcodeNewTest].[L3P7NeedsUpdation] AS [L3P7NeedsUpdation], 
-    [BarcodeNewTest].[L3P8NeedsUpdation] AS [L3P8NeedsUpdation], 
-    [BarcodeNewTest].[L4P1NeedsUpdation] AS [L4P1NeedsUpdation], 
-    [BarcodeNewTest].[L5P1NeedsUpdation] AS [L5P1NeedsUpdation], 
-    [BarcodeNewTest].[L6P1NeedsUpdation] AS [L6P1NeedsUpdation], 
-    [BarcodeNewTest].[L4P2NeedsUpdation] AS [L4P2NeedsUpdation], 
-    [BarcodeNewTest].[L4P3NeedsUpdation] AS [L4P3NeedsUpdation], 
-    [BarcodeNewTest].[L5P3NeedsUpdation] AS [L5P3NeedsUpdation], 
-    [BarcodeNewTest].[L6P3NeedsUpdation] AS [L6P3NeedsUpdation], 
-    [BarcodeNewTest].[L5P2NeedsUpdation] AS [L5P2NeedsUpdation], 
-    [BarcodeNewTest].[L6P2NeedsUpdation] AS [L6P2NeedsUpdation]
-    FROM [dbo].[BarcodeNewTest] AS [BarcodeNewTest]</DefiningQuery>
+    [ADS].[AD_ID] AS [AD_ID], 
+    [ADS].[TEXT] AS [TEXT], 
+    [ADS].[IMAGE_PATH] AS [IMAGE_PATH], 
+    [ADS].[CREATED_BY] AS [CREATED_BY], 
+    [ADS].[CREATED_ON] AS [CREATED_ON], 
+    [ADS].[UPDATED_BY] AS [UPDATED_BY], 
+    [ADS].[UPDATED_ON] AS [UPDATED_ON], 
+    [ADS].[IS_ACTIVE] AS [IS_ACTIVE]
+    FROM [dbo].[ADS] AS [ADS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AREAS" EntityType="Self.AREAS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AREAS].[AREA_ID] AS [AREA_ID], 
+    [AREAS].[NAME] AS [NAME], 
+    [AREAS].[BRANCH_ID] AS [BRANCH_ID]
+    FROM [dbo].[AREAS] AS [AREAS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BANNER_IMAGES" EntityType="Self.BANNER_IMAGES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BANNER_IMAGES].[BANNER_ID] AS [BANNER_ID], 
+    [BANNER_IMAGES].[BANNER_TYPE] AS [BANNER_TYPE], 
+    [BANNER_IMAGES].[BANNER_IMAGE_PATH] AS [BANNER_IMAGE_PATH], 
+    [BANNER_IMAGES].[USER_ID] AS [USER_ID], 
+    [BANNER_IMAGES].[CREATED_ON] AS [CREATED_ON], 
+    [BANNER_IMAGES].[CREATED_BY] AS [CREATED_BY], 
+    [BANNER_IMAGES].[UPDATED_ON] AS [UPDATED_ON], 
+    [BANNER_IMAGES].[UPDATED_BY] AS [UPDATED_BY]
+    FROM [dbo].[BANNER_IMAGES] AS [BANNER_IMAGES]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="BARCODES" EntityType="Self.BARCODES" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1841,6 +1592,117 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
     [BARCODES].[STAFF_DISC] AS [STAFF_DISC], 
     [BARCODES].[IsActive] AS [IsActive]
     FROM [dbo].[BARCODES] AS [BARCODES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Blogs" EntityType="Self.Blogs" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Blogs].[BlogId] AS [BlogId], 
+    [Blogs].[BlogTitle] AS [BlogTitle], 
+    [Blogs].[BlogImageUrl] AS [BlogImageUrl], 
+    [Blogs].[BlogHtml] AS [BlogHtml], 
+    [Blogs].[BlogTitleUrl] AS [BlogTitleUrl], 
+    [Blogs].[CreatedDate] AS [CreatedDate], 
+    [Blogs].[ModifiedDate] AS [ModifiedDate], 
+    [Blogs].[RecordStatus] AS [RecordStatus]
+    FROM [dbo].[Blogs] AS [Blogs]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BRANCHES" EntityType="Self.BRANCHES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BRANCHES].[BRANCH_ID] AS [BRANCH_ID], 
+    [BRANCHES].[BRANCH_NAME] AS [BRANCH_NAME], 
+    [BRANCHES].[LATITUDE] AS [LATITUDE], 
+    [BRANCHES].[LONGITUDE] AS [LONGITUDE], 
+    [BRANCHES].[ADDRESS] AS [ADDRESS], 
+    [BRANCHES].[PHONE] AS [PHONE], 
+    [BRANCHES].[IS_ACTIVE] AS [IS_ACTIVE]
+    FROM [dbo].[BRANCHES] AS [BRANCHES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BRANDS" EntityType="Self.BRANDS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BRANDS].[BRAND_ID] AS [BRAND_ID], 
+    [BRANDS].[NAME] AS [NAME]
+    FROM [dbo].[BRANDS] AS [BRANDS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CART" EntityType="Self.CART" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CART].[CART_ID] AS [CART_ID], 
+    [CART].[USER_ID] AS [USER_ID], 
+    [CART].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [CART].[QUANTITY] AS [QUANTITY], 
+    [CART].[CREATED_DATE] AS [CREATED_DATE]
+    FROM [dbo].[CART] AS [CART]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CATEGORIES" EntityType="Self.CATEGORIES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CATEGORIES].[CATEGORY_ID] AS [CATEGORY_ID], 
+    [CATEGORIES].[DESCRIPTION] AS [DESCRIPTION], 
+    [CATEGORIES].[GROUP_ID] AS [GROUP_ID], 
+    [CATEGORIES].[CREATED_BY] AS [CREATED_BY], 
+    [CATEGORIES].[CREATED_DATE] AS [CREATED_DATE], 
+    [CATEGORIES].[MODIFIED_BY] AS [MODIFIED_BY], 
+    [CATEGORIES].[MODIFIED_DATE] AS [MODIFIED_DATE], 
+    [CATEGORIES].[IsActive] AS [IsActive], 
+    [CATEGORIES].[DESCRIPTION_URL] AS [DESCRIPTION_URL]
+    FROM [dbo].[CATEGORIES] AS [CATEGORIES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CompanyInfo" EntityType="Self.CompanyInfo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CompanyInfo].[CompanyId] AS [CompanyId], 
+    [CompanyInfo].[CompanyName] AS [CompanyName], 
+    [CompanyInfo].[WebsiteTitle] AS [WebsiteTitle], 
+    [CompanyInfo].[BottomText] AS [BottomText], 
+    [CompanyInfo].[BottomLogoUrl] AS [BottomLogoUrl], 
+    [CompanyInfo].[TopLogoUrl] AS [TopLogoUrl], 
+    [CompanyInfo].[SocialVimeoUrl] AS [SocialVimeoUrl], 
+    [CompanyInfo].[SocialPinterestUrl] AS [SocialPinterestUrl], 
+    [CompanyInfo].[SocialTwitterUrl] AS [SocialTwitterUrl], 
+    [CompanyInfo].[SocialFacebookUrl] AS [SocialFacebookUrl], 
+    [CompanyInfo].[PhoneNumber] AS [PhoneNumber], 
+    [CompanyInfo].[EmailAddress] AS [EmailAddress], 
+    [CompanyInfo].[AboutUsText] AS [AboutUsText], 
+    [CompanyInfo].[IosAppUrl] AS [IosAppUrl], 
+    [CompanyInfo].[AndroidAppUrl] AS [AndroidAppUrl]
+    FROM [dbo].[CompanyInfo] AS [CompanyInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ContactUs" EntityType="Self.ContactUs" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ContactUs].[Id] AS [Id], 
+    [ContactUs].[Name] AS [Name], 
+    [ContactUs].[PhoneNumber] AS [PhoneNumber], 
+    [ContactUs].[Email] AS [Email], 
+    [ContactUs].[Website] AS [Website], 
+    [ContactUs].[Message] AS [Message]
+    FROM [dbo].[ContactUs] AS [ContactUs]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="COUPONS" EntityType="Self.COUPONS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [COUPONS].[COUPON_ID] AS [COUPON_ID], 
+    [COUPONS].[PROMO_TEXT] AS [PROMO_TEXT], 
+    [COUPONS].[START_DATE] AS [START_DATE], 
+    [COUPONS].[EXPIRY_DATE] AS [EXPIRY_DATE], 
+    [COUPONS].[VALUE] AS [VALUE], 
+    [COUPONS].[CREATED_ON] AS [CREATED_ON], 
+    [COUPONS].[CREATED_BY] AS [CREATED_BY], 
+    [COUPONS].[IS_ACTIVE] AS [IS_ACTIVE], 
+    [COUPONS].[IS_USED] AS [IS_USED], 
+    [COUPONS].[UNLOCK_AMOUNT] AS [UNLOCK_AMOUNT], 
+    [COUPONS].[CODE] AS [CODE], 
+    [COUPONS].[PROMO] AS [PROMO], 
+    [COUPONS].[updated_by] AS [updated_by], 
+    [COUPONS].[updated_on] AS [updated_on], 
+    [COUPONS].[CATEGORYID] AS [CATEGORYID], 
+    [COUPONS].[SUBCATEGORYID] AS [SUBCATEGORYID], 
+    [COUPONS].[PRODUCTID] AS [PRODUCTID], 
+    [COUPONS].[COUPONTYPE] AS [COUPONTYPE]
+    FROM [dbo].[COUPONS] AS [COUPONS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GROUPS" EntityType="Self.GROUPS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GROUPS].[GROUP_ID] AS [GROUP_ID], 
+    [GROUPS].[NAME] AS [NAME], 
+    [GROUPS].[IMAGE_NAME] AS [IMAGE_NAME], 
+    [GROUPS].[RELATIVE_IMAGE_NAME] AS [RELATIVE_IMAGE_NAME], 
+    [GROUPS].[NAME_URL] AS [NAME_URL]
+    FROM [dbo].[GROUPS] AS [GROUPS]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ITEMINFO" EntityType="Self.ITEMINFO" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1988,6 +1850,138 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
     [ITEMINFO].[L8p3NeedsUpdation] AS [L8p3NeedsUpdation]
     FROM [dbo].[ITEMINFO] AS [ITEMINFO]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="MAINMENU" EntityType="Self.MAINMENU" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MAINMENU].[ID] AS [ID], 
+    [MAINMENU].[MAINMENU] AS [MAINMENU], 
+    [MAINMENU].[USERTYPEID] AS [USERTYPEID], 
+    [MAINMENU].[USERID] AS [USERID], 
+    [MAINMENU].[IsActive] AS [IsActive]
+    FROM [dbo].[MAINMENU] AS [MAINMENU]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OFFER_MANAGEMENT" EntityType="Self.OFFER_MANAGEMENT" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OFFER_MANAGEMENT].[OFFER_ID] AS [OFFER_ID], 
+    [OFFER_MANAGEMENT].[DISCOUNT] AS [DISCOUNT], 
+    [OFFER_MANAGEMENT].[USER_ID] AS [USER_ID], 
+    [OFFER_MANAGEMENT].[TYPE] AS [TYPE], 
+    [OFFER_MANAGEMENT].[CATEGORY_ID] AS [CATEGORY_ID], 
+    [OFFER_MANAGEMENT].[CATEGORY_NAME] AS [CATEGORY_NAME], 
+    [OFFER_MANAGEMENT].[SUB_CATEGORY_ID] AS [SUB_CATEGORY_ID], 
+    [OFFER_MANAGEMENT].[SUB_CATEGORY_NAME] AS [SUB_CATEGORY_NAME], 
+    [OFFER_MANAGEMENT].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [OFFER_MANAGEMENT].[PRODUCT_NAME] AS [PRODUCT_NAME], 
+    [OFFER_MANAGEMENT].[CREATED_ON] AS [CREATED_ON], 
+    [OFFER_MANAGEMENT].[CREATED_BY] AS [CREATED_BY], 
+    [OFFER_MANAGEMENT].[UPDATED_ON] AS [UPDATED_ON], 
+    [OFFER_MANAGEMENT].[UPDATED_BY] AS [UPDATED_BY]
+    FROM [dbo].[OFFER_MANAGEMENT] AS [OFFER_MANAGEMENT]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ONLINE_TRANSACTION" EntityType="Self.ONLINE_TRANSACTION" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ONLINE_TRANSACTION].[TRANSACTION_ID] AS [TRANSACTION_ID], 
+    [ONLINE_TRANSACTION].[PAYMENT_MODE_ID] AS [PAYMENT_MODE_ID], 
+    [ONLINE_TRANSACTION].[TRANSACTION_NUMBER] AS [TRANSACTION_NUMBER]
+    FROM [dbo].[ONLINE_TRANSACTION] AS [ONLINE_TRANSACTION]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ORDER_STATUSES" EntityType="Self.ORDER_STATUSES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ORDER_STATUSES].[ORDER_STATUS_ID] AS [ORDER_STATUS_ID], 
+    [ORDER_STATUSES].[DESCRIPTION] AS [DESCRIPTION]
+    FROM [dbo].[ORDER_STATUSES] AS [ORDER_STATUSES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PACKAGE_PRODUCTS" EntityType="Self.PACKAGE_PRODUCTS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PACKAGE_PRODUCTS].[PACKAGE_PRODUCT_ID] AS [PACKAGE_PRODUCT_ID], 
+    [PACKAGE_PRODUCTS].[PACKAGE_ID] AS [PACKAGE_ID], 
+    [PACKAGE_PRODUCTS].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [PACKAGE_PRODUCTS].[QUANTITY] AS [QUANTITY], 
+    [PACKAGE_PRODUCTS].[IS_ACTIVE] AS [IS_ACTIVE], 
+    [PACKAGE_PRODUCTS].[UPDATED_BY] AS [UPDATED_BY], 
+    [PACKAGE_PRODUCTS].[UPDATED_ON] AS [UPDATED_ON], 
+    [PACKAGE_PRODUCTS].[BAR_CODE] AS [BAR_CODE]
+    FROM [dbo].[PACKAGE_PRODUCTS] AS [PACKAGE_PRODUCTS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PACKAGES" EntityType="Self.PACKAGES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PACKAGES].[PACKAGE_ID] AS [PACKAGE_ID], 
+    [PACKAGES].[NAME] AS [NAME], 
+    [PACKAGES].[CREATED_ON] AS [CREATED_ON], 
+    [PACKAGES].[CREATED_BY] AS [CREATED_BY], 
+    [PACKAGES].[IS_ACTIVE] AS [IS_ACTIVE], 
+    [PACKAGES].[UPDATED_BY] AS [UPDATED_BY], 
+    [PACKAGES].[UPDATED_ON] AS [UPDATED_ON], 
+    [PACKAGES].[DESCRIPTION] AS [DESCRIPTION], 
+    [PACKAGES].[BRANCH_ID] AS [BRANCH_ID]
+    FROM [dbo].[PACKAGES] AS [PACKAGES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PAYMENT_MODES" EntityType="Self.PAYMENT_MODES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PAYMENT_MODES].[PAYMENT_MODE_ID] AS [PAYMENT_MODE_ID], 
+    [PAYMENT_MODES].[DESCRIPTION] AS [DESCRIPTION]
+    FROM [dbo].[PAYMENT_MODES] AS [PAYMENT_MODES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCT_BRANDS" EntityType="Self.PRODUCT_BRANDS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUCT_BRANDS].[PRODUCT_BRAND_ID] AS [PRODUCT_BRAND_ID], 
+    [PRODUCT_BRANDS].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [PRODUCT_BRANDS].[BRAND_NAME] AS [BRAND_NAME]
+    FROM [dbo].[PRODUCT_BRANDS] AS [PRODUCT_BRANDS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCT_COLORS" EntityType="Self.PRODUCT_COLORS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUCT_COLORS].[PRODUCT_COLOR_ID] AS [PRODUCT_COLOR_ID], 
+    [PRODUCT_COLORS].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [PRODUCT_COLORS].[COLOR_NAME] AS [COLOR_NAME]
+    FROM [dbo].[PRODUCT_COLORS] AS [PRODUCT_COLORS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCT_FLAVORS" EntityType="Self.PRODUCT_FLAVORS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUCT_FLAVORS].[PRODUCT_FLAVOR_ID] AS [PRODUCT_FLAVOR_ID], 
+    [PRODUCT_FLAVORS].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [PRODUCT_FLAVORS].[FLAVOR_NAME] AS [FLAVOR_NAME]
+    FROM [dbo].[PRODUCT_FLAVORS] AS [PRODUCT_FLAVORS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCT_LEVELS" EntityType="Self.PRODUCT_LEVELS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUCT_LEVELS].[PRODUCT_LEVEL_ID] AS [PRODUCT_LEVEL_ID], 
+    [PRODUCT_LEVELS].[NAME] AS [NAME], 
+    [PRODUCT_LEVELS].[SUB_CATEGORY_ID] AS [SUB_CATEGORY_ID]
+    FROM [dbo].[PRODUCT_LEVELS] AS [PRODUCT_LEVELS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCT_PACKINGS" EntityType="Self.PRODUCT_PACKINGS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUCT_PACKINGS].[PRODUCT_PACKING_ID] AS [PRODUCT_PACKING_ID], 
+    [PRODUCT_PACKINGS].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [PRODUCT_PACKINGS].[PACKING_NAME] AS [PACKING_NAME]
+    FROM [dbo].[PRODUCT_PACKINGS] AS [PRODUCT_PACKINGS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCT_REVIEWS" EntityType="Self.PRODUCT_REVIEWS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUCT_REVIEWS].[PRODUCT_REVIEW_ID] AS [PRODUCT_REVIEW_ID], 
+    [PRODUCT_REVIEWS].[USER_ID] AS [USER_ID], 
+    [PRODUCT_REVIEWS].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [PRODUCT_REVIEWS].[REVIEW] AS [REVIEW], 
+    [PRODUCT_REVIEWS].[COMMENT] AS [COMMENT], 
+    [PRODUCT_REVIEWS].[CREATED_DATE] AS [CREATED_DATE], 
+    [PRODUCT_REVIEWS].[MODIFIED_DATE] AS [MODIFIED_DATE], 
+    [PRODUCT_REVIEWS].[RECORD_STATUS] AS [RECORD_STATUS]
+    FROM [dbo].[PRODUCT_REVIEWS] AS [PRODUCT_REVIEWS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCT_TAGS" EntityType="Self.PRODUCT_TAGS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUCT_TAGS].[PRODUCT_TAG_ID] AS [PRODUCT_TAG_ID], 
+    [PRODUCT_TAGS].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [PRODUCT_TAGS].[TAG_NAME] AS [TAG_NAME]
+    FROM [dbo].[PRODUCT_TAGS] AS [PRODUCT_TAGS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCT_TYPES" EntityType="Self.PRODUCT_TYPES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUCT_TYPES].[PRODUCT_TYPE_ID] AS [PRODUCT_TYPE_ID], 
+    [PRODUCT_TYPES].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [PRODUCT_TYPES].[TYPE_NAME] AS [TYPE_NAME]
+    FROM [dbo].[PRODUCT_TYPES] AS [PRODUCT_TYPES]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="PS000" EntityType="Self.PS000" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [PS000].[LOCNO] AS [LOCNO], 
@@ -2040,30 +2034,35 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
     [PS000].[SUPP_CODE] AS [SUPP_CODE]
     FROM [dbo].[PS000] AS [PS000]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="PS000Test" EntityType="Self.PS000Test" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="RIDER_ORDER" EntityType="Self.RIDER_ORDER" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [PS000Test].[LOCNO] AS [LOCNO], 
-    [PS000Test].[ITEM_CODE] AS [ITEM_CODE], 
-    [PS000Test].[QTY] AS [QTY], 
-    [PS000Test].[WH_QTY] AS [WH_QTY], 
-    [PS000Test].[T_QTY] AS [T_QTY], 
-    [PS000Test].[FLOOR_NO] AS [FLOOR_NO], 
-    [PS000Test].[COUNTER] AS [COUNTER], 
-    [PS000Test].[SHELF] AS [SHELF], 
-    [PS000Test].[SHELF_QTY] AS [SHELF_QTY], 
-    [PS000Test].[SHELF_FACING] AS [SHELF_FACING], 
-    [PS000Test].[LSDATE] AS [LSDATE], 
-    [PS000Test].[LPDATE] AS [LPDATE], 
-    [PS000Test].[ALLOW_NEGATIVE] AS [ALLOW_NEGATIVE], 
-    [PS000Test].[AreaCovered] AS [AreaCovered], 
-    [PS000Test].[IsActive] AS [IsActive], 
-    [PS000Test].[MAX_QTY] AS [MAX_QTY], 
-    [PS000Test].[MIN_QTY] AS [MIN_QTY], 
-    [PS000Test].[OP_STOCK] AS [OP_STOCK], 
-    [PS000Test].[OP_STOCK_VAL] AS [OP_STOCK_VAL], 
-    [PS000Test].[NeedsReplication] AS [NeedsReplication], 
-    [PS000Test].[NeedsUpdation] AS [NeedsUpdation]
-    FROM [dbo].[PS000Test] AS [PS000Test]</DefiningQuery>
+    [RIDER_ORDER].[RIDER_ORDER_ID] AS [RIDER_ORDER_ID], 
+    [RIDER_ORDER].[RIDER_ID] AS [RIDER_ID], 
+    [RIDER_ORDER].[ORDER_ID] AS [ORDER_ID], 
+    [RIDER_ORDER].[RIDER_TIME_IN] AS [RIDER_TIME_IN], 
+    [RIDER_ORDER].[RIDER_TIME_OUT] AS [RIDER_TIME_OUT], 
+    [RIDER_ORDER].[IS_RIDER_BACK] AS [IS_RIDER_BACK], 
+    [RIDER_ORDER].[CREATED_ON] AS [CREATED_ON], 
+    [RIDER_ORDER].[CREATED_BY] AS [CREATED_BY], 
+    [RIDER_ORDER].[UPDATED_ON] AS [UPDATED_ON], 
+    [RIDER_ORDER].[UPDATED_BY] AS [UPDATED_BY]
+    FROM [dbo].[RIDER_ORDER] AS [RIDER_ORDER]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SMS" EntityType="Self.SMS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SMS].[SMS_ID] AS [SMS_ID], 
+    [SMS].[SENDER] AS [SENDER], 
+    [SMS].[TEXT] AS [TEXT], 
+    [SMS].[RESPONSE] AS [RESPONSE], 
+    [SMS].[SENT_ON] AS [SENT_ON], 
+    [SMS].[SMS_TYPE_ID] AS [SMS_TYPE_ID]
+    FROM [dbo].[SMS] AS [SMS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SMS_TYPES" EntityType="Self.SMS_TYPES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SMS_TYPES].[SMS_TYPE_ID] AS [SMS_TYPE_ID], 
+    [SMS_TYPES].[DESCRIPTION] AS [DESCRIPTION]
+    FROM [dbo].[SMS_TYPES] AS [SMS_TYPES]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="STOCK" EntityType="Self.STOCK" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2072,6 +2071,30 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
     [STOCK].[QTY] AS [QTY], 
     [STOCK].[IsActive] AS [IsActive]
     FROM [dbo].[STOCK] AS [STOCK]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SUB_CATEGORIES" EntityType="Self.SUB_CATEGORIES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SUB_CATEGORIES].[SUB_CATEGORY_ID] AS [SUB_CATEGORY_ID], 
+    [SUB_CATEGORIES].[CATEGORY_ID] AS [CATEGORY_ID], 
+    [SUB_CATEGORIES].[DESCRIPTION] AS [DESCRIPTION], 
+    [SUB_CATEGORIES].[CREATED_BY] AS [CREATED_BY], 
+    [SUB_CATEGORIES].[CREATED_DATE] AS [CREATED_DATE], 
+    [SUB_CATEGORIES].[MODIFIED_BY] AS [MODIFIED_BY], 
+    [SUB_CATEGORIES].[MODIFIED_DATE] AS [MODIFIED_DATE], 
+    [SUB_CATEGORIES].[IsActive] AS [IsActive], 
+    [SUB_CATEGORIES].[APP_IMAGE_PATH] AS [APP_IMAGE_PATH], 
+    [SUB_CATEGORIES].[DESCRIPTION_URL] AS [DESCRIPTION_URL]
+    FROM [dbo].[SUB_CATEGORIES] AS [SUB_CATEGORIES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SUBMENU" EntityType="Self.SUBMENU" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SUBMENU].[ID] AS [ID], 
+    [SUBMENU].[SUBMENU] AS [SUBMENU], 
+    [SUBMENU].[MAINMENUID] AS [MAINMENUID], 
+    [SUBMENU].[USERTYPEID] AS [USERTYPEID], 
+    [SUBMENU].[USERID] AS [USERID], 
+    [SUBMENU].[IsActive] AS [IsActive]
+    FROM [dbo].[SUBMENU] AS [SUBMENU]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="TERMINFO" EntityType="Self.TERMINFO" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2188,13 +2211,70 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
     [TERMINFO].[L12NeedsUpdation] AS [L12NeedsUpdation]
     FROM [dbo].[TERMINFO] AS [TERMINFO]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="TEST" EntityType="Self.TEST" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="USER_TYPES" EntityType="Self.USER_TYPES" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [TEST].[OLD_PRODUCT_ID] AS [OLD_PRODUCT_ID], 
-    [TEST].[NAME] AS [NAME], 
-    [TEST].[DESCRIPTION] AS [DESCRIPTION], 
-    [TEST].[AVG_COST] AS [AVG_COST]
-    FROM [dbo].[TEST] AS [TEST]</DefiningQuery>
+    [USER_TYPES].[USER_TYPE_ID] AS [USER_TYPE_ID], 
+    [USER_TYPES].[DESCRIPTION] AS [DESCRIPTION]
+    FROM [dbo].[USER_TYPES] AS [USER_TYPES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VENDOR_BRANCHES" EntityType="Self.VENDOR_BRANCHES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VENDOR_BRANCHES].[VENDOR_BRANCH_ID] AS [VENDOR_BRANCH_ID], 
+    [VENDOR_BRANCHES].[VENDOR_ID] AS [VENDOR_ID], 
+    [VENDOR_BRANCHES].[NAME] AS [NAME], 
+    [VENDOR_BRANCHES].[ADDRESS] AS [ADDRESS], 
+    [VENDOR_BRANCHES].[LATITUDE] AS [LATITUDE], 
+    [VENDOR_BRANCHES].[LONGITUDE] AS [LONGITUDE], 
+    [VENDOR_BRANCHES].[PHONE] AS [PHONE]
+    FROM [dbo].[VENDOR_BRANCHES] AS [VENDOR_BRANCHES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VENDORS" EntityType="Self.VENDORS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VENDORS].[VENDOR_ID] AS [VENDOR_ID], 
+    [VENDORS].[CLIENT_TYPE] AS [CLIENT_TYPE], 
+    [VENDORS].[VENDOR_NAME] AS [VENDOR_NAME], 
+    [VENDORS].[ADDR1] AS [ADDR1], 
+    [VENDORS].[CITY] AS [CITY], 
+    [VENDORS].[COUNTRY] AS [COUNTRY], 
+    [VENDORS].[CONT_PERSON1] AS [CONT_PERSON1], 
+    [VENDORS].[TITLE1] AS [TITLE1], 
+    [VENDORS].[MOBILE1] AS [MOBILE1], 
+    [VENDORS].[PHONE1] AS [PHONE1], 
+    [VENDORS].[FAX1] AS [FAX1], 
+    [VENDORS].[ADDR2] AS [ADDR2], 
+    [VENDORS].[CITY2] AS [CITY2], 
+    [VENDORS].[COUNTRY2] AS [COUNTRY2], 
+    [VENDORS].[CONT_PERSON2] AS [CONT_PERSON2], 
+    [VENDORS].[TITLE2] AS [TITLE2], 
+    [VENDORS].[MOBILE2] AS [MOBILE2], 
+    [VENDORS].[PHONE2] AS [PHONE2], 
+    [VENDORS].[FAX2] AS [FAX2], 
+    [VENDORS].[WHATSAPP] AS [WHATSAPP], 
+    [VENDORS].[EMAIL] AS [EMAIL], 
+    [VENDORS].[URL] AS [URL], 
+    [VENDORS].[NTN] AS [NTN], 
+    [VENDORS].[IsActive] AS [IsActive], 
+    [VENDORS].[CREATED_BY] AS [CREATED_BY], 
+    [VENDORS].[CREATED_DATE] AS [CREATED_DATE], 
+    [VENDORS].[MODIFIED_BY] AS [MODIFIED_BY], 
+    [VENDORS].[MODIFIED_DATE] AS [MODIFIED_DATE]
+    FROM [dbo].[VENDORS] AS [VENDORS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WebsitePages" EntityType="Self.WebsitePages" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WebsitePages].[PageId] AS [PageId], 
+    [WebsitePages].[PageTitle] AS [PageTitle], 
+    [WebsitePages].[PageUrl] AS [PageUrl], 
+    [WebsitePages].[PageHtml] AS [PageHtml]
+    FROM [dbo].[WebsitePages] AS [WebsitePages]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WISHES_PRODUCT" EntityType="Self.WISHES_PRODUCT" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WISHES_PRODUCT].[WISH_ID] AS [WISH_ID], 
+    [WISHES_PRODUCT].[USER_ID] AS [USER_ID], 
+    [WISHES_PRODUCT].[PRODUCT_ID] AS [PRODUCT_ID], 
+    [WISHES_PRODUCT].[CREATED_DATE] AS [CREATED_DATE]
+    FROM [dbo].[WISHES_PRODUCT] AS [WISHES_PRODUCT]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -2209,9 +2289,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IMAGE_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CREATED_BY" Type="Int32" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="UPDATED_BY" Type="Int32" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
           <Property Name="IS_ACTIVE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="AREA">
@@ -2230,9 +2310,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="BANNER_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="BANNER_IMAGE_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="USER_ID" Type="Int32" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
           <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="BANNER">
@@ -2247,8 +2327,8 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="BannerType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Width" Type="Int32" />
           <Property Name="Height" Type="Int32" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
           <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="IsActive" Type="Boolean" />
         </EntityType>
@@ -2324,8 +2404,8 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="BlogImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="BlogHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="BlogTitleUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
           <Property Name="RecordStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="BRANCH">
@@ -2355,7 +2435,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="USER_ID" Type="Int32" />
           <Property Name="PRODUCT_ID" Type="Int32" />
           <Property Name="QUANTITY" Type="Int32" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="CATEGORy">
           <Key>
@@ -2365,9 +2445,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="GROUP_ID" Type="Int32" Nullable="false" />
           <Property Name="CREATED_BY" Type="Int32" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="0" />
           <Property Name="MODIFIED_BY" Type="Int32" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="DESCRIPTION_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -2408,10 +2488,10 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           </Key>
           <Property Name="COUPON_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PROMO_TEXT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="START_DATE" Type="DateTime" Precision="3" />
-          <Property Name="EXPIRY_DATE" Type="DateTime" Precision="3" />
+          <Property Name="START_DATE" Type="DateTime" Precision="0" />
+          <Property Name="EXPIRY_DATE" Type="DateTime" Precision="0" />
           <Property Name="VALUE" Type="Int32" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="CREATED_BY" Type="Int32" />
           <Property Name="IS_ACTIVE" Type="Boolean" />
           <Property Name="IS_USED" Type="Boolean" />
@@ -2419,7 +2499,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="CODE" Type="Int32" />
           <Property Name="PROMO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="updated_by" Type="Int32" />
-          <Property Name="updated_on" Type="DateTime" Precision="3" />
+          <Property Name="updated_on" Type="DateTime" Precision="0" />
           <Property Name="CATEGORYID" Type="Int32" />
           <Property Name="SUBCATEGORYID" Type="Int32" />
           <Property Name="PRODUCTID" Type="Int32" />
@@ -2459,9 +2539,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="SUB_CATEGORY_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PRODUCT_ID" Type="Int32" />
           <Property Name="PRODUCT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
           <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ONLINE_TRANSACTION">
@@ -2482,7 +2562,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="QUANTITY" Type="Int32" />
           <Property Name="IS_ACTIVE" Type="Int32" />
           <Property Name="UPDATED_BY" Type="Int32" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
           <Property Name="BAR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ORDER_STATUSES">
@@ -2491,40 +2571,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           </Key>
           <Property Name="ORDER_STATUS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="ORDER">
-          <Key>
-            <PropertyRef Name="ORDER_ID" />
-          </Key>
-          <Property Name="ORDER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CUSTOMER_ID" Type="Int32" />
-          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MOBILE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="STATUS" Type="Int32" Nullable="false" />
-          <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CREATED_BY" Type="Int32" />
-          <Property Name="ASSIGNED_ON" Type="DateTime" Precision="3" />
-          <Property Name="ASSIGNED_BY" Type="Int32" />
-          <Property Name="SENT_TO_RIDER_ON" Type="DateTime" Precision="3" />
-          <Property Name="SENT_TO_RIDER_BY" Type="Int32" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
-          <Property Name="UPDATED_BY" Type="Int32" />
-          <Property Name="RIDER_ID" Type="Int32" />
-          <Property Name="REJECTED_BY" Type="Int32" />
-          <Property Name="REJECTED_REASON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="DELIVERY_TIME" Type="DateTime" Precision="3" />
-          <Property Name="IS_ACTIVE" Type="Int32" />
-          <Property Name="BRANCH_ID" Type="Int32" />
-          <Property Name="DELIVERY_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PAYMENT_MODE_ID" Type="Int32" />
-          <Property Name="MANUAL_DISCOUNT" Type="Int32" />
-          <Property Name="COUPON_ID" Type="Int32" />
-          <Property Name="COUPON_DISCOUNT" Type="Int32" />
-          <Property Name="PICKUP_TIME" Type="DateTime" Precision="3" />
-          <Property Name="IS_PACKAGE" Type="Int32" />
-          <Property Name="ADDED_BY" Type="Byte" />
-          <Property Name="IsTestOrder" Type="Boolean" />
         </EntityType>
         <EntityType Name="PACKAGE_PRODUCTS">
           <Key>
@@ -2536,7 +2582,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="QUANTITY" Type="Int32" />
           <Property Name="IS_ACTIVE" Type="Int32" />
           <Property Name="UPDATED_BY" Type="Int32" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
           <Property Name="BAR_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="PACKAGE">
@@ -2545,11 +2591,11 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           </Key>
           <Property Name="PACKAGE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="CREATED_BY" Type="Int32" />
           <Property Name="IS_ACTIVE" Type="Boolean" />
           <Property Name="UPDATED_BY" Type="Int32" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="BRANCH_ID" Type="Int32" />
         </EntityType>
@@ -2620,8 +2666,8 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="PRODUCT_ID" Type="Int64" Nullable="false" />
           <Property Name="REVIEW" Type="Int32" />
           <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <Property Name="RECORD_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="PRODUCT_TAGS">
@@ -2643,6 +2689,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
         <EntityType Name="PRODUCT">
           <Key>
             <PropertyRef Name="PRODUCT_ID" />
+            <PropertyRef Name="PARENT_ID" />
           </Key>
           <Property Name="PRODUCT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OLD_PRODUCT_ID" Type="Int32" />
@@ -2679,6 +2726,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="PRODUCT_NAME_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="DEVICE_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="IS_FAVOURITE" Type="Boolean" />
+          <Property Name="PARENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="ProductTest">
           <Key>
@@ -2724,10 +2772,10 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="RECOMMENDED_PRODUCT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PRODUCT_ID" Type="Int32" />
           <Property Name="PRODUCT_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="PRICE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PRICE" Type="Decimal" Precision="10" Scale="4" />
           <Property Name="PACKING" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="RIDER_ORDER">
           <Key>
@@ -2739,9 +2787,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="RIDER_TIME_IN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="RIDER_TIME_OUT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="IS_RIDER_BACK" Type="Boolean" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="CREATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
           <Property Name="UPDATED_BY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="SM">
@@ -2752,7 +2800,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="SENDER" Type="Int32" />
           <Property Name="TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="RESPONSE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="SENT_ON" Type="DateTime" Precision="3" />
+          <Property Name="SENT_ON" Type="DateTime" Precision="0" />
           <Property Name="SMS_TYPE_ID" Type="Int32" />
         </EntityType>
         <EntityType Name="SMS_TYPES">
@@ -2770,9 +2818,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="CATEGORY_ID" Type="Int32" Nullable="false" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CREATED_BY" Type="Int32" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="0" />
           <Property Name="MODIFIED_BY" Type="Int32" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="APP_IMAGE_PATH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DESCRIPTION_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -2816,9 +2864,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IS_ACTIVE" Type="Boolean" />
           <Property Name="CREATED_BY" Type="Int32" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="UPDATED_BY" Type="Int32" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
           <Property Name="BRANCH_ID" Type="Int32" />
           <Property Name="LONGITUDE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LATITUDE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -2839,8 +2887,8 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="USER_FAVOURITE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="USER_ID" Type="Int32" />
           <Property Name="PRODUCT_ID" Type="Int32" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
           <Property Name="IS_ACTIVE" Type="Int32" />
           <Property Name="IS_FAVOURITE" Type="Boolean" />
         </EntityType>
@@ -2864,9 +2912,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CITY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IS_ACTIVE" Type="Boolean" Nullable="false" />
-          <Property Name="CREATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
           <Property Name="CREATED_BY" Type="Int32" />
-          <Property Name="UPDATED_ON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
           <Property Name="UPDATED_BY" Type="Int32" />
           <Property Name="IS_AVAILABLE" Type="Int32" />
           <Property Name="VEHICLE_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -2922,9 +2970,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="NTN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="CREATED_BY" Type="Int32" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="0" />
           <Property Name="MODIFIED_BY" Type="Int32" />
-          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="WebsitePage">
           <Key>
@@ -2942,7 +2990,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="WISH_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="USER_ID" Type="Int32" />
           <Property Name="PRODUCT_ID" Type="Int32" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="BarcodeNewTest">
           <Key>
@@ -3067,19 +3115,19 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="bDEFAULT" Type="Boolean" Nullable="false" />
           <Property Name="BAR_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="BARTYPE" Type="Int16" Nullable="false" />
-          <Property Name="UNIT_PRICE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="DEALER_PRICE1" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="DEALER_PRICE2" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="UNIT_PRICE" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="DEALER_PRICE1" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DEALER_PRICE2" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="RF_MARGIN" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
           <Property Name="CUSER" Type="Int32" Nullable="false" />
-          <Property Name="CDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CDATE" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MUSER" Type="Int32" Nullable="false" />
-          <Property Name="MDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MDATE" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="bRandomDisc" Type="Boolean" Nullable="false" />
-          <Property Name="DiscStartDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DiscEndDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DiscStartTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DiscEndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DiscStartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DiscEndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DiscStartTime" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DiscEndTime" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DISC_TYPE" Type="Int16" Nullable="false" />
           <Property Name="DISC" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
           <Property Name="LOYALTY_DISC" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
@@ -3278,7 +3326,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="FRACTIONAL" Type="Boolean" Nullable="false" />
           <Property Name="ALLOWQTY" Type="Boolean" Nullable="false" />
           <Property Name="BATCH_QTY" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
-          <Property Name="ITEM_DISC" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="ITEM_DISC" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
           <Property Name="bDISCOUNTED" Type="Boolean" Nullable="false" />
           <Property Name="DISC_QTY" Type="Decimal" Precision="9" Scale="3" Nullable="false" />
           <Property Name="SALE_DISC" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
@@ -3289,9 +3337,9 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="IMPORTED" Type="Boolean" Nullable="false" />
           <Property Name="ShowOnWeb" Type="Boolean" Nullable="false" />
           <Property Name="bNEW" Type="Boolean" Nullable="false" />
-          <Property Name="CDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CDATE" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="CUSER" Type="Int32" Nullable="false" />
-          <Property Name="MDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MDATE" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MUSER" Type="Int32" Nullable="false" />
           <Property Name="CreatedAt" Type="Int16" Nullable="false" />
           <Property Name="NeedsReplication" Type="Boolean" Nullable="false" />
@@ -3384,25 +3432,25 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="QTY" Type="Double" />
           <Property Name="WH_QTY" Type="Double" />
           <Property Name="T_QTY" Type="Double" />
-          <Property Name="MATERIAL_COST" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="INGR_COST" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="PKG_COST" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="LAB_COST" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="OH_COST" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="OTH_COST" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="WASTAGE" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="COST_PRICE1" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="COST_PRICE2" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="COST_PRICE3" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="NET_COST" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="AVG_COST" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="AVG_COST1" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="AVG_COST2" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="AVG_COST3" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="F_PUR_PRICE" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="LAST_PUR_PRICE1" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="LAST_PUR_PRICE2" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="LAST_PUR_PRICE3" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MATERIAL_COST" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="INGR_COST" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="PKG_COST" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="LAB_COST" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="OH_COST" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="OTH_COST" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="WASTAGE" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="COST_PRICE1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="COST_PRICE2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="COST_PRICE3" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="NET_COST" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="AVG_COST" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="AVG_COST1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="AVG_COST2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="AVG_COST3" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="F_PUR_PRICE" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="LAST_PUR_PRICE1" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="LAST_PUR_PRICE2" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="LAST_PUR_PRICE3" Type="Decimal" Precision="10" Scale="4" />
           <Property Name="LAST_SUPP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="LAST_SUPP1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="LAST_SUPP2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -3422,7 +3470,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="ITEM_STATUS" Type="Boolean" />
           <Property Name="PHY_QTY" Type="Double" />
           <Property Name="STATUS" Type="Int32" />
-          <Property Name="PDATE" Type="DateTime" Precision="3" />
+          <Property Name="PDATE" Type="DateTime" Precision="0" />
           <Property Name="IsActive" Type="Boolean" />
           <Property Name="NeedsReplication" Type="Boolean" />
           <Property Name="NeedsUpdation" Type="Boolean" />
@@ -3635,13 +3683,13 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Name="USERID" Type="Int32" Nullable="false" />
           <Property Name="MAXORD" Type="Int32" Nullable="false" />
           <Property Name="MAXDOC" Type="Int32" Nullable="false" />
-          <Property Name="LAST_UPDATED" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LAST_UPDATED" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="COL1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="COL2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="COL3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="COL4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LSDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="LRDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LSDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LRDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="NeedsUpdation" Type="Boolean" Nullable="false" />
           <Property Name="NeedsReplication" Type="Boolean" Nullable="false" />
@@ -3744,7 +3792,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <EntitySet Name="ONLINE_TRANSACTION" EntityType="Self.ONLINE_TRANSACTION" />
           <EntitySet Name="ORDER_PRODUCTS" EntityType="Self.ORDER_PRODUCTS" />
           <EntitySet Name="ORDER_STATUSES" EntityType="Self.ORDER_STATUSES" />
-          <EntitySet Name="ORDERS" EntityType="Self.ORDER" />
           <EntitySet Name="PACKAGE_PRODUCTS" EntityType="Self.PACKAGE_PRODUCTS" />
           <EntitySet Name="PACKAGES" EntityType="Self.PACKAGE" />
           <EntitySet Name="PAYMENT_MODES" EntityType="Self.PAYMENT_MODES" />
@@ -3939,6 +3986,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
             <Parameter Name="BranchId" Mode="In" Type="Int32" />
             <Parameter Name="UserId" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="ORDERS" EntityType="anytimea_GROCERYModel.ORDER" />
         </EntityContainer>
         <ComplexType Name="SP_GetAllProductsByCategories_Result">
           <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" />
@@ -4390,6 +4438,42 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <Property Type="Int32" Name="SUB_CATEGORY_ID" Nullable="true" />
           <Property Type="Int32" Name="FavouriteProduct" Nullable="true" />
         </ComplexType>
+        <EntityType Name="ORDER">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+          </Key>
+          <Property Name="ORDER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CUSTOMER_ID" Type="Int32" />
+          <Property Name="NAME" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MOBILE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="Int32" Nullable="false" />
+          <Property Name="CREATED_ON" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="ASSIGNED_ON" Type="DateTime" Precision="0" />
+          <Property Name="ASSIGNED_BY" Type="Int32" />
+          <Property Name="SENT_TO_RIDER_ON" Type="DateTime" Precision="0" />
+          <Property Name="SENT_TO_RIDER_BY" Type="Int32" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="RIDER_ID" Type="Int32" />
+          <Property Name="REJECTED_BY" Type="Int32" />
+          <Property Name="REJECTED_REASON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DELIVERY_TIME" Type="DateTime" Precision="3" />
+          <Property Name="IS_ACTIVE" Type="Int32" />
+          <Property Name="BRANCH_ID" Type="Int32" />
+          <Property Name="DELIVERY_DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PAYMENT_MODE_ID" Type="Int32" />
+          <Property Name="MANUAL_DISCOUNT" Type="Int32" />
+          <Property Name="COUPON_ID" Type="Int32" />
+          <Property Name="COUPON_DISCOUNT" Type="Int32" />
+          <Property Name="PICKUP_TIME" Type="DateTime" Precision="0" />
+          <Property Name="IS_PACKAGE" Type="Int32" />
+          <Property Name="ADDED_BY" Type="Byte" />
+          <Property Name="IsTestOrder" Type="Boolean" />
+          <Property Name="DeliveryFee" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="EntryType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4448,68 +4532,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BARCODESTests">
-            <EntityTypeMapping TypeName="anytimea_GROCERYModel.BARCODESTest">
-              <MappingFragment StoreEntitySet="BARCODESTest">
-                <ScalarProperty Name="LOCNO" ColumnName="LOCNO" />
-                <ScalarProperty Name="ITEM_CODE" ColumnName="ITEM_CODE" />
-                <ScalarProperty Name="PACK_CODE" ColumnName="PACK_CODE" />
-                <ScalarProperty Name="PACK_DESC" ColumnName="PACK_DESC" />
-                <ScalarProperty Name="UNIT" ColumnName="UNIT" />
-                <ScalarProperty Name="bDEFAULT" ColumnName="bDEFAULT" />
-                <ScalarProperty Name="BAR_CODE" ColumnName="BAR_CODE" />
-                <ScalarProperty Name="BARTYPE" ColumnName="BARTYPE" />
-                <ScalarProperty Name="UNIT_PRICE" ColumnName="UNIT_PRICE" />
-                <ScalarProperty Name="DEALER_PRICE1" ColumnName="DEALER_PRICE1" />
-                <ScalarProperty Name="DEALER_PRICE2" ColumnName="DEALER_PRICE2" />
-                <ScalarProperty Name="RF_MARGIN" ColumnName="RF_MARGIN" />
-                <ScalarProperty Name="CUSER" ColumnName="CUSER" />
-                <ScalarProperty Name="CDATE" ColumnName="CDATE" />
-                <ScalarProperty Name="MUSER" ColumnName="MUSER" />
-                <ScalarProperty Name="MDATE" ColumnName="MDATE" />
-                <ScalarProperty Name="bRandomDisc" ColumnName="bRandomDisc" />
-                <ScalarProperty Name="DiscStartDate" ColumnName="DiscStartDate" />
-                <ScalarProperty Name="DiscEndDate" ColumnName="DiscEndDate" />
-                <ScalarProperty Name="DiscStartTime" ColumnName="DiscStartTime" />
-                <ScalarProperty Name="DiscEndTime" ColumnName="DiscEndTime" />
-                <ScalarProperty Name="DISC_TYPE" ColumnName="DISC_TYPE" />
-                <ScalarProperty Name="DISC" ColumnName="DISC" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="NeedsReplication" ColumnName="NeedsReplication" />
-                <ScalarProperty Name="NeedsUpdation" ColumnName="NeedsUpdation" />
-                <ScalarProperty Name="L1P1NeedsUpdation" ColumnName="L1P1NeedsUpdation" />
-                <ScalarProperty Name="L1P2NeedsUpdation" ColumnName="L1P2NeedsUpdation" />
-                <ScalarProperty Name="L1P3NeedsUpdation" ColumnName="L1P3NeedsUpdation" />
-                <ScalarProperty Name="L1P4NeedsUpdation" ColumnName="L1P4NeedsUpdation" />
-                <ScalarProperty Name="L1P5NeedsUpdation" ColumnName="L1P5NeedsUpdation" />
-                <ScalarProperty Name="L1P6NeedsUpdation" ColumnName="L1P6NeedsUpdation" />
-                <ScalarProperty Name="L1P7NeedsUpdation" ColumnName="L1P7NeedsUpdation" />
-                <ScalarProperty Name="L1P8NeedsUpdation" ColumnName="L1P8NeedsUpdation" />
-                <ScalarProperty Name="L1P9NeedsUpdation" ColumnName="L1P9NeedsUpdation" />
-                <ScalarProperty Name="L1P10NeedsUpdation" ColumnName="L1P10NeedsUpdation" />
-                <ScalarProperty Name="L2P1NeedsUpdation" ColumnName="L2P1NeedsUpdation" />
-                <ScalarProperty Name="L2P2NeedsUpdation" ColumnName="L2P2NeedsUpdation" />
-                <ScalarProperty Name="L2P3NeedsUpdation" ColumnName="L2P3NeedsUpdation" />
-                <ScalarProperty Name="L3P1NeedsUpdation" ColumnName="L3P1NeedsUpdation" />
-                <ScalarProperty Name="L3P2NeedsUpdation" ColumnName="L3P2NeedsUpdation" />
-                <ScalarProperty Name="L3P3NeedsUpdation" ColumnName="L3P3NeedsUpdation" />
-                <ScalarProperty Name="L3P4NeedsUpdation" ColumnName="L3P4NeedsUpdation" />
-                <ScalarProperty Name="L3P5NeedsUpdation" ColumnName="L3P5NeedsUpdation" />
-                <ScalarProperty Name="L3P6NeedsUpdation" ColumnName="L3P6NeedsUpdation" />
-                <ScalarProperty Name="L3P7NeedsUpdation" ColumnName="L3P7NeedsUpdation" />
-                <ScalarProperty Name="L3P8NeedsUpdation" ColumnName="L3P8NeedsUpdation" />
-                <ScalarProperty Name="L4P1NeedsUpdation" ColumnName="L4P1NeedsUpdation" />
-                <ScalarProperty Name="L5P1NeedsUpdation" ColumnName="L5P1NeedsUpdation" />
-                <ScalarProperty Name="L6P1NeedsUpdation" ColumnName="L6P1NeedsUpdation" />
-                <ScalarProperty Name="L4P2NeedsUpdation" ColumnName="L4P2NeedsUpdation" />
-                <ScalarProperty Name="L4P3NeedsUpdation" ColumnName="L4P3NeedsUpdation" />
-                <ScalarProperty Name="L5P3NeedsUpdation" ColumnName="L5P3NeedsUpdation" />
-                <ScalarProperty Name="L6P3NeedsUpdation" ColumnName="L6P3NeedsUpdation" />
-                <ScalarProperty Name="L5P2NeedsUpdation" ColumnName="L5P2NeedsUpdation" />
-                <ScalarProperty Name="L6P2NeedsUpdation" ColumnName="L6P2NeedsUpdation" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4704,41 +4726,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ORDERS">
-            <EntityTypeMapping TypeName="anytimea_GROCERYModel.ORDER">
-              <MappingFragment StoreEntitySet="ORDERS">
-                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
-                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
-                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
-                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="ASSIGNED_ON" ColumnName="ASSIGNED_ON" />
-                <ScalarProperty Name="ASSIGNED_BY" ColumnName="ASSIGNED_BY" />
-                <ScalarProperty Name="SENT_TO_RIDER_ON" ColumnName="SENT_TO_RIDER_ON" />
-                <ScalarProperty Name="SENT_TO_RIDER_BY" ColumnName="SENT_TO_RIDER_BY" />
-                <ScalarProperty Name="UPDATED_ON" ColumnName="UPDATED_ON" />
-                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
-                <ScalarProperty Name="RIDER_ID" ColumnName="RIDER_ID" />
-                <ScalarProperty Name="REJECTED_BY" ColumnName="REJECTED_BY" />
-                <ScalarProperty Name="REJECTED_REASON" ColumnName="REJECTED_REASON" />
-                <ScalarProperty Name="DELIVERY_TIME" ColumnName="DELIVERY_TIME" />
-                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
-                <ScalarProperty Name="BRANCH_ID" ColumnName="BRANCH_ID" />
-                <ScalarProperty Name="DELIVERY_DESCRIPTION" ColumnName="DELIVERY_DESCRIPTION" />
-                <ScalarProperty Name="PAYMENT_MODE_ID" ColumnName="PAYMENT_MODE_ID" />
-                <ScalarProperty Name="MANUAL_DISCOUNT" ColumnName="MANUAL_DISCOUNT" />
-                <ScalarProperty Name="COUPON_ID" ColumnName="COUPON_ID" />
-                <ScalarProperty Name="COUPON_DISCOUNT" ColumnName="COUPON_DISCOUNT" />
-                <ScalarProperty Name="PICKUP_TIME" ColumnName="PICKUP_TIME" />
-                <ScalarProperty Name="IS_PACKAGE" ColumnName="IS_PACKAGE" />
-                <ScalarProperty Name="ADDED_BY" ColumnName="ADDED_BY" />
-                <ScalarProperty Name="IsTestOrder" ColumnName="IsTestOrder" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PACKAGE_PRODUCTS">
             <EntityTypeMapping TypeName="anytimea_GROCERYModel.PACKAGE_PRODUCTS">
               <MappingFragment StoreEntitySet="PACKAGE_PRODUCTS">
@@ -4868,6 +4855,7 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
           <EntitySetMapping Name="PRODUCTS">
             <EntityTypeMapping TypeName="anytimea_GROCERYModel.PRODUCT">
               <MappingFragment StoreEntitySet="PRODUCTS">
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
                 <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
                 <ScalarProperty Name="OLD_PRODUCT_ID" ColumnName="OLD_PRODUCT_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
@@ -4903,44 +4891,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
                 <ScalarProperty Name="PRODUCT_NAME_URL" ColumnName="PRODUCT_NAME_URL" />
                 <ScalarProperty Name="DEVICE_TYPE" ColumnName="DEVICE_TYPE" />
                 <ScalarProperty Name="IS_FAVOURITE" ColumnName="IS_FAVOURITE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProductTests">
-            <EntityTypeMapping TypeName="anytimea_GROCERYModel.ProductTest">
-              <MappingFragment StoreEntitySet="ProductTest">
-                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
-                <ScalarProperty Name="OLD_PRODUCT_ID" ColumnName="OLD_PRODUCT_ID" />
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
-                <ScalarProperty Name="SUB_CATEGORY_ID" ColumnName="SUB_CATEGORY_ID" />
-                <ScalarProperty Name="UNIT_OF_MEASUREMENT" ColumnName="UNIT_OF_MEASUREMENT" />
-                <ScalarProperty Name="AVG_COST" ColumnName="AVG_COST" />
-                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
-                <ScalarProperty Name="DISCOUNT_PERCENTAGE" ColumnName="DISCOUNT_PERCENTAGE" />
-                <ScalarProperty Name="IMPORTED" ColumnName="IMPORTED" />
-                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
-                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
-                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
-                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
-                <ScalarProperty Name="BRAND" ColumnName="BRAND" />
-                <ScalarProperty Name="FLAVOR" ColumnName="FLAVOR" />
-                <ScalarProperty Name="PACKING" ColumnName="PACKING" />
-                <ScalarProperty Name="TAG" ColumnName="TAG" />
-                <ScalarProperty Name="TYPES" ColumnName="TYPES" />
-                <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
-                <ScalarProperty Name="SEC_SUB_CATEGORY_A" ColumnName="SEC_SUB_CATEGORY_A" />
-                <ScalarProperty Name="SEC_SUB_CATEGORY_B" ColumnName="SEC_SUB_CATEGORY_B" />
-                <ScalarProperty Name="PRICE2" ColumnName="PRICE2" />
-                <ScalarProperty Name="HAS_IMAGE" ColumnName="HAS_IMAGE" />
-                <ScalarProperty Name="HAS_THUMBNAIL_IMAGE" ColumnName="HAS_THUMBNAIL_IMAGE" />
-                <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
-                <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
-                <ScalarProperty Name="IS_FEATURED" ColumnName="IS_FEATURED" />
-                <ScalarProperty Name="THRESHOLD" ColumnName="THRESHOLD" />
-                <ScalarProperty Name="IS_EXEMPTED" ColumnName="IS_EXEMPTED" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5018,27 +4968,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
                 <ScalarProperty Name="USERTYPEID" ColumnName="USERTYPEID" />
                 <ScalarProperty Name="USERID" ColumnName="USERID" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="anytimea_GROCERYModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TEMP_CUSTOMERS">
-            <EntityTypeMapping TypeName="anytimea_GROCERYModel.TEMP_CUSTOMERS">
-              <MappingFragment StoreEntitySet="TEMP_CUSTOMERS">
-                <ScalarProperty Name="TEMP_CUSTOMER_ID" ColumnName="TEMP_CUSTOMER_ID" />
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
-                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5185,68 +5114,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
                 <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
                 <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
                 <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BarcodeNewTests">
-            <EntityTypeMapping TypeName="anytimea_GROCERYModel.BarcodeNewTest">
-              <MappingFragment StoreEntitySet="BarcodeNewTest">
-                <ScalarProperty Name="LOCNO" ColumnName="LOCNO" />
-                <ScalarProperty Name="ITEM_CODE" ColumnName="ITEM_CODE" />
-                <ScalarProperty Name="PACK_CODE" ColumnName="PACK_CODE" />
-                <ScalarProperty Name="PACK_DESC" ColumnName="PACK_DESC" />
-                <ScalarProperty Name="UNIT" ColumnName="UNIT" />
-                <ScalarProperty Name="bDEFAULT" ColumnName="bDEFAULT" />
-                <ScalarProperty Name="BAR_CODE" ColumnName="BAR_CODE" />
-                <ScalarProperty Name="BARTYPE" ColumnName="BARTYPE" />
-                <ScalarProperty Name="UNIT_PRICE" ColumnName="UNIT_PRICE" />
-                <ScalarProperty Name="DEALER_PRICE1" ColumnName="DEALER_PRICE1" />
-                <ScalarProperty Name="DEALER_PRICE2" ColumnName="DEALER_PRICE2" />
-                <ScalarProperty Name="RF_MARGIN" ColumnName="RF_MARGIN" />
-                <ScalarProperty Name="CUSER" ColumnName="CUSER" />
-                <ScalarProperty Name="CDATE" ColumnName="CDATE" />
-                <ScalarProperty Name="MUSER" ColumnName="MUSER" />
-                <ScalarProperty Name="MDATE" ColumnName="MDATE" />
-                <ScalarProperty Name="bRandomDisc" ColumnName="bRandomDisc" />
-                <ScalarProperty Name="DiscStartDate" ColumnName="DiscStartDate" />
-                <ScalarProperty Name="DiscEndDate" ColumnName="DiscEndDate" />
-                <ScalarProperty Name="DiscStartTime" ColumnName="DiscStartTime" />
-                <ScalarProperty Name="DiscEndTime" ColumnName="DiscEndTime" />
-                <ScalarProperty Name="DISC_TYPE" ColumnName="DISC_TYPE" />
-                <ScalarProperty Name="DISC" ColumnName="DISC" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="NeedsReplication" ColumnName="NeedsReplication" />
-                <ScalarProperty Name="NeedsUpdation" ColumnName="NeedsUpdation" />
-                <ScalarProperty Name="L1P1NeedsUpdation" ColumnName="L1P1NeedsUpdation" />
-                <ScalarProperty Name="L1P2NeedsUpdation" ColumnName="L1P2NeedsUpdation" />
-                <ScalarProperty Name="L1P3NeedsUpdation" ColumnName="L1P3NeedsUpdation" />
-                <ScalarProperty Name="L1P4NeedsUpdation" ColumnName="L1P4NeedsUpdation" />
-                <ScalarProperty Name="L1P5NeedsUpdation" ColumnName="L1P5NeedsUpdation" />
-                <ScalarProperty Name="L1P6NeedsUpdation" ColumnName="L1P6NeedsUpdation" />
-                <ScalarProperty Name="L1P7NeedsUpdation" ColumnName="L1P7NeedsUpdation" />
-                <ScalarProperty Name="L1P8NeedsUpdation" ColumnName="L1P8NeedsUpdation" />
-                <ScalarProperty Name="L1P9NeedsUpdation" ColumnName="L1P9NeedsUpdation" />
-                <ScalarProperty Name="L1P10NeedsUpdation" ColumnName="L1P10NeedsUpdation" />
-                <ScalarProperty Name="L2P1NeedsUpdation" ColumnName="L2P1NeedsUpdation" />
-                <ScalarProperty Name="L2P2NeedsUpdation" ColumnName="L2P2NeedsUpdation" />
-                <ScalarProperty Name="L2P3NeedsUpdation" ColumnName="L2P3NeedsUpdation" />
-                <ScalarProperty Name="L3P1NeedsUpdation" ColumnName="L3P1NeedsUpdation" />
-                <ScalarProperty Name="L3P2NeedsUpdation" ColumnName="L3P2NeedsUpdation" />
-                <ScalarProperty Name="L3P3NeedsUpdation" ColumnName="L3P3NeedsUpdation" />
-                <ScalarProperty Name="L3P4NeedsUpdation" ColumnName="L3P4NeedsUpdation" />
-                <ScalarProperty Name="L3P5NeedsUpdation" ColumnName="L3P5NeedsUpdation" />
-                <ScalarProperty Name="L3P6NeedsUpdation" ColumnName="L3P6NeedsUpdation" />
-                <ScalarProperty Name="L3P7NeedsUpdation" ColumnName="L3P7NeedsUpdation" />
-                <ScalarProperty Name="L3P8NeedsUpdation" ColumnName="L3P8NeedsUpdation" />
-                <ScalarProperty Name="L4P1NeedsUpdation" ColumnName="L4P1NeedsUpdation" />
-                <ScalarProperty Name="L5P1NeedsUpdation" ColumnName="L5P1NeedsUpdation" />
-                <ScalarProperty Name="L6P1NeedsUpdation" ColumnName="L6P1NeedsUpdation" />
-                <ScalarProperty Name="L4P2NeedsUpdation" ColumnName="L4P2NeedsUpdation" />
-                <ScalarProperty Name="L4P3NeedsUpdation" ColumnName="L4P3NeedsUpdation" />
-                <ScalarProperty Name="L5P3NeedsUpdation" ColumnName="L5P3NeedsUpdation" />
-                <ScalarProperty Name="L6P3NeedsUpdation" ColumnName="L6P3NeedsUpdation" />
-                <ScalarProperty Name="L5P2NeedsUpdation" ColumnName="L5P2NeedsUpdation" />
-                <ScalarProperty Name="L6P2NeedsUpdation" ColumnName="L6P2NeedsUpdation" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5484,33 +5351,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PS000Test">
-            <EntityTypeMapping TypeName="anytimea_GROCERYModel.PS000Test">
-              <MappingFragment StoreEntitySet="PS000Test">
-                <ScalarProperty Name="LOCNO" ColumnName="LOCNO" />
-                <ScalarProperty Name="ITEM_CODE" ColumnName="ITEM_CODE" />
-                <ScalarProperty Name="QTY" ColumnName="QTY" />
-                <ScalarProperty Name="WH_QTY" ColumnName="WH_QTY" />
-                <ScalarProperty Name="T_QTY" ColumnName="T_QTY" />
-                <ScalarProperty Name="FLOOR_NO" ColumnName="FLOOR_NO" />
-                <ScalarProperty Name="COUNTER" ColumnName="COUNTER" />
-                <ScalarProperty Name="SHELF" ColumnName="SHELF" />
-                <ScalarProperty Name="SHELF_QTY" ColumnName="SHELF_QTY" />
-                <ScalarProperty Name="SHELF_FACING" ColumnName="SHELF_FACING" />
-                <ScalarProperty Name="LSDATE" ColumnName="LSDATE" />
-                <ScalarProperty Name="LPDATE" ColumnName="LPDATE" />
-                <ScalarProperty Name="ALLOW_NEGATIVE" ColumnName="ALLOW_NEGATIVE" />
-                <ScalarProperty Name="AreaCovered" ColumnName="AreaCovered" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="MAX_QTY" ColumnName="MAX_QTY" />
-                <ScalarProperty Name="MIN_QTY" ColumnName="MIN_QTY" />
-                <ScalarProperty Name="OP_STOCK" ColumnName="OP_STOCK" />
-                <ScalarProperty Name="OP_STOCK_VAL" ColumnName="OP_STOCK_VAL" />
-                <ScalarProperty Name="NeedsReplication" ColumnName="NeedsReplication" />
-                <ScalarProperty Name="NeedsUpdation" ColumnName="NeedsUpdation" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="STOCKs">
             <EntityTypeMapping TypeName="anytimea_GROCERYModel.STOCK">
               <MappingFragment StoreEntitySet="STOCK">
@@ -5638,19 +5478,6 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TESTs">
-            <EntityTypeMapping TypeName="anytimea_GROCERYModel.TEST">
-              <MappingFragment StoreEntitySet="TEST">
-                <ScalarProperty Name="OLD_PRODUCT_ID" ColumnName="OLD_PRODUCT_ID" />
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
-                <ScalarProperty Name="AVG_COST" ColumnName="AVG_COST" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="anytimea_GROCERYModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="anytimea_GROCERYModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="anytimea_GROCERYModel.Store.sp_dropdiagram" />
           <FunctionImportMapping FunctionImportName="SP_GetAllProductsByCategories" FunctionName="anytimea_GROCERYModel.Store.SP_GetAllProductsByCategories">
             <ResultMapping>
               <ComplexTypeMapping TypeName="anytimea_GROCERYModel.SP_GetAllProductsByCategories_Result">
@@ -5683,33 +5510,12 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_GETRECOMMENDEDPRODUCTS" FunctionName="anytimea_GROCERYModel.Store.SP_GETRECOMMENDEDPRODUCTS" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="anytimea_GROCERYModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="anytimea_GROCERYModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="anytimea_GROCERYModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="anytimea_GROCERYModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_InsertBarcode" FunctionName="anytimea_GROCERYModel.Store.SP_InsertBarcode" />
           <FunctionImportMapping FunctionImportName="SP_InsertItemInfo" FunctionName="anytimea_GROCERYModel.Store.SP_InsertItemInfo" />
           <FunctionImportMapping FunctionImportName="SP_InsertProduct" FunctionName="anytimea_GROCERYModel.Store.SP_InsertProduct" />
           <FunctionImportMapping FunctionImportName="SP_InsertProductFromItemInfo" FunctionName="anytimea_GROCERYModel.Store.SP_InsertProductFromItemInfo" />
           <FunctionImportMapping FunctionImportName="SP_InsertStock" FunctionName="anytimea_GROCERYModel.Store.SP_InsertStock" />
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="anytimea_GROCERYModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="SP_UpdateStock" FunctionName="anytimea_GROCERYModel.Store.SP_UpdateStock" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="anytimea_GROCERYModel.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="SpGetAllBanners" FunctionName="anytimea_GROCERYModel.Store.SpGetAllBanners">
             <ResultMapping>
               <ComplexTypeMapping TypeName="anytimea_GROCERYModel.SpGetAllBanners_Result">
@@ -6198,6 +6004,43 @@ warning 6002: The table/view 'anytimea_GROCERY.dbo.TEST' does not have a primary
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="ORDERS">
+            <EntityTypeMapping TypeName="anytimea_GROCERYModel.ORDER">
+              <MappingFragment StoreEntitySet="ORDERS">
+                <ScalarProperty Name="EntryType" ColumnName="EntryType" />
+                <ScalarProperty Name="DeliveryFee" ColumnName="DeliveryFee" />
+                <ScalarProperty Name="IsTestOrder" ColumnName="IsTestOrder" />
+                <ScalarProperty Name="ADDED_BY" ColumnName="ADDED_BY" />
+                <ScalarProperty Name="IS_PACKAGE" ColumnName="IS_PACKAGE" />
+                <ScalarProperty Name="PICKUP_TIME" ColumnName="PICKUP_TIME" />
+                <ScalarProperty Name="COUPON_DISCOUNT" ColumnName="COUPON_DISCOUNT" />
+                <ScalarProperty Name="COUPON_ID" ColumnName="COUPON_ID" />
+                <ScalarProperty Name="MANUAL_DISCOUNT" ColumnName="MANUAL_DISCOUNT" />
+                <ScalarProperty Name="PAYMENT_MODE_ID" ColumnName="PAYMENT_MODE_ID" />
+                <ScalarProperty Name="DELIVERY_DESCRIPTION" ColumnName="DELIVERY_DESCRIPTION" />
+                <ScalarProperty Name="BRANCH_ID" ColumnName="BRANCH_ID" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="DELIVERY_TIME" ColumnName="DELIVERY_TIME" />
+                <ScalarProperty Name="REJECTED_REASON" ColumnName="REJECTED_REASON" />
+                <ScalarProperty Name="REJECTED_BY" ColumnName="REJECTED_BY" />
+                <ScalarProperty Name="RIDER_ID" ColumnName="RIDER_ID" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="UPDATED_ON" ColumnName="UPDATED_ON" />
+                <ScalarProperty Name="SENT_TO_RIDER_BY" ColumnName="SENT_TO_RIDER_BY" />
+                <ScalarProperty Name="SENT_TO_RIDER_ON" ColumnName="SENT_TO_RIDER_ON" />
+                <ScalarProperty Name="ASSIGNED_BY" ColumnName="ASSIGNED_BY" />
+                <ScalarProperty Name="ASSIGNED_ON" ColumnName="ASSIGNED_ON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

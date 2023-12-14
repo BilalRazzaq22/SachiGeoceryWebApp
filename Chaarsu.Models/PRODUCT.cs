@@ -49,5 +49,6 @@ namespace Chaarsu.Models
         public string PRODUCT_NAME_URL { get; set; }
         public string DEVICE_TYPE { get; set; }
         public Nullable<bool> IS_FAVOURITE { get; set; }
+        public int PARENT_ID { get; set; }
     }
 }

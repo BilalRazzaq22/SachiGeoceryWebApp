@@ -239,6 +239,14 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
             $scope.TotalCartItems += 1;
         });
 
+        if ($scope.CartList.length > 0) {
+            $scope.TotalPrice += 100;
+            $("#lblDeliveryFee").removeAttr("hidden");
+            $("#lblDeliveryFee").addClass("d-flex");
+        } else {
+            $("#lblDeliveryFee").attr("hidden",true);
+            $("#lblDeliveryFee").removeClass("d-flex");
+        }
     }
 
     $scope.LoadHeaderData = function () {

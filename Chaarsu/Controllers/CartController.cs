@@ -148,7 +148,8 @@ namespace Chaarsu.Controllers
                     MOBILE = order.MOBILE,
                     ADDRESS = order.ADDRESS,
                     PAYMENT_MODE_ID = order.PAYMENT_MODE_ID,
-                    DELIVERY_DESCRIPTION = order.DELIVERY_DESCRIPTION
+                    DELIVERY_DESCRIPTION = order.DELIVERY_DESCRIPTION,
+                    EntryType = "WEB"
                 };
 
                 if (Session["BranchId"] != null)

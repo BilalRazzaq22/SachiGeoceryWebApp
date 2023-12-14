@@ -46,7 +46,6 @@ namespace Chaarsu.Models
         public virtual DbSet<ONLINE_TRANSACTION> ONLINE_TRANSACTION { get; set; }
         public virtual DbSet<ORDER_PRODUCTS> ORDER_PRODUCTS { get; set; }
         public virtual DbSet<ORDER_STATUSES> ORDER_STATUSES { get; set; }
-        public virtual DbSet<ORDER> ORDERS { get; set; }
         public virtual DbSet<PACKAGE_PRODUCTS> PACKAGE_PRODUCTS { get; set; }
         public virtual DbSet<PACKAGE> PACKAGES { get; set; }
         public virtual DbSet<PAYMENT_MODES> PAYMENT_MODES { get; set; }
@@ -86,6 +85,7 @@ namespace Chaarsu.Models
         public virtual DbSet<STOCK> STOCKs { get; set; }
         public virtual DbSet<TERMINFO> TERMINFOes { get; set; }
         public virtual DbSet<TEST> TESTs { get; set; }
+        public virtual DbSet<ORDER> ORDERS { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
