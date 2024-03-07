@@ -66,12 +66,6 @@
     <Compile Include="BARCODE.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
-    <Compile Include="BarcodeNewTest.cs">
-      <DependentUpon>Chaarsu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BARCODESTest.cs">
-      <DependentUpon>Chaarsu.tt</DependentUpon>
-    </Compile>
     <Compile Include="Blog.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
@@ -149,9 +143,6 @@
     <Compile Include="PRODUCT.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductTest.cs">
-      <DependentUpon>Chaarsu.tt</DependentUpon>
-    </Compile>
     <Compile Include="PRODUCT_BRANDS.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
@@ -180,9 +171,6 @@
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
     <Compile Include="PS000.cs">
-      <DependentUpon>Chaarsu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PS000Test.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
     <Compile Include="RECOMMENDED_PRODUCTS.cs">
@@ -275,16 +263,7 @@
     <Compile Include="SUB_CATEGORIES.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>Chaarsu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TEMP_CUSTOMERS.cs">
-      <DependentUpon>Chaarsu.tt</DependentUpon>
-    </Compile>
     <Compile Include="TERMINFO.cs">
-      <DependentUpon>Chaarsu.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TEST.cs">
       <DependentUpon>Chaarsu.tt</DependentUpon>
     </Compile>
     <Compile Include="USER.cs">

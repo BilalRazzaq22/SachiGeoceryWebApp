@@ -1,5 +1,6 @@
 ﻿using Chaarsu.Models;
 using Chaarsu.Models.ViewModel;
+using Chaarsu.Repository.DBManager;
 using Chaarsu.Repository.GRepository;
 using Chaarsu.Repository.Interface;
 using Chaarsu.Repository.SPRepository;
@@ -26,6 +27,7 @@ namespace Chaarsu.Controllers
         private GenericRepository<BARCODE> _BARCODES;
         private readonly IUnitOfWork _unitOfWork;
         private readonly SpRepository _sp;
+        QuickQueries _dbmanager = new QuickQueries();
         public CartController()
         {
             _unitOfWork = new UnitOfWork();
@@ -63,8 +65,9 @@ namespace Chaarsu.Controllers
             double bLat = 0;
             double bLong = 0;
             _BRANCHES = new GenericRepository<BRANCH>(_unitOfWork);
-            List<BRANCH> branches = _BRANCHES.Repository.GetAll();
-            foreach (var row in branches)
+            if (MyCollection.Instance.Branches == null)
+                MyCollection.Instance.Branches = _dbmanager.GetAllBranches();
+            foreach (var row in MyCollection.Instance.Branches)
             {
                 bLat = row.LATITUDE ?? 0;
                 bLong = row.LONGITUDE ?? 0;
