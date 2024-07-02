@@ -505,7 +505,7 @@
             //sessionStorage.setItem("long", lang);
             //sessionStorage.setItem("lat", lat);
             $.get({
-                url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lang + "&key=AIzaSyCaJllIQS2KnZBX6ioHHnWLojKHkLzsZp4", success(data) {
+                url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lang + "&key=@System.Configuration.ConfigurationManager.AppSettings["latlong"]", success(data) {
                     localStorage.setItem("address", data.results[0].formatted_address);
                 }
             });
