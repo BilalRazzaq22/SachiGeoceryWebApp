@@ -86,6 +86,11 @@ namespace Chaarsu.Controllers
                 }
             }
 
+            if (nearestBranchId == 1)
+            {
+                nearestBranchId = 8;
+            }
+
             return nearestBranchId;
         }
         private double DegreeToRadian(double angle)
@@ -152,7 +157,10 @@ namespace Chaarsu.Controllers
                     ADDRESS = order.ADDRESS,
                     PAYMENT_MODE_ID = order.PAYMENT_MODE_ID,
                     DELIVERY_DESCRIPTION = order.DELIVERY_DESCRIPTION,
-                    EntryType = "WEB"
+                    EntryType = order.EntryType,
+                    ADDED_BY = order.ADDED_BY,
+                    DELIVERY_TIME = order.DELIVERY_TIME,
+                    DeliveryFee = order.DeliveryFee
                 };
 
                 if (Session["BranchId"] != null)
@@ -174,6 +182,9 @@ namespace Chaarsu.Controllers
                 DateTime orderDate = data.CREATED_ON;
                 data.CREATED_BY = UserId;
                 data.IS_ACTIVE = 1;
+                //data.ADDED_BY = 2;
+                //data.DELIVERY_TIME = DateTime.Now;
+                //data.DeliveryFee = 100;
                 _ORDER.Repository.Add(data);
                 var orderId = data.ORDER_ID;
 

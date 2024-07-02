@@ -13,7 +13,6 @@ using System.Web.Mvc;
 
 namespace Chaarsu.Controllers
 {
-    //[OutputCache(Duration = 60, VaryByParam = "none", Location = System.Web.UI.OutputCacheLocation.Server)]
     public class HomeController : Controller
     {
         private readonly IHomeBLL _homeBLL;
@@ -21,6 +20,7 @@ namespace Chaarsu.Controllers
         //private GenericRepository<BRANCH> _BRANCHES;
         //private readonly IUnitOfWork _unitOfWork;
         private readonly SpRepository _sp;
+        private static int _nearestBranchId = 0;
         QuickQueries _dbmanager = new QuickQueries();
         public HomeController(IHomeBLL homeBLL)
         {
@@ -146,32 +146,41 @@ namespace Chaarsu.Controllers
 
         public JsonResult GetBranchId(double Lang, double Lat)
         {
-            int nearestBranchId = 0;
-            double EarthRadius = 6400000.0, minD = 6400000.0;
-            double bLat = 0;
-            double bLong = 0;
-            //_BRANCHES = new GenericRepository<BRANCH>(_unitOfWork);
-            if (MyCollection.Instance.Branches == null)
-                MyCollection.Instance.Branches = _dbmanager.GetAllBranches();
-            foreach (var row in MyCollection.Instance.Branches)
+            if (_nearestBranchId == 0)
             {
-                bLat = row.LATITUDE ?? 0;
-                bLong = row.LONGITUDE ?? 0;
-
-                Double latDistance = DegreeToRadian(bLat - Lat);
-                Double lonDistance = DegreeToRadian(bLong - Lang);
-                Double a = Math.Sin(latDistance / 2) * Math.Sin(latDistance / 2)
-                        + Math.Cos(DegreeToRadian(Lat)) * Math.Cos(DegreeToRadian(bLat))
-                        * Math.Sin(lonDistance / 2) * Math.Sin(lonDistance / 2);
-                Double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
-                Double distance = EarthRadius * c;
-                if (distance < minD)
+                double EarthRadius = 6400000.0, minD = 6400000.0;
+                double bLat = 0;
+                double bLong = 0;
+                //_BRANCHES = new GenericRepository<BRANCH>(_unitOfWork);
+                if (MyCollection.Instance.Branches == null)
+                    MyCollection.Instance.Branches = _dbmanager.GetAllBranches();
+                foreach (var row in MyCollection.Instance.Branches)
                 {
-                    minD = distance;
-                    nearestBranchId = row.BRANCH_ID;
+                    bLat = row.LATITUDE ?? 0;
+                    bLong = row.LONGITUDE ?? 0;
+
+                    Double latDistance = DegreeToRadian(bLat - Lat);
+                    Double lonDistance = DegreeToRadian(bLong - Lang);
+                    Double a = Math.Sin(latDistance / 2) * Math.Sin(latDistance / 2)
+                            + Math.Cos(DegreeToRadian(Lat)) * Math.Cos(DegreeToRadian(bLat))
+                            * Math.Sin(lonDistance / 2) * Math.Sin(lonDistance / 2);
+                    Double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+                    Double distance = EarthRadius * c;
+                    if (distance < minD)
+                    {
+                        minD = distance;
+                        _nearestBranchId = row.BRANCH_ID;
+                    }
                 }
+
+                if (_nearestBranchId == 1)
+                {
+                    _nearestBranchId = 8;
+                }
+
+                Session["BranchId"] = _nearestBranchId;
             }
-            Session["BranchId"] = nearestBranchId;
+
             return Json("Success", JsonRequestBehavior.AllowGet);
         }
         private double DegreeToRadian(double angle)

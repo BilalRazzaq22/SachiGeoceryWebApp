@@ -35,14 +35,13 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
     }
 
     $scope.GetBranchId = function () {
-
         var lang = localStorage.getItem("lang");
-        var lot = localStorage.getItem("lat");
-        console.log(lang);
-        console.log(lot);
-        objCommon.AjaxCallAPS("Home/GetBranchId", $.param({ Lang: lang, Lat: lot }), "GET", true, function (d) {
+        var lat = localStorage.getItem("lat");
+        if (lang != null && lat != null) {
+            objCommon.AjaxCallAPS("Home/GetBranchId", $.param({ Lang: lang, Lat: lat }), "GET", true, function (d) {
 
-        }, null, "Error while getting branch check the location is ON or not, Please try again.", $scope);
+            }, null, "Error while getting branch check the location is ON or not, Please try again.", $scope);
+        }
     }
 
     $scope.GetHeaderCategories = function () {
@@ -177,7 +176,6 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
     }
 
     $scope.CartCheckOut = function () {
-
         if ($scope.TotalPrice < 1500) {
             objCommon.ShowMessage("Total order amount must be equal or more than 1500", "info");
             return;
@@ -244,7 +242,7 @@ suchiapp.controller("HeaderController", function ($scope, $window) {
             $("#lblDeliveryFee").removeAttr("hidden");
             $("#lblDeliveryFee").addClass("d-flex");
         } else {
-            $("#lblDeliveryFee").attr("hidden",true);
+            $("#lblDeliveryFee").attr("hidden", true);
             $("#lblDeliveryFee").removeClass("d-flex");
         }
     }

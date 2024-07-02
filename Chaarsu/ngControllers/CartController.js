@@ -69,9 +69,14 @@ suchiapp.controller("CartController", function ($scope, $window) {
                     DELIVERY_DESCRIPTION: $scope.DELIVERY_DESCRIPTION,
                     PAYMENT_MODE_ID: radioValue,
                     LATITUDE: lat,
-                    LONGITUDE: long
+                    LONGITUDE: long,
+                    EntryType : "WEB",
+                    IS_ACTIVE : 1,
+                    ADDED_BY : 2,
+                    DELIVERY_TIME : new Date(),
+                    DeliveryFee : 100
                 }
-              
+
 
                 objCommon.AjaxCall("Cart/InsertOrder", JSON.stringify(data), "POST", true, function (order) {
                     var arrayObjects = [];
