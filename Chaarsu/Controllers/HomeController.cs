@@ -79,6 +79,14 @@ namespace Chaarsu.Controllers
         }
 
         [HttpGet]
+        public ActionResult Support()
+        {
+            ViewBag.Message = "Your support page.";
+
+            return View();
+        }
+
+        [HttpGet]
         public JsonResult GetHeaderCategories()
         {
             try
